@@ -1,0 +1,25 @@
+# Node / Vite / TS
+node_modules/
+dist/
+dist-ssr/
+*.log
+vite.config.timestamp-*.mjs
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Env
+.env
+.env.local
+.env.*
+!.env.example
+
+# Coverage / Tests
+coverage/
+playwright-report/
+test-results/
+
+# Misc
+.DS_Store
