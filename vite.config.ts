@@ -1,0 +1,24 @@
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+      '@/schemas': resolve(__dirname, 'schemas'),
+      '@/stories': resolve(__dirname, 'stories')
+    }
+  },
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      }
+    }
+  },
+  server: {
+    port: 3000,
+    open: true
+  }
+})

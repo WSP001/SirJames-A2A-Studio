@@ -1,0 +1,41 @@
+{
+  "name": "sirjamesadventures003",
+  "version": "1.0.0",
+  "description": "Interactive Story: Sir James Adventures Book 003",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "validate": "node scripts/validate.js",
+    "validate:stories": "node scripts/validate.js stories/**/*.json",
+    "ci": "npm run lint && npm run type-check && npm run test:run && npm run validate"
+  },
+  "keywords": [
+    "interactive-story",
+    "typescript",
+    "vite",
+    "adventure"
+  ],
+  "author": "WSP001",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^9.36.0",
+    "glob": "^11.0.3",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
+  }
+}
