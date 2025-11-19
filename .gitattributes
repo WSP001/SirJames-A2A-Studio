@@ -1,0 +1,30 @@
+# Sir James Adventures - Git Attributes
+# Ensures consistent line endings across platforms
+
+# PowerShell scripts - Windows CRLF
+*.ps1 text eol=crlf
+
+# Bash scripts - Unix LF
+*.sh text eol=lf
+
+# Python files - Unix LF
+*.py text eol=lf
+
+# TypeScript/JavaScript - Unix LF
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+
+# Config files - Unix LF
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+
+# Environment files - Unix LF
+.env* text eol=lf
+.python-version text eol=lf
+runtime.txt text eol=lf
+Procfile text eol=lf
