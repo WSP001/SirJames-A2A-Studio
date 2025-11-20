@@ -4,7 +4,7 @@
 # ============================================================
 
 # --- Core image / audio / file libraries ---
-Pillow==10.2.0             # ✅ Compatible with Python 3.12 (10.3.0 breaks!)
+Pillow==10.3.0             # ✅ Compatible with Python 3.12 (10.3.0 breaks!)
 imageio==2.34.0            # Image/video I/O
 numpy==1.26.4              # Numeric support for image ops
 soundfile==0.12.1          # WAV/FLAC handling for TTS exports
@@ -12,9 +12,9 @@ pydub==0.25.1              # Audio manipulation helper
 mutagen==1.47.0            # Audio metadata tagging
 
 # --- Web requests / APIs ---
-requests==2.32.3           # For HTTP calls (OpenAI, ElevenLabs, Suno)
-urllib3==2.2.2             # Required by requests
-aiohttp==3.10.10           # Async API access (faster pipelines)
+requests==2.32.4           # For HTTP calls (OpenAI, ElevenLabs, Suno)
+urllib3==2.5.0             # Required by requests
+aiohttp==3.12.14           # Async API access (faster pipelines)
 
 # --- AWS / Netlify / storage integrations ---
 boto3==1.35.20             # S3 access for vault & backups
