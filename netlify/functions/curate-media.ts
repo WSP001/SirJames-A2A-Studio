@@ -1,6 +1,7 @@
 import type { Handler, HandlerEvent } from '@netlify/functions';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 /**
  * DIRECTOR AGENT (curate-media)
@@ -100,31 +101,69 @@ export const handler: Handler = async (event: HandlerEvent) => {
 
     console.log(`✨ Learned theme from memory: ${learnedTheme}`);
 
-    // Step 2: Mock curation (in production, use Gemini AI)
-    // This would analyze actual images/videos from vaultPath/intake/
-    const curatedScenes: Scene[] = [
-      {
-        file: 'IMG_001.jpg',
-        type: 'image',
-        order: 1,
-        caption: 'Opening shot: Family gathering',
-        duration: 3,
-      },
-      {
-        file: 'VID_002.mp4',
-        type: 'video',
-        order: 2,
-        caption: 'Moment of connection',
-        duration: 5,
-      },
-      {
-        file: 'IMG_003.jpg',
-        type: 'image',
-        order: 3,
-        caption: 'Sunset reflection',
-        duration: 4,
-      },
-    ];
+    // Step 2: Curation (Gemini AI or Mock Fallback)
+    let curatedScenes: Scene[] = [];
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (apiKey) {
+      try {
+        console.log('🤖 Using Gemini AI for curation...');
+        const genAI = new GoogleGenerativeAI(apiKey);
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+
+        const prompt = `
+          Act as a video editor/director.
+          Project: ${projectId}
+          Theme: ${learnedTheme}
+          
+          Task: Curate 3-5 imaginary media assets (files) that would make a cohesive video sequence.
+          Output ONLY raw JSON (no markdown formatting).
+          Format: Array of objects with keys: file (string like "IMG_001.jpg"), type ("image" or "video"), order (number), caption (string), duration (number in seconds).
+        `;
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        let text = response.text();
+        
+        // Clean up potential markdown code blocks if Gemini adds them
+        text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+
+        curatedScenes = JSON.parse(text);
+        console.log(`✨ Gemini generated ${curatedScenes.length} scenes`);
+
+      } catch (error) {
+        console.warn('⚠️ Gemini curation failed, falling back to mock data:', error);
+      }
+    } else {
+      console.log('ℹ️ GEMINI_API_KEY not found, using mock data.');
+    }
+
+    // Fallback if Gemini failed or wasn't used
+    if (curatedScenes.length === 0) {
+        curatedScenes = [
+          {
+            file: 'IMG_001.jpg',
+            type: 'image',
+            order: 1,
+            caption: 'Opening shot: Family gathering',
+            duration: 3,
+          },
+          {
+            file: 'VID_002.mp4',
+            type: 'video',
+            order: 2,
+            caption: 'Moment of connection',
+            duration: 5,
+          },
+          {
+            file: 'IMG_003.jpg',
+            type: 'image',
+            order: 3,
+            caption: 'Sunset reflection',
+            duration: 4,
+          },
+        ];
+    }
 
     // Step 3: Determine mood and pacing
     const mood = learnedTheme === 'uplifting' ? 'warm' : 'contemplative';

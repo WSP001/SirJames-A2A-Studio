@@ -1,4 +1,5 @@
 import type { Handler, HandlerEvent } from '@netlify/functions';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 /**
  * WRITER AGENT (narrate-project)
@@ -19,6 +20,9 @@ interface NarrateRequest {
   theme?: string;
   mood?: string;
 }
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 // Generate narrative based on scenes (stub - in production use Gemini/GPT)
 function generateNarrative(theme: string, mood: string, sceneCount: number): string {
