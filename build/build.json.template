@@ -1,0 +1,96 @@
+{
+  "$schema": "https://sirjames-book002-final.netlify.app/schemas/build.json",
+  "version": "1.0.0",
+  "project": "Sir James Adventures Book002",
+  "chapter": 1,
+  "title": "The Quest Begins",
+  
+  "provenance": {
+    "git_sha": "{{GIT_SHA}}",
+    "git_branch": "{{GIT_BRANCH}}",
+    "build_timestamp": "{{BUILD_TIMESTAMP}}",
+    "builder": "{{BUILDER_NAME}}",
+    "machine": "{{MACHINE_NAME}}"
+  },
+  
+  "tools": {
+    "python_version": "3.12.4",
+    "node_version": "20.x",
+    "ffmpeg_version": "{{FFMPEG_VERSION}}",
+    "netlify_cli_version": "{{NETLIFY_CLI_VERSION}}"
+  },
+  
+  "assets": {
+    "images": {
+      "count": 8,
+      "model": "dall-e-3",
+      "size": "1024x1024",
+      "quality": "standard",
+      "cost_usd": 0.32,
+      "files": [
+        "images/scene-001.png",
+        "images/scene-002.png",
+        "images/scene-003.png",
+        "images/scene-004.png",
+        "images/scene-005.png",
+        "images/scene-006.png",
+        "images/scene-007.png",
+        "images/scene-008.png"
+      ]
+    },
+    "voices": {
+      "count": 25,
+      "provider": "elevenlabs",
+      "model": "eleven_monolingual_v1",
+      "cost_usd": 0.53,
+      "voices_used": {
+        "narrator": "pNInz6obpgDQGcFmaJgB",
+        "sir_james": "ErXwobaYiN019PkySvjV",
+        "claude": "VR6AewLTigWG4xSOukaG",
+        "gramps": "TxGEqnHWrfWFTfGW9XjX"
+      }
+    },
+    "video": {
+      "scenes": 8,
+      "format": "mp4",
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "fps": 30,
+      "audio_codec": "aac",
+      "audio_bitrate": "192k",
+      "loudness": "ebu-r128",
+      "output": "video/chapter-01.mp4"
+    }
+  },
+  
+  "costs": {
+    "images_usd": 0.32,
+    "voices_usd": 0.53,
+    "total_usd": 0.85,
+    "budget_target_usd": 1.00,
+    "under_budget": true
+  },
+  
+  "quality": {
+    "audio_peak_dbfs": -1.5,
+    "audio_loudness_lufs": -16,
+    "video_crf": 18,
+    "accessibility": {
+      "alt_text": true,
+      "captions_vtt": false
+    }
+  },
+  
+  "commons_good": {
+    "transparency": true,
+    "attribution": true,
+    "cost_tracking": true,
+    "age_appropriate": "5-8 years",
+    "content_rating": "PG"
+  },
+  
+  "checksums": {
+    "chapter_video_sha256": "{{VIDEO_SHA256}}",
+    "manifest_sha256": "{{MANIFEST_SHA256}}"
+  }
+}

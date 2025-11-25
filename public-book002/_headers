@@ -1,30 +1,124 @@
 # Sir James Book002 - Netlify Headers
-# Optimized caching for static assets
+# Optimized caching, compression, and security for static assets
+# Commons Good: Transparent, accessible, performant
 
-/public-book002/*
+# ============================================================
+# GLOBAL DEFAULTS
+# ============================================================
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# ============================================================
+# HTML PAGES - Short cache for updates
+# ============================================================
+/*.html
+  Cache-Control: public, max-age=3600, s-maxage=86400
+  Content-Type: text/html; charset=utf-8
+
+/chapter*/*.html
+  Cache-Control: public, max-age=3600, s-maxage=86400
+  Content-Type: text/html; charset=utf-8
+
+# ============================================================
+# IMAGES - Long cache (immutable assets)
+# ============================================================
+/chapter*/images/*.png
   Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/png
 
-/public-book002/**/*.mp4
+/chapter*/images/*.jpg
   Cache-Control: public, max-age=31536000, immutable
-  Content-Type: video/mp4
+  Content-Type: image/jpeg
 
-/public-book002/**/*.mp3
+/chapter*/images/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/webp
+
+# ============================================================
+# AUDIO - Long cache with proper MIME types
+# ============================================================
+/chapter*/audio/*.mp3
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: audio/mpeg
+  Accept-Ranges: bytes
 
-/public-book002/**/*.wav
+/chapter*/audio/*.wav
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: audio/wav
+  Accept-Ranges: bytes
 
-/public-book002/**/*.vtt
+/chapter*/audio/*.ogg
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: audio/ogg
+  Accept-Ranges: bytes
+
+# ============================================================
+# VIDEO - Long cache with streaming support
+# ============================================================
+/chapter*/video/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: video/mp4
+  Accept-Ranges: bytes
+
+/chapter*/video/*.webm
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: video/webm
+  Accept-Ranges: bytes
+
+# ============================================================
+# CAPTIONS & ACCESSIBILITY
+# ============================================================
+/chapter*/captions/*.vtt
+  Cache-Control: public, max-age=86400
   Content-Type: text/vtt; charset=utf-8
+  Access-Control-Allow-Origin: *
 
-/public-book002/**/*.png
-  Cache-Control: public, max-age=31536000, immutable
+/chapter*/captions/*.srt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
 
-/public-book002/**/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-
-# HTML files - shorter cache for updates
-/public-book002/**/*.html
+# ============================================================
+# BUILD METADATA & JSON
+# ============================================================
+/chapter*/manifest.json
   Cache-Control: public, max-age=3600
+  Content-Type: application/json; charset=utf-8
+
+/chapter*/build.json
+  Cache-Control: public, max-age=3600
+  Content-Type: application/json; charset=utf-8
+
+/_media_prompts.json
+  Cache-Control: no-cache
+  Content-Type: application/json; charset=utf-8
+
+/_narration_batch.json
+  Cache-Control: no-cache
+  Content-Type: application/json; charset=utf-8
+
+# ============================================================
+# FONTS (if any)
+# ============================================================
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: font/woff2
+  Access-Control-Allow-Origin: *
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: font/woff
+  Access-Control-Allow-Origin: *
+
+# ============================================================
+# SERVICE WORKER & PWA
+# ============================================================
+/sw.js
+  Cache-Control: no-cache
+  Content-Type: application/javascript; charset=utf-8
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json; charset=utf-8
