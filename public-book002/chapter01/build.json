@@ -1,0 +1,89 @@
+{
+  "$schema": "https://sirjames-book002-final.netlify.app/schemas/build.json",
+  "version": "1.0.0",
+  "project": "Sir James Adventures Book002",
+  "chapter": 1,
+  "title": "Chapter 1",
+  "provenance": {
+    "git_sha": "f520da6422e7",
+    "git_branch": "main",
+    "build_timestamp": "2025-11-25T21:34:02.038707+00:00",
+    "builder": "Roberto002",
+    "machine": "X1-EVO-AI",
+    "os": "Windows 11"
+  },
+  "tools": {
+    "python_version": "3.14.0",
+    "node_version": "24.11.1",
+    "ffmpeg_version": "8.0-full_build-www.gyan.dev"
+  },
+  "assets": {
+    "images": {
+      "count": 8,
+      "model": "dall-e-3",
+      "size": "1024x1024",
+      "quality": "standard",
+      "cost_usd": 0.32,
+      "files": [
+        "images/scene-001.png",
+        "images/scene-002.png",
+        "images/scene-003.png",
+        "images/scene-004.png",
+        "images/scene-005.png",
+        "images/scene-006.png",
+        "images/scene-007.png",
+        "images/scene-008.png"
+      ]
+    },
+    "voices": {
+      "count": 25,
+      "provider": "elevenlabs",
+      "model": "eleven_monolingual_v1",
+      "cost_usd": 0.53,
+      "voices_used": {
+        "narrator": "pNInz6obpgDQGcFmaJgB",
+        "sir_james": "ErXwobaYiN019PkySvjV",
+        "claude": "VR6AewLTigWG4xSOukaG",
+        "gramps": "TxGEqnHWrfWFTfGW9XjX"
+      }
+    },
+    "video": {
+      "exists": false,
+      "format": "mp4",
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "fps": 30,
+      "audio_codec": "aac",
+      "audio_bitrate": "192k",
+      "loudness": "ebu-r128",
+      "output": null
+    }
+  },
+  "costs": {
+    "images_usd": 0.32,
+    "voices_usd": 0.53,
+    "total_usd": 0.85,
+    "budget_target_usd": 1.0,
+    "under_budget": true
+  },
+  "quality": {
+    "audio_peak_dbfs": -1.5,
+    "audio_loudness_lufs": -16,
+    "video_crf": 18,
+    "accessibility": {
+      "alt_text": true,
+      "captions_vtt": false
+    }
+  },
+  "commons_good": {
+    "transparency": true,
+    "attribution": true,
+    "cost_tracking": true,
+    "age_appropriate": "5-8 years",
+    "content_rating": "PG"
+  },
+  "checksums": {
+    "chapter_video_sha256": null,
+    "manifest_sha256": null
+  }
+}

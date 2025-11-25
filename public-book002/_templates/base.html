@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+
+  <!-- Favicons / PWA -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Sir James Adventures - An interactive learning journey for children ages 5-8" />
+  <meta name="author" content="WSP001 / Commons Good" />
+
+  <!-- Preload theme audio for faster first play -->
+  <link rel="preload" as="audio" href="/media/SirJamesThemeSong008.wav" />
+
+  <!-- Base styles -->
+  <style>
+    :root {
+      --pad: 16px;
+      --bg: #0b0b0b;
+      --fg: #f5f5f5;
+      --muted: #9aa0a6;
+      --accent: #8ab4f8;
+    }
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--pad);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .sr-only {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- BEGIN CHAPTER CONTENT -->
+    {{BODY}}
+    <!-- END CHAPTER CONTENT -->
+  </div>
+
+  <!-- Accessible start-audio hint: only shows until first user gesture (iOS/Safari fix) -->
+  <div id="audioHint" role="dialog" aria-live="polite" aria-label="Audio controls"
+       style="position:fixed;inset:auto 12px 12px auto;display:none;z-index:10000;
+              background:rgba(17,17,17,.85);color:#fff;padding:10px 12px;border-radius:12px;
+              box-shadow:0 6px 24px rgba(0,0,0,.35);font:14px/1.4 system-ui">
+    <button id="audioHintBtn"
+            style="all:unset;cursor:pointer;background:#00b894;color:#04120e;
+                   padding:6px 10px;border-radius:10px;margin-right:8px;font-weight:600">▶ Start Audio</button>
+    <span>Tap once to enable narration & theme on this device.</span>
+  </div>
+
+  <script>
+  // iOS/Safari audio unlock - show hint only when needed
+  (function () {
+    const hint = document.getElementById('audioHint');
+    const btn = document.getElementById('audioHintBtn');
+    let primed = false;
+
+    function show() { if (!primed) hint.style.display = 'flex'; }
+    function hide() { hint.style.display = 'none'; }
+
+    async function prime() {
+      try {
+        primed = true;
+        hide();
+        if (window.SJ && SJ.theme) {
+          await SJ.theme.play();
+          SJ.theme.pause();
+        } else {
+          const a = new Audio();
+          a.muted = true;
+          a.src = '/media/SirJamesThemeSong008.wav';
+          await a.play().then(() => a.pause()).catch(() => {});
+        }
+        document.dispatchEvent(new Event('audio:primed'));
+      } catch (_) { /* ignore */ }
+    }
+
+    const KEY = 'sj:audio-primed';
+    if (!sessionStorage.getItem(KEY)) { show(); }
+
+    btn.addEventListener('click', function() {
+      prime();
+      sessionStorage.setItem(KEY, '1');
+    });
+
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function(evt) {
+      window.addEventListener(evt, function() {
+        if (primed) return;
+        prime();
+        sessionStorage.setItem(KEY, '1');
+      }, { once: true, passive: true });
+    });
+  })();
+  </script>
+
+  <!-- Shared audio behavior (always loaded) -->
+  <script src="/js/intermission.js"></script>
+  <script src="/js/audio-settings.js"></script>
+
+  <!-- Auto-wire narration tags -->
+  <script>
+  document.querySelectorAll('audio[data-role="narration"]').forEach(function(a) {
+    a.addEventListener('play', function() {
+      document.dispatchEvent(new Event('audio:scene:playing'));
+    });
+    a.addEventListener('ended', function() {
+      document.dispatchEvent(new Event('audio:scene:ended'));
+    });
+  });
+  </script>
+</body>
+</html>
