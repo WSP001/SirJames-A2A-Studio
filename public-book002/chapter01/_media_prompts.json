@@ -1,0 +1,47 @@
+{
+  "chapter": 1,
+  "title": "The Quest Begins",
+  "style": "bright cartoon illustration, children's book style, warm colors, friendly atmosphere, age-appropriate for 5-8 year olds",
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Quest Begins",
+      "prompt": "A young knight named Sir James standing proudly in a grand castle hall, receiving a quest scroll from a wise king, bright cartoon style, warm golden lighting, medieval fantasy setting"
+    },
+    {
+      "scene": "scene-002", 
+      "title": "Meeting Claude",
+      "prompt": "Sir James meeting Claude, a friendly Red Bone Coonhound dog with floppy ears and warm brown eyes, in a sunny castle courtyard with flowers, cartoon style, joyful reunion moment"
+    },
+    {
+      "scene": "scene-003",
+      "title": "Preparation",
+      "prompt": "Sir James and Claude packing adventure supplies into a leather satchel, maps scrolls and provisions visible on a wooden table, cozy castle room with stone walls, cartoon illustration"
+    },
+    {
+      "scene": "scene-004",
+      "title": "Castle Gates",
+      "prompt": "Large wooden castle gates opening wide with morning sunlight streaming through, Sir James and Claude stepping through into a new adventure, epic perspective, cartoon adventure style"
+    },
+    {
+      "scene": "scene-005",
+      "title": "First Steps",
+      "prompt": "Sir James and Claude taking their first steps on a winding cobblestone path leading away from the castle, hopeful sunrise in background, cartoon illustration, sense of wonder and adventure"
+    },
+    {
+      "scene": "scene-006",
+      "title": "Forest Trail",
+      "prompt": "Dense enchanted forest trail with tall oak trees forming a natural archway, dappled golden sunlight filtering through leaves, Sir James and Claude walking together, magical cartoon style"
+    },
+    {
+      "scene": "scene-007",
+      "title": "Mountain View",
+      "prompt": "Sir James and Claude standing on a grassy hilltop overlooking distant purple mountains, epic landscape panorama view, sunset colors of orange and pink, cartoon adventure illustration"
+    },
+    {
+      "scene": "scene-008",
+      "title": "Campsite Evening",
+      "prompt": "Cozy campsite at dusk with a small crackling campfire, Sir James studying a treasure map by warm firelight while Claude curls up nearby, peaceful evening scene, warm cartoon illustration with stars appearing"
+    }
+  ]
+}

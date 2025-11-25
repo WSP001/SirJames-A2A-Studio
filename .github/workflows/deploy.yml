@@ -175,9 +175,62 @@ jobs:
           echo "🎉 Deployment successful!"
           echo "🌐 Live at: https://$EXPECTED_SITE.netlify.app"
 
+  docs-check:
+    name: 📚 Documentation Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ✅ Verify build/README.md exists
+        run: |
+          if [ ! -f "build/README.md" ]; then
+            echo "❌ Missing build/README.md - Build cheatsheet required!"
+            echo "   This file documents the flywheel pipeline for Book002."
+            echo "   See: https://github.com/WSP001/SirJames-A2A-Studio/blob/main/build/README.md"
+            exit 1
+          fi
+          echo "✅ build/README.md exists"
+
+      - name: ✅ Verify AGENTS.md exists
+        run: |
+          if [ ! -f "AGENTS.md" ]; then
+            echo "❌ Missing AGENTS.md - Agent documentation required!"
+            exit 1
+          fi
+          echo "✅ AGENTS.md exists"
+
+      - name: ✅ Verify build tools exist
+        run: |
+          MISSING=0
+          for tool in "tools/local_agent_clean.py" "tools/images_generate.py" "tools/eleven_agent.py" "tools/build_manifest.py"; do
+            if [ ! -f "$tool" ]; then
+              echo "❌ Missing $tool"
+              MISSING=1
+            else
+              echo "✅ $tool exists"
+            fi
+          done
+          if [ $MISSING -eq 1 ]; then
+            exit 1
+          fi
+
+      - name: 📊 Generate docs report
+        run: |
+          echo "## 📚 Documentation Check" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| File | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| build/README.md | ✅ Present |" >> $GITHUB_STEP_SUMMARY
+          echo "| AGENTS.md | ✅ Present |" >> $GITHUB_STEP_SUMMARY
+          echo "| tools/local_agent_clean.py | ✅ Present |" >> $GITHUB_STEP_SUMMARY
+          echo "| tools/images_generate.py | ✅ Present |" >> $GITHUB_STEP_SUMMARY
+          echo "| tools/eleven_agent.py | ✅ Present |" >> $GITHUB_STEP_SUMMARY
+          echo "| tools/build_manifest.py | ✅ Present |" >> $GITHUB_STEP_SUMMARY
+
   commons-good-check:
     name: 🌍 Commons Good Compliance
-    needs: verify-environment
+    needs: [verify-environment, docs-check]
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout code

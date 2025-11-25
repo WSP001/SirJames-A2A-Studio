@@ -1,0 +1,30 @@
+# Sir James Book002 - Netlify Headers
+# Optimized caching for static assets
+
+/public-book002/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/public-book002/**/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: video/mp4
+
+/public-book002/**/*.mp3
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: audio/mpeg
+
+/public-book002/**/*.wav
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: audio/wav
+
+/public-book002/**/*.vtt
+  Content-Type: text/vtt; charset=utf-8
+
+/public-book002/**/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/public-book002/**/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files - shorter cache for updates
+/public-book002/**/*.html
+  Cache-Control: public, max-age=3600

@@ -1,0 +1,216 @@
+{
+  "chapter": 1,
+  "title": "The Quest Begins",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude": "${VOICEID_CLAUDE}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Quest Begins",
+      "lines": [
+        {
+          "id": "001-01",
+          "voice": "narrator",
+          "text": "In the great hall of Castle Brightstone, young Sir James stood before King Arthur himself.",
+          "emotion": "dramatic"
+        },
+        {
+          "id": "001-02",
+          "voice": "sir_james",
+          "text": "I accept this quest, Your Majesty. I will find the Crystal of Courage!",
+          "emotion": "heroic"
+        },
+        {
+          "id": "001-03",
+          "voice": "narrator",
+          "text": "The king smiled, knowing he had chosen the right knight for this important mission.",
+          "emotion": "warm"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "Meeting Claude",
+      "lines": [
+        {
+          "id": "002-01",
+          "voice": "narrator",
+          "text": "As Sir James prepared to leave, a familiar bark echoed through the courtyard.",
+          "emotion": "cheerful"
+        },
+        {
+          "id": "002-02",
+          "voice": "sir_james",
+          "text": "Claude! My loyal friend! Of course you're coming with me!",
+          "emotion": "excited"
+        },
+        {
+          "id": "002-03",
+          "voice": "narrator",
+          "text": "Claude wagged his tail so hard his whole body wiggled with joy.",
+          "emotion": "playful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "Preparation",
+      "lines": [
+        {
+          "id": "003-01",
+          "voice": "narrator",
+          "text": "Together, they gathered everything they would need for their adventure.",
+          "emotion": "thoughtful"
+        },
+        {
+          "id": "003-02",
+          "voice": "sir_james",
+          "text": "Maps, check. Food, check. Grandfather's compass, check. We're ready, Claude!",
+          "emotion": "determined"
+        },
+        {
+          "id": "003-03",
+          "voice": "narrator",
+          "text": "Claude barked twice, which Sir James knew meant 'Let's go!'",
+          "emotion": "eager"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "Castle Gates",
+      "lines": [
+        {
+          "id": "004-01",
+          "voice": "narrator",
+          "text": "The great castle gates creaked open, revealing the world beyond.",
+          "emotion": "dramatic"
+        },
+        {
+          "id": "004-02",
+          "voice": "sir_james",
+          "text": "This is it, Claude. Our first real adventure begins now.",
+          "emotion": "awe"
+        },
+        {
+          "id": "004-03",
+          "voice": "narrator",
+          "text": "Claude whined softly, sensing how important this journey would be.",
+          "emotion": "tender"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "First Steps",
+      "lines": [
+        {
+          "id": "005-01",
+          "voice": "narrator",
+          "text": "Their first steps took them down a winding path away from everything they knew.",
+          "emotion": "hopeful"
+        },
+        {
+          "id": "005-02",
+          "voice": "sir_james",
+          "text": "Look at that sunrise, Claude! It's like the whole world is cheering us on!",
+          "emotion": "inspired"
+        },
+        {
+          "id": "005-03",
+          "voice": "narrator",
+          "text": "And so began an adventure that would test their courage and strengthen their friendship.",
+          "emotion": "warm"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "Forest Trail",
+      "lines": [
+        {
+          "id": "006-01",
+          "voice": "narrator",
+          "text": "The forest trail was dark and mysterious, with ancient trees towering overhead.",
+          "emotion": "mysterious"
+        },
+        {
+          "id": "006-02",
+          "voice": "sir_james",
+          "text": "Stay close, Claude. These woods are full of secrets.",
+          "emotion": "cautious"
+        },
+        {
+          "id": "006-03",
+          "voice": "narrator",
+          "text": "But Sir James's heart was light, for he had his best friend by his side.",
+          "emotion": "reassuring"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "Mountain View",
+      "lines": [
+        {
+          "id": "007-01",
+          "voice": "narrator",
+          "text": "From the hilltop, they could see mountains stretching to the horizon.",
+          "emotion": "epic"
+        },
+        {
+          "id": "007-02",
+          "voice": "sir_james",
+          "text": "That's where we're headed, Claude. The Shadow Valley lies beyond those peaks.",
+          "emotion": "determined"
+        },
+        {
+          "id": "007-03",
+          "voice": "narrator",
+          "text": "The journey would be long, but Sir James knew they could do it together.",
+          "emotion": "confident"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "Campsite Evening",
+      "lines": [
+        {
+          "id": "008-01",
+          "voice": "narrator",
+          "text": "As stars began to twinkle, they made camp beside a gentle stream.",
+          "emotion": "peaceful"
+        },
+        {
+          "id": "008-02",
+          "voice": "sir_james",
+          "text": "We did well today, Claude. Tomorrow, we'll be even closer to our goal.",
+          "emotion": "satisfied"
+        },
+        {
+          "id": "008-03",
+          "voice": "narrator",
+          "text": "Claude yawned and curled up by the fire, dreaming of adventures to come.",
+          "emotion": "cozy"
+        },
+        {
+          "id": "008-04",
+          "voice": "narrator",
+          "text": "And so ended the first day of Sir James's greatest quest.",
+          "emotion": "concluding"
+        }
+      ]
+    }
+  ]
+}
