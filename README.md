@@ -1,6 +1,6 @@
-# SirJamesAdventures003
+# SirJamesAdventures Book002 IMANGE/AUDIO VERSION
 
-Interactive virtue-choice storybook engine (Book003) for the Sir James Adventures series.
+Interactive virtue-choice storybook engine (Book002) IMANGE/AUDIO for the Sir James Adventures series of interactive Books.
 
 ## Core Goals
 - JSON-driven scenes (schema v3.0)
