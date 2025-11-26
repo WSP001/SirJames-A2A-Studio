@@ -5,7 +5,7 @@
 # --- Core Data & File Handling ---
 numpy==1.26.4              # Data manipulation (Colab/Local)
 pandas==2.2.2              # Data analysis & DataFrame ops
-Pillow==10.2.0             # Image processing (Python 3.12 compatible)
+Pillow==10.3.0             # Image processing (Python 3.12 compatible)
 python-dotenv==1.0.1       # Environment variable management
 PyYAML==6.0.2              # Config parsing
 
@@ -18,8 +18,8 @@ google-generativeai==0.7.2 # Gemini 1.5 Pro (Advanced)
 # --- Cloud Storage & IO ---
 boto3==1.35.20             # AWS S3 (Backups)
 botocore==1.35.20          # AWS Core
-requests==2.32.3           # HTTP Requests
-aiohttp==3.10.10           # Async HTTP
+requests==2.32.4           # HTTP Requests
+aiohttp==3.12.14           # Async HTTP
 
 # --- Audio Processing ---
 soundfile==0.12.1          # Audio I/O
