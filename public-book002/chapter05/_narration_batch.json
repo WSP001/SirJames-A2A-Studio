@@ -1,0 +1,227 @@
+{
+  "chapter": 5,
+  "title": "The Wise Owl's Lesson",
+  "theme": "Knowledge and Wisdom",
+  "virtue": "Learning from Experience and Seeking Wisdom",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Mountain Path",
+      "setting": "Dramatic mountain path with wind blowing, adventure ahead",
+      "lines": [
+        {
+          "id": "005-01-01",
+          "voice": "narrator",
+          "text": "Sir James and Claude climbed the winding mountain path as the wind whispered secrets through the ancient trees.",
+          "emotion": "adventurous"
+        },
+        {
+          "id": "005-01-02",
+          "voice": "sir_james",
+          "text": "Gramps said there's a wise owl who lives at the top of this mountain. She knows the answers to any question!",
+          "emotion": "excited"
+        },
+        {
+          "id": "005-01-03",
+          "voice": "narrator",
+          "text": "Claude's ears perked up. He could sense something magical waiting for them above the clouds.",
+          "emotion": "curious"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "The Ancient Tree",
+      "setting": "Massive ancient oak tree with glowing windows",
+      "lines": [
+        {
+          "id": "005-02-01",
+          "voice": "narrator",
+          "text": "At the mountain's peak stood the most magnificent tree Sir James had ever seen - an ancient oak with windows that glowed like stars.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "005-02-02",
+          "voice": "sir_james",
+          "text": "This must be where the Wise Owl lives! Look at all those books in the windows, Claude!",
+          "emotion": "amazed"
+        },
+        {
+          "id": "005-02-03",
+          "voice": "narrator",
+          "text": "A soft hooting sound drifted down from the highest branch, welcoming them to the tree of knowledge.",
+          "emotion": "mystical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "Meeting the Wise Owl",
+      "setting": "Inside the tree library with the majestic owl",
+      "lines": [
+        {
+          "id": "005-03-01",
+          "voice": "narrator",
+          "text": "Inside the tree was a magnificent library, and perched on a golden branch sat the most beautiful owl Sir James had ever seen.",
+          "emotion": "reverent"
+        },
+        {
+          "id": "005-03-02",
+          "voice": "sir_james",
+          "text": "Good evening, Wise Owl. I am Sir James, and I've come seeking wisdom.",
+          "emotion": "respectful"
+        },
+        {
+          "id": "005-03-03",
+          "voice": "narrator",
+          "text": "The owl's golden eyes sparkled. 'Wisdom is not given, young knight. It is earned through questions and listening.'",
+          "emotion": "wise"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "The First Question",
+      "setting": "Sir James sitting with the owl, books floating around",
+      "lines": [
+        {
+          "id": "005-04-01",
+          "voice": "narrator",
+          "text": "Books floated gently around them as the Wise Owl leaned closer to Sir James.",
+          "emotion": "magical"
+        },
+        {
+          "id": "005-04-02",
+          "voice": "sir_james",
+          "text": "How do I become truly wise, like you and Gramps?",
+          "emotion": "earnest"
+        },
+        {
+          "id": "005-04-03",
+          "voice": "narrator",
+          "text": "The owl smiled. 'By admitting what you don't know, and having the courage to learn. That is the first step to wisdom.'",
+          "emotion": "gentle"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "The Book of Mistakes",
+      "setting": "Owl showing Sir James a special golden book",
+      "lines": [
+        {
+          "id": "005-05-01",
+          "voice": "narrator",
+          "text": "The Wise Owl flew to a shelf and returned with a golden book that seemed to glow from within.",
+          "emotion": "curious"
+        },
+        {
+          "id": "005-05-02",
+          "voice": "sir_james",
+          "text": "What is this special book? It's so beautiful!",
+          "emotion": "intrigued"
+        },
+        {
+          "id": "005-05-03",
+          "voice": "narrator",
+          "text": "'This is the Book of Mistakes,' said the owl. 'Every wise creature has one. Our mistakes teach us more than our successes.'",
+          "emotion": "thoughtful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "Learning from Claude",
+      "setting": "Claude demonstrating patience and observation",
+      "lines": [
+        {
+          "id": "005-06-01",
+          "voice": "narrator",
+          "text": "The Wise Owl looked at Claude with knowing eyes. 'Your companion already understands this lesson.'",
+          "emotion": "observant"
+        },
+        {
+          "id": "005-06-02",
+          "voice": "sir_james",
+          "text": "Claude? What do you mean?",
+          "emotion": "curious"
+        },
+        {
+          "id": "005-06-03",
+          "voice": "narrator",
+          "text": "'Watch how he listens before acting, observes before moving. Dogs are natural students of wisdom.'",
+          "emotion": "wise"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "The Gift of Curiosity",
+      "setting": "Owl giving Sir James a glowing feather",
+      "lines": [
+        {
+          "id": "005-07-01",
+          "voice": "narrator",
+          "text": "The Wise Owl plucked a single feather from her wing. It glowed with soft golden light.",
+          "emotion": "magical"
+        },
+        {
+          "id": "005-07-02",
+          "voice": "sir_james",
+          "text": "For me? Thank you, Wise Owl! I will treasure it always.",
+          "emotion": "grateful"
+        },
+        {
+          "id": "005-07-03",
+          "voice": "narrator",
+          "text": "'This feather will glow whenever you ask a good question. Never stop being curious, young knight.'",
+          "emotion": "encouraging"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "Wisdom Earned",
+      "setting": "Sir James and Claude descending mountain at sunrise",
+      "lines": [
+        {
+          "id": "005-08-01",
+          "voice": "narrator",
+          "text": "As Sir James and Claude made their way down the mountain, the sunrise painted the world in gold and pink.",
+          "emotion": "peaceful"
+        },
+        {
+          "id": "005-08-02",
+          "voice": "sir_james",
+          "text": "I understand now, Claude. Being wise means always being ready to learn, even from our mistakes!",
+          "emotion": "enlightened"
+        },
+        {
+          "id": "005-08-03",
+          "voice": "narrator",
+          "text": "Claude wagged his tail proudly. His young knight was growing wiser every day.",
+          "emotion": "warm"
+        },
+        {
+          "id": "005-08-04",
+          "voice": "gramps",
+          "text": "The wisest people are those who know there's always more to learn. Well done, my boy.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sir James Adventures - Book 002</title>
+  <meta name="description" content="Join Sir James and Claude on magical adventures teaching virtues through interactive storytelling">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 2px solid rgba(255,215,0,0.3);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: #a0c4ff;
+      opacity: 0.9;
+    }
+
+    /* Chapter Grid */
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Chapter Card with 3D Tilt */
+    .chapter-card {
+      position: relative;
+      height: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .chapter-card:hover {
+      box-shadow: 0 20px 50px rgba(255,215,0,0.3);
+    }
+
+    /* Background Image */
+    .card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    .chapter-card:hover .card-bg {
+      transform: scale(1.1);
+    }
+
+    /* Gradient Overlay */
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.1) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.85) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Card Content */
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      z-index: 2;
+    }
+
+    .chapter-number {
+      display: inline-block;
+      background: rgba(255,215,0,0.9);
+      color: #1a1a2e;
+      font-weight: bold;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    .chapter-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .chapter-theme {
+      font-size: 0.9rem;
+      color: #a0c4ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .virtue-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.15);
+      color: #ffd700;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+
+    /* Status Chip */
+    .status-chip {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      z-index: 3;
+      text-transform: uppercase;
+    }
+
+    .status-ready {
+      background: rgba(46, 204, 113, 0.9);
+      color: #fff;
+    }
+
+    .status-coming {
+      background: rgba(241, 196, 15, 0.9);
+      color: #1a1a2e;
+    }
+
+    /* Asset Indicators */
+    .asset-indicators {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 3;
+    }
+
+    .asset-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      background: rgba(255,255,255,0.9);
+    }
+
+    .asset-icon.has-images { color: #3498db; }
+    .asset-icon.has-audio { color: #9b59b6; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,215,0,0.2);
+      margin-top: 2rem;
+    }
+
+    .footer a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.8rem; }
+      .chapter-grid { padding: 1rem; gap: 1.5rem; }
+      .chapter-card { height: 280px; }
+      .chapter-title { font-size: 1.2rem; }
+    }
+
+    /* Shine effect on hover */
+    .card-shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+      );
+      z-index: 2;
+      transition: left 0.5s ease;
+    }
+
+    .chapter-card:hover .card-shine {
+      left: 150%;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Sir James Adventures</h1>
+    <p>Book 002 - The Virtue Quest</p>
+  </header>
+
+  <main class="chapter-grid" id="chapterGrid">
+    <!-- Cards will be dynamically inserted here -->
+  </main>
+
+  <footer class="footer">
+    <a href="parent-dashboard.html">Parent Dashboard</a>
+    <span style="color: #666;">|</span>
+    <span style="color: #a0c4ff; font-size: 0.9rem;">
+      80 HD Images + 250 Audio Lines
+    </span>
+  </footer>
+
+  <script>
+    // Load chapters data and render cards
+    async function loadChapters() {
+      try {
+        const response = await fetch('chapters.json');
+        const data = await response.json();
+        renderChapterCards(data.chapters);
+      } catch (error) {
+        console.error('Error loading chapters:', error);
+        // Fallback to static data if fetch fails
+        renderFallbackCards();
+      }
+    }
+
+    function renderChapterCards(chapters) {
+      const grid = document.getElementById('chapterGrid');
+      grid.innerHTML = '';
+
+      chapters.forEach(chapter => {
+        const card = createChapterCard(chapter);
+        grid.appendChild(card);
+      });
+
+      // Initialize tilt effect
+      initTiltEffect();
+    }
+
+    function createChapterCard(chapter) {
+      const card = document.createElement('div');
+      card.className = 'chapter-card';
+      card.setAttribute('data-chapter', chapter.id);
+
+      const statusClass = chapter.status === 'ready' ? 'status-ready' : 'status-coming';
+      const statusText = chapter.status === 'ready' ? 'Ready' : 'Coming Soon';
+
+      card.innerHTML = `
+        <div class="card-bg" style="background-image: url('${chapter.coverImage}')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-shine"></div>
+        
+        <div class="asset-indicators">
+          ${chapter.hasImages ? '<div class="asset-icon has-images" title="8 HD Images">🖼️</div>' : ''}
+          ${chapter.hasAudio ? '<div class="asset-icon has-audio" title="25 Audio Lines">🔊</div>' : ''}
+        </div>
+        
+        <div class="status-chip ${statusClass}">${statusText}</div>
+        
+        <div class="card-content">
+          <span class="chapter-number">Chapter ${chapter.id}</span>
+          <h2 class="chapter-title">${chapter.title}</h2>
+          <p class="chapter-theme">${chapter.theme}</p>
+          <span class="virtue-badge">✨ ${chapter.virtue}</span>
+        </div>
+      `;
+
+      // Click to navigate
+      card.addEventListener('click', () => {
+        if (chapter.status === 'ready') {
+          window.location.href = `${chapter.slug}/scene-001/index.html`;
+        }
+      });
+
+      return card;
+    }
+
+    // 3D Tilt Effect
+    function initTiltEffect() {
+      const cards = document.querySelectorAll('.chapter-card');
+
+      cards.forEach(card => {
+        card.addEventListener('mousemove', handleTilt);
+        card.addEventListener('mouseleave', resetTilt);
+        card.addEventListener('touchstart', handleTouch, { passive: true });
+      });
+    }
+
+    function handleTilt(e) {
+      const card = e.currentTarget;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    }
+
+    function resetTilt(e) {
+      const card = e.currentTarget;
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    }
+
+    function handleTouch(e) {
+      const card = e.currentTarget;
+      card.style.transform = 'scale(1.02)';
+      setTimeout(() => {
+        card.style.transform = 'scale(1)';
+      }, 200);
+    }
+
+    // Fallback if JSON fails to load
+    function renderFallbackCards() {
+      const fallbackChapters = [
+        { id: 1, slug: 'chapter01', title: 'The Quest Begins', theme: 'Beginning the Journey', virtue: 'Courage', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter01/images/scene-001.png' },
+        { id: 2, slug: 'chapter02', title: 'The Butterfly Garden', theme: 'Patience and Gentleness', virtue: 'Patience', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter02/images/scene-001.png' },
+        { id: 3, slug: 'chapter03', title: "The Dragon's Riddle", theme: 'Wisdom and Problem Solving', virtue: 'Wisdom', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter03/images/scene-001.png' },
+        { id: 4, slug: 'chapter04', title: 'The Enchanted Garden', theme: 'Caring for Nature', virtue: 'Stewardship', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter04/images/scene-001.png' },
+        { id: 5, slug: 'chapter05', title: "The Wise Owl's Lesson", theme: 'Learning and Listening', virtue: 'Humility', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter05/images/scene-001.png' },
+        { id: 6, slug: 'chapter06', title: 'The Mirror of Truth', theme: 'Honesty and Self-Reflection', virtue: 'Honesty', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter06/images/scene-001.png' },
+        { id: 7, slug: 'chapter07', title: 'The Wishing Star', theme: 'Dreams and Aspirations', virtue: 'Hope', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter07/images/scene-001.png' },
+        { id: 8, slug: 'chapter08', title: 'The River of Stars', theme: 'Community and Friendship', virtue: 'Kindness', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter08/images/scene-001.png' },
+        { id: 9, slug: 'chapter09', title: 'The Moonbeam Celebration', theme: 'Guidance and Faith', virtue: 'Faith', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter09/images/scene-001.png' },
+        { id: 10, slug: 'chapter10', title: "The Knight's Triumph", theme: 'Completion and Growth', virtue: 'Perseverance', status: 'ready', hasImages: true, hasAudio: true, coverImage: 'chapter10/images/scene-001.png' }
+      ];
+      renderChapterCards(fallbackChapters);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', loadChapters);
+  </script>
+</body>
+</html>

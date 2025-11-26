@@ -2,51 +2,81 @@
 
 **Project:** Image & Audio Multimedia Edition (No Emojis)  
 **Target:** Ship to Sir James (5-year-old grandson) on iPad  
-**Updated:** November 26, 2025  
-**Primary Tester:** Sir James himself
-
-## ✅ PHASE 1-2 COMPLETE (Nov 26)
-- ✅ Book001 frozen note added to README
-- ✅ 80 per-scene prompts consolidated to `prompts/book002/json/`
-- ✅ Sir James eye color fixed: **BLUE eyes** (not green)
-- ✅ Image generator updated to read new prompt format
+**Updated:** November 26, 2025 @ 2:00 PM  
+**Primary Tester:** Sir James himself  
+**Git Tag:** `book002-assets-v1` (milestone)
 
 ---
 
 ## 🔑 Legend
 
-- 🔴 = Not done / blocking
-- 🟡 = In progress / partial  
-- ✅ = Done / green
+| Symbol | Meaning |
+|--------|---------|
+| ✅ | Done / Green |
+| 🟡 | In Progress |
+| 🔴 | Not Done |
 
 ---
 
-## 🎯 Reality Check (Honest Assessment)
+## 📊 CHAPTER STATUS DASHBOARD
 
-### Chapter 1 - The Quest Begins
-| Asset | Status | Count | Notes |
-|-------|--------|-------|-------|
-| **Images (PNG)** | ✅ | 8/8 | `public-book002/chapter01/images/scene-001.png` etc. |
-| **Audio (MP3)** | ✅ | 25 | `public-book002/chapter01/audio/001-01.mp3` etc. |
-| **Media Prompts** | ✅ | 1 | `_media_prompts.json` exists |
-| **Narration Script** | ✅ | 1 | `_narration_batch.json` exists |
-| **Scene HTML** | 🟡 | 8 | HTML exists but shows "DALL-E pending" placeholder |
-| **Wired to Assets** | 🔴 | 0 | HTML not connected to real images/audio |
+| Ch | Title | Images | Audio | HTML Wired | Deployed | Status |
+|----|-------|--------|-------|------------|----------|--------|
+| 01 | The Quest Begins | ✅ 8/8 | ✅ 25 | 🟡 | ✅ | 🟡 Wire HTML |
+| 02 | The Butterfly Garden | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 03 | The Dragon's Riddle | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 04 | The Enchanted Garden | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 05 | The Wise Owl's Lesson | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 06 | The Mirror of Truth | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 07 | The Wishing Star | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 08 | The River of Stars | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 09 | The Moonbeam Celebration | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 10 | The Knight's Triumph | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
 
-### Chapters 2-10
-| Chapter | Source JSON | Images | Audio | HTML | Status |
-|---------|-------------|--------|-------|------|--------|
-| 02 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 03 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 04 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 05 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 06 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 07 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 08 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 09 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
-| 10 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+**TOTALS:** 80/80 Images ✅ | 250 Audio Lines ✅ | HTML: 🔴 | Deploy: 🔴
 
-**Source files exist at:** `LOGIC SirJames_Interactive_Prototype_With_Chapter10/chapter02/chapter.json` etc.
+---
+
+## 💰 COST TRACKING
+
+| Asset Type | Count | Cost | Status |
+|------------|-------|------|--------|
+| HD DALL-E Images | 80 scenes | ~$5.60 | ✅ Complete |
+| ElevenLabs Audio | 250 lines | ~$7.00 | ✅ Complete |
+| Thought Icons | 5 icons | ~$0.20 | ✅ Complete |
+| **TOTAL** | | **~$12.80** | ✅ Under budget |
+
+---
+
+## 🎤 VOICE NOTES
+
+**Current Voice:** Sir James sounds mature (middle-aged)  
+**Target Voice:** 5-year-old boy, playful, curious  
+**Status:** 🟡 PLACEHOLDER - Keep current, tune in next round  
+**Action:** Generate 2-3 test clips with younger voice settings when ready
+
+---
+
+## 🚀 NEXT ACTIONS
+
+### Immediate
+- [ ] Build Chapter Board landing page (HD images, tilt effect)
+- [ ] Create `chapters.json` data file
+- [ ] Wire HTML to real images/audio
+- [ ] Commit all audio files
+- [ ] Tag milestone: `book002-assets-v1`
+
+### Before Sawyer Tests
+- [ ] QA each chapter on iPad
+- [ ] Verify audio plays on tap
+- [ ] Check image loads correctly
+- [ ] Test navigation (Next/Previous)
+
+### Future (Next Round)
+- [ ] Tune Sir James voice to 5-year-old
+- [ ] Add background music (Suno)
+- [ ] Parent dashboard enhancements
+- [ ] Virtue tracking integration
 
 ---
 
