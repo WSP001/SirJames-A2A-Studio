@@ -20,7 +20,8 @@ from dotenv import load_dotenv
 
 # Project configuration
 PROJECT_ROOT = Path(__file__).parent.parent
-load_dotenv(PROJECT_ROOT / '.env.local')
+# Force override any existing env var with .env.local value
+load_dotenv(PROJECT_ROOT / '.env.local', override=True)
 
 # Cost estimates (USD)
 DALLE_COSTS = {
@@ -42,15 +43,42 @@ def get_openai_client():
         return None
 
 def load_media_prompts(chapter_num):
-    """Load media prompts from JSON file"""
+    """Load media prompts from JSON file - tries per-scene files first, then legacy format"""
+    
+    # Try new per-scene JSON files first (from prompts/book002/json/)
+    per_scene_dir = PROJECT_ROOT / "prompts" / "book002" / "json"
+    scene_files = sorted(per_scene_dir.glob(f"ch{chapter_num:02d}-sc*.json"))
+    
+    if scene_files:
+        print(f"[INFO] Loading {len(scene_files)} per-scene prompts from prompts/book002/json/")
+        scenes = []
+        theme = ""
+        for sf in scene_files:
+            with open(sf, 'r', encoding='utf-8') as f:
+                scene_data = json.load(f)
+                theme = scene_data.get("theme", theme)
+                scenes.append({
+                    "scene": f"scene-{scene_data['scene']:03d}",
+                    "prompt": scene_data.get("prompt", ""),
+                    "scene_id": scene_data.get("scene_id", "")
+                })
+        return {
+            "chapter": chapter_num,
+            "title": theme,
+            "style": "Disney Pixar 3D animation, professional broadcast quality",
+            "scenes": scenes
+        }
+    
+    # Fall back to legacy _media_prompts.json
     prompts_file = PROJECT_ROOT / "public-book002" / f"chapter{chapter_num:02d}" / "_media_prompts.json"
     
     if prompts_file.exists():
+        print(f"[INFO] Loading legacy _media_prompts.json")
         with open(prompts_file, 'r', encoding='utf-8') as f:
             return json.load(f)
     
     # Generate default prompts if file doesn't exist
-    print(f"[INFO] No _media_prompts.json found, using default prompts for Chapter {chapter_num}")
+    print(f"[INFO] No prompts found, using default prompts for Chapter {chapter_num}")
     return generate_default_prompts(chapter_num)
 
 def generate_default_prompts(chapter_num):

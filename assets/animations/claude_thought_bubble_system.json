@@ -1,0 +1,131 @@
+{
+  "ClaudeThoughtBubbleAnimationSystem": {
+    "version": "1.0.0",
+    "updated": "2025-11-26",
+    "SystemOverview": "Claude is the loyal Redbone Coonhound companion in the Sir James Interactive Storybook. His role is to silently offer guidance, emotional support, and playful non-verbal reactions through animated thought bubbles that appear during narrative and decision-making moments. This enhances emotional literacy and soft decision hints, especially for younger readers.",
+    
+    "AnimationStates": [
+      {
+        "id": "Idle_Blink",
+        "description": "Default relaxed state with blinking or nose wiggle",
+        "trigger": "default"
+      },
+      {
+        "id": "Idle_Listen", 
+        "description": "Triggered by narration voice lines (head tilt)",
+        "trigger": "narration_playing"
+      },
+      {
+        "id": "Idle_Sniff",
+        "description": "Light sniffing loop during quiet moments",
+        "trigger": "scene_idle"
+      },
+      {
+        "id": "Bubble_Appear",
+        "description": "Thought bubble grows from Claude's head",
+        "trigger": "showThought()"
+      },
+      {
+        "id": "Bubble_Pulse",
+        "description": "Bubble icon gently pulses to attract attention",
+        "trigger": "bubble_visible"
+      },
+      {
+        "id": "Bubble_Disappear",
+        "description": "Fades once decision is made or dismissed",
+        "trigger": "decision_made OR timeout"
+      }
+    ],
+
+    "ThoughtBubbleIconTypes": {
+      "_note": "ALL icons are HD DALL-E generated images - NO emojis",
+      "HelpfulInsight": {
+        "image_file": "thought_icon_insight.png",
+        "dall_e_prompt": "Golden glowing lightbulb with small pawprint embossed on glass, soft magical glow, Disney Pixar 3D style, transparent background, 512x512",
+        "meaning": "Suggests thoughtful, virtuous direction",
+        "use_case": "When player should choose the kind/brave option"
+      },
+      "Uncertainty": {
+        "image_file": "thought_icon_question.png",
+        "dall_e_prompt": "Soft fluffy cloud shaped like question mark, gentle silver shimmer, curious expression, Disney Pixar 3D style, transparent background, 512x512",
+        "meaning": "Encourages player to pause and reflect",
+        "use_case": "Complex moral choices, no clear right answer"
+      },
+      "Empathy": {
+        "image_file": "thought_icon_heart.png",
+        "dall_e_prompt": "Warm glowing heart with gentle pink and red gradient, soft magical sparkles, caring and kind feeling, Disney Pixar 3D style, transparent background, 512x512",
+        "meaning": "Highlights emotional impact",
+        "use_case": "When choice affects another character's feelings"
+      },
+      "Concern": {
+        "image_file": "thought_icon_caution.png",
+        "dall_e_prompt": "Gentle amber caution symbol with soft glow, not scary, protective feeling, Disney Pixar 3D style, transparent background, 512x512",
+        "meaning": "Warns of selfish or rash choice",
+        "use_case": "When player is about to make a poor decision"
+      },
+      "Joy": {
+        "image_file": "thought_icon_joy.png",
+        "dall_e_prompt": "Sparkling golden star burst with colorful magical confetti, celebration feeling, happy and bright, Disney Pixar 3D style, transparent background, 512x512",
+        "meaning": "Signals playful/light-hearted decision",
+        "use_case": "Fun moments, celebrations, positive outcomes"
+      }
+    },
+
+    "CodeHookSamples": {
+      "showThought": {
+        "syntax": "claude.showThought('empathy')",
+        "description": "Shows heart bubble with specified type"
+      },
+      "onClick": {
+        "syntax": "claude.onClick()",
+        "description": "Triggers voice-over or parent hint tooltip"
+      },
+      "reset": {
+        "syntax": "claude.reset()",
+        "description": "Removes all bubbles and returns to idle"
+      },
+      "animate": {
+        "syntax": "claude.animate()",
+        "description": "Triggers current mood loop (sniff, tail wag, etc.)"
+      }
+    },
+
+    "TimingAccessibility": {
+      "BubbleTiming": {
+        "appear_delay_ms": 3000,
+        "description": "Bubble appears 3 seconds after narration ends"
+      },
+      "Interaction": {
+        "tap_action": "Optional voice hint or enhanced visual cue",
+        "description": "If tapped, provides additional guidance"
+      },
+      "Accessibility": {
+        "alt_text_required": true,
+        "description": "Bubbles paired with accessible alt-text for visually impaired readers",
+        "alternate_input": "Support for alternate input systems"
+      }
+    },
+
+    "CSSAnimationSpecs": {
+      "bubble_appear": {
+        "animation": "bubble-grow 0.4s ease-out",
+        "transform": "scale(0) -> scale(1)",
+        "opacity": "0 -> 1"
+      },
+      "bubble_pulse": {
+        "animation": "bubble-pulse 2s ease-in-out infinite",
+        "transform": "scale(1) -> scale(1.05) -> scale(1)"
+      },
+      "bubble_disappear": {
+        "animation": "bubble-fade 0.3s ease-in",
+        "opacity": "1 -> 0"
+      },
+      "positioning": {
+        "anchor": "Claude's head (top-right)",
+        "offset_x": "20px",
+        "offset_y": "-40px",
+        "z_index": 100
+      }
+    }
+  }
+}

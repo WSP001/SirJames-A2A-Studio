@@ -20,7 +20,8 @@ from dotenv import load_dotenv
 
 # Project configuration
 PROJECT_ROOT = Path(__file__).parent.parent
-load_dotenv(PROJECT_ROOT / '.env.local')
+# Force override any existing env var with .env.local value
+load_dotenv(PROJECT_ROOT / '.env.local', override=True)
 
 # Cost estimates (USD per 1000 characters)
 ELEVEN_COST_PER_1K_CHARS = 0.30  # Approximate for standard tier

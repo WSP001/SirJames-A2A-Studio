@@ -1,0 +1,227 @@
+{
+  "chapter": 2,
+  "title": "The Butterfly Garden",
+  "theme": "Beauty and Wonder",
+  "virtue": "Appreciation of Nature's Beauty",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Hidden Waterfall",
+      "setting": "Sparkling waterfall with rainbow mist, rocky cavern entrance",
+      "lines": [
+        {
+          "id": "002-01-01",
+          "voice": "narrator",
+          "text": "Following the winding forest path, Sir James and Claude discovered something magical - a sparkling waterfall that painted rainbows in the misty air.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "002-01-02",
+          "voice": "sir_james",
+          "text": "Look Claude! There's something behind the waterfall! Do you see it?",
+          "emotion": "excited"
+        },
+        {
+          "id": "002-01-03",
+          "voice": "narrator",
+          "text": "Claude barked excitedly, his tail wagging as he spotted the hidden entrance behind the curtain of water.",
+          "emotion": "playful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "The Crystal Guardian",
+      "setting": "Glowing crystal chamber with ethereal blue light",
+      "lines": [
+        {
+          "id": "002-02-01",
+          "voice": "narrator",
+          "text": "Inside the cavern, crystals glowed with a soft blue light. And there, standing tall and shimmering, was the Crystal Guardian.",
+          "emotion": "mystical"
+        },
+        {
+          "id": "002-02-02",
+          "voice": "sir_james",
+          "text": "Hello! I am Sir James. We come in peace and friendship.",
+          "emotion": "brave"
+        },
+        {
+          "id": "002-02-03",
+          "voice": "narrator",
+          "text": "The Guardian's voice echoed like wind chimes. 'Young knight, to pass through my garden, you must show me the courage in your heart.'",
+          "emotion": "gentle"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "The Crystal Puzzle",
+      "setting": "Chamber of floating crystals, each glowing different colors",
+      "lines": [
+        {
+          "id": "002-03-01",
+          "voice": "narrator",
+          "text": "Crystals of every color floated gently in the air around them. Each one hummed with its own special song.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "002-03-02",
+          "voice": "sir_james",
+          "text": "Claude, I think we need to work together on this. What do you think, boy?",
+          "emotion": "thoughtful"
+        },
+        {
+          "id": "002-03-03",
+          "voice": "narrator",
+          "text": "Claude nuzzled Sir James's hand, and together they began to solve the crystal puzzle, matching colors and sounds.",
+          "emotion": "encouraging"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "The Crystal of Truth",
+      "setting": "Central crystal throne room, magnificent and awe-inspiring",
+      "lines": [
+        {
+          "id": "002-04-01",
+          "voice": "narrator",
+          "text": "In the heart of the cavern stood a magnificent throne made entirely of crystals, and upon it rested a glowing gem.",
+          "emotion": "majestic"
+        },
+        {
+          "id": "002-04-02",
+          "voice": "sir_james",
+          "text": "The Crystal of Truth! Gramps told me stories about this. It shows what's truly in your heart.",
+          "emotion": "awed"
+        },
+        {
+          "id": "002-04-03",
+          "voice": "narrator",
+          "text": "As Sir James approached, the crystal began to glow brighter, recognizing the kindness within him.",
+          "emotion": "warm"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "Helping the Lost Creatures",
+      "setting": "Dark tunnel with Sir James's crystal lighting the path",
+      "lines": [
+        {
+          "id": "002-05-01",
+          "voice": "narrator",
+          "text": "Deeper in the cavern, Sir James heard tiny voices calling for help. Small cave creatures had lost their way in the dark.",
+          "emotion": "concerned"
+        },
+        {
+          "id": "002-05-02",
+          "voice": "sir_james",
+          "text": "Don't worry, little friends! My crystal will light the way. Follow me and Claude!",
+          "emotion": "reassuring"
+        },
+        {
+          "id": "002-05-03",
+          "voice": "narrator",
+          "text": "The grateful creatures followed the warm glow, chirping happily as Sir James led them safely home.",
+          "emotion": "heartwarming"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "The Crystal Bridge",
+      "setting": "Transparent crystal bridge over glowing underground river",
+      "lines": [
+        {
+          "id": "002-06-01",
+          "voice": "narrator",
+          "text": "Before them stretched a bridge made of pure crystal, spanning a river that glowed with soft golden light.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "002-06-02",
+          "voice": "sir_james",
+          "text": "It's beautiful, Claude. But we must be brave. One step at a time, together.",
+          "emotion": "determined"
+        },
+        {
+          "id": "002-06-03",
+          "voice": "narrator",
+          "text": "With Claude by his side, Sir James crossed the crystal bridge, each step ringing like a gentle bell.",
+          "emotion": "triumphant"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "The Ancient Knights",
+      "setting": "Cave paintings showing knightly virtues and history",
+      "lines": [
+        {
+          "id": "002-07-01",
+          "voice": "narrator",
+          "text": "On the cavern walls, ancient paintings told stories of knights who had come before - each one learning important lessons.",
+          "emotion": "reverent"
+        },
+        {
+          "id": "002-07-02",
+          "voice": "sir_james",
+          "text": "Look Claude! These knights learned about courage, kindness, and truth. Just like Gramps teaches me!",
+          "emotion": "inspired"
+        },
+        {
+          "id": "002-07-03",
+          "voice": "narrator",
+          "text": "Sir James traced the paintings gently, feeling connected to all the brave knights who walked this path before him.",
+          "emotion": "thoughtful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "Emerging Victorious",
+      "setting": "Cave exit with golden sunset streaming in",
+      "lines": [
+        {
+          "id": "002-08-01",
+          "voice": "narrator",
+          "text": "As Sir James and Claude emerged from the crystal cavern, the setting sun painted the sky in brilliant oranges and golds.",
+          "emotion": "triumphant"
+        },
+        {
+          "id": "002-08-02",
+          "voice": "sir_james",
+          "text": "We did it, Claude! We learned that true beauty comes from helping others and being brave together!",
+          "emotion": "joyful"
+        },
+        {
+          "id": "002-08-03",
+          "voice": "narrator",
+          "text": "Claude barked happily, and somewhere behind them, the Crystal Guardian smiled, knowing another young knight had learned an important lesson.",
+          "emotion": "warm"
+        },
+        {
+          "id": "002-08-04",
+          "voice": "gramps",
+          "text": "Well done, my boy. The crystals showed you what was already in your heart - courage, kindness, and wonder.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}

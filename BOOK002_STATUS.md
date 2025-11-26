@@ -2,8 +2,14 @@
 
 **Project:** Image & Audio Multimedia Edition (No Emojis)  
 **Target:** Ship to Sir James (5-year-old grandson) on iPad  
-**Updated:** November 25, 2025  
+**Updated:** November 26, 2025  
 **Primary Tester:** Sir James himself
+
+## ✅ PHASE 1-2 COMPLETE (Nov 26)
+- ✅ Book001 frozen note added to README
+- ✅ 80 per-scene prompts consolidated to `prompts/book002/json/`
+- ✅ Sir James eye color fixed: **BLUE eyes** (not green)
+- ✅ Image generator updated to read new prompt format
 
 ---
 
