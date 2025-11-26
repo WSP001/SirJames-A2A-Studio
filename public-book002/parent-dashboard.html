@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Dashboard - Sir James Adventures</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <style>
+    :root {
+      --bg: #1a1a2e;
+      --card-bg: #16213e;
+      --accent: #e94560;
+      --accent-soft: #0f3460;
+      --text: #eaeaea;
+      --text-muted: #a0a0a0;
+      --success: #00d26a;
+      --warning: #ffc107;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      padding: 30px 0;
+      border-bottom: 2px solid var(--accent-soft);
+      margin-bottom: 30px;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .card h2 .icon {
+      font-size: 1.5rem;
+    }
+    
+    /* Progress Section */
+    .progress-item {
+      margin-bottom: 16px;
+    }
+    
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+    
+    .progress-bar {
+      height: 12px;
+      background: var(--accent-soft);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #ff6b6b);
+      border-radius: 6px;
+      transition: width 0.5s ease;
+    }
+    
+    /* Virtue Badges */
+    .virtue-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    
+    .virtue-badge {
+      text-align: center;
+      padding: 16px 8px;
+      background: var(--accent-soft);
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    
+    .virtue-badge:hover {
+      transform: scale(1.05);
+    }
+    
+    .virtue-badge.earned {
+      background: linear-gradient(135deg, #00d26a33, #00d26a11);
+      border: 2px solid var(--success);
+    }
+    
+    .virtue-badge .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .virtue-badge .name {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .virtue-badge .status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    
+    /* Discussion Prompts */
+    .prompt-list {
+      list-style: none;
+    }
+    
+    .prompt-item {
+      padding: 14px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .prompt-item:hover {
+      background: #1a3a5c;
+    }
+    
+    .prompt-item .chapter {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    
+    .prompt-item .question {
+      font-size: 0.95rem;
+    }
+    
+    /* Metrics */
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--accent-soft);
+    }
+    
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+    
+    .metric-value {
+      font-weight: 700;
+      color: var(--success);
+    }
+    
+    /* Quick Actions */
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .action-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    .action-btn.primary {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .action-btn.secondary {
+      background: var(--accent-soft);
+      color: var(--text);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      .virtue-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Parent Dashboard</h1>
+      <p>Track your child's journey through Sir James Adventures</p>
+    </header>
+    
+    <div class="dashboard-grid">
+      <!-- Reading Progress -->
+      <div class="card">
+        <h2><span class="icon">📚</span> Reading Progress</h2>
+        <div class="progress-item">
+          <div class="progress-label">
+            <span>Chapter 1: The Castle Gate</span>
+            <span>100%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">
+            <span>Chapter 2: The Garden Path</span>
+            <span>0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">
+            <span>Overall Book Progress</span>
+            <span>10%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 10%"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Virtue Badges -->
+      <div class="card">
+        <h2><span class="icon">🏅</span> Virtue Badges</h2>
+        <div class="virtue-grid">
+          <div class="virtue-badge earned">
+            <span class="emoji">🦁</span>
+            <span class="name">Courage</span>
+            <span class="status">Earned!</span>
+          </div>
+          <div class="virtue-badge">
+            <span class="emoji">💝</span>
+            <span class="name">Kindness</span>
+            <span class="status">In Progress</span>
+          </div>
+          <div class="virtue-badge">
+            <span class="emoji">🔍</span>
+            <span class="name">Curiosity</span>
+            <span class="status">Locked</span>
+          </div>
+          <div class="virtue-badge">
+            <span class="emoji">🤝</span>
+            <span class="name">Teamwork</span>
+            <span class="status">Locked</span>
+          </div>
+          <div class="virtue-badge">
+            <span class="emoji">🎯</span>
+            <span class="name">Persistence</span>
+            <span class="status">Locked</span>
+          </div>
+          <div class="virtue-badge">
+            <span class="emoji">🌟</span>
+            <span class="name">Honesty</span>
+            <span class="status">Locked</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Discussion Prompts -->
+      <div class="card">
+        <h2><span class="icon">💬</span> Discussion Prompts</h2>
+        <ul class="prompt-list">
+          <li class="prompt-item">
+            <div class="chapter">Chapter 1</div>
+            <div class="question">Why do you think Sir James felt nervous at the castle gate?</div>
+          </li>
+          <li class="prompt-item">
+            <div class="chapter">Chapter 1</div>
+            <div class="question">What would you do if you found a mysterious key?</div>
+          </li>
+          <li class="prompt-item">
+            <div class="chapter">Chapter 1</div>
+            <div class="question">How did Claude help Sir James feel brave?</div>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Session Metrics -->
+      <div class="card">
+        <h2><span class="icon">📊</span> Session Metrics</h2>
+        <div class="metric-row">
+          <span>Total Reading Time</span>
+          <span class="metric-value">12 min</span>
+        </div>
+        <div class="metric-row">
+          <span>Scenes Completed</span>
+          <span class="metric-value">8 / 80</span>
+        </div>
+        <div class="metric-row">
+          <span>Choices Made</span>
+          <span class="metric-value">3</span>
+        </div>
+        <div class="metric-row">
+          <span>Last Session</span>
+          <span class="metric-value">Today</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="card">
+      <h2><span class="icon">⚡</span> Quick Actions</h2>
+      <div class="action-buttons">
+        <button class="action-btn primary" onclick="location.href='/chapter01/'">
+          Continue Reading
+        </button>
+        <button class="action-btn secondary" onclick="location.href='/chapter01/'">
+          Start Chapter 1
+        </button>
+        <button class="action-btn secondary" onclick="alert('Coming soon: Print activity sheets!')">
+          Print Activities
+        </button>
+        <button class="action-btn secondary" onclick="alert('Coming soon: Audio-only mode!')">
+          Audio Mode
+        </button>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Sir James Adventures - Book002 Image/Audio Edition</p>
+      <p>Built with love for the Commons Good | <a href="https://github.com/WSP001/SirJames-A2A-Studio">GitHub</a></p>
+    </footer>
+  </div>
+  
+  <script>
+    // Load progress from localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const progress = JSON.parse(localStorage.getItem('sj:progress') || '{}');
+      console.log('Loaded progress:', progress);
+      
+      // Update UI based on saved progress
+      // (In production, this would sync with a backend)
+    });
+  </script>
+</body>
+</html>

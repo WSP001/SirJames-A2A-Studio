@@ -1,12 +1,13 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  # Book002 is pre-built static content - no build step needed
+  command = "echo 'Book002 static deploy - no build required'"
+  publish = "public-book002"
 
 [build.environment]
   NODE_VERSION = "18"
 
 [dev]
-  command = "vite"
+  command = "npx http-server public-book002 -p 5173"
   targetPort = 5173
   port = 8888
   autoLaunch = false
