@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "created": "2025-08-19T15:46:24.160167",
+    "quality_level": "professional_broadcast",
+    "target_audience": "children_5_to_8_years"
+  },
+  "voice_guidelines": {
+    "narrator": {
+      "style": "Warm, engaging storyteller voice, like a beloved grandfather",
+      "pace": "Moderate, clear enunciation for young listeners",
+      "tone": "Encouraging, magical, safe and inspiring",
+      "emotion": "Wonder, excitement, gentle wisdom"
+    },
+    "sir_james": {
+      "style": "Young, brave, kind voice, age 8-10",
+      "characteristics": "Determined but humble, learning and growing",
+      "emotion": "Curious, courageous, compassionate"
+    },
+    "claude": {
+      "style": "Loyal dog companion, intelligent barks and whines",
+      "characteristics": "Protective, wise, encouraging sounds",
+      "emotion": "Loyal, supportive, brave"
+    }
+  },
+  "music_themes": {
+    "adventure_theme": "Orchestral, heroic but gentle, inspiring young knights",
+    "magical_theme": "Ethereal, wonder-filled, safe mystical sounds",
+    "virtue_theme": "Uplifting, character-building, moral triumph",
+    "celebration_theme": "Joyful, rewarding, achievement recognition"
+  },
+  "chapter_audio": {
+    "chapter_01": {
+      "narration_style": "Forest adventure, whispering woods atmosphere",
+      "background_music": "Gentle forest sounds, magical woodland theme",
+      "scene_scripts": {
+        "scene_001": "In a cozy cottage at the edge of the Whispering Woods, young Sir James polished his wooden practice sword. The morning sun painted golden stripes across the porch where his loyal companion Claude sat watching. 'A knight's heart must be as ready as his shield,' said Gramps with a knowing smile. 'Are you prepared for what the woods might ask of you today, James?'",
+        "scene_002": "With Claude leading the way, Sir James stepped onto the forest path. Ancient oak trees towered above like gentle giants, their leaves whispering secrets of adventures past. Magical sparkles danced in the dappled sunlight, and Sir James felt his heart fill with wonder and excitement.",
+        "scene_003": "There, glowing softly on the forest path, lay a shimmering feather unlike any Sir James had ever seen. Claude sniffed it curiously, his tail wagging with excitement. 'What do you think it means, Claude?' Sir James asked, kneeling to examine the magical gift.",
+        "scene_004": "Forest creatures gathered around Sir James and Claude - friendly squirrels with twinkling eyes, gentle rabbits with soft fur, and wise old owls perched on low branches. They seemed to welcome the young knight with warm chirps and gentle sounds.",
+        "scene_005": "When Sir James found a small woodland creature with a hurt paw, his kind heart immediately knew what to do. Gently, he helped the little animal, and Claude watched approvingly as a soft, healing light seemed to surround them both.",
+        "scene_006": "In a clearing ahead stood an ancient stone circle, its mysterious runes glowing with gentle, welcoming light. Sir James approached with wonder, feeling the magic of ages past calling to his brave young heart.",
+        "scene_007": "At the crossroads, Sir James paused thoughtfully. Two paths stretched before him, each leading to different adventures. Claude nuzzled his hand encouragingly, reminding him that the right choice comes from a virtuous heart.",
+        "scene_008": "As Chapter One drew to a close, the forest creatures gathered to celebrate Sir James's first steps on his journey. Magical lights danced around them, and Sir James felt proud but humble, knowing his adventure was just beginning."
+      }
+    }
+  }
+}

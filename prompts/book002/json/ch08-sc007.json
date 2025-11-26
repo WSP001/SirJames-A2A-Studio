@@ -1,0 +1,39 @@
+{
+  "scene_id": "sjb2::08::007::prompt::v1",
+  "chapter": 8,
+  "scene": 7,
+  "theme": "Rabbit Warren - Community and Friendship",
+  "color_scheme": "Earth greens, cozy browns, warm hearth light",
+  "environment": "Magical rabbit warren setting, enchanted and child-friendly",
+  "prompt": "Sir James in rabbit warren, Claude beside him, earth greens, cozy browns, warm hearth light color palette, Disney Pixar style, magical adventure scene 7, virtue and character development focus",
+  "global_style": {
+    "art_style": "Disney Pixar 3D animation style, warm and inviting",
+    "lighting": "Soft natural lighting with magical golden hour ambiance",
+    "color_palette": "Rich, saturated colors with child-friendly warmth",
+    "composition": "Rule of thirds, dynamic but safe for children",
+    "quality": "Ultra-high resolution 4K, professional animation quality",
+    "mood": "Adventurous, magical, safe, and inspiring for young knights"
+  },
+  "character_consistency": {
+    "sir_james": {
+      "description": "Young brave knight, 8-10 years old, kind eyes, determined expression",
+      "appearance": "Brown hair, blue tunic with silver trim, wooden practice sword",
+      "personality": "Courageous, kind, helpful, always learning virtue"
+    },
+    "claude": {
+      "description": "Loyal redbone coonhound companion, reddish-brown coat",
+      "appearance": "Medium-sized hunting dog, intelligent amber eyes, noble bearing",
+      "personality": "Wise, protective, loyal friend and guide"
+    },
+    "gramps": {
+      "description": "Wise elderly mentor, white beard, kind grandfather figure",
+      "appearance": "Simple robes, walking staff, twinkling wise eyes",
+      "personality": "Patient teacher, full of wisdom and gentle guidance"
+    }
+  },
+  "metadata": {
+    "source": "enhanced_image_prompts.json",
+    "version": "2.0",
+    "quality_level": "professional"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "scene_id": "sjb2::05::003::prompt::v1",
+  "chapter": 5,
+  "scene": 3,
+  "theme": "Wise Owl - Knowledge and Wisdom",
+  "color_scheme": "Deep browns, golden wisdom, starlit nights",
+  "environment": "Magical wise owl setting, enchanted and child-friendly",
+  "prompt": "ATOMIC CONSISTENCY REQUIREMENTS - Book002 Chapter 5 Scene 3\n\nTHEME: The Storm King's Challenge\n\nCHARACTER ATOMICS (MUST MATCH EXACTLY):\nSIR JAMES:\n- Brown hair with distinctive natural cowlick on right side\n- Bright blue eyes, wide and curious\n- Fair skin with natural rosy cheeks  \n- Royal blue tunic with silver Celtic trim patterns\n- Brown leather belt with brass buckle\n- Wooden practice sword with carved handle at side\n- Small compact build, confident posture\n- Kind determined expression\n\nCLAUDE THE DOG:\n- Loyal redbone coonhound companion\n- Reddish-brown coat, medium-sized\n- Intelligent amber eyes, noble bearing\n- Alert ears, wagging tail\n- Always by Sir James's side\n\nSCENE SETTING:\nHurricane winds swirling, Sir James and Claude standing strong together\n\nACTION:\nStanding firm against the winds of doubt, Claude anchoring him\n\nTECHNICAL ATOMICS:\n- Style: Disney Pixar 3D animation, professional broadcast quality\n- Resolution: 4K (3840x2160) ultra-detailed\n- Lighting: Warm cinematic lighting appropriate to scene\n- Camera: Medium shot, child-friendly perspective\n- Quality: Broadcast television standards\n- Consistency: 95%+ character match across ALL scenes\n\nCRITICAL: Maintain exact character appearance from scene 1 through all chapters.",
+  "global_style": {
+    "art_style": "Disney Pixar 3D animation style, warm and inviting",
+    "lighting": "Soft natural lighting with magical golden hour ambiance",
+    "color_palette": "Rich, saturated colors with child-friendly warmth",
+    "composition": "Rule of thirds, dynamic but safe for children",
+    "quality": "Ultra-high resolution 4K, professional animation quality",
+    "mood": "Adventurous, magical, safe, and inspiring for young knights"
+  },
+  "character_consistency": {
+    "sir_james": {
+      "description": "Young brave knight, 8-10 years old, kind eyes, determined expression",
+      "appearance": "Brown hair, blue tunic with silver trim, wooden practice sword",
+      "personality": "Courageous, kind, helpful, always learning virtue"
+    },
+    "claude": {
+      "description": "Loyal redbone coonhound companion, reddish-brown coat",
+      "appearance": "Medium-sized hunting dog, intelligent amber eyes, noble bearing",
+      "personality": "Wise, protective, loyal friend and guide"
+    },
+    "gramps": {
+      "description": "Wise elderly mentor, white beard, kind grandfather figure",
+      "appearance": "Simple robes, walking staff, twinkling wise eyes",
+      "personality": "Patient teacher, full of wisdom and gentle guidance"
+    }
+  },
+  "metadata": {
+    "source": "enhanced_image_prompts.json",
+    "version": "2.0",
+    "quality_level": "professional"
+  }
+}

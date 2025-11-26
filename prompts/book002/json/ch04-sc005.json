@@ -1,0 +1,39 @@
+{
+  "scene_id": "sjb2::04::005::prompt::v1",
+  "chapter": 4,
+  "scene": 5,
+  "theme": "Crystal Stream - Purity and Clarity",
+  "color_scheme": "Crystal blues, silver streams, pure whites",
+  "environment": "Magical crystal stream setting, enchanted and child-friendly",
+  "prompt": "Sir James in crystal stream, Claude beside him, crystal blues, silver streams, pure whites color palette, Disney Pixar style, magical adventure scene 5, virtue and character development focus",
+  "global_style": {
+    "art_style": "Disney Pixar 3D animation style, warm and inviting",
+    "lighting": "Soft natural lighting with magical golden hour ambiance",
+    "color_palette": "Rich, saturated colors with child-friendly warmth",
+    "composition": "Rule of thirds, dynamic but safe for children",
+    "quality": "Ultra-high resolution 4K, professional animation quality",
+    "mood": "Adventurous, magical, safe, and inspiring for young knights"
+  },
+  "character_consistency": {
+    "sir_james": {
+      "description": "Young brave knight, 8-10 years old, kind eyes, determined expression",
+      "appearance": "Brown hair, blue tunic with silver trim, wooden practice sword",
+      "personality": "Courageous, kind, helpful, always learning virtue"
+    },
+    "claude": {
+      "description": "Loyal redbone coonhound companion, reddish-brown coat",
+      "appearance": "Medium-sized hunting dog, intelligent amber eyes, noble bearing",
+      "personality": "Wise, protective, loyal friend and guide"
+    },
+    "gramps": {
+      "description": "Wise elderly mentor, white beard, kind grandfather figure",
+      "appearance": "Simple robes, walking staff, twinkling wise eyes",
+      "personality": "Patient teacher, full of wisdom and gentle guidance"
+    }
+  },
+  "metadata": {
+    "source": "enhanced_image_prompts.json",
+    "version": "2.0",
+    "quality_level": "professional"
+  }
+}

@@ -1,5 +1,7 @@
 # Sir James Adventures Book002 - Image/Audio Version
 
+> **⚠️ IMPORTANT:** Book001 (emoji version) is **content-frozen**. All new work happens in Book002 in this repo. Do not edit Book001 content.
+
 Interactive virtue-choice storybook with **DALL-E images** and **ElevenLabs audio narration** for ages 5-8.
 
 > **LIVE NOW:** [sirjames-book002-final.netlify.app](https://sirjames-book002-final.netlify.app)
