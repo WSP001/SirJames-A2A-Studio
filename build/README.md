@@ -4,6 +4,41 @@ Fast commands for local build (Windows-friendly), asset generation, video assemb
 
 ---
 
+## 🚀 Click2Kick (Easiest Way)
+
+**For parents, testers, and developers** — just double-click!
+
+```
+📁 Root Directory:
+C:\Users\Roberto002\OneDrive\Sir James\LOGIC SirJames_Interactive_Prototype_With_Chapter10\SirJames-A2A-Studio
+
+📄 Double-click: Click2Kick.bat
+   OR run: .\scripts\Click2Kick.ps1
+```
+
+**Menu Options:**
+| Key | Action |
+|-----|--------|
+| `1` | Preview Chapter (Local Browser) |
+| `2` | Test on Device (Shows iPad URL) |
+| `3` | Check Environment Health |
+| `4` | Generate Assets (Images + Audio) |
+| `5` | Build Chapter Video |
+| `6` | Full Pipeline (All Steps) |
+| `7` | Deploy Preview |
+| `8` | Deploy Production |
+| `9` | View Cost Metrics |
+| `P` | Parent Dashboard |
+
+**Cross-Project DevHub** (outside repos):
+```
+📁 C:\Users\Roberto002\OneDrive\DevHub\
+📄 Double-click: DevHub.bat
+```
+Switches between Sir James, SirTrav, and SeaTrace projects.
+
+---
+
 ## TL;DR (copy-paste)
 
 ```powershell
