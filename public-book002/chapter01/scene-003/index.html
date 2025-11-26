@@ -3,92 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sir James Adventures - Chapter 1 - Scene-003</title>
+    <title>Sir James Adventures - Chapter 1 - Preparation</title>
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Georgia', serif;
-            margin: 0;
-            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .scene-container {
-            max-width: 800px;
+            flex: 1;
+            max-width: 900px;
             margin: 0 auto;
-            background: rgba(0,0,0,0.3);
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
         }
         .scene-title {
-            font-size: 2.5em;
+            font-size: 1.8em;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .image-placeholder {
+        .scene-image {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            font-size: 1.2em;
-            text-align: center;
+            max-height: 50vh;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
         }
-        .narration {
-            font-size: 1.3em;
+        .narration-box {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        .narration-text {
+            font-size: 1.4em;
             line-height: 1.6;
             text-align: center;
-            margin: 20px 0;
-            font-style: italic;
         }
-        .character {
+        .character-name {
             font-weight: bold;
             color: #ffd700;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .audio-controls {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .play-btn {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            border: none;
+            color: #333;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.6);
+        }
+        .play-btn:active {
+            transform: scale(0.98);
         }
         .navigation {
-            text-align: center;
-            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: auto;
+            padding: 20px 0;
         }
         .nav-button {
+            flex: 1;
             background: rgba(255,255,255,0.2);
             border: 2px solid white;
             color: white;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 25px;
+            padding: 15px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
         .nav-button:hover {
             background: rgba(255,255,255,0.3);
             transform: translateY(-2px);
         }
+        .nav-button.primary {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border-color: #4CAF50;
+        }
+        @media (max-width: 600px) {
+            .scene-title { font-size: 1.4em; }
+            .narration-text { font-size: 1.2em; }
+            .play-btn { padding: 12px 30px; font-size: 1em; }
+        }
     </style>
 </head>
 <body>
     <div class="scene-container">
-        <h1 class="scene-title">Scene 003</h1>
+        <h1 class="scene-title">Preparation</h1>
         
-        <div class="image-placeholder">
-            📸 Image: Sir James preparing supplies, adventure gear, determined expression<br>
-            <small>(DALL-E generation pending)</small>
+        <img src="../images/scene-003.png" 
+             alt="Sir James and Claude packing adventure supplies into a leather satchel, maps scrolls and provisions visible on a wooden table, cozy castle room with s"
+             class="scene-image">
+        
+        <div class="narration-box">
+            <div class="narration-text">
+                <span class="character-name">Narrator:</span>
+                Together, they gathered everything they would need for their adventure.
+            </div>
         </div>
         
-        <div class="narration">
-            <span class="character">Sir James:</span><br>
-            Together they packed supplies: maps, provisions, and Sir James's favorite sword, inherited from his grandfather.
+        <div class="audio-controls">
+            <button class="play-btn" id="playBtn" aria-label="Play narration">
+                ▶ Tap to Listen
+            </button>
+            <audio id="narration" preload="auto">
+                <source src="../audio/003-01.mp3" type="audio/mpeg">
+            </audio>
         </div>
         
         <div class="navigation">
             <a href="../scene-002/index.html" class="nav-button">← Previous</a>
-            <a href="../scene-004/index.html" class="nav-button">Next →</a>
+            <a href="../scene-004/index.html" class="nav-button primary">Next Scene →</a>
         </div>
     </div>
+    
+    <script>
+        const audio = document.getElementById('narration');
+        const playBtn = document.getElementById('playBtn');
+        let isPlaying = false;
+        
+        playBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.textContent = '▶ Tap to Listen';
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    playBtn.textContent = '⏸ Pause';
+                    isPlaying = true;
+                }).catch(e => {
+                    console.log('Audio play failed:', e);
+                    playBtn.textContent = '▶ Tap Again';
+                });
+            }
+        });
+        
+        audio.addEventListener('ended', function() {
+            playBtn.textContent = '▶ Play Again';
+            isPlaying = false;
+        });
+        
+        document.addEventListener('touchstart', function() {
+            audio.load();
+        }, { once: true });
+    </script>
 </body>
 </html>

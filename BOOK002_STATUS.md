@@ -1,35 +1,88 @@
-# Sir James Adventures Book002 - Status Report
-**Project:** Image & Audio Multimedia Edition  
-**Target:** Complete automated pipeline from emoji chapters to published web experience  
-**Updated:** November 21, 2025
+# 📘 Sir James Adventures – Book002 Status
+
+**Project:** Image & Audio Multimedia Edition (No Emojis)  
+**Target:** Ship to Sir James (5-year-old grandson) on iPad  
+**Updated:** November 25, 2025  
+**Primary Tester:** Sir James himself
 
 ---
 
-## Current Status: 65% Complete
+## 🔑 Legend
 
-### What's Working
+- 🔴 = Not done / blocking
+- 🟡 = In progress / partial  
+- ✅ = Done / green
 
-- [x] **Project Structure** - Organized directories and naming conventions
-- [x] **Gemini Integration** - AI model connected for curation and narration
-- [x] **Requirements Management** - Clean `requirements.txt` with pinned versions
-- [x] **Colab Setup Scripts** - Automated environment configuration
-- [x] **API Key Management** - Secure environment variable handling
-- [x] **Documentation** - Comprehensive guides (AGENTS.md, PROJECT_STRUCTURE.md)
-- [x] **TypeScript Functions** - `curate-media.ts` and `narrate-project.ts` with Gemini calls
+---
 
-### In Progress
-- [ ] **Chapter Content** - Need to verify all 10 chapters have emoji source files
-- [ ] **Voice Synthesis** - ElevenLabs integration (API key needed)
-- [ ] **Music Generation** - Suno API integration (API key needed)
-- [ ] **Image Generation** - DALL-E 3 integration for scene images
-- [ ] **Chapter Compiler** - HTML assembly with all media assets
-- [ ] **Click2Kick Interface** - User-friendly dashboard for Gramps
+## 🎯 Reality Check (Honest Assessment)
 
-### Blocked/Missing
-- [ ] **ElevenLabs API Key** - Required for voice synthesis
-- [ ] **Suno API Key** - Required for background music
-- [ ] **OpenAI API Key** - Required for DALL-E image generation
-- [ ] **Chapter Source Files** - Need to locate/verify emoji markdown files
+### Chapter 1 - The Quest Begins
+| Asset | Status | Count | Notes |
+|-------|--------|-------|-------|
+| **Images (PNG)** | ✅ | 8/8 | `public-book002/chapter01/images/scene-001.png` etc. |
+| **Audio (MP3)** | ✅ | 25 | `public-book002/chapter01/audio/001-01.mp3` etc. |
+| **Media Prompts** | ✅ | 1 | `_media_prompts.json` exists |
+| **Narration Script** | ✅ | 1 | `_narration_batch.json` exists |
+| **Scene HTML** | 🟡 | 8 | HTML exists but shows "DALL-E pending" placeholder |
+| **Wired to Assets** | 🔴 | 0 | HTML not connected to real images/audio |
+
+### Chapters 2-10
+| Chapter | Source JSON | Images | Audio | HTML | Status |
+|---------|-------------|--------|-------|------|--------|
+| 02 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 03 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 04 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 05 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 06 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 07 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 08 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 09 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+| 10 | ✅ `chapter.json` | 🔴 | 🔴 | 🔴 | 🔴 Not started |
+
+**Source files exist at:** `LOGIC SirJames_Interactive_Prototype_With_Chapter10/chapter02/chapter.json` etc.
+
+---
+
+## 🚀 Immediate Actions (Turn Red → Green)
+
+### TODAY: Fix Chapter 1 (30 min)
+- [ ] 🔴 Wire scene HTML to use real images (`images/scene-001.png`)
+- [ ] 🔴 Wire scene HTML to use real audio (`audio/001-01.mp3`)
+- [ ] 🔴 Remove "DALL-E pending" placeholder text
+- [ ] 🔴 Test on iPad
+- [ ] 🔴 Deploy to Netlify
+
+### THIS WEEK: Generate Chapters 2-10
+- [ ] 🔴 Create `_media_prompts.json` for each chapter (from `chapter.json`)
+- [ ] 🔴 Create `_narration_batch.json` for each chapter
+- [ ] 🔴 Generate images via DALL-E (~$0.32/chapter × 9 = ~$2.88)
+- [ ] 🔴 Generate audio via ElevenLabs (~$0.53/chapter × 9 = ~$4.77)
+- [ ] 🔴 Wire HTML for all chapters
+
+**Estimated total cost:** ~$7.65 for remaining 9 chapters
+
+---
+
+## ✅ What's Actually Working
+
+- [x] **Project Structure** - Organized directories
+- [x] **Chapter 1 Assets** - 8 images + 25 audio files generated
+- [x] **Prompt Templates** - `_media_prompts.json` and `_narration_batch.json` format defined
+- [x] **Click2Kick Interface** - `scripts/Click2Kick.ps1` created
+- [x] **Parent Dashboard** - `public-book002/parent-dashboard.html` created
+- [x] **DevHub** - Cross-project switcher at `C:\Users\Roberto002\OneDrive\DevHub\`
+- [x] **Sprint README** - `docs/Sprint_README.md` for programmers
+- [x] **Netlify Config** - `netlify.toml` configured for static deploy
+- [x] **API Keys** - `.env.local` structure defined
+
+---
+
+## 🔴 Blocking Issues
+
+1. **Scene HTML not wired** - Images/audio exist but HTML shows placeholders
+2. **Chapters 2-10 missing assets** - Source JSON exists, need to generate media
+3. **manifest.loader.js not created** - Previous programmer's code not implemented yet
 
 ---
 
