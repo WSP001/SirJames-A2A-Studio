@@ -8,6 +8,7 @@
 ## Current Status: 65% Complete
 
 ### What's Working
+
 - [x] **Project Structure** - Organized directories and naming conventions
 - [x] **Gemini Integration** - AI model connected for curation and narration
 - [x] **Requirements Management** - Clean `requirements.txt` with pinned versions
@@ -66,7 +67,7 @@
 OPENAI_API_KEY=sk-...           # For DALL-E images
 ELEVENLABS_API_KEY=...          # For voice synthesis
 SUNO_API_KEY=...                # For background music
-GEMINI_API_KEY=AIzaSy...        # Already configured
+GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"  # Already configured
 ```
 
 ### 2. Chapter Source Files (Priority 2)

@@ -11,9 +11,13 @@ import subprocess
 import argparse
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
 
 # Project configuration
 PROJECT_ROOT = Path(__file__).parent.parent
+
+# Load environment variables from .env.local
+load_dotenv(PROJECT_ROOT / '.env.local')
 DOCS_DIR = PROJECT_ROOT / "Docs"
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 NETLIFY_FUNCTIONS = PROJECT_ROOT / "netlify" / "functions"
@@ -159,7 +163,7 @@ class LocalAgent:
         print("\n[5/5] Documentation Check:")
         docs_to_check = [
             'AGENTS.md',
-            'BOOK002_IMAGE_AUDIO_PLAN.md',
+            'Docs/BOOK002_IMAGE_AUDIO_PLAN.md',
             'HYBRID_PLAN.md'
         ]
         
@@ -248,8 +252,8 @@ class LocalAgent:
             print(f"[ERROR] Invalid chapter number: {chapter} (must be 1-10)")
             return False
         
-        # Check if orchestrate_book002.py exists
-        orchestrate_script = self.project_root.parent / "orchestrate_book002.py"
+        # Check if orchestrate_book002_clean.py exists
+        orchestrate_script = self.project_root.parent / "orchestrate_book002_clean.py"
         if not orchestrate_script.exists():
             print(f"[ERROR] Orchestration script not found: {orchestrate_script}")
             return False

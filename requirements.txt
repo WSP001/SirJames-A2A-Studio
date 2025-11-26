@@ -1,49 +1,37 @@
-# ============================================================
-# Sir James Adventures Book002 - Production Dependencies
-# Python 3.12.4 (pinned in .python-version and runtime.txt)
-# ============================================================
+# Sir James Book002 - Production Dependencies
+# Python 3.12.4
+# Usage: pip install -r requirements.txt
 
-# --- Core image / audio / file libraries ---
-Pillow==10.2.0             # ✅ Compatible with Python 3.12 (10.3.0 breaks!)
-imageio==2.34.0            # Image/video I/O
-numpy==1.26.4              # Numeric support for image ops
-soundfile==0.12.1          # WAV/FLAC handling for TTS exports
-pydub==0.25.1              # Audio manipulation helper
-mutagen==1.47.0            # Audio metadata tagging
+# --- Core Data & File Handling ---
+numpy==1.26.4              # Data manipulation (Colab/Local)
+pandas==2.2.2              # Data analysis & DataFrame ops
+Pillow==10.2.0             # Image processing (Python 3.12 compatible)
+python-dotenv==1.0.1       # Environment variable management
+PyYAML==6.0.2              # Config parsing
 
-# --- Web requests / APIs ---
-requests==2.32.3           # For HTTP calls (OpenAI, ElevenLabs, Suno)
-urllib3==2.2.2             # Required by requests
-aiohttp==3.10.10           # Async API access (faster pipelines)
+# --- AI & API Clients ---
+openai==1.53.0             # GPT-4 & DALL-E
+elevenlabs>=1.0.0          # Voice synthesis
+google-generativeai==0.7.2 # Gemini 1.5 Pro (Advanced)
+# suno-client==0.3.4       # (Uncomment when available)
 
-# --- AWS / Netlify / storage integrations ---
-boto3==1.35.20             # S3 access for vault & backups
-botocore==1.35.20          # Required by boto3
-python-dotenv==1.0.1       # Load local .env values during testing
+# --- Cloud Storage & IO ---
+boto3==1.35.20             # AWS S3 (Backups)
+botocore==1.35.20          # AWS Core
+requests==2.32.3           # HTTP Requests
+aiohttp==3.10.10           # Async HTTP
 
-# --- Data / serialization / validation ---
-pydantic==2.8.2            # Schema validation for chapter data
-PyYAML==6.0.2              # Manifest & pipeline config parsing
-jsonschema==4.22.0         # Validate AI pipeline configs
+# --- Audio Processing ---
+soundfile==0.12.1          # Audio I/O
+pydub==0.25.1              # Audio manipulation
+mutagen==1.47.0            # Metadata tagging
 
-# --- CLI & utility tools ---
-click==8.1.7               # Used by pipeline scripts
-tqdm==4.66.5               # Progress bars for generation steps
-rich==13.8.1               # Colored logs in build console
+# --- Development & Colab ---
+jupyterlab==4.2.0          # Local notebook environment
+matplotlib==3.9.0          # Visualization
+tqdm==4.66.5               # Progress bars
+rich==13.8.1               # Terminal formatting
 
-# --- AI libraries (OpenAI, ElevenLabs, Suno, Gemini) ---
-openai==1.53.0             # OpenAI GPT-4 / DALL-E client
-elevenlabs==1.3.2          # ElevenLabs TTS API wrapper
-# suno-client==0.3.4       # Placeholder (defer to v1.1)
-google-generativeai==0.7.2 # Gemini integration (optional)
-
-# --- Testing & validation ---
-flake8==7.1.1
-pytest==8.3.2
-
-# ============================================================
-# Notes:
-# • Pillow 10.2.0 max for Python 3.12 compatibility
-# • boto3/botocore versions must match
-# • Pin all versions to prevent breaking builds
-# ============================================================
+# --- Testing ---
+pytest==8.3.2              # Unit testing
+flake8==7.1.1              # Linting

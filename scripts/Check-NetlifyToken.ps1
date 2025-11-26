@@ -10,23 +10,23 @@ if ($env:NETLIFY_AUTH_TOKEN) {
     Write-Host "✅ Local NETLIFY_AUTH_TOKEN detected in session." -ForegroundColor Green
 } else {
     # Try loading from .env.local
-    if (Test-Path "..\.env.local") {
-         $tokenLine = Get-Content "..\.env.local" | Select-String "NETLIFY_AUTH_TOKEN"
-         if ($tokenLine) {
-             Write-Host "✅ Local NETLIFY_AUTH_TOKEN found in .env.local." -ForegroundColor Green
-         } else {
-             Write-Host "❌ NETLIFY_AUTH_TOKEN missing from .env.local" -ForegroundColor Red
-         }
-    } elseif (Test-Path ".env.local") {
+    if (Test-Path ".env.local") {
         $tokenLine = Get-Content ".env.local" | Select-String "NETLIFY_AUTH_TOKEN"
         if ($tokenLine) {
             Write-Host "✅ Local NETLIFY_AUTH_TOKEN found in .env.local." -ForegroundColor Green
         } else {
             Write-Host "❌ NETLIFY_AUTH_TOKEN missing from .env.local" -ForegroundColor Red
-            Write-Host "👉 Action: Add it to .env.local" -ForegroundColor Yellow
+            Write-Host "👉 Action: Add it to .env.local in the project root" -ForegroundColor Yellow
+        }
+    } elseif (Test-Path "..\.env.local") {
+        $tokenLine = Get-Content "..\.env.local" | Select-String "NETLIFY_AUTH_TOKEN"
+        if ($tokenLine) {
+            Write-Host "✅ NETLIFY_AUTH_TOKEN found in parent .env.local (workspace root)." -ForegroundColor Green
+        } else {
+            Write-Host "❌ NETLIFY_AUTH_TOKEN missing from parent .env.local" -ForegroundColor Red
         }
     } else {
-        Write-Host "❌ .env.local file not found." -ForegroundColor Red
+        Write-Host "❌ .env.local file not found in project or parent folder." -ForegroundColor Red
     }
 }
 
