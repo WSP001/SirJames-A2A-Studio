@@ -74,29 +74,126 @@ Ensure your `.env.local` is populated:
 OPENAI_API_KEY=sk-...         # DALL-E 3 images
 ELEVENLABS_API_KEY=xi...      # Voice synthesis
 GEMINI_API_KEY=AIza...        # Orchestration (optional)
-NETLIFY_AUTH_TOKEN=...        # Deployment
 ```
 
-### 2. Asset Generation (Batch)
-For mass-production of remaining chapters:
+> **Note:** API keys are for LOCAL asset generation only. Do NOT add them to Netlify.
+
+### 2. Using `sirjames-dev` (Clean Local Dev Shell)
+
+This project includes a **lightweight dev shell** for Roberto/Gramps and contributors.
+
+**Goal:** Jump straight into `SirJames-A2A-Studio` with Python ready, **no noisy Windsurf/Docker banners**.
+
+#### How to Start the Dev Shell
+
+**Recommended for Roberto:**
+- Double-click `sirjames-dev.cmd` on the Desktop
+- OR press `Win + R`, type: `sirjames-dev`
+
+This opens a clean PowerShell session:
+- Working directory = `SirJames-A2A-Studio`
+- Python ready
+- No Windsurf "DevShell" banner spam
+
+> **Note:** Running PowerShell inside Windsurf may still show Windsurf's injected profile.
+> For a truly clean experience, launch via Desktop shortcut or `Win + R`.
+
+#### Shortcut Commands (inside sirjames-dev)
+
+| Command  | Description                          |
+|----------|--------------------------------------|
+| `status` | Show high-level Book002 asset status |
+| `img`    | Run DALL-E image generation helper   |
+| `audio`  | Run ElevenLabs audio generation      |
+| `icons`  | Generate Claude thought-bubble icons |
+| `serve`  | Start local preview on :8888         |
+| `deploy` | Deploy Book002 to Netlify (with confirmation) |
+
+### 3. Asset Generation
+
 ```powershell
-# Generate images for Chapters 5-10
-.\scripts\Generate-AllImages.ps1
-
-# Generate audio for Chapter 2
-python tools/eleven_agent.py synth --chapter 2 --max-usd 1.00
+# Inside sirjames-dev shell:
+img 3      # Generate images for Chapter 3
+audio 3    # Generate audio for Chapter 3
+icons      # Generate thought bubble icons
 ```
 
-### 3. Test Locally
+Or use the direct commands:
 ```powershell
-npx http-server public-book002 -p 8888
-# Open: http://localhost:8888/chapter01/scene-001/
+python tools/images_generate.py --chapter 3 --size 1792x1024 --quality hd --max-usd 1.00
+python tools/eleven_agent.py synth --chapter 3 --max-usd 1.00
 ```
 
-### 4. Deploy to Netlify
+### 4. Test Locally
+
 ```powershell
-npx netlify deploy --dir="public-book002" --prod --no-build
+serve
+# Opens: http://127.0.0.1:8888
 ```
+
+### 5. Deploy to Netlify
+
+```powershell
+deploy
+# Runs pre-flight checks, asks for confirmation, then deploys
+```
+
+---
+
+## 🌐 Netlify Deployment Requirements (Book002)
+
+### Target
+
+- **Site:** `sirjames-book002-final` (Netlify)
+- **Live URL:** https://sirjames-book002-final.netlify.app
+- **Source repo:** https://github.com/WSP001/SirJames-A2A-Studio
+- **App type:** Static site, no framework build required
+- **Publish directory:** `public-book002/`
+
+This project **does not need** a complex build step for Book002.
+Everything is pre-generated into `public-book002` by our Python tools.
+
+### Netlify Configuration
+
+In `netlify.toml`:
+```toml
+[build]
+  command = "echo 'Book002 static deploy - no build required'"
+  publish = "public-book002"
+
+[dev]
+  command = "npx http-server public-book002 -p 5173"
+  targetPort = 5173
+  port = 8888
+```
+
+### Netlify CLI Wiring
+
+Requirements:
+1. Netlify CLI installed: `npm install -g netlify-cli`
+2. Local folder linked to site (one-time setup by programmer):
+   ```bash
+   netlify login
+   netlify link    # choose site: sirjames-book002-final
+   ```
+
+After linking, the `deploy` command in `sirjames-dev` runs:
+```bash
+netlify deploy --prod --dir=public-book002 --message "Book002: Gramps deploy via sirjames-dev"
+```
+
+### Environment Variables
+
+For **local asset generation only** (NOT required on Netlify):
+- `OPENAI_API_KEY` – used by `tools/images_generate.py`
+- `ELEVENLABS_API_KEY` – used by `tools/eleven_agent.py`
+
+These should live in `.env.local` on the local machine.
+
+**Important:**
+- ❌ Do not commit `.env.local`
+- ❌ Do not copy these keys into Netlify environment vars
+- Book002 is a pre-generated static experience – Netlify serves assets only
 
 ---
 
