@@ -1,17 +1,35 @@
 {
   "project_id": "voice-samples",
   "dry_run": false,
-  "description": "Sample clips for voice approval before full render",
+  "description": "Sample clips for voice approval before full render - Sir James uses child voice",
   "lines": [
     {
       "id": "sirj-01",
       "character": "sir_james",
-      "text": "I'm ready for adventure!"
+      "text": "I'm ready for adventure!",
+      "prosody": { "mood": "excited", "smile": true },
+      "notes": "Test child voice - should sound like enthusiastic 5-year-old boy"
     },
     {
       "id": "sirj-02",
       "character": "sir_james",
-      "text": "Come on Claude, let's go explore!"
+      "text": "Claude, did you hear that?",
+      "prosody": { "mood": "curious", "pace": "normal" },
+      "notes": "Test questioning tone"
+    },
+    {
+      "id": "sirj-03",
+      "character": "sir_james",
+      "text": "Wow… the castle is HUGE!",
+      "prosody": { "mood": "amazed", "pace": "slow", "smile": true },
+      "notes": "Test wonder/amazement - emphasis on HUGE"
+    },
+    {
+      "id": "sirj-04",
+      "character": "sir_james",
+      "text": "Come on Claude, let's go explore!",
+      "prosody": { "mood": "eager", "pace": "fast", "smile": true },
+      "notes": "Test energetic call to action"
     },
     {
       "id": "gramps-01",

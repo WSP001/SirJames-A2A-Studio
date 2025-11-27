@@ -1,15 +1,29 @@
 {
   "sir_james": {
-    "voice_id": "LIB_BELLA",
-    "source": "library",
-    "notes": "youthful, bright - 5-year-old boy knight",
+    "voice_id": "DESIGNED_CHILD_BOY",
+    "source": "voice_design",
+    "notes": "5-year-old boy knight - use Voice Design or DSP fallback",
+    "voice_design_prompt": "5-year-old boy; bright, curious, gentle energy; soft consonants; light air; small mouth resonance; short phrasing; cheerful; not squeaky; neutral American; low sibilance.",
     "settings": {
-      "stability": 0.78,
-      "similarity_boost": 0.90,
-      "style": 0.20,
+      "stability": 0.72,
+      "similarity_boost": 0.92,
+      "style": 0.18,
       "use_speaker_boost": true
     },
-    "wpm_target": 160
+    "post": {
+      "pitch_shift_semitones": 3,
+      "speed": 1.05,
+      "de_ess": true,
+      "brighten_db": 2,
+      "highpass_hz": 100
+    },
+    "wpm_target": 135,
+    "quality_targets": {
+      "wpm_range": [120, 150],
+      "lufs_target": -16,
+      "max_sibilance": "gentle",
+      "plosive_filter": "highpass 80-100 Hz"
+    }
   },
   "claude": {
     "voice_id": "SFX_DOG_VOX",
