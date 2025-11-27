@@ -64,6 +64,13 @@ We are building for the Commons. Every generation bundle includes a `commons_spe
 - License assertions (CC-BY-NC-SA 4.0).
 - Raw prompt data (for reproducibility).
 
+### 4. Voice System (ElevenLabs)
+Multi-character voice synthesis with per-line caching. See **[docs/VOICE_SYSTEM.md](docs/VOICE_SYSTEM.md)** for:
+- Voice IDs & settings for all characters
+- JSON script format with character tagging
+- SFX support for Claude (dog sounds)
+- Cost estimation & migration strategy
+
 ---
 
 ## 🚀 Quick Start (Book002 Workflow)

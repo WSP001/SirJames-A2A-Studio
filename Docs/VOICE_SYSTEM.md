@@ -102,6 +102,16 @@ Claude uses pre-recorded SFX instead of TTS:
 ## 🔄 Audio Generation Workflow
 
 ### 1. Generate Voice Samples (Approval)
+
+**Dry-run mode (no API credits used):**
+```bash
+curl -X POST "$URL/.netlify/functions/narrate-project" \
+  -H "Content-Type: application/json" \
+  -H "x-dry-run: true" \
+  -d @prompts/scripts/voice-samples.json
+```
+
+**Production mode (uses API credits):**
 ```bash
 curl -X POST "$URL/.netlify/functions/narrate-project" \
   -H "Content-Type: application/json" \
