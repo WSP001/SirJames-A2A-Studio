@@ -1,0 +1,42 @@
+{
+  "scene_id": "chapter01/scene-001",
+  "title": "The Quest Begins",
+  "lines": [
+    {
+      "id": "001",
+      "character": "narrator",
+      "text": "In the great hall of Castle Brightstone, young Sir James stood before King Arthur himself."
+    },
+    {
+      "id": "002",
+      "character": "king_arthur",
+      "text": "Young Sir James, I have a most important quest for you."
+    },
+    {
+      "id": "003",
+      "character": "sir_james",
+      "text": "I am ready, Your Majesty! What would you have me do?"
+    },
+    {
+      "id": "004",
+      "character": "claude",
+      "sfx": "dog_bark_excited_01",
+      "text": ""
+    },
+    {
+      "id": "005",
+      "character": "king_arthur",
+      "text": "You must journey to the Enchanted Forest and find the Crystal of Courage."
+    },
+    {
+      "id": "006",
+      "character": "sir_james",
+      "text": "I won't let you down, Your Majesty!"
+    },
+    {
+      "id": "007",
+      "character": "narrator",
+      "text": "And so began the greatest adventure Sir James had ever known."
+    }
+  ]
+}

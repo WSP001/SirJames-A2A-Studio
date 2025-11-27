@@ -1,0 +1,54 @@
+{
+  "project_id": "voice-samples",
+  "dry_run": false,
+  "description": "Sample clips for voice approval before full render",
+  "lines": [
+    {
+      "id": "sirj-01",
+      "character": "sir_james",
+      "text": "I'm ready for adventure!"
+    },
+    {
+      "id": "sirj-02",
+      "character": "sir_james",
+      "text": "Come on Claude, let's go explore!"
+    },
+    {
+      "id": "gramps-01",
+      "character": "gramps",
+      "text": "Once upon a time, in a land of magic and wonder..."
+    },
+    {
+      "id": "gramps-02",
+      "character": "gramps",
+      "text": "And that, my dear boy, is how courage is born."
+    },
+    {
+      "id": "narrator-01",
+      "character": "narrator",
+      "text": "In the great hall of Castle Brightstone, a young knight awaited his destiny."
+    },
+    {
+      "id": "king-01",
+      "character": "king_arthur",
+      "text": "Bravery is forged in small choices, young knight."
+    },
+    {
+      "id": "king-02",
+      "character": "king_arthur",
+      "text": "Go forth, Sir James, and make the kingdom proud!"
+    },
+    {
+      "id": "dog-01",
+      "character": "claude",
+      "sfx": "dog_bark_excited_01",
+      "text": ""
+    },
+    {
+      "id": "dog-02",
+      "character": "claude",
+      "sfx": "dog_woof_happy_01",
+      "text": ""
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "sir_james": {
+    "voice_id": "LIB_BELLA",
+    "source": "library",
+    "notes": "youthful, bright - 5-year-old boy knight",
+    "settings": {
+      "stability": 0.78,
+      "similarity_boost": 0.90,
+      "style": 0.20,
+      "use_speaker_boost": true
+    },
+    "wpm_target": 160
+  },
+  "claude": {
+    "voice_id": "SFX_DOG_VOX",
+    "source": "sfx",
+    "notes": "barks/whines via SFX, not TTS - loyal bloodhound",
+    "settings": null,
+    "sfx_library": {
+      "dog_bark_excited_01": "sfx/claude/bark_excited_01.mp3",
+      "dog_bark_alert_01": "sfx/claude/bark_alert_01.mp3",
+      "dog_whine_sad_01": "sfx/claude/whine_sad_01.mp3",
+      "dog_woof_happy_01": "sfx/claude/woof_happy_01.mp3",
+      "dog_pant_01": "sfx/claude/pant_01.mp3"
+    }
+  },
+  "gramps": {
+    "voice_id": "LIB_ANTONI",
+    "source": "library",
+    "notes": "warm baritone narrator - wise grandfather",
+    "settings": {
+      "stability": 0.72,
+      "similarity_boost": 0.88,
+      "style": 0.15,
+      "use_speaker_boost": true
+    },
+    "wpm_target": 150
+  },
+  "narrator": {
+    "voice_id": "LIB_RACHEL",
+    "source": "library",
+    "notes": "neutral storyteller voice",
+    "settings": {
+      "stability": 0.75,
+      "similarity_boost": 0.85,
+      "style": 0.10,
+      "use_speaker_boost": true
+    },
+    "wpm_target": 155
+  },
+  "king_arthur": {
+    "voice_id": "LIB_ARNOLD",
+    "source": "library",
+    "notes": "royal, measured - commanding but kind",
+    "settings": {
+      "stability": 0.70,
+      "similarity_boost": 0.86,
+      "style": 0.18,
+      "use_speaker_boost": true
+    },
+    "wpm_target": 150
+  },
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2025-11-26",
+    "notes": [
+      "LIB_* are placeholder IDs - replace with real ElevenLabs voice IDs",
+      "Claude uses SFX files, not TTS",
+      "To add clones: change source to 'clone' and update voice_id"
+    ],
+    "api_endpoint": "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/stream",
+    "cost_estimate": {
+      "chars_per_line_avg": 90,
+      "lines_per_scene_avg": 3,
+      "total_scenes": 80,
+      "estimated_chars": 25920,
+      "note": "Well within typical monthly quotas on paid tiers"
+    }
+  }
+}
