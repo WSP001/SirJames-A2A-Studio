@@ -1,21 +1,19 @@
 {
   "sir_james": {
-    "voice_id": "DESIGNED_CHILD_BOY",
-    "source": "voice_design",
-    "notes": "5-year-old boy knight - use Voice Design or DSP fallback",
-    "voice_design_prompt": "5-year-old boy; bright, curious, gentle energy; soft consonants; light air; small mouth resonance; short phrasing; cheerful; not squeaky; neutral American; low sibilance.",
+    "voice_id": "SOYHLrjzK2X1ezoPC6cr",
+    "source": "library",
+    "notes": "Harry (young male) + DSP for child-like voice - 5yo boy knight",
     "settings": {
-      "stability": 0.72,
-      "similarity_boost": 0.92,
+      "stability": 0.74,
+      "similarity_boost": 0.9,
       "style": 0.18,
       "use_speaker_boost": true
     },
-    "post": {
-      "pitch_shift_semitones": 3,
-      "speed": 1.05,
+    "dsp_fallback": {
+      "pitch_semitones": 3,
+      "rate": 1.05,
       "de_ess": true,
-      "brighten_db": 2,
-      "highpass_hz": 100
+      "eq": { "highpass_hz": 100, "presence_db": 2 }
     },
     "wpm_target": 135,
     "quality_targets": {
@@ -39,46 +37,47 @@
     }
   },
   "gramps": {
-    "voice_id": "LIB_ANTONI",
+    "voice_id": "pqHfZKP75CvOlQylNhV4",
     "source": "library",
-    "notes": "warm baritone narrator - wise grandfather",
+    "notes": "Bill (old male) - warm grandfather storyteller",
+    "settings": {
+      "stability": 0.7,
+      "similarity_boost": 0.92,
+      "style": 0.2,
+      "use_speaker_boost": true
+    },
+    "wpm_target": 150
+  },
+  "narrator": {
+    "voice_id": "XrExE9yKIg1WjnnlVkGX",
+    "source": "library",
+    "notes": "Matilda (female) - neutral storyteller voice",
     "settings": {
       "stability": 0.72,
+      "similarity_boost": 0.9,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "wpm_target": 155
+  },
+  "king_arthur": {
+    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "source": "library",
+    "notes": "George (british male) - royal, commanding but kind",
+    "settings": {
+      "stability": 0.76,
       "similarity_boost": 0.88,
       "style": 0.15,
       "use_speaker_boost": true
     },
     "wpm_target": 150
   },
-  "narrator": {
-    "voice_id": "LIB_RACHEL",
-    "source": "library",
-    "notes": "neutral storyteller voice",
-    "settings": {
-      "stability": 0.75,
-      "similarity_boost": 0.85,
-      "style": 0.10,
-      "use_speaker_boost": true
-    },
-    "wpm_target": 155
-  },
-  "king_arthur": {
-    "voice_id": "LIB_ARNOLD",
-    "source": "library",
-    "notes": "royal, measured - commanding but kind",
-    "settings": {
-      "stability": 0.70,
-      "similarity_boost": 0.86,
-      "style": 0.18,
-      "use_speaker_boost": true
-    },
-    "wpm_target": 150
-  },
   "_meta": {
-    "version": "1.0.0",
-    "updated": "2025-11-26",
+    "version": "1.1.0",
+    "updated": "2025-11-27",
     "notes": [
-      "LIB_* are placeholder IDs - replace with real ElevenLabs voice IDs",
+      "Real ElevenLabs voice IDs now active",
+      "Sir James: Harry + DSP pitch shift for child voice",
       "Claude uses SFX files, not TTS",
       "To add clones: change source to 'clone' and update voice_id"
     ],

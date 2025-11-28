@@ -1,0 +1,32 @@
+{
+  "scene": "scene-001",
+  "chapter": "chapter01",
+  "base": "/chapter01/audio/voices/",
+  "generated": "2025-11-28T01:53:03.581Z",
+  "lines": {
+    "001": {
+      "file": "scene-001-001-narrator.mp3",
+      "character": "narrator"
+    },
+    "002": {
+      "file": "scene-001-002-king_arthur.mp3",
+      "character": "king_arthur"
+    },
+    "003": {
+      "file": "scene-001-003-sir_james.mp3",
+      "character": "sir_james"
+    },
+    "005": {
+      "file": "scene-001-005-king_arthur.mp3",
+      "character": "king_arthur"
+    },
+    "006": {
+      "file": "scene-001-006-sir_james.mp3",
+      "character": "sir_james"
+    },
+    "007": {
+      "file": "scene-001-007-narrator.mp3",
+      "character": "narrator"
+    }
+  }
+}

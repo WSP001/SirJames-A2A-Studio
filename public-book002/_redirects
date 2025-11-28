@@ -4,6 +4,5 @@
 /book002/chapter/:ch/*  /chapter:ch/:splat  200
 /book002/ch/:ch/*       /chapter:ch/:splat  200
 
-# Default chapter redirect
-/book002               /chapter01/index.html  302
-/                      /chapter01/index.html  302
+# Default redirect - go to Chapter Board (index.html)
+/book002               /index.html  302
