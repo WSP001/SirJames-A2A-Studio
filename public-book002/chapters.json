@@ -16,7 +16,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter01/images/scene-001.png"
+      "coverImage": "assets/covers/chapter01-cover.png"
     },
     {
       "id": 2,
@@ -30,7 +30,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter02/images/scene-001.png"
+      "coverImage": "assets/covers/chapter02-cover.png"
     },
     {
       "id": 3,
@@ -44,7 +44,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter03/images/scene-001.png"
+      "coverImage": "assets/covers/chapter03-cover.png"
     },
     {
       "id": 4,
@@ -58,7 +58,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter04/images/scene-001.png"
+      "coverImage": "assets/covers/chapter04-cover.png"
     },
     {
       "id": 5,
@@ -72,7 +72,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter05/images/scene-001.png"
+      "coverImage": "assets/covers/chapter05-cover.png"
     },
     {
       "id": 6,
@@ -86,7 +86,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter06/images/scene-001.png"
+      "coverImage": "assets/covers/chapter06-cover.png"
     },
     {
       "id": 7,
@@ -100,7 +100,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter07/images/scene-001.png"
+      "coverImage": "assets/covers/chapter07-cover.png"
     },
     {
       "id": 8,
@@ -114,7 +114,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter08/images/scene-001.png"
+      "coverImage": "assets/covers/chapter08-cover.png"
     },
     {
       "id": 9,
@@ -128,7 +128,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter09/images/scene-001.png"
+      "coverImage": "assets/covers/chapter09-cover.png"
     },
     {
       "id": 10,
@@ -142,7 +142,7 @@
       "hasAudio": true,
       "imageCount": 8,
       "audioCount": 25,
-      "coverImage": "chapter10/images/scene-001.png"
+      "coverImage": "assets/covers/chapter10-cover.png"
     }
   ],
   "voiceNote": {
