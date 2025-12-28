@@ -165,6 +165,7 @@
                 Claude barked excitedly, his tail wagging as he spotted the hidden entrance behind the curtain of water.
             </div>
             <audio data-line="003" preload="auto" src="../audio/002-01-03.mp3"></audio>
+            <audio id="claudeBark" preload="auto" src="../audio/sfx/dog-bark.mp3"></audio>
         </div>
 
         <!-- Play All Button -->
@@ -215,6 +216,13 @@
                 
                 try {
                     await audio.play();
+                    // Play Claude bark when line 003 plays (mentions barking)
+                    if (audio.getAttribute('data-line') === '003') {
+                        setTimeout(() => {
+                            const bark = document.getElementById('claudeBark');
+                            if (bark) bark.play().catch(e => console.log('Bark blocked:', e));
+                        }, 500);
+                    }
                     await new Promise(resolve => {
                         audio.onended = resolve;
                     });

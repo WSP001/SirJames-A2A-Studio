@@ -33,8 +33,9 @@ CRITICAL: Sir James MUST look like a 5-YEAR-OLD CHILD - very small, round face, 
 NO TEXT in the image.
 `;
 
-// Chapter 1 Scene Prompts
-const CHAPTER1_SCENES = [
+// All Chapter Scene Prompts
+const CHAPTER_SCENES = {
+    1: [
     {
         scene: 1,
         title: "The Quest Begins",
@@ -75,7 +76,50 @@ const CHAPTER1_SCENES = [
         title: "Campsite Evening",
         prompt: `${CHARACTERS.sirJames} and ${CHARACTERS.claude} at a cozy campsite at dusk. The small 5-year-old boy studies a treasure map by warm firelight. ${CHARACTERS.claude} curled up beside him. Tent in background, stars beginning to appear in the purple sky. Warm, safe, magical atmosphere.`
     }
-];
+    ],
+    2: [
+        {
+            scene: 1,
+            title: "The Hidden Waterfall",
+            prompt: `${CHARACTERS.sirJames} and ${CHARACTERS.claude} discovering a magical sparkling waterfall in an enchanted forest. The small 5-year-old boy points excitedly at a rainbow forming in the mist. ${CHARACTERS.claude} stands alert beside him, tail wagging. Crystal clear water cascading over mossy rocks, hidden cave entrance visible behind the waterfall. Magical atmosphere with light rays and sparkles.`
+        },
+        {
+            scene: 2,
+            title: "The Crystal Guardian",
+            prompt: `${CHARACTERS.sirJames} and ${CHARACTERS.claude} meeting a friendly glowing crystal guardian spirit inside a magical cavern. The small 5-year-old boy looks up in wonder at the gentle translucent being. Crystals of various colors line the cave walls, casting rainbow reflections. Warm magical glow illuminates the scene.`
+        },
+        {
+            scene: 3,
+            title: "The Crystal Puzzle",
+            prompt: `${CHARACTERS.sirJames} carefully arranging glowing crystals on an ancient stone pedestal to solve a puzzle. The small 5-year-old boy concentrates with determination. ${CHARACTERS.claude} watches supportively. Magical symbols glow on the pedestal. Cave interior with beautiful crystal formations.`
+        },
+        {
+            scene: 4,
+            title: "The Crystal of Truth",
+            prompt: `${CHARACTERS.sirJames} holding up a brilliant glowing Crystal of Truth that illuminates the entire cavern. The small 5-year-old boy's face shows wonder and joy. ${CHARACTERS.claude} barks happily beside him. Magical light rays emanate from the crystal, revealing hidden cave paintings on the walls.`
+        },
+        {
+            scene: 5,
+            title: "Helping the Lost Creatures",
+            prompt: `${CHARACTERS.sirJames} and ${CHARACTERS.claude} helping small lost magical creatures (baby fairies, tiny dragons, glowing butterflies) find their way home. The small 5-year-old boy gently guides them with kindness. Forest clearing with magical mushrooms and flowers. Warm sunset light filtering through trees.`
+        },
+        {
+            scene: 6,
+            title: "The Crystal Bridge",
+            prompt: `${CHARACTERS.sirJames} and ${CHARACTERS.claude} crossing a magnificent bridge made entirely of glowing crystals over a deep magical chasm. The small 5-year-old boy walks bravely forward. Stars and magical lights visible in the depths below. Ethereal blue and purple lighting.`
+        },
+        {
+            scene: 7,
+            title: "The Ancient Knights",
+            prompt: `${CHARACTERS.sirJames} standing before ghostly images of ancient knights projected by magical crystals. The small 5-year-old boy listens respectfully to their wisdom. ${CHARACTERS.claude} sits attentively. Knights appear as friendly translucent blue spirits in armor. Grand crystal chamber setting.`
+        },
+        {
+            scene: 8,
+            title: "Emerging Victorious",
+            prompt: `${CHARACTERS.sirJames} and ${CHARACTERS.claude} emerging triumphantly from the crystal cavern into bright sunlight. The small 5-year-old boy holds the Crystal of Truth proudly. ${CHARACTERS.claude} bounds joyfully beside him. Beautiful forest landscape visible, rainbow arcing across the sky. Victorious, happy atmosphere.`
+        }
+    ]
+};
 
 async function generateImage(prompt, outputPath) {
     const fullPrompt = `${prompt}\n\n${STYLE}`;
@@ -157,7 +201,7 @@ function downloadImage(url, outputPath) {
 }
 
 async function main() {
-    const chapter = process.argv[2] || '1';
+    const chapter = parseInt(process.argv[2] || '1');
     
     console.log('🎨 Sir James Scene Image Regenerator');
     console.log('='.repeat(50));
@@ -165,8 +209,13 @@ async function main() {
     console.log(`📖 Processing Chapter ${chapter}`);
     console.log('='.repeat(50));
     
-    const scenes = CHAPTER1_SCENES; // For now, only Chapter 1
-    const outputDir = path.join(__dirname, '..', 'public-book002', `chapter0${chapter}`, 'images');
+    const scenes = CHAPTER_SCENES[chapter];
+    if (!scenes) {
+        console.error(`❌ No scene prompts defined for Chapter ${chapter}`);
+        process.exit(1);
+    }
+    const chapterFolder = chapter < 10 ? `chapter0${chapter}` : `chapter${chapter}`;
+    const outputDir = path.join(__dirname, '..', 'public-book002', chapterFolder, 'images');
     
     // Backup existing images
     const backupDir = path.join(outputDir, 'backup');
@@ -197,8 +246,8 @@ async function main() {
     }
     
     console.log('\n' + '='.repeat(50));
-    console.log('✅ Chapter 1 scene regeneration complete!');
-    console.log(`💰 Total cost: ~$0.64 (8 images)`);
+    console.log(`✅ Chapter ${chapter} scene regeneration complete!`);
+    console.log(`💰 Total cost: ~$${(scenes.length * 0.08).toFixed(2)} (${scenes.length} images)`);
     console.log(`📁 Output: ${outputDir}`);
     console.log(`📦 Backups: ${backupDir}`);
 }
