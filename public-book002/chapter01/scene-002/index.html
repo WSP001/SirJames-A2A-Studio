@@ -135,6 +135,9 @@
             <audio id="narration" preload="auto">
                 <source src="../audio/002-01.mp3" type="audio/mpeg">
             </audio>
+            <audio id="claudeBark" preload="auto">
+                <source src="../audio/sfx/dog-bark.mp3" type="audio/mpeg">
+            </audio>
         </div>
         
                 <!-- Big Home Button for easy navigation back to all chapters -->
@@ -160,6 +163,10 @@
                 audio.play().then(() => {
                     playBtn.textContent = '⏸ Pause';
                     isPlaying = true;
+                    // Play Claude's bark after narration mentions it
+                    setTimeout(() => {
+                        document.getElementById('claudeBark').play().catch(e => console.log('Bark blocked:', e));
+                    }, 2000);
                 }).catch(e => {
                     console.log('Audio play failed:', e);
                     playBtn.textContent = '▶ Tap Again';

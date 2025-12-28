@@ -10,6 +10,7 @@
     "precommit:secrets": "echo \"Run detect-secrets before committing\" && exit 0"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@netlify/functions": "^2.6.0",
     "aws-sdk": "^2.1490.0",
     "js-yaml": "^4.1.0",
