@@ -240,12 +240,45 @@
     .chapter-card:hover .card-shine {
       left: 150%;
     }
+
+    /* Music Button */
+    .music-btn {
+      margin-top: 1rem;
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+      border: none;
+      color: #1a1a2e;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .music-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255,215,0,0.6);
+    }
+    .music-btn.playing {
+      background: linear-gradient(135deg, #00d26a, #00a854);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 15px rgba(0,210,106,0.4); }
+      50% { box-shadow: 0 6px 25px rgba(0,210,106,0.7); }
+    }
   </style>
 </head>
 <body>
+  <!-- Theme Music Player - Cycles through 8 songs -->
+  <audio id="themeMusic" preload="auto"></audio>
+
   <header class="header">
-    <h1>Sir James Adventures</h1>
+    <h1>⚔️ Sir James Adventures ⚔️</h1>
     <p>Book 002 - The Virtue Quest</p>
+    <button id="musicBtn" class="music-btn playing" onclick="stopMusic()">
+      🔇 Stop Music
+    </button>
   </header>
 
   <main class="chapter-grid" id="chapterGrid">
@@ -383,6 +416,59 @@
 
     // Initialize
     document.addEventListener('DOMContentLoaded', loadChapters);
+
+    // Theme Music - Cycles through 8 songs in order
+    const playlist = [
+      'assets/audio/Sir James Adventures.mp3',
+      'assets/audio/Sir James AdventuressSONG001.mp3',
+      'assets/audio/Sir James AdventuresSONG002.mp3',
+      'assets/audio/Sir James AdventuresSONG003.mp3',
+      'assets/audio/_Sir James\' Adventure Song004.mp3',
+      'assets/audio/_Sir James\' Adventure Song006.mp3',
+      'assets/audio/_Sir James\' Adventure Song007.mp3',
+      'assets/audio/_Sir James\' Adventure Song_.mp3'
+    ];
+    let currentTrack = 0;
+    let musicStopped = false;
+
+    function playNextSong() {
+      if (musicStopped) return;
+      const audio = document.getElementById('themeMusic');
+      audio.src = playlist[currentTrack];
+      audio.play().catch(e => console.log('Playback blocked:', e));
+      currentTrack = (currentTrack + 1) % playlist.length; // Loop back to start
+    }
+
+    function stopMusic() {
+      const audio = document.getElementById('themeMusic');
+      const btn = document.getElementById('musicBtn');
+      audio.pause();
+      audio.currentTime = 0;
+      musicStopped = true;
+      btn.style.display = 'none'; // Hide button after stopping
+    }
+
+    // Start music and set up song cycling
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('themeMusic');
+      
+      // When song ends, play next one
+      audio.addEventListener('ended', playNextSong);
+      
+      // Try autoplay
+      playNextSong();
+      audio.play().catch(e => {
+        // iOS blocks autoplay, show tap-to-play message
+        const btn = document.getElementById('musicBtn');
+        btn.textContent = '🎵 Tap to Start Music';
+        btn.onclick = () => {
+          musicStopped = false;
+          playNextSong();
+          btn.textContent = '🔇 Stop Music';
+          btn.onclick = stopMusic;
+        };
+      });
+    });
   </script>
 </body>
 </html>

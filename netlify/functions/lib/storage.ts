@@ -1,6 +1,7 @@
 import { createReadStream, statSync } from 'fs';
 import path from 'path';
 import AWS from 'aws-sdk';
+import { getStore } from '@netlify/blobs';
 
 export interface StorageResult {
   ok: boolean;
@@ -9,6 +10,11 @@ export interface StorageResult {
   expiresAt?: string;
   error?: string;
   metadata?: Record<string, unknown>;
+}
+
+// Netlify Blobs store for run artifacts
+export function runsStore() {
+  return getStore({ name: 'runs', consistency: 'strong' });
 }
 
 const DEFAULT_MAX_MB = 500;

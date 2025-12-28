@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sir James Adventures - Video Studio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      color: #f8fafc;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .header-nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover { color: #f8fafc; }
+
+    /* Main Layout */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .main { grid-template-columns: 1fr; }
+    }
+
+    /* Panel */
+    .panel {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .panel-number {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: #0f172a;
+    }
+
+    .panel-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Upload Zone */
+    .upload-zone {
+      border: 2px dashed rgba(148, 163, 184, 0.3);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 1rem;
+    }
+
+    .upload-zone:hover,
+    .upload-zone.dragover {
+      border-color: #6366f1;
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    .upload-zone input { display: none; }
+
+    .upload-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .upload-hint {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    /* File List */
+    .file-list {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .file-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .file-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .form-select,
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 8px;
+      color: inherit;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-secondary {
+      background: rgba(148, 163, 184, 0.15);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: inherit;
+    }
+
+    /* API Key Section */
+    .api-section {
+      background: rgba(0,0,0,0.2);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .api-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .api-header h4 {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    /* Status */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .status-idle { background: rgba(148, 163, 184, 0.15); }
+    .status-processing { background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.4); }
+    .status-success { background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #bbf7d0; }
+    .status-error { background: rgba(248, 113, 113, 0.2); border: 1px solid rgba(248, 113, 113, 0.4); color: #fecaca; }
+
+    .status-spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #38bdf8;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Result */
+    .result-panel {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+    }
+
+    .result-panel h4 {
+      margin-bottom: 0.75rem;
+      color: #a0c4ff;
+    }
+
+    .result-panel pre {
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Project ID Badge */
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-badge::before {
+      content: '📁';
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Sir James Video Studio</h1>
+    <nav class="header-nav">
+      <a href="index.html">Book002</a>
+      <a href="https://github.com/WSP001/SirJames-A2A-Studio" target="_blank" rel="noopener">Docs</a>
+      <a href="#">Vault</a>
+      <a href="https://github.com/WSP001/SirJames-A2A-Studio" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Panel 1: Ingest & Context -->
+    <section class="panel">
+      <div class="panel-header">
+        <span class="panel-number">1</span>
+        <span class="panel-title">Ingest & Context</span>
+      </div>
+
+      <div id="projectBadge" class="project-badge" style="display: none;">
+        Project ID: <span id="projectIdDisplay">-</span>
+      </div>
+
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" multiple accept=".txt,.json,.mp3,.mp4,.jpg,.jpeg,.png,.gif,.webp">
+        <div class="upload-icon">📁</div>
+        <p>Drag & drop chapter assets or click to upload</p>
+        <p class="upload-hint">Supports: images (.png, .jpg), audio (.mp3), scripts (.txt, .json)</p>
+      </div>
+
+      <div class="file-list" id="fileList"></div>
+    </section>
+
+    <!-- Panel 2: Generation Pipeline -->
+    <section class="panel">
+      <div class="panel-header">
+        <span class="panel-number">2</span>
+        <span class="panel-title">Generation Pipeline</span>
+      </div>
+
+      <div id="activeProject" style="display: none; margin-bottom: 1rem;">
+        <span style="color: #94a3b8;">Active:</span>
+        <span id="activeProjectId" style="color: #38bdf8; font-family: monospace;"></span>
+      </div>
+
+      <div class="api-section">
+        <div class="api-header">
+          <h4>🔑 API Configuration</h4>
+          <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="toggleKeyManager()">Manage Keys</button>
+        </div>
+
+        <div class="form-group">
+          <select class="form-select" id="apiKeySelect" title="Select API Key">
+            <option value="">Select an API Key...</option>
+          </select>
+        </div>
+
+        <div id="keyManager" style="display: none; margin-top: 1rem;">
+          <div class="form-group">
+            <input type="text" class="form-input" id="newKeyLabel" placeholder="Key label (e.g., Suno Sandbox)">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-input" id="newKeyValue" placeholder="Paste API key value">
+          </div>
+          <button class="btn btn-secondary" onclick="saveApiKey()">Save Key</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Video Prompt</label>
+        <textarea class="form-textarea" id="videoPrompt" placeholder="Describe the chapter video (e.g., 'Create a 2-minute animated video for Chapter 1 with narration and background music')..."></textarea>
+        <p class="upload-hint" id="promptLink" style="margin-top: 0.5rem; display: none;">
+          Linked to Project: <span id="linkedProjectId"></span>
+        </p>
+      </div>
+
+      <button class="btn btn-primary" id="generateBtn" onclick="generateVideo()">
+        🎬 Generate Chapter Video
+      </button>
+
+      <div class="status-bar status-idle" id="statusBar">
+        <span id="statusLabel">Ready</span>
+      </div>
+
+      <div class="result-panel" id="resultPanel" style="display: none;">
+        <h4>Generation Complete</h4>
+        <p id="resultMessage">Video is ready to view</p>
+        <pre id="resultJson"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // State
+    let uploadedFiles = [];
+    let apiKeys = [];
+    let currentProjectId = null;
+    let isGenerating = false;
+
+    const STORAGE_KEY = 'sirtrav-video-api-keys';
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      loadApiKeys();
+      setupUploadZone();
+    });
+
+    // API Key Management
+    function loadApiKeys() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          apiKeys = JSON.parse(stored);
+          renderApiKeySelect();
+        }
+      } catch (e) {
+        console.warn('Failed to load API keys:', e);
+      }
+    }
+
+    function saveApiKeys() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(apiKeys));
+      } catch (e) {
+        console.warn('Failed to save API keys:', e);
+      }
+    }
+
+    function renderApiKeySelect() {
+      const select = document.getElementById('apiKeySelect');
+      select.innerHTML = '<option value="">Select an API Key...</option>';
+      apiKeys.forEach((key, index) => {
+        const masked = key.value.slice(-4).padStart(key.value.length, '*');
+        const option = document.createElement('option');
+        option.value = key.id;
+        option.textContent = `${key.label} (${masked})`;
+        select.appendChild(option);
+      });
+    }
+
+    function toggleKeyManager() {
+      const manager = document.getElementById('keyManager');
+      manager.style.display = manager.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function saveApiKey() {
+      const label = document.getElementById('newKeyLabel').value.trim();
+      const value = document.getElementById('newKeyValue').value.trim();
+
+      if (!value) {
+        alert('Please enter an API key value');
+        return;
+      }
+
+      const key = {
+        id: `key-${Date.now()}`,
+        label: label || `Key ${apiKeys.length + 1}`,
+        value: value,
+        createdAt: new Date().toISOString()
+      };
+
+      apiKeys.unshift(key);
+      saveApiKeys();
+      renderApiKeySelect();
+
+      document.getElementById('apiKeySelect').value = key.id;
+      document.getElementById('newKeyLabel').value = '';
+      document.getElementById('newKeyValue').value = '';
+      document.getElementById('keyManager').style.display = 'none';
+    }
+
+    // File Upload
+    function setupUploadZone() {
+      const zone = document.getElementById('uploadZone');
+      const input = document.getElementById('fileInput');
+
+      zone.addEventListener('click', () => input.click());
+
+      zone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        zone.classList.add('dragover');
+      });
+
+      zone.addEventListener('dragleave', () => {
+        zone.classList.remove('dragover');
+      });
+
+      zone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        zone.classList.remove('dragover');
+        handleFiles(e.dataTransfer.files);
+      });
+
+      input.addEventListener('change', (e) => {
+        handleFiles(e.target.files);
+      });
+    }
+
+    function handleFiles(files) {
+      uploadedFiles = [...uploadedFiles, ...Array.from(files)];
+      renderFileList();
+
+      // Generate project ID
+      if (!currentProjectId) {
+        currentProjectId = `PROJ-${Date.now()}`;
+        document.getElementById('projectBadge').style.display = 'flex';
+        document.getElementById('projectIdDisplay').textContent = currentProjectId;
+        document.getElementById('activeProject').style.display = 'block';
+        document.getElementById('activeProjectId').textContent = currentProjectId;
+        document.getElementById('promptLink').style.display = 'block';
+        document.getElementById('linkedProjectId').textContent = currentProjectId;
+      }
+    }
+
+    function renderFileList() {
+      const list = document.getElementById('fileList');
+      list.innerHTML = '';
+
+      uploadedFiles.forEach((file, index) => {
+        const item = document.createElement('div');
+        item.className = 'file-item';
+
+        // Create thumbnail for images
+        if (file.type.startsWith('image/')) {
+          const img = document.createElement('img');
+          img.src = URL.createObjectURL(file);
+          item.appendChild(img);
+        } else {
+          const icon = document.createElement('span');
+          icon.textContent = file.type.includes('audio') ? '🎵' : file.type.includes('video') ? '🎬' : '📄';
+          icon.style.fontSize = '1.5rem';
+          item.appendChild(icon);
+        }
+
+        const name = document.createElement('span');
+        name.className = 'file-name';
+        name.textContent = file.name;
+        item.appendChild(name);
+
+        list.appendChild(item);
+      });
+    }
+
+    // Video Generation
+    async function generateVideo() {
+      const prompt = document.getElementById('videoPrompt').value.trim();
+      const keyId = document.getElementById('apiKeySelect').value;
+
+      if (!prompt) {
+        alert('Please enter a video prompt');
+        return;
+      }
+
+      const selectedKey = apiKeys.find(k => k.id === keyId);
+      if (!selectedKey) {
+        alert('Please select an API key');
+        return;
+      }
+
+      if (isGenerating) return;
+      isGenerating = true;
+
+      const btn = document.getElementById('generateBtn');
+      const statusBar = document.getElementById('statusBar');
+      const statusLabel = document.getElementById('statusLabel');
+      const resultPanel = document.getElementById('resultPanel');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="status-spinner"></span> Working...';
+      statusBar.className = 'status-bar status-processing';
+      statusLabel.innerHTML = '<span class="status-spinner"></span> Generating...';
+      resultPanel.style.display = 'none';
+
+      try {
+        const response = await fetch('/.netlify/functions/generate-video', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': selectedKey.value
+          },
+          body: JSON.stringify({
+            prompt: prompt,
+            projectId: currentProjectId
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.ok) {
+          statusBar.className = 'status-bar status-success';
+          statusLabel.textContent = '✅ Generation Complete';
+          resultPanel.style.display = 'block';
+          document.getElementById('resultMessage').textContent = 
+            result.status === 'completed' ? 'Video is ready to view' : `Status: ${result.status}`;
+          document.getElementById('resultJson').textContent = JSON.stringify(result, null, 2);
+        } else {
+          throw new Error(result.error || result.detail || 'Generation failed');
+        }
+
+      } catch (error) {
+        console.error('Generation error:', error);
+        statusBar.className = 'status-bar status-error';
+        statusLabel.textContent = `❌ Error: ${error.message}`;
+      } finally {
+        isGenerating = false;
+        btn.disabled = false;
+        btn.innerHTML = '🎬 Generate Chapter Video';
+      }
+    }
+  </script>
+</body>
+</html>

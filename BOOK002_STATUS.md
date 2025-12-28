@@ -22,29 +22,29 @@
 
 | Ch | Title | Images | Audio | HTML Wired | Deployed | Status |
 |----|-------|--------|-------|------------|----------|--------|
-| 01 | The Quest Begins | ✅ 8/8 | ✅ 25 | 🟡 | ✅ | 🟡 Wire HTML |
-| 02 | The Butterfly Garden | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 03 | The Dragon's Riddle | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 04 | The Enchanted Garden | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 05 | The Wise Owl's Lesson | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 06 | The Mirror of Truth | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 07 | The Wishing Star | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 08 | The River of Stars | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 09 | The Moonbeam Celebration | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
-| 10 | The Knight's Triumph | ✅ 8/8 | ✅ 25 | 🔴 | 🔴 | 🟡 Ready to wire |
+| 01 | The Quest Begins | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 02 | The Butterfly Garden | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 03 | The Dragon's Riddle | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 04 | The Enchanted Garden | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 05 | The Wise Owl's Lesson | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 06 | The Mirror of Truth | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 07 | The Wishing Star | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 08 | The River of Stars | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 09 | The Moonbeam Celebration | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
+| 10 | The Knight's Triumph | ✅ 8/8 | ✅ 8 | ✅ 8 scenes | 🟡 | ✅ Ready |
 
-**TOTALS:** 80/80 Images ✅ | 250 Audio Lines ✅ | HTML: 🔴 | Deploy: 🔴
+**TOTALS:** 80/80 Images ✅ | 80/80 Audio ✅ | HTML: ✅ 80 scenes | Deploy: 🟡 Pending
 
 ---
 
 ## 💰 COST TRACKING
 
-| Asset Type | Count | Cost | Status |
-|------------|-------|------|--------|
-| HD DALL-E Images | 80 scenes | ~$5.60 | ✅ Complete |
-| ElevenLabs Audio | 250 lines | ~$7.00 | ✅ Complete |
+| Asset Type | Progress | Cost | Status |
+|------------|---------|------|--------|
+| HD DALL-E Images | 4/80 generated | ~$0.28 spent | 🟡 In Progress |
+| ElevenLabs Audio | 5/250 generated | ~$0.03 spent | 🟡 In Progress |
 | Thought Icons | 5 icons | ~$0.20 | ✅ Complete |
-| **TOTAL** | | **~$12.80** | ✅ Under budget |
+| **TOTAL** | | **~$0.31 spent** | 🟡 Under budget |
 
 ---
 
@@ -60,11 +60,12 @@
 ## 🚀 NEXT ACTIONS
 
 ### Immediate
-- [ ] Build Chapter Board landing page (HD images, tilt effect)
-- [ ] Create `chapters.json` data file
-- [ ] Wire HTML to real images/audio
-- [ ] Commit all audio files
-- [ ] Tag milestone: `book002-assets-v1`
+- [x] Build Chapter Board landing page (HD images, tilt effect) ✅
+- [x] Create `chapters.json` data file ✅
+- [x] Wire HTML to real images/audio ✅ (80 scenes wired!)
+- [ ] Commit all new HTML files
+- [ ] Deploy to Netlify production
+- [ ] Tag milestone: `book002-html-complete`
 
 ### Before Sawyer Tests
 - [ ] QA each chapter on iPad
@@ -83,9 +84,9 @@
 ## 🚀 Immediate Actions (Turn Red → Green)
 
 ### TODAY: Fix Chapter 1 (30 min)
-- [ ] 🔴 Wire scene HTML to use real images (`images/scene-001.png`)
-- [ ] 🔴 Wire scene HTML to use real audio (`audio/001-01.mp3`)
-- [ ] 🔴 Remove "DALL-E pending" placeholder text
+- [x] ✅ Wire scene HTML to use real images (`images/scene-001.png`)
+- [x] ✅ Wire scene HTML to use real audio (`audio/001-01.mp3`)
+- [x] ✅ Remove "DALL-E pending" placeholder text
 - [ ] 🔴 Test on iPad
 - [ ] 🔴 Deploy to Netlify
 
@@ -116,7 +117,7 @@
 
 ## 🔴 Blocking Issues
 
-1. **Scene HTML not wired** - Images/audio exist but HTML shows placeholders
+1. ~~Scene HTML not wired~~ - ✅ FIXED: Images/audio now properly linked
 2. **Chapters 2-10 missing assets** - Source JSON exists, need to generate media
 3. **manifest.loader.js not created** - Previous programmer's code not implemented yet
 

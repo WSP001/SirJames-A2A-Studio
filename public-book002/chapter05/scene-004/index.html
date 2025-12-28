@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sir James Adventures - Chapter 5 - The Wise Owl's Lesson</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .scene-container {
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .scene-title {
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .scene-image {
+            width: 100%;
+            max-height: 50vh;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        .narration-box {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        .narration-text {
+            font-size: 1.4em;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .character-name {
+            font-weight: bold;
+            color: #ffd700;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .audio-controls {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .play-btn {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            border: none;
+            color: #333;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.6);
+        }
+        .play-btn:active {
+            transform: scale(0.98);
+        }
+        .home-button {
+            display: block;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #333;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+            transition: all 0.3s ease;
+        }
+        .home-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.6);
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: auto;
+            padding: 20px 0;
+        }
+        .nav-button {
+            flex: 1;
+            background: rgba(255,255,255,0.2);
+            border: 3px solid white;
+            color: white;
+            padding: 18px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        .nav-button.primary {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border-color: #4CAF50;
+            font-size: 1.3em;
+        }
+        @media (max-width: 600px) {
+            .scene-title { font-size: 1.4em; }
+            .narration-text { font-size: 1.2em; }
+            .play-btn { padding: 12px 30px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene-container">
+        <h1 class="scene-title">The First Question</h1>
+        
+        <img src="src="../assets/images/chapter5-scene-004.png"" 
+             alt="The First Question - Sir James Adventures"
+             class="scene-image">
+        
+        <!-- Line 001: Narrator -->
+        <div class="narration-box" data-line="001">
+            <div class="narration-text">
+                <span class="character-name" style="color: #ffd700;">📖 Narrator:</span>
+                Books floated gently around them as the Wise Owl leaned closer to Sir James.
+            </div>
+            <audio data-line="001" preload="auto" src="../audio/005-04-01.mp3"></audio>
+        </div>
+
+        <!-- Line 002: Sir_James -->
+        <div class="narration-box" data-line="002">
+            <div class="narration-text">
+                <span class="character-name" style="color: #4CAF50;">⚔️ Sir James:</span>
+                How do I become truly wise, like you and Gramps?
+            </div>
+            <audio data-line="002" preload="auto" src="../audio/005-04-02.mp3"></audio>
+        </div>
+
+        <!-- Line 003: Narrator -->
+        <div class="narration-box" data-line="003">
+            <div class="narration-text">
+                <span class="character-name" style="color: #ffd700;">📖 Narrator:</span>
+                The owl smiled. 'By admitting what you don't know, and having the courage to learn. That is the first step to wisdom.'
+            </div>
+            <audio data-line="003" preload="auto" src="../audio/005-04-03.mp3"></audio>
+        </div>
+
+        <!-- Play All Button -->
+        <div class="audio-controls">
+            <button class="play-btn" id="playAllBtn" aria-label="Play all narration">
+                ▶️ Play Story
+            </button>
+        </div>
+        
+        <!-- Big Home Button for easy navigation back to all chapters -->
+        <a href="../../index.html" class="home-button">🏠 All Chapters</a>
+        
+        <div class="navigation">
+            <a href="../scene-003/index.html" class="nav-button">⬅️ Previous</a>
+            <a href="../scene-005/index.html" class="nav-button primary">Next ➡️</a>
+        </div>
+    </div>
+    
+    <script>
+        // Collect all audio elements in order
+        const audioElements = Array.from(document.querySelectorAll('audio[data-line]'));
+        const playAllBtn = document.getElementById('playAllBtn');
+        let currentIndex = 0;
+        let isPlaying = false;
+
+        // Play all lines sequentially
+        async function playAll() {
+            if (isPlaying) {
+                // Stop all
+                audioElements.forEach(a => { a.pause(); a.currentTime = 0; });
+                playAllBtn.textContent = '▶️ Play Story';
+                isPlaying = false;
+                currentIndex = 0;
+                return;
+            }
+
+            isPlaying = true;
+            playAllBtn.textContent = '⏸ Pause';
+
+            for (let i = currentIndex; i < audioElements.length; i++) {
+                if (!isPlaying) break;
+                currentIndex = i;
+                const audio = audioElements[i];
+                
+                // Highlight current line
+                document.querySelectorAll('.narration-box').forEach(box => box.style.opacity = '0.6');
+                audio.closest('.narration-box').style.opacity = '1';
+                
+                try {
+                    await audio.play();
+                    await new Promise(resolve => {
+                        audio.onended = resolve;
+                    });
+                } catch (e) {
+                    console.log('Audio play failed:', e);
+                }
+            }
+
+            // Reset when done
+            document.querySelectorAll('.narration-box').forEach(box => box.style.opacity = '1');
+            playAllBtn.textContent = '▶️ Play Again';
+            isPlaying = false;
+            currentIndex = 0;
+        }
+
+        playAllBtn.addEventListener('click', playAll);
+
+        // Allow tapping individual lines to play just that line
+        document.querySelectorAll('.narration-box[data-line]').forEach(box => {
+            box.style.cursor = 'pointer';
+            box.addEventListener('click', function(e) {
+                if (e.target.closest('audio')) return;
+                const audio = this.querySelector('audio');
+                if (audio) {
+                    // Stop any playing audio
+                    audioElements.forEach(a => { a.pause(); a.currentTime = 0; });
+                    audio.play().catch(e => console.log('Tap play failed:', e));
+                }
+            });
+        });
+
+        // iOS audio unlock
+        document.addEventListener('touchstart', function() {
+            audioElements.forEach(a => a.load());
+        }, { once: true });
+    </script>
+</body>
+</html>

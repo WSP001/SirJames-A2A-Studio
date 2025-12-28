@@ -139,23 +139,77 @@
         <h1 class="scene-title">The Quest Begins</h1>
         
         <img src="../images/scene-001.png" 
-             alt="A young knight named Sir James standing proudly in a grand castle hall, receiving a quest scroll from a wise king, bright cartoon style, warm golden l"
+             alt="Sir James, a 5-year-old boy knight with blue eyes and brown hair, standing in Castle Brightstone receiving a quest from King Arthur"
              class="scene-image">
         
-        <div class="narration-box">
+        <!-- Line 001: Narrator -->
+        <div class="narration-box" data-line="001">
             <div class="narration-text">
-                <span class="character-name">Narrator:</span>
+                <span class="character-name">📖 Narrator:</span>
                 In the great hall of Castle Brightstone, young Sir James stood before King Arthur himself.
             </div>
+            <audio data-line="001" preload="auto" src="../audio/voices/scene-001-001-narrator.mp3"></audio>
         </div>
-        
+
+        <!-- Line 002: King Arthur -->
+        <div class="narration-box" data-line="002">
+            <div class="narration-text">
+                <span class="character-name" style="color: #9370DB;">👑 King Arthur:</span>
+                Young Sir James, I have a most important quest for you.
+            </div>
+            <audio data-line="002" preload="auto" src="../audio/voices/scene-001-002-king_arthur.mp3"></audio>
+        </div>
+
+        <!-- Line 003: Sir James -->
+        <div class="narration-box" data-line="003">
+            <div class="narration-text">
+                <span class="character-name" style="color: #4CAF50;">⚔️ Sir James:</span>
+                I am ready, Your Majesty! What would you have me do?
+            </div>
+            <audio data-line="003" preload="auto" src="../audio/voices/scene-001-003-sir_james.mp3"></audio>
+        </div>
+
+        <!-- Line 004: Claude (SFX) -->
+        <div class="narration-box" data-line="004">
+            <div class="narration-text">
+                <span class="character-name" style="color: #FF9800;">🐕 Claude:</span>
+                *excited bark!* 🐾
+            </div>
+            <audio data-line="004" preload="auto" src="../audio/sfx/dog-bark.mp3"></audio>
+        </div>
+
+        <!-- Line 005: King Arthur -->
+        <div class="narration-box" data-line="005">
+            <div class="narration-text">
+                <span class="character-name" style="color: #9370DB;">👑 King Arthur:</span>
+                You must journey to the Enchanted Forest and find the Crystal of Courage.
+            </div>
+            <audio data-line="005" preload="auto" src="../audio/voices/scene-001-005-king_arthur.mp3"></audio>
+        </div>
+
+        <!-- Line 006: Sir James -->
+        <div class="narration-box" data-line="006">
+            <div class="narration-text">
+                <span class="character-name" style="color: #4CAF50;">⚔️ Sir James:</span>
+                I won't let you down, Your Majesty!
+            </div>
+            <audio data-line="006" preload="auto" src="../audio/voices/scene-001-006-sir_james.mp3"></audio>
+        </div>
+
+        <!-- Line 007: Narrator -->
+        <div class="narration-box" data-line="007">
+            <div class="narration-text">
+                <span class="character-name">📖 Narrator:</span>
+                And so began the greatest adventure Sir James had ever known.
+            </div>
+            <audio data-line="007" preload="auto" src="../audio/voices/scene-001-007-narrator.mp3"></audio>
+        </div>
+
+        <!-- Play All Button -->
         <div class="audio-controls">
-            <button class="play-btn" id="playBtn" aria-label="Play narration">
-                ▶ Tap to Listen
+            <button class="play-btn" id="playAllBtn" aria-label="Play all narration">
+                ▶️ Play Story
             </button>
-            <audio id="narration" preload="auto">
-                <source src="../audio/001-01.mp3" type="audio/mpeg">
-            </audio>
         </div>
         
         <!-- Big Home Button for easy navigation back to all chapters -->
@@ -168,33 +222,71 @@
     </div>
     
     <script>
-        const audio = document.getElementById('narration');
-        const playBtn = document.getElementById('playBtn');
+        // Collect all audio elements in order
+        const audioElements = Array.from(document.querySelectorAll('audio[data-line]'));
+        const playAllBtn = document.getElementById('playAllBtn');
+        let currentIndex = 0;
         let isPlaying = false;
-        
-        playBtn.addEventListener('click', function() {
+
+        // Play all lines sequentially
+        async function playAll() {
             if (isPlaying) {
-                audio.pause();
-                playBtn.textContent = '▶ Tap to Listen';
+                // Stop all
+                audioElements.forEach(a => { a.pause(); a.currentTime = 0; });
+                playAllBtn.textContent = '▶️ Play Story';
                 isPlaying = false;
-            } else {
-                audio.play().then(() => {
-                    playBtn.textContent = '⏸ Pause';
-                    isPlaying = true;
-                }).catch(e => {
-                    console.log('Audio play failed:', e);
-                    playBtn.textContent = '▶ Tap Again';
-                });
+                currentIndex = 0;
+                return;
             }
-        });
-        
-        audio.addEventListener('ended', function() {
-            playBtn.textContent = '▶ Play Again';
+
+            isPlaying = true;
+            playAllBtn.textContent = '⏸ Pause';
+
+            for (let i = currentIndex; i < audioElements.length; i++) {
+                if (!isPlaying) break;
+                currentIndex = i;
+                const audio = audioElements[i];
+                
+                // Highlight current line
+                document.querySelectorAll('.narration-box').forEach(box => box.style.opacity = '0.6');
+                audio.closest('.narration-box').style.opacity = '1';
+                
+                try {
+                    await audio.play();
+                    await new Promise(resolve => {
+                        audio.onended = resolve;
+                    });
+                } catch (e) {
+                    console.log('Audio play failed:', e);
+                }
+            }
+
+            // Reset when done
+            document.querySelectorAll('.narration-box').forEach(box => box.style.opacity = '1');
+            playAllBtn.textContent = '▶️ Play Again';
             isPlaying = false;
+            currentIndex = 0;
+        }
+
+        playAllBtn.addEventListener('click', playAll);
+
+        // Allow tapping individual lines to play just that line
+        document.querySelectorAll('.narration-box[data-line]').forEach(box => {
+            box.style.cursor = 'pointer';
+            box.addEventListener('click', function(e) {
+                if (e.target.closest('audio')) return;
+                const audio = this.querySelector('audio');
+                if (audio) {
+                    // Stop any playing audio
+                    audioElements.forEach(a => { a.pause(); a.currentTime = 0; });
+                    audio.play().catch(e => console.log('Tap play failed:', e));
+                }
+            });
         });
-        
+
+        // iOS audio unlock
         document.addEventListener('touchstart', function() {
-            audio.load();
+            audioElements.forEach(a => a.load());
         }, { once: true });
     </script>
 </body>

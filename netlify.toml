@@ -2,6 +2,8 @@
   # Book002 is pre-built static content - no build step needed
   command = "echo 'Book002 static deploy - no build required'"
   publish = "public-book002"
+  # Temporarily disable functions to allow static deploy
+  ignore_functions = true
 
 [build.environment]
   NODE_VERSION = "18"
