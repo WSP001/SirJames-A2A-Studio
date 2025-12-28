@@ -1,0 +1,455 @@
+{
+  "generated": "2025-12-28T01:28:05.993Z",
+  "chapters": [
+    {
+      "number": 1,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter01/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter01/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter01/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter01/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter01/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter01/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter01/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter01/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter02/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter02/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter02/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter02/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter02/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter02/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter02/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter02/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter03/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter03/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter03/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter03/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter03/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter03/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter03/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter03/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter04/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter04/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter04/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter04/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter04/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter04/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter04/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter04/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter05/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter05/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter05/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter05/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter05/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter05/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter05/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter05/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter06/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter06/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter06/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter06/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter06/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter06/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter06/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter06/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter07/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter07/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter07/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter07/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter07/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter07/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter07/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter07/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter08/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter08/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter08/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter08/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter08/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter08/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter08/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter08/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter09/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter09/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter09/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter09/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter09/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter09/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter09/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter09/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "scenes": [
+        {
+          "number": 1,
+          "path": "chapter10/scene-001/index.html",
+          "exists": true
+        },
+        {
+          "number": 2,
+          "path": "chapter10/scene-002/index.html",
+          "exists": true
+        },
+        {
+          "number": 3,
+          "path": "chapter10/scene-003/index.html",
+          "exists": true
+        },
+        {
+          "number": 4,
+          "path": "chapter10/scene-004/index.html",
+          "exists": true
+        },
+        {
+          "number": 5,
+          "path": "chapter10/scene-005/index.html",
+          "exists": true
+        },
+        {
+          "number": 6,
+          "path": "chapter10/scene-006/index.html",
+          "exists": true
+        },
+        {
+          "number": 7,
+          "path": "chapter10/scene-007/index.html",
+          "exists": true
+        },
+        {
+          "number": 8,
+          "path": "chapter10/scene-008/index.html",
+          "exists": true
+        }
+      ]
+    }
+  ]
+}

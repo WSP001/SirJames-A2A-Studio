@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{SCENE_TITLE}} - Sir James Adventures</title>
+    <style>
+        /* ============================================
+           CANONICAL SCENE STYLES - Book002/Book003
+           Do not modify without updating all scenes
+           ============================================ */
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .scene-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .scene-title {
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .scene-image {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        /* Narration boxes with character colors */
+        .narration-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .narration-text {
+            font-size: 1.3em;
+            line-height: 1.6;
+        }
+        
+        .character-name {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* Character-specific colors */
+        .char-narrator { color: #ffd700; }
+        .char-sir-james { color: #4CAF50; }
+        .char-claude { color: #8B4513; }
+        .char-gramps { color: #9370DB; }
+        .char-sparky { color: #FF6B35; }
+        
+        /* Audio controls - single button, 48px+ touch target */
+        .audio-controls {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .play-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            border-radius: 30px;
+            cursor: pointer;
+            min-height: 48px;
+            min-width: 200px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .play-btn:hover, .play-btn:focus {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+        }
+        
+        .play-btn:active {
+            transform: scale(0.98);
+        }
+        
+        /* Chapter Complete section (last scene only) */
+        .chapter-complete {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .chapter-complete h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        .chapter-complete p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        /* Book Complete section (final chapter only) */
+        .book-complete {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* Navigation - kid-friendly 48px+ buttons */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            min-height: 48px;
+            min-width: 120px;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+        
+        .nav-button:hover, .nav-button:focus {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        .nav-button.primary {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            font-size: 1.4em;
+            padding: 20px 40px;
+            min-height: 60px;
+        }
+        
+        /* iPad autoplay fallback overlay */
+        .autoplay-fallback {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .autoplay-fallback button {
+            padding: 30px 60px;
+            font-size: 1.5em;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .autoplay-fallback.hidden {
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .scene-title { font-size: 1.4em; }
+            .narration-text { font-size: 1.2em; }
+            .play-btn { padding: 12px 30px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene-container">
+        <h1 class="scene-title">{{SCENE_TITLE}}</h1>
+        
+        <!-- Scene image - path: ../images/scene-{{SCENE_NUM}}.png -->
+        <img src="../images/scene-{{SCENE_NUM}}.png" 
+             alt="{{SCENE_ALT_TEXT}}"
+             class="scene-image">
+        
+        <!-- NARRATION LINES - repeat this block for each line -->
+        <!-- Line {{LINE_NUM}}: {{CHARACTER}} -->
+        <div class="narration-box" data-line="{{LINE_NUM}}">
+            <div class="narration-text">
+                <span class="character-name char-{{CHARACTER_CLASS}}">{{CHARACTER_EMOJI}} {{CHARACTER_NAME}}:</span>
+                {{LINE_TEXT}}
+            </div>
+            <audio data-line="{{LINE_NUM}}" preload="auto" src="../audio/{{AUDIO_FILE}}"></audio>
+        </div>
+        <!-- END NARRATION LINES -->
+
+        <!-- Play All Button - single control -->
+        <div class="audio-controls">
+            <button class="play-btn" id="playAllBtn" aria-label="Play all narration">
+                ▶️ Play Story
+            </button>
+        </div>
+        
+        <!-- CHAPTER COMPLETE SECTION (last scene only, remove for scenes 1-7) -->
+        <div class="chapter-complete">
+            <h2>🎉 Chapter {{CHAPTER_NUM}} Complete!</h2>
+            <p>Great job! {{CHAPTER_VIRTUE_MESSAGE}}</p>
+            <a href="../../chapter{{NEXT_CHAPTER}}/scene-001/index.html" class="nav-button primary">
+                🚀 Next Chapter →
+            </a>
+        </div>
+        <!-- END CHAPTER COMPLETE -->
+        
+        <!-- Navigation -->
+        <div class="navigation">
+            <!-- Previous scene (hide on scene-001) -->
+            <a href="../scene-{{PREV_SCENE}}/index.html" class="nav-button">⬅️ Back</a>
+            
+            <!-- Next scene (scenes 1-7 only, remove on scene-008) -->
+            <a href="../scene-{{NEXT_SCENE}}/index.html" class="nav-button primary">Next Scene →</a>
+            
+            <!-- All Chapters -->
+            <a href="../../index.html" class="nav-button">🏠 All Chapters</a>
+        </div>
+    </div>
+    
+    <!-- iPad autoplay fallback (hidden by default) -->
+    <div class="autoplay-fallback hidden" id="autoplayFallback">
+        <button onclick="startAudio()">🔊 Tap to Start Story</button>
+    </div>
+    
+    <script>
+        /**
+         * CANONICAL SCENE ENGINE - Book002/Book003
+         * Single source of truth for audio playback and navigation
+         */
+        
+        // Collect all audio elements in order
+        const audioElements = Array.from(document.querySelectorAll('audio[data-line]'));
+        const playAllBtn = document.getElementById('playAllBtn');
+        let currentIndex = 0;
+        let isPlaying = false;
+
+        // Play all lines sequentially
+        async function playAll() {
+            if (isPlaying) {
+                // Stop all
+                audioElements.forEach(a => { a.pause(); a.currentTime = 0; });
+                playAllBtn.textContent = '▶️ Play Story';
+                isPlaying = false;
+                currentIndex = 0;
+                return;
+            }
+            
+            isPlaying = true;
+            playAllBtn.textContent = '⏸ Pause';
+            
+            for (let i = currentIndex; i < audioElements.length; i++) {
+                if (!isPlaying) break;
+                currentIndex = i;
+                
+                // Highlight current narration box
+                document.querySelectorAll('.narration-box').forEach(box => {
+                    box.style.background = 'rgba(255,255,255,0.1)';
+                });
+                const currentBox = document.querySelector(`[data-line="${audioElements[i].dataset.line}"]`);
+                if (currentBox) {
+                    currentBox.style.background = 'rgba(255,215,0,0.2)';
+                    currentBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                
+                // Play and wait for completion
+                try {
+                    await playAudio(audioElements[i]);
+                } catch (e) {
+                    console.log('Audio playback interrupted');
+                }
+            }
+            
+            // Reset when done
+            if (isPlaying) {
+                playAllBtn.textContent = '▶️ Play Again';
+                isPlaying = false;
+                currentIndex = 0;
+            }
+        }
+
+        function playAudio(audio) {
+            return new Promise((resolve, reject) => {
+                audio.onended = resolve;
+                audio.onerror = reject;
+                audio.play().catch(reject);
+            });
+        }
+
+        playAllBtn.addEventListener('click', playAll);
+        
+        // iPad/Safari autoplay fallback
+        function checkAutoplaySupport() {
+            const testAudio = new Audio();
+            testAudio.play().then(() => {
+                testAudio.pause();
+            }).catch(() => {
+                // Autoplay blocked - show fallback
+                document.getElementById('autoplayFallback').classList.remove('hidden');
+            });
+        }
+        
+        function startAudio() {
+            document.getElementById('autoplayFallback').classList.add('hidden');
+            playAll();
+        }
+        
+        // Virtue tracking (localStorage)
+        const STORAGE_KEYS = {
+            choices: 'sj:choices',
+            progress: 'sj:progress',
+            virtues: 'sj:virtues',
+            session: 'sj:session_id'
+        };
+        
+        function logVirtue(virtue, chapter, scene) {
+            const virtues = JSON.parse(localStorage.getItem(STORAGE_KEYS.virtues) || '[]');
+            virtues.push({
+                virtue,
+                chapter,
+                scene,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem(STORAGE_KEYS.virtues, JSON.stringify(virtues));
+        }
+        
+        function logProgress(chapter, scene) {
+            const progress = JSON.parse(localStorage.getItem(STORAGE_KEYS.progress) || '{}');
+            progress[`ch${chapter}`] = scene;
+            progress.lastVisit = new Date().toISOString();
+            localStorage.setItem(STORAGE_KEYS.progress, JSON.stringify(progress));
+        }
+        
+        // Log this scene visit
+        logProgress({{CHAPTER_NUM}}, {{SCENE_NUM_INT}});
+    </script>
+</body>
+</html>
