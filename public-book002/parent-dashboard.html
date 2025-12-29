@@ -377,6 +377,9 @@
         <button class="action-btn secondary" onclick="alert('Coming soon: Audio-only mode!')">
           Audio Mode
         </button>
+        <button class="action-btn secondary" onclick="resetProgress()" style="background: #dc3545;">
+          🔄 Reset Progress
+        </button>
       </div>
     </div>
     
@@ -390,11 +393,71 @@
     // Load progress from localStorage
     document.addEventListener('DOMContentLoaded', function() {
       const progress = JSON.parse(localStorage.getItem('sj:progress') || '{}');
+      const virtues = JSON.parse(localStorage.getItem('sj:virtues') || '{}');
+      const choices = JSON.parse(localStorage.getItem('sj:choices') || '[]');
+      
       console.log('Loaded progress:', progress);
+      console.log('Loaded virtues:', virtues);
+      console.log('Loaded choices:', choices);
       
       // Update UI based on saved progress
-      // (In production, this would sync with a backend)
+      updateProgressDisplay(progress);
+      updateVirtueDisplay(virtues);
     });
+    
+    function updateProgressDisplay(progress) {
+      // Calculate overall progress
+      const totalScenes = 80;
+      const completedScenes = Object.keys(progress).filter(k => progress[k] === true).length;
+      const percentage = Math.round((completedScenes / totalScenes) * 100);
+      
+      // Update scenes completed metric
+      const scenesMetric = document.querySelector('.metric-value');
+      if (scenesMetric) {
+        // Find the scenes completed row and update it
+        document.querySelectorAll('.metric-row').forEach(row => {
+          if (row.textContent.includes('Scenes Completed')) {
+            row.querySelector('.metric-value').textContent = `${completedScenes} / ${totalScenes}`;
+          }
+        });
+      }
+    }
+    
+    function updateVirtueDisplay(virtues) {
+      // Update virtue badges based on earned virtues
+      const virtueMap = {
+        'courage': '🦁',
+        'kindness': '💝',
+        'curiosity': '🔍',
+        'teamwork': '🤝',
+        'persistence': '🎯',
+        'honesty': '🌟'
+      };
+      
+      document.querySelectorAll('.virtue-badge').forEach(badge => {
+        const name = badge.querySelector('.name').textContent.toLowerCase();
+        if (virtues[name] && virtues[name] > 0) {
+          badge.classList.add('earned');
+          badge.querySelector('.status').textContent = 'Earned!';
+        }
+      });
+    }
+    
+    function resetProgress() {
+      if (confirm('Are you sure you want to reset all progress? This will clear:\n\n• Reading progress\n• Virtue badges\n• All choices made\n• Session data\n\nThis cannot be undone!')) {
+        // Clear all Sir James localStorage keys
+        localStorage.removeItem('sj:progress');
+        localStorage.removeItem('sj:virtues');
+        localStorage.removeItem('sj:choices');
+        localStorage.removeItem('sj:session_id');
+        
+        // Show confirmation
+        alert('✅ Progress has been reset!\n\nSir James can now start a fresh adventure from Chapter 1.');
+        
+        // Reload the page to reflect changes
+        location.reload();
+      }
+    }
   </script>
 </body>
 </html>

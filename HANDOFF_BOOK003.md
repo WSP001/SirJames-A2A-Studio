@@ -301,5 +301,117 @@ Before starting any work:
 
 ---
 
+---
+
+## 🐕 CLAUDE BARK/SFX OPPORTUNITIES
+
+Based on scanning all 10 chapters' narration scripts, here are all scenes where Claude barks, howls, whines, or makes sounds that should trigger SFX:
+
+### SFX Files Available
+```
+/assets/audio/sfx/dog-bark.mp3   - Standard bark
+/assets/audio/sfx/dog-whine.mp3  - Whine/concern
+/assets/audio/sfx/dog-happy.mp3  - Happy sounds
+```
+
+### Chapter-by-Chapter Claude SFX Triggers
+
+| Chapter | Scene | Narration Text | SFX Type |
+|---------|-------|----------------|----------|
+| **Ch1** | Scene 2 | "a familiar bark echoed through the courtyard" | 🔊 bark |
+| **Ch1** | Scene 3 | "Claude barked twice, which Sir James knew meant 'Let's go!'" | 🔊 bark (x2) |
+| **Ch1** | Scene 4 | "Claude whined softly, sensing how important this journey would be" | 🔊 whine |
+| **Ch2** | Scene 1 | "Claude barked excitedly, his tail wagging" | 🔊 bark |
+| **Ch2** | Scene 8 | "Claude barked happily" | 🔊 happy |
+| **Ch3** | Scene 7 | "Claude barked in agreement" | 🔊 bark |
+| **Ch3** | Scene 8 | "Claude wagged his tail happily" | 🔊 happy |
+| **Ch4** | Scene 5 | "Claude howled along in his own special way" | 🔊 howl |
+| **Ch4** | Scene 8 | "Claude barked happily" | 🔊 happy |
+| **Ch6** | Scene 8 | "Claude barked in agreement" | 🔊 bark |
+| **Ch7** | Scene 6 | "Claude barked joyfully and licked Sir James's face" | 🔊 happy |
+| **Ch8** | Scene 3 | "Claude barked encouragingly" | 🔊 bark |
+| **Ch9** | Scene 6 | "Claude howled happily" | 🔊 howl ✅ (already added) |
+| **Ch10** | Scene 6 | "Claude stood beside him and barked once" | 🔊 bark ✅ (already added) |
+
+### Implementation Notes
+- Chapters 9 & 10 Scene 6 already have Claude SFX wired
+- Remaining 12 scenes need SFX integration
+- Consider adding `dog-howl.mp3` for howl moments
+
+---
+
+## 🚀 BOOK003 RECOMMENDATIONS
+
+### 1. Interactive Branching Paths
+Book001 (Emoji version) has interactive choice points where Sir James can take different paths. Book003 should restore these:
+- **Courage vs Wisdom choices** at key moments
+- **Trust decisions** that affect story outcomes
+- Track choices in `sj:choices` localStorage
+
+### 2. Introduce Sparky the Squirrel
+Sparky is a mischievous character mentioned in Book001 but not yet in Book002:
+- **Species:** Red squirrel
+- **Personality:** Energetic, mischievous, helpful
+- **Role:** Comic relief, guides Sir James to hidden paths
+- **Voice:** Could use high-pitched ElevenLabs voice
+
+### 3. Netlify Sites for Deployment
+Existing Netlify deployments to consider:
+- `sirjames-book002-final.netlify.app` - Current Book002 (PRODUCTION)
+- `sirjames-adventures.netlify.app` - Legacy Book001
+- Recommend: `sirjames-book003.netlify.app` for Book003
+
+### 4. Parent Dashboard Enhancements
+- ✅ Reset Progress button (just added)
+- Add: Reading time tracking per session
+- Add: Print-friendly activity sheets
+- Add: Audio-only mode for car rides
+
+### 5. Claude's Thought Bubble System
+From `CONSISTENCY.md`, Claude communicates via thought bubbles:
+```javascript
+claude.showThought('empathy')  // 💓 Heart icon
+claude.showThought('warning')  // ⚠️ Exclamation
+claude.showThought('idea')     // 💡 Lightbulb
+claude.showThought('question') // ❓ Question cloud
+```
+
+### 6. Virtue Tracking System
+localStorage keys for virtue system:
+- `sj:virtues` - Object with virtue counts
+- `sj:choices` - Array of choice records
+- `sj:progress` - Scene completion tracking
+
+### 7. Cost Optimization
+Book002 cost: ~$9.20 total
+- DALL-E images: $6.40 (80 images)
+- ElevenLabs TTS: $1.50
+- GPT-4 prompts: $0.30
+- Suno music: $1.00
+
+For Book003, consider:
+- Reuse Book002 images where scenes are similar
+- Batch TTS generation to reduce API calls
+- Use cached prompts from `assets/prompts/`
+
+### 8. Missing Features to Add
+- [ ] Sparky the Squirrel character
+- [ ] Interactive choice points (from Book001)
+- [ ] Claude thought bubble animations
+- [ ] Virtue-based story branching
+- [ ] Achievement badges for completing chapters
+- [ ] Audio-only mode for accessibility
+
+---
+
+## 📚 EMOJI VERSION SOURCE FILES
+
+For Book003, the original emoji scripts are in:
+- `SourceEmoji/chapter1.html` through `chapter10.html`
+- These contain the interactive choice points missing from Book002
+- Use `html_to_emoji_md.py` to convert to Markdown format
+
+---
+
 **Last Updated:** December 29, 2025
 **Author:** Cascade AI Assistant
