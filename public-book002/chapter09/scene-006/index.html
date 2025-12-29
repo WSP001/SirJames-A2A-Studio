@@ -158,13 +158,15 @@
             <audio data-line="002" preload="auto" src="../audio/009-06-02.mp3"></audio>
         </div>
 
-        <!-- Line 003: Narrator -->
+        <!-- Line 003: Narrator + Claude Howl SFX -->
         <div class="narration-box" data-line="003">
             <div class="narration-text">
                 <span class="character-name" style="color: #ffd700;">📖 Narrator:</span>
                 Claude howled happily, and the whole amphitheater filled with the sound of celebration.
+                <span style="color: #8B4513;">🐕 *happy howl!*</span>
             </div>
             <audio data-line="003" preload="auto" src="../audio/009-06-03.mp3"></audio>
+            <audio id="claudeHowl" preload="auto" src="../audio/dog-bark.mp3"></audio>
         </div>
 
         <!-- Play All Button -->
@@ -250,6 +252,15 @@
         document.addEventListener('touchstart', function() {
             audioElements.forEach(a => a.load());
         }, { once: true });
+
+        // Play Claude's howl SFX when line 003 starts
+        const claudeHowl = document.getElementById('claudeHowl');
+        const line003Audio = document.querySelector('audio[data-line="003"]');
+        if (line003Audio && claudeHowl) {
+            line003Audio.addEventListener('play', () => {
+                setTimeout(() => claudeHowl.play().catch(e => console.log('Howl SFX:', e)), 1500);
+            });
+        }
     </script>
 </body>
 </html>

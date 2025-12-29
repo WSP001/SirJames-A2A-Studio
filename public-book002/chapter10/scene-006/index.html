@@ -158,13 +158,15 @@
             <audio data-line="002" preload="auto" src="../audio/010-06-02.mp3"></audio>
         </div>
 
-        <!-- Line 003: Narrator -->
+        <!-- Line 003: Narrator + Claude Bark SFX -->
         <div class="narration-box" data-line="003">
             <div class="narration-text">
                 <span class="character-name" style="color: #ffd700;">📖 Narrator:</span>
                 Claude stood beside him and barked once, as if making the same promise. They were a team, now and forever.
+                <span style="color: #8B4513;">🐕 *woof!*</span>
             </div>
             <audio data-line="003" preload="auto" src="../audio/010-06-03.mp3"></audio>
+            <audio id="claudeBark" preload="auto" src="../audio/dog-bark.mp3"></audio>
         </div>
 
         <!-- Play All Button -->
@@ -250,6 +252,15 @@
         document.addEventListener('touchstart', function() {
             audioElements.forEach(a => a.load());
         }, { once: true });
+
+        // Play Claude's bark SFX when line 003 starts
+        const claudeBark = document.getElementById('claudeBark');
+        const line003Audio = document.querySelector('audio[data-line="003"]');
+        if (line003Audio && claudeBark) {
+            line003Audio.addEventListener('play', () => {
+                setTimeout(() => claudeBark.play().catch(e => console.log('Bark SFX:', e)), 2000);
+            });
+        }
     </script>
 </body>
 </html>
