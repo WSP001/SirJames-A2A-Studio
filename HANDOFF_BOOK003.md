@@ -413,5 +413,160 @@ For Book003, the original emoji scripts are in:
 
 ---
 
+## 🌐 NETLIFY SITES ANALYSIS
+
+### Existing Sir James Sites
+
+| Site Name | URL | Status | Purpose |
+|-----------|-----|--------|---------|
+| `sirjames-book002-final` | https://sirjames-book002-final.netlify.app | ✅ PRODUCTION | Book002 Image/Audio (CURRENT) |
+| `sirjames-book003` | https://sirjames-book003.netlify.app | 🆕 RESERVED | Book003 Interactive (NEXT) |
+| `sirjames-book002` | https://sirjames-book002.netlify.app | ⚠️ Legacy | Previous Book002 attempt |
+| `sirjamesadventures-book002` | https://sirjamesadventures-book002.netlify.app | ⚠️ Legacy | Previous attempt |
+| `sir-james-adventuers001` | https://sir-james-adventuers001.netlify.app | 📚 Book001 | Emoji version |
+| `sirjamesadventure2024` | https://sirjamesadventure2024.netlify.app | ⚠️ Legacy | Old version |
+| `sirjamesadventuers` | https://sirjamesadventuers.netlify.app | ⚠️ Legacy | Old version |
+
+### Recommended Site for Book003
+
+**USE:** `sirjames-book003.netlify.app` (already reserved!)
+
+The next programming team should:
+1. Link this site to the `WSP001/SirJamesAdventures003` GitHub repo
+2. Set up auto-deploy from `main` branch
+3. Add environment variables (API keys)
+
+---
+
+## 🔒 WEBSITE PROTECTION STRATEGIES
+
+To prevent future programmers from breaking the working Book002 site:
+
+### 1. Branch Protection (GitHub)
+```bash
+# In GitHub repo settings:
+Settings → Branches → Add rule
+- Branch name pattern: main
+- Require pull request reviews before merging
+- Require status checks to pass
+- Do not allow force pushes
+```
+
+### 2. Netlify Deploy Lock
+```bash
+# Lock production deploys (only owner can unlock)
+netlify deploy:lock
+```
+
+### 3. Create Stable Tag
+```bash
+git tag -a book002-stable-v1.0 -m "Book002 production stable - DO NOT MODIFY"
+git push origin book002-stable-v1.0
+```
+
+### 4. Netlify Deploy Contexts
+In `netlify.toml`:
+```toml
+[context.production]
+  command = "echo 'Production locked - use staging for testing'"
+  
+[context.branch-deploy]
+  command = "echo 'Branch deploy allowed'"
+```
+
+### 5. Read-Only Mode (Recommended)
+- Archive the `SirJames-A2A-Studio` repo after Book002 is complete
+- Create new repo `SirJamesAdventures003` for Book003 work
+- Keep Book002 site pointing to archived repo
+
+---
+
+## 📦 BOOK003 PRELIMINARY SETUP
+
+### Files Already Available
+
+The next programming team has a head start with these existing files:
+
+**From Book002 (reusable):**
+- `public-book002/assets/audio/sfx/` - Dog bark, whine, happy SFX
+- `public-book002/assets/audio/sir-james-adventures-theme.mp3` - Theme music
+- `CONSISTENCY.md` - Character bible (Sir James, Claude specs)
+- `content/voices.json` - ElevenLabs voice IDs
+- `scripts/` - Image/audio generation scripts
+
+**From SirJamesAdventures003 repo:**
+- `public-book003/chapter1/index_emoji_script.html` - Emoji source
+- `content/voices.book003.json` - Voice configuration
+
+### Recommended File Structure for Book003
+```
+SirJamesAdventures003/
+├── public-book003/
+│   ├── index.html              # Landing page
+│   ├── parent-dashboard.html   # Parent dashboard
+│   ├── chapter01/
+│   │   ├── scene-001/
+│   │   │   ├── index.html      # Scene with choices
+│   │   │   └── choice-a.html   # Branching path A
+│   │   │   └── choice-b.html   # Branching path B
+│   │   └── images/
+│   │   └── audio/
+│   └── assets/
+│       ├── css/scene-engine.css
+│       ├── js/scene-engine.js
+│       └── audio/sfx/
+├── content/
+│   ├── voices.book003.json
+│   └── chapters/
+│       └── chapter01.json      # Scene definitions with choices
+├── scripts/
+│   ├── generate-scene.mjs
+│   └── wire-choices.js
+├── CONSISTENCY.md              # Copy from Book002
+├── netlify.toml
+└── README.md
+```
+
+### API Keys Needed
+```
+OPENAI_API_KEY=sk-...          # DALL-E 3 images
+ELEVENLABS_API_KEY=sk_...      # Voice generation
+SUNO_API_KEY=...               # Music (optional)
+```
+
+### Quick Start Commands
+```bash
+# Clone Book003 repo
+git clone https://github.com/WSP001/SirJamesAdventures003.git
+cd SirJamesAdventures003
+
+# Install dependencies
+npm install
+
+# Copy character consistency from Book002
+cp ../SirJames-A2A-Studio/CONSISTENCY.md .
+
+# Link to Netlify site
+netlify link --name sirjames-book003
+
+# Start local dev
+netlify dev
+```
+
+---
+
+## 🎵 THE BEST ADVENTURE IS YOU AND ME
+
+*"A little seed grows, and did I tell you,*
+*The best adventures are for you and me.*
+*If a challenge comes our way,*
+*We should listen to what our friends say.*
+*Growing stronger every day.*
+*Oh, Sir James is on a quest,*
+*Putting friendship... Hooray!*
+*Here we go—the best adventure is you and me!"*
+
+---
+
 **Last Updated:** December 29, 2025
 **Author:** Cascade AI Assistant
