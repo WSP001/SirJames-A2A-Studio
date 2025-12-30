@@ -340,6 +340,82 @@ Based on scanning all 10 chapters' narration scripts, here are all scenes where 
 
 ---
 
+## 🎨 DALL-E IMAGE PROMPT TEMPLATE
+
+This is the **authoritative prompt structure** for generating consistent Sir James images via DALL-E 3 API.
+
+### Character Consistency Bible
+
+```javascript
+// SIR JAMES - 5-YEAR-OLD BOY KNIGHT
+const SIR_JAMES_PROMPT = `Sir James: a tiny 5-year-old boy knight with:
+- BRIGHT BLUE EYES (CRITICAL - must be vivid blue, NOT green or brown)
+- Sandy brown messy hair with a slight cowlick on top
+- Rosy pink cheeks with an innocent sweet smile
+- Very small child proportions (kindergarten age, about 3.5 feet tall)
+- Royal blue medieval tunic with silver Celtic knotwork trim
+- Brown leather belt with a small pouch
+- Brown leather boots
+- Carrying a small wooden practice sword
+- Expression: curious, brave, innocent`;
+
+// CLAUDE THE DOG - REDBONE COONHOUND
+const CLAUDE_PROMPT = `Claude the dog: a loyal Redbone Coonhound with:
+- Rich reddish-brown coat (NOT dark brown or black)
+- Long floppy ears that hang past his chin
+- Soulful amber-brown eyes with intelligence
+- Royal blue collar with a silver heart-shaped tag
+- Proud but friendly posture
+- Standing protectively near Sir James`;
+
+// STYLE DIRECTIVE
+const STYLE_PROMPT = `Disney Pixar 3D animation style, photorealistic CGI rendering, 
+4K ultra-detailed, warm golden hour cinematic lighting, magical fantasy atmosphere, 
+child-friendly, professional quality matching theatrical animation standards`;
+```
+
+### Full Prompt Structure
+
+```javascript
+const fullPrompt = `${STYLE_PROMPT}
+
+SCENE: [Describe the setting - location, time of day, atmosphere]
+
+CHARACTERS:
+${SIR_JAMES_PROMPT}
+${CLAUDE_PROMPT}
+
+ACTION: [What are the characters doing? Their poses, expressions, interactions]
+
+ATMOSPHERE: [Mood, lighting details, magical elements]
+
+CRITICAL: The boy MUST look like a TINY 5-YEAR-OLD (kindergarten age) with BRIGHT BLUE EYES. 
+NOT a teenager, NOT a young adult. Very small child proportions.`;
+```
+
+### API Call Parameters
+
+```javascript
+const response = await openai.images.generate({
+  model: 'dall-e-3',
+  prompt: fullPrompt,
+  n: 1,
+  size: '1792x1024',  // Landscape for scene images
+  quality: 'hd',
+  style: 'vivid'
+});
+```
+
+### Cost Tracking
+- **Per image:** $0.04 (DALL-E 3 HD 1792x1024)
+- **Per chapter:** ~$0.32 (8 scenes)
+- **Full book:** ~$3.20 (10 chapters × 8 scenes)
+
+### Script Location
+See `scripts/fix-all-inconsistent-images.js` for working implementation.
+
+---
+
 ## 🚀 BOOK003 RECOMMENDATIONS
 
 ### 1. Interactive Branching Paths
