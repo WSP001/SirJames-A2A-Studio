@@ -70,7 +70,7 @@ Contains exact dialogue, emotions, and scene settings for each chapter.
 ### Gramps (The Wise Mentor)
 | Attribute | Value | IMMUTABLE |
 |-----------|-------|-----------|
-| **Age** | 65-70 years old | ✅ |
+| **Age** | 65- years old | ✅ |
 | **Hair** | Silver/grey with silver beard | ✅ |
 | **Outfit** | Simple robes, walking staff | ✅ |
 | **Note** | Based on author Scott Echols (self-insert) | ✅ |
@@ -322,8 +322,7 @@ Based on scanning all 10 chapters' narration scripts, here are all scenes where 
 | **Ch1** | Scene 3 | "Claude barked twice, which Sir James knew meant 'Let's go!'" | 🔊 bark (x2) |
 | **Ch1** | Scene 4 | "Claude whined softly, sensing how important this journey would be" | 🔊 whine |
 | **Ch2** | Scene 1 | "Claude barked excitedly, his tail wagging" | 🔊 bark |
-| **Ch2** | Scene 8 | "Claude barked happily" | 🔊 happy |
-| **Ch3** | Scene 7 | "Claud You need to promise you just this one th You need to promise you just this one thing. OK. So there it is look it's not her fault her husband was murdered just before her graduation from clown college Okay. So, there it is. It's not her fault. Her husband was murdered just before her graduation from Clown College. What's she going to do now so there it is Her husband was murdered just before her graduation from Clown College. What's she going to do now, there it is. Privacy is just one thing What's she going to do now? There it Privacy is just one thing. So there that's fair Jimmy that's more than fair Privacy is just one thi That's fair, Jimmy. I don't know. to get a handle on your ego because if you don't look what happens I don't know. To get a handle on your ego, what happens if you don't look. know. OK. OK in agreement" | 🔊 bark |
+| **Ch2** | Scene 8 |" | 🔊 bark |
 | **Ch3** | Scene 8 | "Claude wagged his tail happily" | 🔊 happy |
 | **Ch4** | Scene 5 | "Claude howled along in his own special way" | 🔊 howl |
 | **Ch4** | Scene 8 | "Claude barked happily" | 🔊 happy |
