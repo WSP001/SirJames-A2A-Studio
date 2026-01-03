@@ -1,0 +1,655 @@
+{
+  "$schema": "scene_manifest_v1.0",
+  "description": "Sir James Book003 - Chapters 6-10 Scene Cards for Parents Dashboard",
+  "created": "2026-01-02",
+  "architecture": "U2A + A2A + D2A",
+  
+  "scene_card_schema": {
+    "story_fields": {
+      "chapter": "number",
+      "scene": "number",
+      "scene_title": "string",
+      "setting": "string",
+      "characters": ["string"]
+    },
+    "literacy_fields": {
+      "reading_level_band": "Emergent | Early | Developing | Bridge-to-Fluency | Consolidation",
+      "focus_skill": "string",
+      "target_words": ["string"],
+      "spelling_task_type": "none | trace | choose-letters | fill-missing | free-try"
+    },
+    "interaction_metrics": {
+      "word_recognition": { "attempts": 0, "correct_first_try": 0, "hints_used": 0 },
+      "spelling_attempts": { "per_word": {}, "keyboard_used": false },
+      "auto_read_vs_self_read_ratio": 0.0,
+      "dashboard_actions": []
+    }
+  },
+
+  "chapters": {
+    "6": {
+      "title": "River of Choices",
+      "theme": "Word Families & Direction Words",
+      "reading_level": "Early → Developing",
+      "virtue_focus": "wisdom",
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 6,
+            "scene": 1,
+            "scene_title": "Fork in the River",
+            "setting": "A river splits into three shimmering channels, each labeled with a glowing word",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Early → Developing",
+            "focus_skill": "CVC word families (-at, -og), direction words",
+            "target_words": ["cat", "bat", "hat", "log", "fog", "dog", "up", "down"],
+            "spelling_task_type": "choose-letters"
+          },
+          "interaction_type": "tap-to-match",
+          "narrator_prompt": "Find the word 'dog' to follow the safe path",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll try reading the sign!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Can you help me, Claude?", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 6,
+            "scene": 2,
+            "scene_title": "Rock-Step Word Hops",
+            "setting": "Stepping stones across a shallow branch of the river, each showing a CVC word",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Early → Developing",
+            "focus_skill": "CVC decoding with varied vowels",
+            "target_words": ["map", "mop", "cap", "cup", "dip", "hop"],
+            "spelling_task_type": "choose-letters"
+          },
+          "interaction_type": "step-selection",
+          "narrator_prompt": "Choose the stone with 'hop' to jump safely",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I can do this carefully!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "One step at a time", "virtue": "perseverance", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 6,
+            "scene": 3,
+            "scene_title": "Sparky's Word Raft",
+            "setting": "Sparky builds a little raft, but each plank only locks in if Sir James matches rhyming words",
+            "characters": ["Sir James", "Sparky"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Early → Developing",
+            "focus_skill": "Rhyme matching, sight words",
+            "target_words": ["hat", "cat", "log", "frog", "ship", "dip", "go", "in", "on"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "drag-and-drop-rhyme",
+          "narrator_prompt": "Match the rhyming words to build the raft",
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let's work together, Sparky!", "virtue": "kindness", "points": 1 },
+            "choice_b": { "text": "I'll figure out the pattern", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 6,
+            "scene": 4,
+            "scene_title": "Calm Cove Reading Rest",
+            "setting": "A quiet cove where Gramps opens a short three-sentence captioned picture",
+            "characters": ["Sir James", "Gramps", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Early → Developing",
+            "focus_skill": "Simple sentence reading",
+            "target_words": ["The", "dog", "is", "in", "the", "boat", "We", "go", "up", "river"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "read-along-tap",
+          "narrator_prompt": "Read along: 'The dog is in the boat. We go up the river.'",
+          "parent_dashboard_action": "Encourage Self-Reading toggle",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll try reading it myself!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Read it to me first", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 6,
+            "scene": 5,
+            "scene_title": "Choice Ledger & Foreshadowing Rapids",
+            "setting": "A glowing water ledger shows which words guided them safely; far downstream, faint rapids foreshadow tougher decisions",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Early → Developing",
+            "focus_skill": "Review and preview",
+            "target_words": ["wave", "rock", "fast", "dog", "hat", "go"],
+            "spelling_task_type": "fill-missing"
+          },
+          "interaction_type": "mini-quiz",
+          "narrator_prompt": "Pick the spoken word from three options",
+          "foreshadow": {
+            "hint": "The rapids ahead will need even more reading skills",
+            "preview_words": ["wave", "rock", "fast"],
+            "next_chapter_skill": "consonant blends"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'm ready for the rapids!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Let's practice more first", "virtue": "wisdom", "points": 1 }
+          }
+        }
+      ]
+    },
+    
+    "7": {
+      "title": "Echo Mountain",
+      "theme": "Repetition, Blends, and Simple Spelling",
+      "reading_level": "Developing",
+      "virtue_focus": "courage",
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 7,
+            "scene": 1,
+            "scene_title": "Base Camp Echo Call",
+            "setting": "At the foot of Echo Mountain, Sir James calls out and hears the mountain echo back",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing",
+            "focus_skill": "Consonant blends (cl-, br-, st-, tr-)",
+            "target_words": ["clap", "brick", "stop", "tree"],
+            "spelling_task_type": "choose-letters"
+          },
+          "interaction_type": "echo-tap",
+          "narrator_prompt": "Tap words to send them into the echo",
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let me try a new word!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "I'll listen to Claude's echo first", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 7,
+            "scene": 2,
+            "scene_title": "Signposts in the Mist",
+            "setting": "Foggy signposts appear with blended words; only the correct one leads up a safe path",
+            "characters": ["Sir James", "Claude", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing",
+            "focus_skill": "Blend word recognition",
+            "target_words": ["cliff", "cloud", "step", "trail", "stone"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "multiple-choice",
+          "narrator_prompt": "Follow the 'trail' - find the right sign",
+          "parent_dashboard_action": "Show first two letters support toggle",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I can read it without help!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Show me the first letters", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 7,
+            "scene": 3,
+            "scene_title": "Echo Spelling Caves",
+            "setting": "Small caves repeat any word Sir James spells on glowing stones",
+            "characters": ["Sir James", "Sparky"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing",
+            "focus_skill": "Spelling with blends",
+            "target_words": ["clap", "stop", "trip", "rock"],
+            "spelling_task_type": "free-try"
+          },
+          "interaction_type": "letter-tiles",
+          "narrator_prompt": "Spell the word you hear using the letter tiles",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll spell it myself!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Can Sparky help me?", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 7,
+            "scene": 4,
+            "scene_title": "Gramps' Story Fire",
+            "setting": "At a mountain ledge campfire, Gramps tells a short story with repeated blend words",
+            "characters": ["Sir James", "Gramps", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing",
+            "focus_skill": "Repetition for fluency, emotional vocabulary",
+            "target_words": ["brave", "clap", "stop", "trail", "stone"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "tap-highlight",
+          "narrator_prompt": "Tap highlighted words to hear them again",
+          "parent_chat_feature": "Family echo word - parent types a word to appear in narration",
+          "virtue_opportunity": {
+            "choice_a": { "text": "Tell me more about being brave!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Can I add my own word?", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 7,
+            "scene": 5,
+            "scene_title": "Summit Echo & Future Voices",
+            "setting": "At the summit, an enormous echo returns short phrases, hinting at sentence reading ahead",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing",
+            "focus_skill": "Short phrase reading",
+            "target_words": ["Be brave", "Stay kind", "Check again"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "phrase-choice",
+          "narrator_prompt": "Choose which phrase to shout - the echo will repeat it!",
+          "foreshadow": {
+            "hint": "Soon you'll read whole sentences in the City of Many Doors",
+            "preview_skill": "functional reading, sentence comprehension",
+            "next_chapter_theme": "City navigation with labels"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Be brave!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Stay kind!", "virtue": "kindness", "points": 1 },
+            "choice_c": { "text": "Check again!", "virtue": "wisdom", "points": 1 }
+          }
+        }
+      ]
+    },
+    
+    "8": {
+      "title": "City of Many Doors",
+      "theme": "Functional Reading & Simple Sentences",
+      "reading_level": "Developing → Bridge",
+      "virtue_focus": "wisdom",
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 8,
+            "scene": 1,
+            "scene_title": "Gatehouse Signs",
+            "setting": "At the city gate, multiple doors are labeled with simple words and arrows",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing → Bridge",
+            "focus_skill": "Functional direction words",
+            "target_words": ["open", "shut", "in", "out", "left", "right"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "tap-the-label",
+          "narrator_prompt": "Find the door labeled 'left'",
+          "parent_dashboard_action": "Reading mode - labels hide until tapped",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I can read without pictures!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Show me the pictures first", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 8,
+            "scene": 2,
+            "scene_title": "Street Crossing Sentences",
+            "setting": "Busy streets have floating sentence strips like 'Stop. Look. Go.' that control magical traffic",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing → Bridge",
+            "focus_skill": "Short sentence sequences with periods",
+            "target_words": ["Stop", "Look", "Go", "Wait"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "sentence-order",
+          "narrator_prompt": "Put the sentences in the right order: Stop. Look. Go.",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I know the safe order!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Let's figure it out together", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 8,
+            "scene": 3,
+            "scene_title": "Claude's Delivery Route",
+            "setting": "Claude carries message scrolls with one-line instructions to different doors",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing → Bridge",
+            "focus_skill": "Sentence comprehension with direction words",
+            "target_words": ["Go", "up", "down", "in", "out", "left", "right", "stairs"],
+            "spelling_task_type": "choose-letters"
+          },
+          "interaction_type": "sentence-to-picture-match",
+          "narrator_prompt": "Match 'Go up the stairs' to the right picture",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll help Claude deliver!", "virtue": "kindness", "points": 1 },
+            "choice_b": { "text": "Let me read the directions", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 8,
+            "scene": 4,
+            "scene_title": "Sparky's Shortcut Posters",
+            "setting": "Sparky keeps spotting shortcuts labelled with persuasive posters",
+            "characters": ["Sir James", "Sparky"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing → Bridge",
+            "focus_skill": "Adjectives and contrast words",
+            "target_words": ["safe", "fast", "slow", "bumpy"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "choice-with-reading",
+          "narrator_prompt": "Which path? 'Safe and Slow' or 'Fast but Bumpy'?",
+          "virtue_opportunity": {
+            "choice_a": { "text": "Safe and Slow", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Fast but Bumpy", "virtue": "courage", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 8,
+            "scene": 5,
+            "scene_title": "City Map & Reading Passport",
+            "setting": "At a rooftop lookout, a map shows all the doors and paths they used",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Developing → Bridge",
+            "focus_skill": "Review of functional words, preview adjectives",
+            "target_words": ["open", "shut", "in", "out", "left", "right", "safe", "fast", "quiet", "noisy"],
+            "spelling_task_type": "fill-missing"
+          },
+          "interaction_type": "passport-summary",
+          "narrator_prompt": "Your reading passport shows all the words you've mastered!",
+          "parent_dashboard_display": "Reading passport card with words mastered, sentences navigated",
+          "foreshadow": {
+            "hint": "Next: descriptive words in the Star Orchard",
+            "preview_words": ["quiet", "noisy", "bright", "soft"],
+            "recommendation": "Introduce 2-3 new adjectives"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I learned so many words!", "virtue": "perseverance", "points": 1 },
+            "choice_b": { "text": "What's next on our adventure?", "virtue": "courage", "points": 1 }
+          }
+        }
+      ]
+    },
+    
+    "9": {
+      "title": "Star Orchard",
+      "theme": "Descriptive Words & Longer Sentences",
+      "reading_level": "Bridge-to-Fluency",
+      "virtue_focus": "kindness",
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 9,
+            "scene": 1,
+            "scene_title": "Choosing a Star-Tree",
+            "setting": "An orchard where stars hang like fruit, each tree has a description plaque",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Bridge-to-Fluency",
+            "focus_skill": "Adjective recognition",
+            "target_words": ["bright", "soft", "tall", "small", "quiet", "busy"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "description-match",
+          "narrator_prompt": "Find the tall, quiet tree",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll find the prettiest one!", "virtue": "kindness", "points": 1 },
+            "choice_b": { "text": "Let me read each plaque carefully", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 9,
+            "scene": 2,
+            "scene_title": "Tasting Notes with Gramps",
+            "setting": "Gramps models describing star-fruit with two-adjective sentences",
+            "characters": ["Sir James", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Bridge-to-Fluency",
+            "focus_skill": "Two-clause sentences with 'and'",
+            "target_words": ["sweet", "soft", "bright", "cold", "warm", "and"],
+            "spelling_task_type": "fill-missing"
+          },
+          "interaction_type": "cloze-adjective",
+          "narrator_prompt": "Fill in: 'It is ___ and soft.'",
+          "parent_dashboard_action": "Optional spelling try toggle",
+          "virtue_opportunity": {
+            "choice_a": { "text": "It is sweet and soft!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Can I taste it first?", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 9,
+            "scene": 3,
+            "scene_title": "Claude's Preference Cards",
+            "setting": "Claude's thought bubbles show short written sentences about preferences",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Bridge-to-Fluency",
+            "focus_skill": "First-person sentences, negation",
+            "target_words": ["I", "like", "do", "not", "the", "bright", "soft", "fruit"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "sentence-builder",
+          "narrator_prompt": "Help Claude say: 'I like the bright fruit' or 'I do not like...'",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I like the bright fruit!", "virtue": "kindness", "points": 1 },
+            "choice_b": { "text": "I do not like the cold fruit", "virtue": "honesty", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 9,
+            "scene": 4,
+            "scene_title": "Sparky's Star Sorting Game",
+            "setting": "Sparky runs around sorting fallen stars into baskets labeled with descriptive words",
+            "characters": ["Sir James", "Sparky"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Bridge-to-Fluency",
+            "focus_skill": "Word-only vs picture+word labels",
+            "target_words": ["hot", "cold", "heavy", "light"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "drag-to-basket",
+          "narrator_prompt": "Sort the stars into the right baskets",
+          "parent_dashboard_action": "Show Words Only challenge toggle",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I can read without pictures!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Show me the pictures too", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 9,
+            "scene": 5,
+            "scene_title": "Night-Sky Poem & Future Constellations",
+            "setting": "At night, tiny text constellations form simple two-line poems",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Bridge-to-Fluency",
+            "focus_skill": "Short text composition",
+            "target_words": ["sky", "bright", "soft", "kind", "brave"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "word-choice-poem",
+          "narrator_prompt": "Choose words for the constellation poem",
+          "parent_dashboard_display": "Word cloud of adjectives child chose",
+          "foreshadow": {
+            "hint": "These words will shape your next adventures",
+            "personalization": "A2A agents use chosen words to color future scenes",
+            "next_book_seed": "If child favored 'bright, brave' → sky-quests; if 'quiet, soft' → gentle scenes"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "The sky is bright and brave!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "The sky is soft and kind!", "virtue": "kindness", "points": 1 }
+          }
+        }
+      ]
+    },
+    
+    "10": {
+      "title": "Homecoming Circle",
+      "theme": "Review, Reflection & Transfer",
+      "reading_level": "Consolidation",
+      "virtue_focus": "all",
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 10,
+            "scene": 1,
+            "scene_title": "Path of Remembering Signs",
+            "setting": "On the way back to the cottage, the path is lined with signs from each earlier place",
+            "characters": ["Sir James", "Claude"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Consolidation",
+            "focus_skill": "Mixed review of all word types",
+            "target_words": ["go", "stop", "up", "down", "brave", "kind", "bright"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "tap-match-review",
+          "narrator_prompt": "Tap the sign that matches what you hear",
+          "parent_dashboard_display": "Color-coded heatmap: auto-recognized vs hesitated words",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I remember all these words!", "virtue": "perseverance", "points": 1 },
+            "choice_b": { "text": "Let me try each one", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 10,
+            "scene": 2,
+            "scene_title": "Campfire Word Stories",
+            "setting": "Around the home campfire, each character holds a card with words that mattered to them",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Consolidation",
+            "focus_skill": "Emotion and virtue words, connectors",
+            "target_words": ["trust", "fun", "brave", "kind", "because", "and"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "sentence-completion",
+          "narrator_prompt": "Finish: 'I was brave because...'",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I was brave because I tried!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "I was kind because I helped!", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 10,
+            "scene": 3,
+            "scene_title": "Home Desk Spelling Try",
+            "setting": "At Sir James's little desk, a friendly quill offers a playful spelling challenge",
+            "characters": ["Sir James"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Consolidation",
+            "focus_skill": "Spelling assessment - words almost mastered",
+            "target_words": ["dynamically selected from weak areas"],
+            "spelling_task_type": "free-try"
+          },
+          "interaction_type": "letter-tiles-assessment",
+          "narrator_prompt": "Spell your favorite words from the adventure",
+          "parent_dashboard_display": "Spelling profile: CVC solid, blends emerging, sight words memorized",
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll try the hard ones!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "I'll start with ones I know", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 10,
+            "scene": 4,
+            "scene_title": "Parents' Circle View",
+            "setting": "Grown-ups in Sir James's village gather to hear about his adventures - mirrors the Parents Dashboard",
+            "characters": ["Sir James", "Gramps", "Village Adults"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Consolidation",
+            "focus_skill": "No new literacy - summary and celebration",
+            "target_words": [],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "story-summary-display",
+          "narrator_prompt": "You found many brave words! The grown-ups are proud!",
+          "parent_dashboard_display": "Chapter-by-chapter strip with aggregated metrics per scene",
+          "virtue_summary": {
+            "display": "Total virtue points earned",
+            "knighthood_update": "Check for level advancement",
+            "achievements": "Badges earned this book"
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 10,
+            "scene": 5,
+            "scene_title": "Window to the Next Book",
+            "setting": "Sir James looks into the Room of Many Windows, seeing hints of new lands shaped by words he favored",
+            "characters": ["Sir James", "Claude", "Gramps"]
+          },
+          "literacy_fields": {
+            "reading_level_band": "Consolidation",
+            "focus_skill": "Preview and personalization seed",
+            "target_words": ["dynamically seeded from child's favorites"],
+            "spelling_task_type": "none"
+          },
+          "interaction_type": "future-choice",
+          "narrator_prompt": "What kind of place should we visit next?",
+          "foreshadow": {
+            "type": "personalization_seed",
+            "logic": "If child loved 'cloud, bright, brave' → sky-quests in Book004; if 'quiet, soft, kind' → softer scenes",
+            "stored_flag": "book003_preferences_for_book004"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "A place with mountains and stars!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "A place with friends and gardens!", "virtue": "kindness", "points": 1 },
+            "choice_c": { "text": "A place with puzzles and secrets!", "virtue": "wisdom", "points": 1 }
+          },
+          "closing": "For the Commons Good! 🏰⚔️🐕✨"
+        }
+      ]
+    }
+  },
+
+  "dashboard_aggregations": {
+    "chapter_summary_card": {
+      "fields": ["chapter", "title", "theme", "scenes_completed", "virtue_points_earned", "reading_level_progress"],
+      "visualization": "strip-card per chapter"
+    },
+    "word_mastery_heatmap": {
+      "categories": ["CVC", "blends", "sight_words", "adjectives", "sentences"],
+      "colors": { "mastered": "#22c55e", "developing": "#eab308", "needs_practice": "#ef4444" }
+    },
+    "knighthood_progress": {
+      "levels": ["Page", "Squire", "Knight", "Champion", "Legend"],
+      "thresholds": [0, 100, 300, 600, 1000]
+    }
+  }
+}

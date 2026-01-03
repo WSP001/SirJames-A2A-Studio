@@ -1,0 +1,989 @@
+{
+  "$schema": "scene_manifest_v1.0",
+  "description": "Sir James Book003 - Chapters 1-5 Scene Cards for Parents Dashboard (Baseline → Skills)",
+  "created": "2026-01-02",
+  "architecture": "U2A + A2A + D2A",
+  "book_structure": {
+    "chapters_1_5": "Foundation Skills (Baseline, Patterns, Teamwork, Communication, Transfer)",
+    "chapters_6_10": "Literacy Skills (Word Families, Blends, Sentences, Adjectives, Review)"
+  },
+
+  "opening": {
+    "title": "Sir James as Our Test Pilot",
+    "setting": "The Room of Many Windows - a round stone hall where glowing windows represent parent dashboard screens",
+    "narrative": "Sir James stands in a round stone hall called the Room of Many Windows, where each glowing window secretly represents a parent's dashboard screen in our world. Gramps explains that every time a grown-up taps a button, types in the chat box, or changes a slider, the windows shimmer and new adventures appear for Sir James, Claude, and Sparky to test.",
+    "meta_purpose": "Sir James is the first explorer of the Parents' Control Tower, testing each challenge so the Story Guides (A2A producer and director agents) can watch signals, adjust difficulty, and save what works into the Book of Measurements.",
+    "characters": ["Sir James", "Gramps", "Claude", "Sparky"]
+  },
+
+  "chapters": {
+    "1": {
+      "title": "Whispering Woods",
+      "theme": "Baseline & Safety",
+      "focus_area": "survival-sense",
+      "virtue_focus": "courage",
+      "learning_goals": ["listening", "safety awareness", "emotional regulation", "asking for help"],
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 1,
+            "scene": 1,
+            "scene_title": "Cottage Morning, Choosing the Path",
+            "setting": "Little cottage on the edge of Whispering Woods, morning light, door to adventure",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Sir James wakes in the little cottage on the edge of Whispering Woods, excited and a tiny bit nervous about his first 'official' quest, while Claude and Sparky bounce at the door.",
+          "child_challenge": {
+            "type": "decision-tree",
+            "prompt": "Choose between a sunny path and a shadowy shortcut",
+            "options": {
+              "sunny_path": { "label": "Sunny Path", "virtue": "wisdom", "safety_signal": "cautious" },
+              "shadowy_shortcut": { "label": "Shadowy Shortcut", "virtue": "courage", "safety_signal": "adventurous" }
+            }
+          },
+          "parent_dashboard": {
+            "buttons": [
+              { "id": "focus_listening", "label": "Focus on Listening", "tag": "learning_focus" },
+              { "id": "focus_observation", "label": "Focus on Observation", "tag": "learning_focus" },
+              { "id": "just_fun", "label": "Just for Fun Today", "tag": "learning_focus" }
+            ],
+            "display": "Session learning focus selector",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_signal": "learning_focus_tag",
+            "director_note": "baseline_safety_preference",
+            "measurement": "survival-sense: Does child tend to rush, pause, or seek help?"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let's take the safe sunny path!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "I'm brave enough for the shortcut!", "virtue": "courage", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 1,
+            "scene": 2,
+            "scene_title": "Edge of the Woods, First Whisper Challenge",
+            "setting": "Forest edge where trees whisper soft clues about the safest way",
+            "characters": ["Sir James", "Claude"]
+          },
+          "narrative_beat": "At the forest edge, the trees begin to 'whisper' soft clues about which way is safest, but they only make sense if Sir James slows down and listens carefully.",
+          "child_challenge": {
+            "type": "listening-challenge",
+            "prompt": "Listen to the forest whispers and choose which clue to follow",
+            "skill_measured": "attention span, patience"
+          },
+          "parent_dashboard": {
+            "display": "Listening challenge meter",
+            "toggles": [
+              { "id": "slow_narrator", "label": "Read Extra Slowly", "signal": "pacing_slow" },
+              { "id": "sound_effects", "label": "Add Sound Effects", "signal": "audio_enhanced" },
+              { "id": "replay_message", "label": "Allow Replay", "signal": "replay_enabled" }
+            ],
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_signal": "USER2AGENT pacing preference",
+            "measurement": "time spent + number of replays = attention span pattern"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll listen very carefully!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Claude, help me hear!", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 1,
+            "scene": 3,
+            "scene_title": "Meeting the First Forest Guide",
+            "setting": "Deep in the trees, a friendly moss-covered Forest Guide offers help",
+            "characters": ["Sir James", "Forest Guide", "Claude"]
+          },
+          "narrative_beat": "Deeper in the trees, Sir James meets a friendly, moss-covered Forest Guide who offers two kinds of help: a straight answer or a riddle.",
+          "child_challenge": {
+            "type": "help-style-choice",
+            "prompt": "Choose how the Forest Guide should help",
+            "options": {
+              "riddle": { "label": "Give me a riddle!", "skill": "problem-solving" },
+              "direct_answer": { "label": "Just tell me the way", "skill": "asking-for-help" }
+            }
+          },
+          "parent_dashboard": {
+            "buttons": [
+              { "id": "let_riddle", "label": "Let the Riddle Stand", "signal": "challenge_mode" },
+              { "id": "offer_hint", "label": "Offer a Hint in Chat", "signal": "support_mode" }
+            ],
+            "chat_enabled": true,
+            "chat_feature": "Parent types wisdom that appears as 'grown-up wisdom' line in story margin"
+          },
+          "a2a_hooks": {
+            "director_note": "interaction_style tag (riddle-lover vs direct-asker)",
+            "d2a_signal": "parent_chat_input stored for personalization"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I love riddles! Challenge me!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Please help me find the way", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 1,
+            "scene": 4,
+            "scene_title": "First Minor Scare, Emotion Check-In",
+            "setting": "Wind rattles branches, hollow log booms like a drum - sudden scare moment",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "A sudden gust of wind rattles the branches and a hollow log booms like a drum, startling Sir James and Sparky, while Claude plants himself protectively at Sir James's side.",
+          "child_challenge": {
+            "type": "emotion-check-in",
+            "prompt": "How are you feeling right now?",
+            "emoji_options": ["😨 Scared", "💪 Brave", "🤔 Curious", "😕 Confused"]
+          },
+          "parent_dashboard": {
+            "buttons": [
+              { "id": "normalize", "label": "Normalize Feelings", "action": "add reassuring narrator lines" },
+              { "id": "breathing", "label": "Practice Breathing", "action": "mini breathing exercise with Claude counting" }
+            ],
+            "display": "Child's emoji selection visible to parent",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_signal": "emotional_regulation preference (push ahead vs linger and calm)",
+            "measurement": "emotional_regulation tagged, not right/wrong"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I feel scared but I'll keep going!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Let's take a breath with Claude", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 1,
+            "scene": 5,
+            "scene_title": "Campfire Reflection & Parent Snapshot",
+            "setting": "Small camp just inside the safe ring of trees, evening falls",
+            "characters": ["Sir James", "Gramps", "Claude", "Sparky"]
+          },
+          "narrative_beat": "As evening falls, they make a small camp just inside the safe ring of trees, and Sir James, Gramps, Claude, and Sparky talk about what went well and what still feels tricky.",
+          "child_challenge": {
+            "type": "virtue-selection",
+            "prompt": "Choose one moment each of:",
+            "selections": ["courage", "wisdom", "trust"],
+            "display": "Icons light up above the scene"
+          },
+          "parent_dashboard": {
+            "display": "Summary Card: 'Today your child: listened to forest clues, chose X path, used Y hints, told us they felt Z'",
+            "buttons": [
+              { "id": "harder", "label": "Harder Next Time", "signal": "difficulty_up" },
+              { "id": "same", "label": "Same Level", "signal": "difficulty_same" },
+              { "id": "support", "label": "More Support", "signal": "difficulty_down" }
+            ],
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "director_agent": "adjusts Chapter 2 difficulty and hint density based on parent clicks",
+            "measurement": "chapter_1_baseline_complete"
+          },
+          "foreshadow": {
+            "hint": "Tomorrow we enter the Crystal Caves where patterns glow!",
+            "preview_skill": "pattern recognition",
+            "next_chapter_theme": "Patterns & Curiosity"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "My bravest moment was...", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "My wisest moment was...", "virtue": "wisdom", "points": 1 },
+            "choice_c": { "text": "When I trusted my friends...", "virtue": "trust", "points": 1 }
+          }
+        }
+      ]
+    },
+
+    "2": {
+      "title": "Crystal Caves",
+      "theme": "Patterns & Curiosity",
+      "focus_area": "thinking-survival",
+      "virtue_focus": "wisdom",
+      "learning_goals": ["pattern recognition", "question-asking", "metacognition", "coping strategies"],
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 2,
+            "scene": 1,
+            "scene_title": "The Shimmering Cave Entrance",
+            "setting": "Mouth of Crystal Caves - thousands of colored crystals hum softly, doorway shifts shape",
+            "characters": ["Sir James", "Claude"]
+          },
+          "narrative_beat": "Sir James reaches the mouth of the Crystal Caves, where thousands of colored crystals hum softly like a choir, and the doorway itself shifts shape depending on how closely he looks.",
+          "child_challenge": {
+            "type": "pattern-puzzle",
+            "prompt": "Spot the pattern in the crystals to open the door",
+            "patterns": ["red-blue-red-blue", "circle-square-circle", "big-small-big"],
+            "skill_measured": "pattern_type_preference, attempts_count"
+          },
+          "parent_dashboard": {
+            "toggle": {
+              "id": "pattern_play",
+              "options": ["Color Patterns", "Shape Patterns", "Story-Only"],
+              "signal": "pattern_type_focus"
+            },
+            "display": "Pattern preference tracking",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "measurement": "thinking-survival profile (no red X's, just patterns)",
+            "producer_signal": "pattern_preference logged"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I see the color pattern!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Let me look more closely...", "virtue": "perseverance", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 2,
+            "scene": 2,
+            "scene_title": "Echo Chamber of Questions",
+            "setting": "Chamber where every question echoes back with a slightly different version",
+            "characters": ["Sir James", "Claude", "Gramps"]
+          },
+          "narrative_beat": "Inside, Sir James finds a chamber where every question he asks echoes back with a slightly different version, teaching him that good questions help light up the cave.",
+          "child_challenge": {
+            "type": "question-training",
+            "prompt": "Help Sir James ask a good question",
+            "skill_measured": "metacognition - learning that questions are survival skills"
+          },
+          "parent_dashboard": {
+            "buttons": [
+              { "id": "model_question", "label": "Model a Good Question", "signal": "question_type_model" },
+              { "id": "feelings_question", "label": "Ask About Feelings", "signal": "question_type_feelings" },
+              { "id": "strategy_question", "label": "Ask About Strategy", "signal": "question_type_strategy" }
+            ],
+            "action": "Parent choice triggers narrator to pose that style of question",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "d2a_signal": "question_style_preference stored",
+            "measurement": "metacognition training: 'What do I notice?' as survival skill"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "What do I notice here?", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "What could I try?", "virtue": "courage", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 2,
+            "scene": 3,
+            "scene_title": "Claude's Crystal Puzzle & Hint System",
+            "setting": "Glowing chasm with stepping-stone path, Claude's nose glows as he sniffs safe path",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Claude pads ahead, his nose glowing faintly as he sniffs out a safe stepping-stone path across a glowing chasm, while Sparky races along a ledge above.",
+          "child_challenge": {
+            "type": "sequence-puzzle",
+            "prompt": "Choose the crystal sequence to cross safely",
+            "hint_system": {
+              "tier_1": "Gentle Nudge",
+              "tier_2": "Worked Example",
+              "tier_3": "Direct Answer"
+            }
+          },
+          "parent_dashboard": {
+            "selector": {
+              "id": "hint_strategy",
+              "options": ["Gentle Nudge", "Worked Example", "Let Them Wrestle"],
+              "signal": "hint_level_preference"
+            },
+            "display": "Hint usage counter",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "d2a_signal": "D2A documentation agent logs help needed",
+            "director_note": "Future chapters present near-but-not-quite-familiar puzzles instead of random difficulty jumps"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll figure it out myself!", "virtue": "courage", "points": 2 },
+            "choice_b": { "text": "Claude, show me the way!", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 2,
+            "scene": 4,
+            "scene_title": "The Dark Pocket & Coping Choices",
+            "setting": "Unusually dark and quiet section of cave",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "A section of the cave grows unusually dark and quiet, and Sir James admits that even brave knights can feel unsure when they can't see the way.",
+          "child_challenge": {
+            "type": "coping-choice",
+            "prompt": "How should Sir James feel better?",
+            "options": {
+              "silly_song": { "label": "Sing a silly song with Sparky", "coping_style": "active" },
+              "quiet_comfort": { "label": "Hold Claude's ear quietly", "coping_style": "calm" }
+            }
+          },
+          "parent_dashboard": {
+            "optional_log": {
+              "prompt": "Did your child seem:",
+              "options": ["calm", "fidgety", "upset", "excited"]
+            },
+            "purpose": "Soft emotional map for fun-scary vs too-much correlation",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_signal": "coping_preference logged",
+            "measurement": "emotional_map for challenge calibration"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let's sing and be brave!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Claude makes me feel safe", "virtue": "trust", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 2,
+            "scene": 5,
+            "scene_title": "Crystal Ledger & Parent Insights",
+            "setting": "Chapter end - floating crystal ledger appears with badges",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps"]
+          },
+          "narrative_beat": "At the chapter's end, a floating crystal ledger appears, showing icons for patterns solved, questions tried, hints used, and coping choices, all in a playful badge-like style.",
+          "child_challenge": {
+            "type": "reflection",
+            "display": "Badge icons: patterns solved, questions tried, hints used, coping choices"
+          },
+          "parent_dashboard": {
+            "display": {
+              "type": "timeline",
+              "tags": ["Preferred colors", "Needed worked example", "Chose silly coping"]
+            },
+            "suggestions": ["Next time: try fewer automatic hints", "Offer more 'ask a question' prompts via chat"],
+            "action_button": {
+              "id": "use_recommended",
+              "label": "Use Recommended Flow",
+              "signal": "accept_director_cut"
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_agent": "drafts one-line summary",
+            "director_agent": "proposes 'director's cut' for Chapter 3 pacing"
+          },
+          "foreshadow": {
+            "hint": "The Labyrinth awaits, where teamwork lights the way!",
+            "preview_skill": "teamwork, strategy",
+            "next_chapter_theme": "Teamwork & Strategy"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I learned to ask good questions!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "I tried hard even when stuck!", "virtue": "perseverance", "points": 1 }
+          }
+        }
+      ]
+    },
+
+    "3": {
+      "title": "Labyrinth & Bridge of Light",
+      "theme": "Teamwork & Strategy",
+      "focus_area": "social-survival",
+      "virtue_focus": "trust",
+      "learning_goals": ["risk assessment", "role assignment", "planning", "trust in others"],
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 3,
+            "scene": 1,
+            "scene_title": "The Living Labyrinth Map",
+            "setting": "Huge stone map of labyrinth that rearranges when touched",
+            "characters": ["Sir James", "Gramps", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Sir James, Gramps, Claude, and Sparky stand before a huge stone map of a labyrinth that rearranges itself when they touch it, representing all the upcoming choices.",
+          "child_challenge": {
+            "type": "route-selection",
+            "prompt": "Help Sir James pick a route",
+            "options": {
+              "short_tricky": { "label": "Short but Tricky", "risk_style": "high_risk" },
+              "long_safe": { "label": "Long but Safe", "risk_style": "low_risk" },
+              "surprise": { "label": "Surprise Me!", "risk_style": "random" }
+            }
+          },
+          "parent_dashboard": {
+            "note": "This choice shapes how many mini-challenges we show today",
+            "toggle": {
+              "id": "balanced_route",
+              "label": "Override to Balanced Route",
+              "signal": "family_preference_override"
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "measurement": "risk-style marker",
+            "director_agent": "respects family preferences over time"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I like a challenge!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Let's be careful", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 3,
+            "scene": 2,
+            "scene_title": "Team Roles & Turn-Taking",
+            "setting": "Inside the maze - gates respond to different characters' strengths",
+            "characters": ["Sir James", "Gramps", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Inside the maze, the group must get through a series of gates that each respond best to a different character—Claude's nose, Sparky's agility, Gramps's wisdom, or Sir James's courage.",
+          "child_challenge": {
+            "type": "role-assignment",
+            "prompt": "Who should try first? Who should lead this time?",
+            "characters_available": ["Claude", "Sparky", "Gramps", "Sir James"],
+            "skill_measured": "leadership balance, cooperation"
+          },
+          "parent_dashboard": {
+            "display": "Character selection counter - which character child picks most often",
+            "button": {
+              "id": "let_others_lead",
+              "label": "Practice Letting Others Lead",
+              "signal": "encourage_support_role"
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "measurement": "social-survival skills: cooperation, turn-taking",
+            "director_signal": "balance_team_selections in future scenes"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll lead the way!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Claude should try first!", "virtue": "trust", "points": 1 },
+            "choice_c": { "text": "Gramps knows best", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 3,
+            "scene": 3,
+            "scene_title": "Mist Corridor & Strategy Planning",
+            "setting": "Twisting corridor filled with silver mist, Labyrinth Guardian appears as faint outline",
+            "characters": ["Sir James", "Claude", "Labyrinth Guardian"]
+          },
+          "narrative_beat": "A twisting corridor fills with silver mist that makes it hard to see, but the Labyrinth Guardian appears as a faint outline to offer a choice: rush ahead following a faint light, or pause to draw a plan in the dust.",
+          "child_challenge": {
+            "type": "plan-vs-action",
+            "prompt": "Should Sir James plan first or jump into action?",
+            "options": {
+              "plan": { "label": "Draw a plan in the dust", "style": "planner" },
+              "jump": { "label": "Rush toward the light!", "style": "action" }
+            }
+          },
+          "parent_dashboard": {
+            "add_ons": [
+              { "id": "extra_planning", "label": "Add Extra Planning Questions", "signal": "extend_strategy" },
+              { "id": "skip_faster", "label": "Skip to Action Faster", "signal": "reduce_strategy" }
+            ],
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_signal": "planning_preference (energized by planning vs impatient)",
+            "director_adjustment": "future strategy scenes shorter/longer/more guided"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let me think this through!", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "Follow me, team!", "virtue": "courage", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 3,
+            "scene": 4,
+            "scene_title": "The Almost-Fall & Trust Test",
+            "setting": "Tricky gap with shifting stepping stone",
+            "characters": ["Sir James", "Claude"]
+          },
+          "narrative_beat": "At one tricky gap, a stepping stone shifts under Sir James's foot, and he has to decide whether to leap alone or grab Claude's collar and trust him to guide the jump.",
+          "child_challenge": {
+            "type": "trust-decision",
+            "prompt": "Leap alone or trust Claude?",
+            "options": {
+              "leap_alone": { "label": "I can do it myself!", "style": "self-reliance" },
+              "trust_claude": { "label": "Claude, help me!", "style": "trust-in-friend" }
+            }
+          },
+          "parent_dashboard": {
+            "prompt": "Ask your child what they would do if they were Sir James",
+            "button": {
+              "id": "family_discussed",
+              "label": "We Talked About This",
+              "signal": "family_discussion_logged"
+            },
+            "chat_enabled": true
+          },
+          "a2a_hooks": {
+            "d2a_signal": "family_discussion flag enables similar reflection prompts later",
+            "measurement": "help_seeking_style (self-reliance vs explicit trust)"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I'll make the leap!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Claude, guide me!", "virtue": "trust", "points": 2 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 3,
+            "scene": 5,
+            "scene_title": "Bridge of Light Finale & Virtue Wrap-Up",
+            "setting": "Radiant Bridge of Light appears from combined decisions",
+            "characters": ["Sir James", "Claude", "Sparky", "Gramps", "Labyrinth Guardian"]
+          },
+          "narrative_beat": "Finally, the group reaches the radiant Bridge of Light, where all the day's quiet decisions combine to let the bridge appear beneath Sir James's feet. The Guardian formally names the three key virtues: courage, wisdom, and trust.",
+          "child_challenge": {
+            "type": "virtue-reflection",
+            "prompt": "Which virtue felt strongest for you? Which would you like to practice more?",
+            "selections": ["courage", "wisdom", "trust"]
+          },
+          "parent_dashboard": {
+            "display": "Mini-graph of virtue choices across Chapters 1-3",
+            "control_panel": {
+              "title": "Next Session",
+              "options": [
+                { "id": "more_teamwork", "label": "More Teamwork Focus" },
+                { "id": "more_strategy", "label": "More Strategy Focus" },
+                { "id": "keep_mix", "label": "Keep the Mix" }
+              ]
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "director_agent": "clear knobs for shaping Chapter 4 and beyond",
+            "measurement": "virtue_strength and practice_request logged"
+          },
+          "foreshadow": {
+            "hint": "Next: Skyward Harbor where words take flight!",
+            "preview_skill": "communication, perspective-taking",
+            "next_chapter_theme": "Communication & Perspective"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Courage felt strongest!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Wisdom helped most!", "virtue": "wisdom", "points": 1 },
+            "choice_c": { "text": "Trusting friends was key!", "virtue": "trust", "points": 1 }
+          }
+        }
+      ]
+    },
+
+    "4": {
+      "title": "Skyward Harbor",
+      "theme": "Communication & Perspective",
+      "focus_area": "communication-survival",
+      "virtue_focus": "honesty",
+      "learning_goals": ["asking clarifying questions", "tone awareness", "listening modes", "calm leadership"],
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 4,
+            "scene": 1,
+            "scene_title": "Arrival at Skyward Harbor",
+            "setting": "Floating harbor where airships drift among clouds, dockmasters give conflicting directions",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Sir James sails to a floating harbor where airships drift among clouds, and every dockmaster seems to give slightly different instructions.",
+          "child_challenge": {
+            "type": "communication-style",
+            "prompt": "How should Sir James handle the confusing directions?",
+            "options": {
+              "ask_clarity": { "label": "Ask clarifying questions", "skill": "communication" },
+              "observe_signs": { "label": "Observe the signs", "skill": "observation" },
+              "follow_gut": { "label": "Follow my gut!", "skill": "intuition" }
+            }
+          },
+          "parent_dashboard": {
+            "toggle": {
+              "id": "practice_clarity",
+              "label": "Practice Asking for Clarity",
+              "signal": "reward_question_asking",
+              "description": "When on, narrator and NPCs reward question-asking more heavily"
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "measurement": "safe communication survival skills logged"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Can you say that again please?", "virtue": "wisdom", "points": 1 },
+            "choice_b": { "text": "I trust my instincts!", "virtue": "courage", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 4,
+            "scene": 2,
+            "scene_title": "Message Misunderstanding Mini-Play",
+            "setting": "Humorous misunderstanding about which ship to board",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Claude mishears an instruction and Sparky over-explains something, leading to a humorous misunderstanding about which ship they're boarding.",
+          "child_challenge": {
+            "type": "rewrite-response",
+            "prompt": "Help Sir James say it better",
+            "options": {
+              "direct": { "label": "Short and clear", "tone": "direct" },
+              "friendly": { "label": "Friendly and warm", "tone": "friendly" },
+              "goofy": { "label": "Silly and fun", "tone": "goofy" }
+            }
+          },
+          "parent_dashboard": {
+            "display": "Tone palette - shows child's usual tone picks (direct/friendly/goofy)",
+            "chat_box": {
+              "prompt": "Type a real-life example from your family",
+              "example": "We had a mix-up at school pickup this week",
+              "signal": "d2a_context_store"
+            },
+            "chat_enabled": true
+          },
+          "a2a_hooks": {
+            "d2a_signal": "Parent context stored for future story mirroring (no personal details exposed)"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let me be clear: which ship?", "virtue": "honesty", "points": 1 },
+            "choice_b": { "text": "Ha! Let's try again nicely!", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 4,
+            "scene": 3,
+            "scene_title": "Tower of Listening Flags",
+            "setting": "High tower with colorful flags that change shape based on listening quality",
+            "characters": ["Sir James", "Sky Captain"]
+          },
+          "narrative_beat": "High above the harbor, colorful flags change shape depending on how well characters listen to one another. Sir James must listen to a sky-captain's story and choose what mattered most.",
+          "child_challenge": {
+            "type": "listening-focus",
+            "prompt": "What mattered most in the captain's story?",
+            "options": {
+              "feelings": { "label": "The feelings", "focus": "emotional" },
+              "facts": { "label": "The facts", "focus": "factual" },
+              "plans": { "label": "The plans", "focus": "strategic" }
+            }
+          },
+          "parent_dashboard": {
+            "display": "Listening mode bar",
+            "toggle": {
+              "id": "feelings_language",
+              "label": "Enable Extra Feelings Language",
+              "signal": "add_emotional_vocabulary",
+              "description": "Narrator adds more words like 'nervous', 'relieved'"
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "measurement": "language-growth tracking (emotional vocabulary exposure)"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "The captain felt worried!", "virtue": "empathy", "points": 1 },
+            "choice_b": { "text": "The important fact was...", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 4,
+            "scene": 4,
+            "scene_title": "Storm Warning & Calm Leadership",
+            "setting": "Dark clouds gather, harbor goes on alert with sirens and flapping sails",
+            "characters": ["Sir James", "Claude", "Sparky"]
+          },
+          "narrative_beat": "Dark clouds gather and the harbor goes on alert, with sirens and flapping sails making the scene noisy and busy. Sir James has to calm Sparky, follow instructions, and notice a crucial clue Claude finds.",
+          "child_challenge": {
+            "type": "calming-tactic",
+            "prompt": "How should Sir James stay calm and lead?",
+            "options": {
+              "deep_breath": { "label": "Take a deep breath", "tactic": "breathing" },
+              "repeat_instructions": { "label": "Repeat the instructions", "tactic": "focus" },
+              "check_friend": { "label": "Check on Sparky first", "tactic": "care" }
+            }
+          },
+          "parent_dashboard": {
+            "button": {
+              "id": "calm_leader_script",
+              "label": "Use Calm-Leader Script",
+              "signal": "model_calm_leadership",
+              "description": "Story models what calm leadership sounds like"
+            },
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "producer_signal": "calming_tactic_preference promoted as reusable survival pattern"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Deep breath... we can do this!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Sparky, are you okay?", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 4,
+            "scene": 5,
+            "scene_title": "Harbor Debrief & Family Story Hook",
+            "setting": "Storm passes, harbor master thanks the team",
+            "characters": ["Sir James", "Claude", "Sparky", "Harbor Master"]
+          },
+          "narrative_beat": "When the storm passes, the harbor master thanks Sir James and friends, and invites them to hang a small flag that represents how they handled the day.",
+          "child_challenge": {
+            "type": "flag-meaning",
+            "prompt": "What should your flag mean?",
+            "options": {
+              "asked_help": { "label": "We asked for help", "meaning": "help-seeking" },
+              "stayed_calm": { "label": "We stayed calm", "meaning": "regulation" },
+              "fixed_mixup": { "label": "We fixed a mix-up", "meaning": "problem-solving" }
+            }
+          },
+          "parent_dashboard": {
+            "display": "Matching family reflection question",
+            "button": {
+              "id": "bookmark_scene",
+              "label": "Bookmark This Scene",
+              "signal": "d2a_great_moment_saved"
+            },
+            "chat_enabled": true,
+            "chat_prompt": "What's a time your family stayed calm together?"
+          },
+          "a2a_hooks": {
+            "d2a_signal": "Bookmarked scenes feed D2A documentation pipeline for 'great moments to revisit'"
+          },
+          "foreshadow": {
+            "hint": "The Clockwork Library holds all our memories!",
+            "preview_skill": "memory, practice, transfer",
+            "next_chapter_theme": "Memory, Practice & Transfer"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "We worked together!", "virtue": "trust", "points": 1 },
+            "choice_b": { "text": "We stayed brave!", "virtue": "courage", "points": 1 }
+          }
+        }
+      ]
+    },
+
+    "5": {
+      "title": "Clockwork Library",
+      "theme": "Memory, Practice & Transfer",
+      "focus_area": "transfer-survival",
+      "virtue_focus": "perseverance",
+      "learning_goals": ["skill connection", "API understanding", "parent co-authoring", "growth visualization"],
+      "scenes": [
+        {
+          "story_fields": {
+            "chapter": 5,
+            "scene": 1,
+            "scene_title": "Entering the Clockwork Stacks",
+            "setting": "Library where shelves glide on rails, each book is a mechanical box replaying past adventures",
+            "characters": ["Sir James", "Claude"]
+          },
+          "narrative_beat": "Sir James steps into a library where shelves glide on rails and each book is a small mechanical box that replays a past adventure as tiny holograms.",
+          "child_challenge": {
+            "type": "memory-box-selection",
+            "prompt": "Which adventure memory box do you want to open?",
+            "options": {
+              "whispering_woods": { "label": "Whispering Woods", "chapter": 1 },
+              "crystal_caves": { "label": "Crystal Caves", "chapter": 2 },
+              "labyrinth": { "label": "Labyrinth of Light", "chapter": 3 }
+            }
+          },
+          "parent_dashboard": {
+            "wheel": {
+              "id": "practice_what",
+              "title": "Practice What?",
+              "options": ["Listening", "Patterns", "Teamwork", "Communication"],
+              "signal": "transfer_practice_focus"
+            },
+            "description": "Direct control over which type of mini-activity appears beneath the recap",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "measurement": "skills_and_virtues_connection across chapters tracked"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "Let's remember our bravest moment!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "Let's see how we solved puzzles!", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 5,
+            "scene": 2,
+            "scene_title": "Claude's Code Room (APIs in Story Form)",
+            "setting": "Cozy room full of glowing runes and sliding tiles representing 'promises between worlds'",
+            "characters": ["Sir James", "Claude", "Gramps"]
+          },
+          "narrative_beat": "Claude leads Sir James to a cozy room full of glowing runes and sliding tiles where each tile represents a 'promise' between worlds: when a child does X, the system does Y. Gramps explains this is how adventures know when to change.",
+          "child_challenge": {
+            "type": "tile-arrangement",
+            "prompt": "Arrange the tiles to make promises",
+            "examples": [
+              { "if": "I ask for help", "then": "Friends answer kindly" },
+              { "if": "I try again", "then": "The puzzle gets easier" }
+            ]
+          },
+          "parent_dashboard": {
+            "overlay": {
+              "type": "technical",
+              "description": "Maps tiles to trigger types (hint requests, virtue selections, parent chat events)"
+            },
+            "purpose": "Gives designers and engineers a narrative-safe way to think about sequential API calls",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "meta_purpose": "Metaphor for actual APIs programming team is building",
+            "d2a_signal": "trigger_types visualized for engineering reference"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "If I'm brave, adventures happen!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "If I help friends, they help me!", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 5,
+            "scene": 3,
+            "scene_title": "Parent Co-Author Desk",
+            "setting": "Carved wooden desk labeled 'For Grown-Up Co-Adventurers Only' with blank pages",
+            "characters": ["Sir James", "Gramps"]
+          },
+          "narrative_beat": "Sir James discovers a carved wooden desk labeled 'For Grown-Up Co-Adventurers Only,' where blank pages wait for new challenges.",
+          "child_challenge": {
+            "type": "story-preview",
+            "prompt": "What kind of challenge should the grown-ups create?",
+            "display": "Child sees that parents can add to their adventures"
+          },
+          "parent_dashboard": {
+            "panel": {
+              "id": "parent_authoring",
+              "title": "Parent Authoring Panel",
+              "templates": [
+                { "id": "short_challenge", "label": "Short Challenge" },
+                { "id": "big_feelings", "label": "Big Feelings Moment" },
+                { "id": "teamwork_puzzle", "label": "Teamwork Puzzle" }
+              ],
+              "input": "Add a simple prompt or family detail"
+            },
+            "chat_enabled": true
+          },
+          "a2a_hooks": {
+            "producer_agent": "Turns parent choices into safe, on-rails micro-variations",
+            "d2a_agent": "Tracks which templates families actually use for cost-effectiveness"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I want a brave challenge!", "virtue": "courage", "points": 1 },
+            "choice_b": { "text": "I want a friend adventure!", "virtue": "kindness", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 5,
+            "scene": 4,
+            "scene_title": "Child Skill Gauge & Growth Story",
+            "setting": "Friendly clockwork owl with spinning dials showing growth icons",
+            "characters": ["Sir James", "Clockwork Owl"]
+          },
+          "narrative_beat": "Near the exit stands a friendly clockwork owl that spins dials labeled with icons rather than numbers: a growing tree for persistence, a rising sun for confidence, interlocking gears for teamwork, and a glowing ear for listening.",
+          "child_challenge": {
+            "type": "growth-celebration",
+            "display": "Simple growth story icons",
+            "examples": ["Your teamwork tree grew new leaves!", "Your listening ear glows brighter!"]
+          },
+          "parent_dashboard": {
+            "display": {
+              "type": "measurement_view",
+              "details": [
+                "Which chapters contributed most to which skills",
+                "How often hints were needed",
+                "How often reflection questions were used"
+              ]
+            },
+            "description": "This is your Book of Measurements - aggregated but playful",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "purpose": "Informs agents about where to stretch or support in upcoming books",
+            "measurement": "comprehensive_skill_gauge"
+          },
+          "virtue_opportunity": {
+            "choice_a": { "text": "I grew so much!", "virtue": "perseverance", "points": 1 },
+            "choice_b": { "text": "I want to keep learning!", "virtue": "wisdom", "points": 1 }
+          }
+        },
+        {
+          "story_fields": {
+            "chapter": 5,
+            "scene": 5,
+            "scene_title": "Foreshadowing the Next Five Chapters",
+            "setting": "Labyrinth Guardian shows five distant landmarks - mountains, rivers, towers",
+            "characters": ["Sir James", "Claude", "Labyrinth Guardian"]
+          },
+          "narrative_beat": "As Sir James leaves the Clockwork Library, the Labyrinth Guardian appears one last time to show him five distant landmarks—mountains, rivers, towers—that hint at the next five chapters still to come.",
+          "child_challenge": {
+            "type": "arc-preference",
+            "prompt": "What kind of place should we visit next?",
+            "options": {
+              "mountains": { "label": "Mountains with echoes", "arc": "exploration" },
+              "rivers": { "label": "Rivers with choices", "arc": "decision-making" },
+              "towers": { "label": "Towers with puzzles", "arc": "problem-solving" }
+            }
+          },
+          "parent_dashboard": {
+            "strip": {
+              "id": "choose_next_arc",
+              "title": "Choose the Next Arc",
+              "options": [
+                { "id": "more_feelings", "label": "More Feelings Adventures" },
+                { "id": "more_puzzles", "label": "More Puzzle Adventures" },
+                { "id": "mix_it_up", "label": "Mix It Up" }
+              ]
+            },
+            "purpose": "Tags family preference, gives programming team clear routing for APIs",
+            "chat_enabled": false
+          },
+          "a2a_hooks": {
+            "director_agent": "Proposes which upcoming adventures best match child's emerging strengths and struggles",
+            "d2a_signal": "family_arc_preference stored for Chapters 6-10 generation"
+          },
+          "foreshadow": {
+            "type": "book_bridge",
+            "destination": "Chapters 6-10: River of Choices, Echo Mountain, City of Many Doors, Star Orchard, Homecoming Circle",
+            "skill_progression": "Foundation Skills → Literacy Skills"
+          },
+          "closing": "And so Sir James looked toward the horizon, ready for new adventures. The Room of Many Windows glowed warmly, as parents everywhere prepared to guide the next journey... For the Commons Good! 🏰⚔️🐕✨"
+        }
+      ]
+    }
+  },
+
+  "book_of_measurements": {
+    "description": "Aggregated skill tracking without grades, just patterns",
+    "tracked_skills": {
+      "survival_sense": "Does child rush, pause, or seek help?",
+      "thinking_survival": "Pattern preferences and problem-solving style",
+      "social_survival": "Cooperation, turn-taking, trust in others",
+      "communication_survival": "Question-asking, tone, listening modes",
+      "transfer_survival": "Ability to connect skills across chapters"
+    },
+    "virtue_tracking": {
+      "virtues": ["courage", "wisdom", "trust", "kindness", "perseverance", "honesty", "empathy"],
+      "display": "Icons that light up, no numbers/grades for children"
+    },
+    "parent_view": {
+      "summary_cards": "Per-chapter summaries with tags",
+      "timelines": "Scene-by-scene progression",
+      "recommendations": "A2A agent suggestions for next sessions"
+    }
+  },
+
+  "api_flow_summary": {
+    "chapter_1": "Baseline establishment → survival-sense signals",
+    "chapter_2": "Pattern puzzles → thinking-survival profile",
+    "chapter_3": "Team gates → social-survival metrics",
+    "chapter_4": "Communication challenges → communication-survival tags",
+    "chapter_5": "Transfer practice → comprehensive skill gauge + Chapters 6-10 seeding"
+  }
+}
