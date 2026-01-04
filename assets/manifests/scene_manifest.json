@@ -1,0 +1,698 @@
+{
+  "manifest_version": "3.5.0",
+  "book": "Book003",
+  "title": "Sir James Adventures: From Survival Skills to Reading Knights",
+  "created": "2026-01-03",
+  "architecture": "U2A + A2A + D2A",
+  "test_pilot": "Sir James (5yo personified)",
+  "battle_cry": "For the Commons Good! 🏰⚔️🐕✨",
+  
+  "character_bible": {
+    "sir_james": {
+      "age": 5,
+      "description": "5-year-old boy with bright blue eyes, brown hair with cowlick",
+      "outfit": "Royal blue tunic with silver Celtic trim",
+      "personality": "Brave, curious, kind-hearted",
+      "voice_id": "sir_james_voice"
+    },
+    "claude": {
+      "breed": "Redbone Coonhound",
+      "description": "Reddish-brown coat, amber eyes, long floppy ears",
+      "personality": "Loyal, protective, wise in dog ways",
+      "voice_id": "claude_thought",
+      "sfx": ["dog_tail_wag", "dog_bark_happy", "dog_whimper"]
+    },
+    "gramps": {
+      "description": "Wise elderly grandfather with kind eyes",
+      "personality": "Patient, encouraging, full of wisdom",
+      "voice_id": "gramps_voice"
+    },
+    "sparky": {
+      "description": "Energetic companion creature",
+      "personality": "Playful, quick, encouraging"
+    }
+  },
+
+  "story_arc": {
+    "part1": {
+      "name": "Foundation Skills",
+      "chapters": [1, 2, 3, 4, 5],
+      "focus": "Survival Skills",
+      "skills": ["survival-sense", "thinking-survival", "social-survival", "communication-survival", "transfer-survival"]
+    },
+    "bridge": {
+      "description": "Skills transfer to literacy application",
+      "api_endpoint": "/api/v1/transfer-check"
+    },
+    "part2": {
+      "name": "Literacy Skills",
+      "chapters": [6, 7, 8, 9, 10],
+      "focus": "Reading & Spelling",
+      "levels": ["Early", "Developing", "Bridge-to-Fluency", "Consolidation"]
+    }
+  },
+
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Whispering Woods",
+      "theme": "Baseline & Safety",
+      "skill_focus": "survival-sense",
+      "learning_goals": ["Listening", "Safety awareness", "Emotional regulation", "Asking for help"],
+      "virtue_focus": "courage",
+      "scenes": [
+        {
+          "scene": "1.1",
+          "title": "Cottage Morning, Choosing the Path",
+          "setting": "Little cottage on the edge of Whispering Woods",
+          "child_challenge": {
+            "type": "decision_tree",
+            "prompt": "Choose between a sunny path and a shadowy shortcut",
+            "options": [
+              {"text": "Let's take the safe sunny path!", "virtue": "wisdom", "points": 1},
+              {"text": "I'm brave enough for the shortcut!", "virtue": "courage", "points": 1}
+            ]
+          },
+          "parent_dashboard": {
+            "controls": ["Focus on Listening", "Focus on Observation", "Just for Fun Today"],
+            "metrics": ["learning_focus_tag", "baseline_safety_preference"]
+          },
+          "a2a_hooks": {
+            "producer_signal": "learning_focus_tag",
+            "director_note": "baseline_safety_preference",
+            "measurement": "Does this child tend to rush, pause, or seek help?"
+          }
+        },
+        {
+          "scene": "1.2",
+          "title": "Edge of the Woods, First Whisper Challenge",
+          "setting": "Forest edge where trees whisper clues",
+          "child_challenge": {
+            "type": "listening",
+            "prompt": "Listen to forest whispers and choose which clue to follow",
+            "skill_measured": ["attention_span", "patience"]
+          },
+          "parent_dashboard": {
+            "controls": ["Read Extra Slowly", "Add Sound Effects", "Allow Replay"],
+            "meter": "Listening Challenge Meter"
+          },
+          "a2a_hooks": {
+            "u2a_signal": "pacing_preference",
+            "measurement": "time_spent + replays = attention_span_pattern"
+          }
+        },
+        {
+          "scene": "1.3",
+          "title": "Meeting the First Forest Guide",
+          "setting": "Deeper in the trees with moss-covered Forest Guide",
+          "child_challenge": {
+            "type": "help_style",
+            "prompt": "Choose: riddle (problem-solving) or direct answer (asking-for-help)",
+            "options": [
+              {"text": "Give me a riddle!", "style": "riddle-lover"},
+              {"text": "Just tell me the answer", "style": "direct-asker"}
+            ]
+          },
+          "parent_dashboard": {
+            "controls": ["Let the Riddle Stand", "Offer a Hint in Chat"],
+            "chat_enabled": true
+          },
+          "a2a_hooks": {
+            "director_note": "interaction_style",
+            "d2a_signal": "Parent chat input stored for personalization"
+          }
+        },
+        {
+          "scene": "1.4",
+          "title": "First Minor Scare, Emotion Check-In",
+          "setting": "Wind rattles branches, hollow log booms",
+          "child_challenge": {
+            "type": "emotion_checkin",
+            "prompt": "How do you feel?",
+            "options": [
+              {"emoji": "😨", "text": "Scared"},
+              {"emoji": "💪", "text": "Brave"},
+              {"emoji": "🤔", "text": "Curious"},
+              {"emoji": "😕", "text": "Confused"}
+            ]
+          },
+          "parent_dashboard": {
+            "controls": ["Normalize Feelings", "Practice Breathing"],
+            "shows_child_selection": true
+          },
+          "a2a_hooks": {
+            "producer_signal": "emotional_regulation",
+            "measurement": "Tagged to pattern, not right/wrong"
+          }
+        },
+        {
+          "scene": "1.5",
+          "title": "Campfire Reflection & Parent Snapshot",
+          "setting": "Small camp inside safe ring of trees",
+          "child_challenge": {
+            "type": "reflection",
+            "prompt": "Choose one moment each of: courage, wisdom, trust"
+          },
+          "parent_dashboard": {
+            "summary_card": true,
+            "shows": ["listening_check", "path_choice", "hints_used", "emotion_journey"],
+            "next_session_controls": ["Harder", "Same Level", "More Support"]
+          },
+          "foreshadow": "Tomorrow we enter the Crystal Caves where patterns glow!"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "Crystal Caves",
+      "theme": "Patterns & Curiosity",
+      "skill_focus": "thinking-survival",
+      "learning_goals": ["Pattern recognition", "Question-asking", "Metacognition", "Coping strategies"],
+      "virtue_focus": "wisdom",
+      "scenes": [
+        {
+          "scene": "2.1",
+          "title": "The Shimmering Cave Entrance",
+          "setting": "Mouth of Crystal Caves with colored crystals",
+          "child_challenge": {
+            "type": "pattern_matching",
+            "prompt": "Spot patterns in crystals to open door",
+            "pattern_types": ["color", "shape", "size"]
+          },
+          "parent_dashboard": {
+            "controls": ["Color Patterns", "Shape Patterns", "Story-Only"]
+          }
+        },
+        {
+          "scene": "2.2",
+          "title": "Echo Chamber of Questions",
+          "setting": "Chamber where questions echo back",
+          "child_challenge": {
+            "type": "metacognition",
+            "prompt": "Learn that good questions help light up the cave",
+            "question_types": ["What do I notice?", "What could I try?"]
+          },
+          "parent_dashboard": {
+            "controls": ["Model a Good Question", "Ask About Feelings", "Ask About Strategy"]
+          }
+        },
+        {
+          "scene": "2.3",
+          "title": "Claude's Crystal Puzzle & Hint System",
+          "setting": "Glowing chasm with stepping-stone path",
+          "child_challenge": {
+            "type": "sequence_puzzle",
+            "prompt": "Choose crystal sequence to cross safely",
+            "hints_available": 5
+          },
+          "parent_dashboard": {
+            "controls": ["Gentle Nudge", "Worked Example", "Let Them Wrestle"],
+            "hint_meter": true
+          }
+        },
+        {
+          "scene": "2.4",
+          "title": "The Dark Pocket & Coping Choices",
+          "setting": "Unusually dark and quiet section",
+          "child_challenge": {
+            "type": "coping_choice",
+            "prompt": "Choose how to cope with uncertainty",
+            "options": [
+              {"text": "Sing a silly song with Sparky", "style": "active_coping"},
+              {"text": "Hold Claude's ear quietly", "style": "calm_coping"}
+            ]
+          },
+          "parent_dashboard": {
+            "emotional_log": ["Calm", "Fidgety", "Upset", "Excited"]
+          }
+        },
+        {
+          "scene": "2.5",
+          "title": "Crystal Ledger & Parent Insights",
+          "setting": "Floating crystal ledger appears",
+          "child_display": {
+            "badges": ["Patterns Solved", "Questions Tried", "Hints Used", "Coping Choice"]
+          },
+          "parent_dashboard": {
+            "timeline": true,
+            "suggestions": true,
+            "recommended_flow_button": true
+          },
+          "foreshadow": "The Labyrinth awaits, where teamwork lights the way!"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "Labyrinth & Bridge of Light",
+      "theme": "Teamwork & Strategy",
+      "skill_focus": "social-survival",
+      "learning_goals": ["Risk assessment", "Role assignment", "Planning", "Trust in others"],
+      "virtue_focus": "trust",
+      "scenes": [
+        {
+          "scene": "3.1",
+          "title": "The Living Labyrinth Map",
+          "child_challenge": {
+            "type": "route_selection",
+            "options": ["Short but Tricky", "Long but Safe", "Surprise Me!"]
+          }
+        },
+        {
+          "scene": "3.2",
+          "title": "Team Roles & Turn-Taking",
+          "child_challenge": {
+            "type": "role_assignment",
+            "characters": ["Claude", "Sparky", "Gramps", "Sir James"]
+          }
+        },
+        {
+          "scene": "3.3",
+          "title": "Mist Corridor & Strategy Planning",
+          "child_challenge": {
+            "type": "planning_vs_action",
+            "options": ["Draw a plan in the dust", "Rush toward the light"]
+          }
+        },
+        {
+          "scene": "3.4",
+          "title": "The Almost-Fall & Trust Test",
+          "child_challenge": {
+            "type": "trust_decision",
+            "options": [
+              {"text": "Leap alone", "virtue": "courage"},
+              {"text": "Grab Claude's collar", "virtue": "trust"}
+            ]
+          }
+        },
+        {
+          "scene": "3.5",
+          "title": "Bridge of Light Finale & Virtue Wrap-Up",
+          "child_challenge": {
+            "type": "virtue_reflection",
+            "prompt": "Pick which virtue felt strongest"
+          },
+          "foreshadow": "Next: Skyward Harbor where words take flight!"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "Skyward Harbor",
+      "theme": "Communication & Perspective",
+      "skill_focus": "communication-survival",
+      "learning_goals": ["Asking clarifying questions", "Tone awareness", "Listening modes", "Calm leadership"],
+      "virtue_focus": "kindness",
+      "scenes": [
+        {
+          "scene": "4.1",
+          "title": "Arrival at Skyward Harbor",
+          "child_challenge": {
+            "type": "clarity_seeking",
+            "options": ["Ask clarity", "Observe signs", "Follow gut"]
+          }
+        },
+        {
+          "scene": "4.2",
+          "title": "Message Misunderstanding Mini-Play",
+          "child_challenge": {
+            "type": "tone_selection",
+            "options": ["Direct", "Friendly", "Goofy"]
+          }
+        },
+        {
+          "scene": "4.3",
+          "title": "Tower of Listening Flags",
+          "child_challenge": {
+            "type": "listening_focus",
+            "options": ["Feelings", "Facts", "Plans"]
+          }
+        },
+        {
+          "scene": "4.4",
+          "title": "Storm Warning & Calm Leadership",
+          "child_challenge": {
+            "type": "calm_response",
+            "options": ["Deep breath", "Repeat instructions", "Check on Sparky first"]
+          }
+        },
+        {
+          "scene": "4.5",
+          "title": "Harbor Debrief & Family Story Hook",
+          "child_challenge": {
+            "type": "flag_meaning",
+            "options": ["We asked for help", "We stayed calm", "We fixed a mix-up"]
+          },
+          "foreshadow": "The Clockwork Library holds all our memories!"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "Clockwork Library",
+      "theme": "Memory, Practice & Transfer",
+      "skill_focus": "transfer-survival",
+      "learning_goals": ["Skill connection", "API understanding", "Parent co-authoring", "Growth visualization"],
+      "virtue_focus": "wisdom",
+      "scenes": [
+        {
+          "scene": "5.1",
+          "title": "Entering the Clockwork Stacks",
+          "child_challenge": {
+            "type": "memory_selection",
+            "options": ["Whispering Woods", "Crystal Caves", "Labyrinth"]
+          }
+        },
+        {
+          "scene": "5.2",
+          "title": "Claude's Code Room (APIs in Story Form)",
+          "child_challenge": {
+            "type": "tile_arrangement",
+            "concept": "If I ask for help → friends answer kindly"
+          },
+          "api_mapping": {
+            "ask_for_help": "hint_request",
+            "choose_courage": "virtue_selection",
+            "grownup_types": "parent_chat_event"
+          }
+        },
+        {
+          "scene": "5.3",
+          "title": "Parent Co-Author Desk",
+          "parent_dashboard": {
+            "authoring_panel": true,
+            "templates": ["Short Challenge", "Big Feelings Moment", "Teamwork Puzzle"]
+          }
+        },
+        {
+          "scene": "5.4",
+          "title": "Child Skill Gauge & Growth Story",
+          "child_display": {
+            "growth_icons": ["persistence", "confidence", "teamwork", "listening"]
+          }
+        },
+        {
+          "scene": "5.5",
+          "title": "Foreshadowing the Next Five Chapters",
+          "child_challenge": {
+            "type": "arc_preference",
+            "options": ["Mountains (exploration)", "Rivers (decisions)", "Towers (puzzles)"]
+          },
+          "bridge_text": "The survival skills he learned would now become READING skills. The River of Choices awaits!"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "River of Choices",
+      "theme": "Word Families & Direction Words",
+      "reading_level": "Early → Developing",
+      "learning_goals": ["CVC word families (-at, -og, -ip)", "Direction words (up/down/left/right)"],
+      "virtue_focus": "courage",
+      "scenes": [
+        {
+          "scene": "6.1",
+          "title": "Fork in the River",
+          "literacy_focus": "CVC word families",
+          "target_words": ["cat", "bat", "hat", "log", "fog", "dog", "up", "down"],
+          "interaction": "tap-to-match"
+        },
+        {
+          "scene": "6.2",
+          "title": "Rock-Step Word Hops",
+          "literacy_focus": "CVC with varied vowels",
+          "target_words": ["map", "mop", "cap", "cup", "dip", "hop"],
+          "interaction": "step-selection"
+        },
+        {
+          "scene": "6.3",
+          "title": "Sparky's Word Raft",
+          "literacy_focus": "Rhyme matching",
+          "target_words": ["hat-cat", "log-frog", "ship-dip", "go", "in", "on"],
+          "interaction": "drag-and-drop"
+        },
+        {
+          "scene": "6.4",
+          "title": "Calm Cove Reading Rest",
+          "literacy_focus": "Simple sentences",
+          "target_sentences": ["The dog is in the boat.", "We go up the river."],
+          "interaction": "read-along-tap"
+        },
+        {
+          "scene": "6.5",
+          "title": "Choice Ledger & Rapids",
+          "literacy_focus": "Review + preview",
+          "target_words": ["wave", "rock", "fast"],
+          "interaction": "mini-quiz"
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Echo Mountain",
+      "theme": "Blends & Spelling",
+      "reading_level": "Developing",
+      "learning_goals": ["Consonant blends (bl-, cl-, st-, tr-)", "Echo repetition", "Simple spelling"],
+      "virtue_focus": "wisdom",
+      "scenes": [
+        {
+          "scene": "7.1",
+          "title": "Base Camp Echo Call",
+          "literacy_focus": "Consonant blends",
+          "target_words": ["clap", "brick", "stop", "tree"],
+          "interaction": "echo-tap"
+        },
+        {
+          "scene": "7.2",
+          "title": "Signposts in the Mist",
+          "literacy_focus": "Blend recognition",
+          "target_words": ["cliff", "cloud", "step", "trail", "stone"],
+          "interaction": "multiple-choice"
+        },
+        {
+          "scene": "7.3",
+          "title": "Echo Spelling Caves",
+          "literacy_focus": "Spelling with blends",
+          "target_words": ["clap", "stop", "trip", "rock"],
+          "interaction": "letter-tiles"
+        },
+        {
+          "scene": "7.4",
+          "title": "Gramps' Story Fire",
+          "literacy_focus": "Repetition, emotions",
+          "target_words": ["brave", "clap", "stop", "trail"],
+          "interaction": "tap-highlight"
+        },
+        {
+          "scene": "7.5",
+          "title": "Summit Echo & Voices",
+          "literacy_focus": "Short phrases",
+          "target_phrases": ["Be brave", "Stay kind", "Check again"],
+          "interaction": "phrase-choice"
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "City of Many Doors",
+      "theme": "Functional Reading & Sentences",
+      "reading_level": "Developing → Bridge",
+      "learning_goals": ["Direction words", "3-5 word sentences", "Adjectives intro"],
+      "virtue_focus": "kindness",
+      "scenes": [
+        {
+          "scene": "8.1",
+          "title": "Gatehouse Signs",
+          "literacy_focus": "Functional direction",
+          "target_words": ["open", "shut", "in", "out", "left", "right"],
+          "interaction": "tap-the-label"
+        },
+        {
+          "scene": "8.2",
+          "title": "Street Crossing",
+          "literacy_focus": "Sentence sequences",
+          "target_sentences": ["Stop.", "Look.", "Go.", "Wait."],
+          "interaction": "sentence-order"
+        },
+        {
+          "scene": "8.3",
+          "title": "Claude's Delivery",
+          "literacy_focus": "Sentence comprehension",
+          "target_sentences": ["Go up the stairs"],
+          "interaction": "sentence-to-picture"
+        },
+        {
+          "scene": "8.4",
+          "title": "Sparky's Shortcuts",
+          "literacy_focus": "Adjectives & contrast",
+          "target_words": ["safe", "fast", "slow", "bumpy"],
+          "interaction": "choice-with-reading"
+        },
+        {
+          "scene": "8.5",
+          "title": "City Map & Passport",
+          "literacy_focus": "Review + adjectives",
+          "target_words": ["quiet", "noisy"],
+          "interaction": "passport-summary"
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "Star Orchard",
+      "theme": "Adjectives & Description",
+      "reading_level": "Bridge-to-Fluency",
+      "learning_goals": ["Adjective recognition", "Two-clause sentences", "Preferences"],
+      "virtue_focus": "trust",
+      "scenes": [
+        {
+          "scene": "9.1",
+          "title": "Choosing a Star-Tree",
+          "literacy_focus": "Adjective pairs",
+          "target_words": ["bright", "soft", "tall", "small", "quiet", "busy"],
+          "interaction": "description-match"
+        },
+        {
+          "scene": "9.2",
+          "title": "Tasting Notes",
+          "literacy_focus": "It is ___ and ___",
+          "target_words": ["sweet", "soft", "bright", "cold", "warm"],
+          "interaction": "cloze-adjective"
+        },
+        {
+          "scene": "9.3",
+          "title": "Claude's Preferences",
+          "literacy_focus": "I like / I do not like",
+          "target_words": ["I", "like", "do", "not", "the", "bright"],
+          "interaction": "sentence-builder"
+        },
+        {
+          "scene": "9.4",
+          "title": "Sparky's Star Sorting",
+          "literacy_focus": "Word-only labels",
+          "target_words": ["hot", "cold", "heavy", "light"],
+          "interaction": "drag-to-basket"
+        },
+        {
+          "scene": "9.5",
+          "title": "Night-Sky Poem",
+          "literacy_focus": "Short composition",
+          "target_words": ["sky", "bright", "soft", "kind", "brave"],
+          "interaction": "word-choice-poem"
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Homecoming Circle",
+      "theme": "Review, Reflection & Transfer",
+      "reading_level": "Consolidation",
+      "learning_goals": ["Mixed review", "Spelling assessment", "Celebration", "Book004 seeding"],
+      "virtue_focus": "all",
+      "scenes": [
+        {
+          "scene": "10.1",
+          "title": "Path of Remembering",
+          "literacy_focus": "Mixed review",
+          "target_words": ["go", "stop", "up", "down", "brave", "kind", "bright"],
+          "interaction": "tap-match-review"
+        },
+        {
+          "scene": "10.2",
+          "title": "Campfire Word Stories",
+          "literacy_focus": "Virtue words + connectors",
+          "target_words": ["trust", "fun", "brave", "because", "and"],
+          "interaction": "sentence-completion"
+        },
+        {
+          "scene": "10.3",
+          "title": "Home Desk Spelling",
+          "literacy_focus": "Spelling assessment",
+          "target_words": "dynamic_from_weak_areas",
+          "interaction": "letter-tiles"
+        },
+        {
+          "scene": "10.4",
+          "title": "Parents' Circle View",
+          "literacy_focus": "Summary & celebration",
+          "interaction": "story-summary"
+        },
+        {
+          "scene": "10.5",
+          "title": "Window to Next Book",
+          "literacy_focus": "Personalization seed",
+          "interaction": "future-choice",
+          "book004_seeds": {
+            "word_preferences": "dynamic",
+            "arc_preferences": "dynamic",
+            "family_discussion_flags": "dynamic"
+          }
+        }
+      ]
+    }
+  ],
+
+  "api_flow": {
+    "phase0_session_init": {
+      "endpoint": "POST /api/v1/session/init",
+      "actions": ["Load child profile", "Load Book002 completion data", "Load virtue progress"],
+      "returns": ["sessionId", "context"]
+    },
+    "phase1_foundation": {
+      "chapters": [1, 2, 3, 4, 5],
+      "per_chapter": [
+        "POST /api/v1/analyze-mood",
+        "POST /api/v1/curate-chapters",
+        "GET /api/v1/story/:storyId",
+        "POST /api/v1/scene-metrics",
+        "POST /api/v1/submit-evaluation"
+      ]
+    },
+    "phase2_bridge": {
+      "endpoint": "POST /api/v1/transfer-check",
+      "actions": ["Aggregate Ch.1-5 skills", "Map to literacy readiness"],
+      "returns": ["recommended_literacy_focus"]
+    },
+    "phase3_literacy": {
+      "chapters": [6, 7, 8, 9, 10],
+      "per_chapter": [
+        "POST /api/v1/curate-chapters",
+        "GET /api/v1/story/:storyId",
+        "POST /api/v1/scene-metrics",
+        "POST /api/v1/submit-evaluation"
+      ],
+      "additional_metrics": ["word_recognition", "spelling_attempts", "reading_mode"]
+    },
+    "phase4_completion": {
+      "endpoint": "POST /api/v1/complete-book",
+      "actions": ["Generate final summary", "Update knighthood", "Store Book004 seeds"],
+      "returns": ["completion_certificate", "recommendations"]
+    }
+  },
+
+  "knighthood_system": {
+    "levels": [
+      {"name": "Page", "min_points": 0, "max_points": 49},
+      {"name": "Squire", "min_points": 50, "max_points": 149},
+      {"name": "Knight", "min_points": 150, "max_points": 299},
+      {"name": "Champion", "min_points": 300, "max_points": 499},
+      {"name": "Legend", "min_points": 500, "max_points": null}
+    ],
+    "virtues": ["courage", "kindness", "wisdom", "trust"],
+    "points_per_choice": 1,
+    "bonus_points": {
+      "chapter_completion": 5,
+      "no_hints_used": 3,
+      "parent_discussion": 2
+    }
+  },
+
+  "commons_good_compliance": {
+    "cost_target": "<$1.00 per chapter",
+    "transparency": "All costs logged to /telemetry endpoint",
+    "privacy": "No personal data; Sir James is a character name only",
+    "attribution": "Every AI system credited (OpenAI, ElevenLabs, Suno)",
+    "ethics": "Content rated PG (ages 5-8); age-appropriate themes",
+    "accessibility": "ARIA labels, keyboard navigation, screen reader support"
+  }
+}

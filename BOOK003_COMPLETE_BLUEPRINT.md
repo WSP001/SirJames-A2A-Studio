@@ -988,6 +988,162 @@ When a parent opens the dashboard for Book003:
 
 ---
 
+## 🚀 IMPROVEMENTS APPLIED (Based on Book002 Learnings)
+
+### What We Learned & Fixed:
+
+| Issue Found | Solution Applied | Files Updated |
+|-------------|------------------|---------------|
+| **Sir James looked too old** | Explicit "5-year-old" in ALL image prompts | `regenerate_chapter6_images.mjs` |
+| **Scripts too short (3 lines)** | Expanded to 6-8 lines per scene | All `_narration_batch.json` |
+| **No Claude thought bubbles** | Added to all 80 scenes | `enhance_all_scripts.mjs` |
+| **No scene thumbnails** | Added clickable thumbnails to all chapters | All chapter `index.html` |
+| **No virtue choices** | Added to all 10 chapter endings | All `_narration_batch.json` |
+| **No parent discussion prompts** | Added to all 10 chapters | All `_narration_batch.json` |
+| **Safari/iOS compatibility** | Added `-webkit-backdrop-filter` | All chapter pages |
+
+### New Scripts Created:
+
+```
+scripts/
+├── enhance_all_scripts.mjs      # Expands 3-line scenes to 6-8 lines
+├── update_all_chapter_pages.mjs # Adds thumbnails to all chapters
+├── audit_image_consistency.mjs  # Checks all 80 images for issues
+├── regenerate_chapter6_images.mjs # Fixes age-inconsistent images
+```
+
+### Character Bible Enforcement:
+
+```javascript
+const CHARACTER_BIBLE = {
+  sir_james: {
+    age: "5 years old",  // CRITICAL: Always specify!
+    eyes: "bright blue",
+    hair: "brown with cowlick",
+    outfit: "royal blue tunic with silver Celtic trim"
+  },
+  claude: {
+    breed: "Redbone Coonhound",
+    coat: "reddish-brown",
+    eyes: "amber/brown",
+    ears: "long floppy"
+  }
+};
+```
+
+### Scene Enhancement Template:
+
+Each scene now includes:
+1. **Narrator intro** (setting the scene)
+2. **Claude thought bubble** (dog's perspective)
+3. **Sir James dialogue** (child voice)
+4. **Narrator expansion** (descriptive detail)
+5. **Character reaction** (emotional beat)
+6. **Closing narration** (transition to next)
+
+### Virtue Choice Format:
+
+```json
+{
+  "virtue_choice": {
+    "prompt": "What should Sir James do next?",
+    "options": [
+      {"text": "Be brave!", "virtue": "courage", "points": 1},
+      {"text": "Think carefully", "virtue": "wisdom", "points": 1}
+    ]
+  }
+}
+```
+
+### Parent Discussion Format:
+
+```json
+{
+  "parent_discussion": {
+    "chapter_theme": "courage",
+    "questions": [
+      "What did Sir James learn about being brave?",
+      "How did Claude help during the adventure?",
+      "What would you have done?",
+      "Can you think of a time you showed courage?"
+    ],
+    "activity": "Draw your favorite moment from this chapter!"
+  }
+}
+```
+
+---
+
+## 📊 BOOK3.5 ENHANCEMENT STATS
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Lines per scene | 3 | 6-8 |
+| Total dialogue lines | ~240 | **~470** |
+| Claude thought bubbles | 0 | **80** |
+| Virtue choices | 0 | **10** |
+| Parent discussion sections | 0 | **10** |
+| Scene thumbnails | 0 | **80** |
+| Images verified | ? | **80/80** |
+
+---
+
+## 🔗 MANIFEST FILE LOCATION
+
+The machine-readable version of this blueprint:
+
+```
+assets/manifests/scene_manifest.json
+```
+
+This JSON file can be parsed directly by:
+- **Writer Agent** → Story generation
+- **Parent Dashboard** → UI controls
+- **D2A System** → Skill logging
+- **API Router** → Endpoint mapping
+
+---
+
+## ✅ READY FOR ENTERPRISE TESTING
+
+### Pre-Flight Checklist:
+
+- [x] All 80 scenes expanded to 6-8 lines
+- [x] All 80 Claude thought bubbles added
+- [x] All 10 virtue choices implemented
+- [x] All 10 parent discussion prompts added
+- [x] All 80 scene thumbnails on chapter pages
+- [x] All 80 images verified present
+- [x] Safari/iOS compatibility fixed
+- [x] Character Bible enforced in all prompts
+- [x] scene_manifest.json created
+- [ ] Physical device testing (iPad, Android, Chrome)
+- [ ] Production deploy approval
+
+### Test Commands:
+
+```powershell
+# Preview locally
+netlify dev
+
+# Run image audit
+node scripts/audit_image_consistency.mjs
+
+# Enhance scripts (if needed)
+node scripts/enhance_all_scripts.mjs
+
+# Update chapter pages (if needed)
+node scripts/update_all_chapter_pages.mjs
+```
+
+---
+
 **For the Commons Good!** 🏰⚔️🐕✨
 
 *The complete Sir James Adventures Book003 journey—from baseline survival skills through reading mastery—all powered by the Parents Dashboard as the Room of Many Windows.*
+
+---
+
+**Last Updated:** January 3, 2026  
+**Version:** 3.5.0  
+**Status:** 🟢 Ready for Enterprise Testing
