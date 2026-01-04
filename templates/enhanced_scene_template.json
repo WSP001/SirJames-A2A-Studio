@@ -1,0 +1,133 @@
+{
+  "template_version": "3.5",
+  "description": "Enhanced scene template for Book3.5 with more interactivity",
+  "note": "Each scene should have 6-8 lines minimum, plus virtue choices and parent discussion prompts",
+  
+  "scene_structure": {
+    "required_elements": [
+      "narrator_intro",
+      "character_dialogue",
+      "claude_thought_bubble",
+      "virtue_choice",
+      "narrator_transition",
+      "parent_discussion_prompt"
+    ],
+    "minimum_lines": 6,
+    "recommended_lines": 8
+  },
+  
+  "example_enhanced_scene": {
+    "scene": "scene-001",
+    "title": "The Abandoned Tower",
+    "setting": "Dusty tower room with ornate mirror reflecting strange visions",
+    "image_prompt": "5-year-old boy with bright blue eyes and brown hair with cowlick, wearing royal blue tunic with silver Celtic trim, standing in dusty ancient tower with Redbone Coonhound dog, magical mirror covered in dust, golden sunlight through arched windows, Pixar-style 3D animation",
+    
+    "lines": [
+      {
+        "id": "006-01-01",
+        "voice": "narrator",
+        "text": "Sir James and Claude climbed the winding stairs of an old tower, where dust danced in beams of golden light. Each step creaked beneath their feet, telling stories of ages past.",
+        "emotion": "mysterious",
+        "sfx": "footsteps_stone"
+      },
+      {
+        "id": "006-01-02",
+        "voice": "claude_thought",
+        "text": "Claude's nose twitched. Something magical was up here - he could smell it!",
+        "emotion": "curious",
+        "sfx": "dog_sniff"
+      },
+      {
+        "id": "006-01-03",
+        "voice": "sir_james",
+        "text": "Look Claude! There's an old mirror up here. It's so beautiful, even covered in dust. I wonder who used to look into it?",
+        "emotion": "curious"
+      },
+      {
+        "id": "006-01-04",
+        "voice": "narrator",
+        "text": "The mirror stood taller than Gramps, its frame carved with swirling patterns that seemed to move in the light.",
+        "emotion": "descriptive"
+      },
+      {
+        "id": "006-01-05",
+        "voice": "sir_james",
+        "text": "Should I wipe the dust away? What if it's magic?",
+        "emotion": "excited"
+      },
+      {
+        "id": "006-01-06",
+        "voice": "narrator",
+        "text": "As Sir James wiped the dust away with his small hand, the mirror began to glow with a soft, silvery light. Claude's ears perked up in surprise!",
+        "emotion": "wonder",
+        "sfx": "magic_shimmer"
+      }
+    ],
+    
+    "virtue_choice": {
+      "prompt": "The mirror is glowing! What should Sir James do?",
+      "options": [
+        {
+          "text": "Step closer bravely to see what the mirror shows",
+          "virtue": "courage",
+          "next_scene": "scene-002a"
+        },
+        {
+          "text": "Wait and think carefully before touching it again",
+          "virtue": "wisdom",
+          "next_scene": "scene-002b"
+        }
+      ]
+    },
+    
+    "parent_discussion": {
+      "prompt": "Talk with your child about this scene!",
+      "questions": [
+        "Have you ever found something old and mysterious? How did it make you feel?",
+        "Why do you think Sir James wanted to clean the mirror?",
+        "What do you think the mirror will show?"
+      ],
+      "virtue_lesson": "Being curious and exploring new things takes courage!"
+    }
+  },
+  
+  "voice_guidelines": {
+    "narrator": {
+      "style": "Warm grandfather storyteller",
+      "emotion": "Wonder, encouragement",
+      "voice_id": "XrExE9yKIg1WjnnlVkGX"
+    },
+    "sir_james": {
+      "style": "Young, brave, 5-year-old",
+      "emotion": "Curious, courageous",
+      "voice_id": "SOYHLrjzK2X1ezoPC6cr"
+    },
+    "gramps": {
+      "style": "Elderly, wise, patient",
+      "emotion": "Gentle wisdom, pride",
+      "voice_id": "pqHfZKP75CvOlQylNhV4"
+    },
+    "claude_thought": {
+      "style": "Narrator speaks Claude's thoughts",
+      "emotion": "Loyal, supportive",
+      "note": "Claude communicates via thought bubbles only - no direct speech"
+    }
+  },
+  
+  "character_bible_reminder": {
+    "sir_james": {
+      "age": "5 years old (MUST be exactly 5, very young child)",
+      "eyes": "Bright blue, wide and curious",
+      "hair": "Brown with distinctive cowlick",
+      "outfit": "Royal blue tunic with silver Celtic knotwork trim, brown boots",
+      "accessory": "Small wooden practice sword at belt"
+    },
+    "claude": {
+      "breed": "Redbone Coonhound",
+      "coat": "Reddish-brown, smooth fur",
+      "ears": "Long and floppy",
+      "eyes": "Warm amber/brown, soulful",
+      "personality": "Loyal, protective, communicates through thought bubbles"
+    }
+  }
+}
