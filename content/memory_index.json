@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "project": "Sir James Adventures Book002",
+  "created": "2026-01-03T00:00:00Z",
+  "updated": "2026-01-03T00:00:00Z",
+  
+  "user_preferences": {
+    "favorite_moods": [],
+    "favorite_themes": [],
+    "preferred_virtues": ["courage", "wisdom", "trust"],
+    "session_count": 0
+  },
+  
+  "video_history": [],
+  
+  "feedback_log": [],
+  
+  "virtue_progress": {
+    "courage": 0,
+    "wisdom": 0,
+    "trust": 0
+  },
+  
+  "chapter_progress": {
+    "completed": [],
+    "current_chapter": 1,
+    "current_scene": 1
+  },
+  
+  "parent_inputs": [],
+  
+  "learning_insights": {
+    "patterns": [],
+    "recommendations": []
+  },
+  
+  "commons_good": {
+    "total_cost_usd": 0,
+    "images_generated": 0,
+    "audio_generated": 0,
+    "stories_created": 0
+  }
+}

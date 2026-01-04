@@ -90,10 +90,10 @@
 ### 3.2 Memory System
 | Task | Status | Tool | Expected Result |
 |------|--------|------|-----------------|
-| Implement byterover-store-knowledge | 🔴 | Byterover MCP | Stores preferences after each session |
-| Implement byterover-retrieve-knowledge | 🔴 | Byterover MCP | Retrieves preferences before generation |
-| Create memory_index.json | 🔴 | Local file | Stores favorite_moods, video_history |
-| Wire feedback loop | 🔴 | Parent Dashboard → Memory | 👍/👎 updates preferences |
+| Implement byterover-store-knowledge | 🟢 | Byterover MCP | Stores preferences after each session ✅ |
+| Implement byterover-retrieve-knowledge | 🟢 | Byterover MCP | Retrieves preferences before generation ✅ |
+| Create memory_index.json | 🟢 | Local file | Stores favorite_moods, video_history ✅ |
+| Wire feedback loop | 🟢 | Parent Dashboard → Memory | 👍/👎 updates preferences ✅ |
 
 ---
 
