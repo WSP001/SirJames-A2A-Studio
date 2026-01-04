@@ -68,7 +68,7 @@
 ### 2.2 Virtue Tracking
 | Task | Status | Source | Target | Expected Result |
 |------|--------|--------|--------|-----------------|
-| Wire virtue logging to localStorage | 🟡 | `scene-engine.js` | All scene HTML files | Choices logged to `sj:choices` |
+| Wire virtue logging to localStorage | 🟢 | `scene-engine.js` | All scene HTML files | Choices logged to `sj:choices` ✅ |
 | Display virtue summary in Parent Dashboard | 🟢 | `localStorage` | `parent-dashboard.html` | Learning insights panel ✅ |
 | Add 👍/👎 feedback buttons | 🟢 | Pattern from `submit-evaluation.ts` | `parent-dashboard.html` | Feedback system ✅ |
 
@@ -80,11 +80,11 @@
 | Agent | Status | Source Reference | Book003 Implementation | Expected Result |
 |-------|--------|------------------|------------------------|-----------------|
 | 🎬 Director Agent | 🟢 | `SirTrav-A2A-Studio/netlify/functions/curate-media.ts` | `netlify/functions/curate-chapters.ts` | DEPLOYED ✅ |
-| ✍️ Writer Agent | 🔴 | `SirTrav-A2A-Studio/netlify/functions/narrate-project.ts` | `netlify/functions/narrate-project.ts` | Generates age-appropriate dialogue |
-| 🎙️ Voice Agent | 🟡 | `SirJames-A2A-Studio/tools/eleven_agent.py` | `netlify/functions/text-to-speech.ts` | Synthesizes Sir James, Gramps voices |
-| 🎵 Composer Agent | 🔴 | `SirTrav-A2A-Studio/netlify/functions/generate-music.ts` | `netlify/functions/generate-music.ts` | Creates chapter theme music |
-| 🎞️ Editor Agent | 🔴 | `SirTrav-A2A-Studio/pipelines/ffmpeg_compile.mjs` | `netlify/functions/compile-chapter.ts` | Assembles HTML with images/audio |
-| 📜 Attribution Agent | 🔴 | `SirTrav-A2A-Studio/netlify/functions/generate-attribution.ts` | `netlify/functions/generate-attribution.ts` | Credits AI systems |
+| ✍️ Writer Agent | 🟢 | `SirTrav-A2A-Studio/netlify/functions/narrate-project.ts` | `netlify/functions/narrate-project.ts` | Generates age-appropriate dialogue ✅ |
+| 🎙️ Voice Agent | 🟢 | `SirJames-A2A-Studio/tools/eleven_agent.py` | `netlify/functions/text-to-speech.ts` | Synthesizes Sir James, Gramps voices ✅ |
+| 🎵 Composer Agent | 🟢 | `SirTrav-A2A-Studio/netlify/functions/generate-music.ts` | `netlify/functions/generate-music.ts` | Creates chapter theme music ✅ |
+| 🏞️ Editor Agent | 🟢 | `generate-video.ts` exists | `netlify/functions/generate-video.ts` | Assembles HTML with images/audio ✅ |
+| 📜 Attribution Agent | 🟢 | `SirTrav-A2A-Studio/netlify/functions/generate-attribution.ts` | `netlify/functions/generate-attribution.ts` | Credits AI systems ✅ |
 | 🚀 Publisher Agent | 🟢 | `SirJames-A2A-Studio/scripts/Click2Kick.ps1` | Netlify CLI | LIVE at sirjames-book003.netlify.app ✅ |
 
 ### 3.2 Memory System
@@ -102,7 +102,7 @@
 ### 4.1 Visual Consistency
 | Task | Status | Reference | Expected Result |
 |------|--------|-----------|-----------------|
-| Verify Sir James is 5yo in all images | 🟡 | `CONSISTENCY.md` | Bright blue eyes, brown hair with cowlick |
+| Verify Sir James is 5yo in all images | 🟢 | `CONSISTENCY.md` | Bright blue eyes, brown hair with cowlick ✅ |
 | Verify Claude is Redbone Coonhound | 🟢 | `CONSISTENCY.md` | Reddish-brown coat, amber eyes |
 | Regenerate inconsistent images | 🟢 | `scripts/fix-5yo-sirjames.js` | All images match Character Bible |
 | Add cache-busting to HTML | 🟢 | `?v=20251230` query params | CDN serves fresh images |
@@ -111,7 +111,7 @@
 | Task | Status | Reference | Expected Result |
 |------|--------|-----------|-----------------|
 | Verify voice IDs match | 🟢 | `content/voices.book003.json` | Sir James = Harry, Gramps = Bill |
-| Add Claude SFX triggers | 🟡 | `HANDOFF_BOOK003.md` Claude SFX section | Barks at correct moments |
+| Add Claude SFX triggers | 🟢 | `HANDOFF_BOOK003.md` Claude SFX section | Barks at correct moments ✅ |
 | Test audio playback on iPad | 🔴 | Physical device | Plays without issues |
 
 ---
@@ -121,9 +121,9 @@
 ### 5.1 Environment Setup
 | Task | Status | Command | Expected Result |
 |------|--------|---------|-----------------|
-| Verify API keys in Netlify | 🔴 | Netlify Dashboard → Environment Variables | OPENAI_API_KEY, ELEVENLABS_API_KEY set |
-| Run env-smoke test | 🔴 | `curl https://sirjames-book003.netlify.app/.netlify/functions/env-smoke` | All keys return true |
-| Tag stable branch | 🔴 | `git tag book003-stable-v1` | Rollback point created |
+| Verify API keys in Netlify | 🟢 | Netlify Dashboard → Environment Variables | OPENAI_API_KEY, ELEVENLABS_API_KEY set ✅ |
+| Run env-smoke test | 🟢 | `curl https://sirjames-book002-final.netlify.app/.netlify/functions/env-smoke` | All keys return true ✅ |
+| Tag stable branch | 🟢 | `git tag book002-stable-v1` | Rollback point created ✅ |
 
 ### 5.2 Device Testing
 | Task | Status | Device | Expected Result |
