@@ -1,0 +1,490 @@
+{
+  "timestamp": "2026-01-04T03:28:23.371Z",
+  "summary": {
+    "totalImages": 80,
+    "totalMissing": 0,
+    "totalIssues": 0
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 2772134,
+          "sizeKB": 2707
+        },
+        {
+          "scene": "002",
+          "size": 2897911,
+          "sizeKB": 2830
+        },
+        {
+          "scene": "003",
+          "size": 2671756,
+          "sizeKB": 2609
+        },
+        {
+          "scene": "004",
+          "size": 3352270,
+          "sizeKB": 3274
+        },
+        {
+          "scene": "005",
+          "size": 3306986,
+          "sizeKB": 3229
+        },
+        {
+          "scene": "006",
+          "size": 2909183,
+          "sizeKB": 2841
+        },
+        {
+          "scene": "007",
+          "size": 2636588,
+          "sizeKB": 2575
+        },
+        {
+          "scene": "008",
+          "size": 2813755,
+          "sizeKB": 2748
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 2,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3202354,
+          "sizeKB": 3127
+        },
+        {
+          "scene": "002",
+          "size": 3183430,
+          "sizeKB": 3109
+        },
+        {
+          "scene": "003",
+          "size": 3245682,
+          "sizeKB": 3170
+        },
+        {
+          "scene": "004",
+          "size": 3089026,
+          "sizeKB": 3017
+        },
+        {
+          "scene": "005",
+          "size": 2761163,
+          "sizeKB": 2696
+        },
+        {
+          "scene": "006",
+          "size": 3508056,
+          "sizeKB": 3426
+        },
+        {
+          "scene": "007",
+          "size": 3114409,
+          "sizeKB": 3041
+        },
+        {
+          "scene": "008",
+          "size": 2881504,
+          "sizeKB": 2814
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 3,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3001683,
+          "sizeKB": 2931
+        },
+        {
+          "scene": "002",
+          "size": 3173248,
+          "sizeKB": 3099
+        },
+        {
+          "scene": "003",
+          "size": 2919781,
+          "sizeKB": 2851
+        },
+        {
+          "scene": "004",
+          "size": 3237372,
+          "sizeKB": 3161
+        },
+        {
+          "scene": "005",
+          "size": 2170373,
+          "sizeKB": 2120
+        },
+        {
+          "scene": "006",
+          "size": 3074125,
+          "sizeKB": 3002
+        },
+        {
+          "scene": "007",
+          "size": 3483269,
+          "sizeKB": 3402
+        },
+        {
+          "scene": "008",
+          "size": 2961660,
+          "sizeKB": 2892
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 4,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3459971,
+          "sizeKB": 3379
+        },
+        {
+          "scene": "002",
+          "size": 2915070,
+          "sizeKB": 2847
+        },
+        {
+          "scene": "003",
+          "size": 3089100,
+          "sizeKB": 3017
+        },
+        {
+          "scene": "004",
+          "size": 3012517,
+          "sizeKB": 2942
+        },
+        {
+          "scene": "005",
+          "size": 3351915,
+          "sizeKB": 3273
+        },
+        {
+          "scene": "006",
+          "size": 2385726,
+          "sizeKB": 2330
+        },
+        {
+          "scene": "007",
+          "size": 2971079,
+          "sizeKB": 2901
+        },
+        {
+          "scene": "008",
+          "size": 3326606,
+          "sizeKB": 3249
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 5,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3000422,
+          "sizeKB": 2930
+        },
+        {
+          "scene": "002",
+          "size": 3286255,
+          "sizeKB": 3209
+        },
+        {
+          "scene": "003",
+          "size": 3098814,
+          "sizeKB": 3026
+        },
+        {
+          "scene": "004",
+          "size": 3227810,
+          "sizeKB": 3152
+        },
+        {
+          "scene": "005",
+          "size": 3252683,
+          "sizeKB": 3176
+        },
+        {
+          "scene": "006",
+          "size": 3334819,
+          "sizeKB": 3257
+        },
+        {
+          "scene": "007",
+          "size": 3407984,
+          "sizeKB": 3328
+        },
+        {
+          "scene": "008",
+          "size": 3107939,
+          "sizeKB": 3035
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 6,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 2875462,
+          "sizeKB": 2808
+        },
+        {
+          "scene": "002",
+          "size": 2708817,
+          "sizeKB": 2645
+        },
+        {
+          "scene": "003",
+          "size": 3091258,
+          "sizeKB": 3019
+        },
+        {
+          "scene": "004",
+          "size": 2779023,
+          "sizeKB": 2714
+        },
+        {
+          "scene": "005",
+          "size": 3052752,
+          "sizeKB": 2981
+        },
+        {
+          "scene": "006",
+          "size": 2660653,
+          "sizeKB": 2598
+        },
+        {
+          "scene": "007",
+          "size": 2617809,
+          "sizeKB": 2556
+        },
+        {
+          "scene": "008",
+          "size": 2907090,
+          "sizeKB": 2839
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 7,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3490006,
+          "sizeKB": 3408
+        },
+        {
+          "scene": "002",
+          "size": 2725831,
+          "sizeKB": 2662
+        },
+        {
+          "scene": "003",
+          "size": 2971624,
+          "sizeKB": 2902
+        },
+        {
+          "scene": "004",
+          "size": 2784121,
+          "sizeKB": 2719
+        },
+        {
+          "scene": "005",
+          "size": 2916800,
+          "sizeKB": 2848
+        },
+        {
+          "scene": "006",
+          "size": 2989679,
+          "sizeKB": 2920
+        },
+        {
+          "scene": "007",
+          "size": 2867104,
+          "sizeKB": 2800
+        },
+        {
+          "scene": "008",
+          "size": 2929737,
+          "sizeKB": 2861
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 8,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3281251,
+          "sizeKB": 3204
+        },
+        {
+          "scene": "002",
+          "size": 3240026,
+          "sizeKB": 3164
+        },
+        {
+          "scene": "003",
+          "size": 2385586,
+          "sizeKB": 2330
+        },
+        {
+          "scene": "004",
+          "size": 2806400,
+          "sizeKB": 2741
+        },
+        {
+          "scene": "005",
+          "size": 2958403,
+          "sizeKB": 2889
+        },
+        {
+          "scene": "006",
+          "size": 3108847,
+          "sizeKB": 3036
+        },
+        {
+          "scene": "007",
+          "size": 3196298,
+          "sizeKB": 3121
+        },
+        {
+          "scene": "008",
+          "size": 2921787,
+          "sizeKB": 2853
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 9,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 3284169,
+          "sizeKB": 3207
+        },
+        {
+          "scene": "002",
+          "size": 2946545,
+          "sizeKB": 2877
+        },
+        {
+          "scene": "003",
+          "size": 3152208,
+          "sizeKB": 3078
+        },
+        {
+          "scene": "004",
+          "size": 2925360,
+          "sizeKB": 2857
+        },
+        {
+          "scene": "005",
+          "size": 2999486,
+          "sizeKB": 2929
+        },
+        {
+          "scene": "006",
+          "size": 3425277,
+          "sizeKB": 3345
+        },
+        {
+          "scene": "007",
+          "size": 3113883,
+          "sizeKB": 3041
+        },
+        {
+          "scene": "008",
+          "size": 3049597,
+          "sizeKB": 2978
+        }
+      ],
+      "potentialIssues": []
+    },
+    {
+      "chapter": 10,
+      "imagesFound": 8,
+      "imagesMissing": [],
+      "imageSizes": [
+        {
+          "scene": "001",
+          "size": 2823611,
+          "sizeKB": 2757
+        },
+        {
+          "scene": "002",
+          "size": 3199450,
+          "sizeKB": 3124
+        },
+        {
+          "scene": "003",
+          "size": 2887385,
+          "sizeKB": 2820
+        },
+        {
+          "scene": "004",
+          "size": 2967552,
+          "sizeKB": 2898
+        },
+        {
+          "scene": "005",
+          "size": 2849411,
+          "sizeKB": 2783
+        },
+        {
+          "scene": "006",
+          "size": 2986465,
+          "sizeKB": 2916
+        },
+        {
+          "scene": "007",
+          "size": 3253665,
+          "sizeKB": 3177
+        },
+        {
+          "scene": "008",
+          "size": 2821243,
+          "sizeKB": 2755
+        }
+      ],
+      "potentialIssues": []
+    }
+  ]
+}
