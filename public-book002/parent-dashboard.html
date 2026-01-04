@@ -51,6 +51,27 @@
       font-size: 1.1rem;
     }
     
+    .status-indicator {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+    
+    .status-connected {
+      background: var(--success);
+      color: var(--bg);
+    }
+    
+    .status-disconnected {
+      background: var(--accent);
+      color: var(--text);
+    }
+      font-size: 1.1rem;
+    }
+    
     .dashboard-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -285,38 +306,36 @@
       
       <!-- Virtue Badges -->
       <div class="card">
-        <h2><span class="icon">🏅</span> Virtue Badges</h2>
+        <h2><span class="icon">🏅</span> Virtue Progress</h2>
         <div class="virtue-grid">
-          <div class="virtue-badge earned">
-            <span class="emoji">🦁</span>
+          <div class="virtue-badge earned" id="courage-badge">
+            <span class="emoji">💎</span>
             <span class="name">Courage</span>
-            <span class="status">Earned!</span>
+            <span class="count" id="courage-count">0</span>
           </div>
-          <div class="virtue-badge">
-            <span class="emoji">💝</span>
-            <span class="name">Kindness</span>
-            <span class="status">In Progress</span>
+          <div class="virtue-badge" id="wisdom-badge">
+            <span class="emoji">🥇</span>
+            <span class="name">Wisdom</span>
+            <span class="count" id="wisdom-count">0</span>
           </div>
-          <div class="virtue-badge">
-            <span class="emoji">🔍</span>
-            <span class="name">Curiosity</span>
-            <span class="status">Locked</span>
+          <div class="virtue-badge" id="trust-badge">
+            <span class="emoji">🏅</span>
+            <span class="name">Trust</span>
+            <span class="count" id="trust-count">0</span>
           </div>
-          <div class="virtue-badge">
-            <span class="emoji">🤝</span>
-            <span class="name">Teamwork</span>
-            <span class="status">Locked</span>
-          </div>
-          <div class="virtue-badge">
-            <span class="emoji">🎯</span>
-            <span class="name">Persistence</span>
-            <span class="status">Locked</span>
-          </div>
-          <div class="virtue-badge">
-            <span class="emoji">🌟</span>
-            <span class="name">Honesty</span>
-            <span class="status">Locked</span>
-          </div>
+        </div>
+        <button class="action-btn secondary" onclick="refreshVirtueData()" style="margin-top: 15px; width: 100%;">
+          🔄 Refresh Virtue Data
+        </button>
+      </div>
+      
+      <!-- Recent Choices -->
+      <div class="card">
+        <h2><span class="icon">📖</span> Recent Choices</h2>
+        <div id="recent-choices">
+          <p style="color: var(--text-muted); text-align: center; padding: 20px;">
+            No choices yet. Start reading Sir James Adventures to see virtue choices here!
+          </p>
         </div>
       </div>
       
@@ -390,6 +409,122 @@
   </div>
   
   <script>
+    // STORAGE KEYS
+    const STORAGE_KEYS = {
+      choices: 'sj:choices',
+      progress: 'sj:progress',
+      virtues: 'sj:virtues',
+      sessionId: 'sj:session_id'
+    };
+    
+    // Initialize dashboard on load
+    document.addEventListener('DOMContentLoaded', function() {
+      refreshVirtueData();
+      loadRecentChoices();
+      
+      // Auto-refresh every 30 seconds
+      setInterval(refreshVirtueData, 30000);
+    });
+    
+    function getVirtues() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEYS.virtues);
+        return stored ? JSON.parse(stored) : { courage: 0, wisdom: 0, trust: 0 };
+      } catch (e) {
+        return { courage: 0, wisdom: 0, trust: 0 };
+      }
+    }
+    
+    function getChoices() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEYS.choices);
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+    
+    function refreshVirtueData() {
+      const virtues = getVirtues();
+      
+      // Update virtue counts
+      document.getElementById('courage-count').textContent = virtues.courage;
+      document.getElementById('wisdom-count').textContent = virtues.wisdom;
+      document.getElementById('trust-count').textContent = virtues.trust;
+      
+      // Update virtue badges (add earned class if count > 0)
+      const courageBadge = document.getElementById('courage-badge');
+      const wisdomBadge = document.getElementById('wisdom-badge');
+      const trustBadge = document.getElementById('trust-badge');
+      
+      if (virtues.courage > 0) courageBadge.classList.add('earned');
+      if (virtues.wisdom > 0) wisdomBadge.classList.add('earned');
+      if (virtues.trust > 0) trustBadge.classList.add('earned');
+      
+      console.log('Virtue data refreshed:', virtues);
+    }
+    
+    function loadRecentChoices() {
+      const choices = getChoices();
+      const choicesContainer = document.getElementById('recent-choices');
+      
+      if (choices.length === 0) {
+        choicesContainer.innerHTML = `
+          <p style="color: var(--text-muted); text-align: center; padding: 20px;">
+            No choices yet. Start reading Sir James Adventures to see virtue choices here!
+          </p>
+        `;
+        return;
+      }
+      
+      // Sort by timestamp (newest first)
+      const sortedChoices = choices.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      
+      // Show last 5 choices
+      const recentChoices = sortedChoices.slice(0, 5);
+      
+      choicesContainer.innerHTML = recentChoices.map(choice => {
+        const date = new Date(choice.timestamp);
+        const timeAgo = getTimeAgo(date);
+        
+        const virtueIcons = {
+          courage: '💎',
+          wisdom: '🥇',
+          trust: '🏅'
+        };
+        
+        return `
+          <div class="metric-row">
+            <div>
+              <span>${virtueIcons[choice.virtue] || '⭐'}</span>
+              <strong>${choice.virtue.toUpperCase()}</strong>
+              <br>
+              <small>Chapter ${choice.chapter}, Scene ${choice.scene}: "${choice.label}"</small>
+            </div>
+            <div class="metric-value">${timeAgo}</div>
+          </div>
+        `;
+      }).join('');
+    }
+    
+    function getTimeAgo(date) {
+      const seconds = Math.floor((new Date() - date) / 1000);
+      
+      if (seconds < 60) return 'Just now';
+      if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+      if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+      return `${Math.floor(seconds / 86400)}d ago`;
+    }
+    
+    // Listen for storage changes (when choices are made in other tabs)
+    window.addEventListener('storage', function(e) {
+      if (e.key === STORAGE_KEYS.virtues || e.key === STORAGE_KEYS.choices) {
+        refreshVirtueData();
+        loadRecentChoices();
+      }
+    });
+    
+    // Original script continues...
     // Load progress from localStorage
     document.addEventListener('DOMContentLoaded', function() {
       const progress = JSON.parse(localStorage.getItem('sj:progress') || '{}');
