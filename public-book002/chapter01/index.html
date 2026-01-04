@@ -19,6 +19,7 @@
             background: rgba(0,0,0,0.3);
             padding: 40px;
             border-radius: 15px;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
         .chapter-title {
@@ -43,19 +44,34 @@
         .scene-card {
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .scene-card:hover {
             transform: translateY(-5px);
             background: rgba(255,255,255,0.2);
         }
+        .scene-thumbnail {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
         .scene-link {
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: bold;
+            display: block;
+        }
+        .scene-title {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
         }
         .navigation {
             text-align: center;
@@ -90,50 +106,58 @@
             
             <div class="scene-card">
                 <a href="scene-001/index.html" class="scene-link">
-                    Scene 1<br>
-                    <small>Scene 001</small>
+                    <img src="images/scene-001.png" alt="Scene 1" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 1</span>
+                    <div class="scene-title">The Royal Summons</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-002/index.html" class="scene-link">
-                    Scene 2<br>
-                    <small>Scene 002</small>
+                    <img src="images/scene-002.png" alt="Scene 2" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 2</span>
+                    <div class="scene-title">Meeting King Arthur</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-003/index.html" class="scene-link">
-                    Scene 3<br>
-                    <small>Scene 003</small>
+                    <img src="images/scene-003.png" alt="Scene 3" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 3</span>
+                    <div class="scene-title">The Quest Revealed</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-004/index.html" class="scene-link">
-                    Scene 4<br>
-                    <small>Scene 004</small>
+                    <img src="images/scene-004.png" alt="Scene 4" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 4</span>
+                    <div class="scene-title">Preparing for Adventure</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-005/index.html" class="scene-link">
-                    Scene 5<br>
-                    <small>Scene 005</small>
+                    <img src="images/scene-005.png" alt="Scene 5" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 5</span>
+                    <div class="scene-title">Claude's Encouragement</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-006/index.html" class="scene-link">
-                    Scene 6<br>
-                    <small>Scene 006</small>
+                    <img src="images/scene-006.png" alt="Scene 6" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 6</span>
+                    <div class="scene-title">The First Choice</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-007/index.html" class="scene-link">
-                    Scene 7<br>
-                    <small>Scene 007</small>
+                    <img src="images/scene-007.png" alt="Scene 7" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 7</span>
+                    <div class="scene-title">Setting Off</div>
                 </a>
             </div> 
             <div class="scene-card">
                 <a href="scene-008/index.html" class="scene-link">
-                    Scene 8<br>
-                    <small>Scene 008</small>
+                    <img src="images/scene-008.png" alt="Scene 8" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 8</span>
+                    <div class="scene-title">The Journey Begins</div>
                 </a>
             </div>
         </div>
