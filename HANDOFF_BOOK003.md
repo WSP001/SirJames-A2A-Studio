@@ -406,6 +406,7 @@ const response = await openai.images.generate({
 ```
 
 ### Cost Tracking
+
 - **Per image:** $0.04 (DALL-E 3 HD 1792x1024)
 - **Per chapter:** ~$0.32 (8 scenes)
 - **Full book:** ~$3.20 (10 chapters × 8 scenes)
