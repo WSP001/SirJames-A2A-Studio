@@ -69,8 +69,6 @@
       background: var(--accent);
       color: var(--text);
     }
-      font-size: 1.1rem;
-    }
     
     .dashboard-grid {
       display: grid;
@@ -247,9 +245,28 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 12px 0;
+      border-top: 1px solid var(--accent-soft);
+      margin-top: 40px;
       color: var(--text-muted);
       font-size: 0.9rem;
+    }
+    
+    /* Utility Classes */
+    .progress-full { width: 100%; }
+    .progress-empty { width: 0%; }
+    .progress-ten { width: 10%; }
+    .full-width-button { 
+      margin-top: 15px; 
+      width: 100%; 
+    }
+    .empty-message { 
+      color: var(--text-muted); 
+      text-align: center; 
+      padding: 20px; 
+    }
+    .reset-button { 
+      background: #dc3545; 
     }
     
     footer a {
@@ -281,7 +298,7 @@
             <span>100%</span>
           </div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 100%"></div>
+            <div class="progress-fill progress-full"></div>
           </div>
         </div>
         <div class="progress-item">
@@ -290,7 +307,7 @@
             <span>0%</span>
           </div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 0%"></div>
+            <div class="progress-fill progress-empty"></div>
           </div>
         </div>
         <div class="progress-item">
@@ -299,7 +316,7 @@
             <span>10%</span>
           </div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 10%"></div>
+            <div class="progress-fill progress-ten"></div>
           </div>
         </div>
       </div>
@@ -324,7 +341,7 @@
             <span class="count" id="trust-count">0</span>
           </div>
         </div>
-        <button class="action-btn secondary" onclick="refreshVirtueData()" style="margin-top: 15px; width: 100%;">
+        <button class="action-btn secondary full-width-button" onclick="refreshVirtueData()">
           🔄 Refresh Virtue Data
         </button>
       </div>
@@ -333,7 +350,7 @@
       <div class="card">
         <h2><span class="icon">📖</span> Recent Choices</h2>
         <div id="recent-choices">
-          <p style="color: var(--text-muted); text-align: center; padding: 20px;">
+          <p class="empty-message">
             No choices yet. Start reading Sir James Adventures to see virtue choices here!
           </p>
         </div>
@@ -396,7 +413,7 @@
         <button class="action-btn secondary" onclick="alert('Coming soon: Audio-only mode!')">
           Audio Mode
         </button>
-        <button class="action-btn secondary" onclick="resetProgress()" style="background: #dc3545;">
+        <button class="action-btn secondary reset-button" onclick="resetProgress()">
           🔄 Reset Progress
         </button>
       </div>
@@ -470,7 +487,7 @@
       
       if (choices.length === 0) {
         choicesContainer.innerHTML = `
-          <p style="color: var(--text-muted); text-align: center; padding: 20px;">
+          <p class="empty-message">
             No choices yet. Start reading Sir James Adventures to see virtue choices here!
           </p>
         `;
