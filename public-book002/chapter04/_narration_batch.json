@@ -29,16 +29,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "004-01-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-01-02",
           "voice": "sir_james",
           "text": "Look Claude! There's a hidden gate here. And see that golden key hanging from the rose bush?",
           "emotion": "excited"
         },
         {
+          "id": "004-01-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-01-03",
           "voice": "narrator",
           "text": "Claude sniffed the air and wagged his tail. The garden beyond the gate smelled of magic and flowers.",
           "emotion": "curious"
+        },
+        {
+          "id": "004-01-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -54,16 +73,35 @@
           "emotion": "amazed"
         },
         {
+          "id": "004-02-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-02-02",
           "voice": "sir_james",
           "text": "Claude, the flowers are glowing! And is that fountain made of crystals?",
           "emotion": "delighted"
         },
         {
+          "id": "004-02-02-exp",
+          "voice": "narrator",
+          "text": "A gentle breeze carried whispers of ancient magic.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-02-03",
           "voice": "narrator",
           "text": "A gentle voice floated through the air. 'Welcome, young knight. This garden blooms for those with kind hearts.'",
           "emotion": "mystical"
+        },
+        {
+          "id": "004-02-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -79,16 +117,35 @@
           "emotion": "concerned"
         },
         {
+          "id": "004-03-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-03-02",
           "voice": "sir_james",
           "text": "Oh no, this poor flower looks so sad! What can we do to help, Claude?",
           "emotion": "caring"
         },
         {
+          "id": "004-03-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-03-03",
           "voice": "narrator",
           "text": "Claude gently nudged Sir James toward the crystal fountain, as if showing him the answer.",
           "emotion": "helpful"
+        },
+        {
+          "id": "004-03-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -104,16 +161,35 @@
           "emotion": "gentle"
         },
         {
+          "id": "004-04-claude",
+          "voice": "claude_thought",
+          "text": "Claude stayed close to Sir James, his faithful eyes full of encouragement.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-04-02",
           "voice": "sir_james",
           "text": "Here you go, little flower. This magic water will help you feel better.",
           "emotion": "tender"
         },
         {
+          "id": "004-04-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-04-03",
           "voice": "narrator",
           "text": "As the water touched its roots, the rose began to glow and lift its petals toward the sun!",
           "emotion": "joyful"
+        },
+        {
+          "id": "004-04-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -129,16 +205,35 @@
           "emotion": "magical"
         },
         {
+          "id": "004-05-claude",
+          "voice": "claude_thought",
+          "text": "Claude nuzzled Sir James's hand gently, offering silent comfort.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-05-02",
           "voice": "sir_james",
           "text": "You're welcome, friends! Every living thing deserves kindness and care.",
           "emotion": "warm"
         },
         {
+          "id": "004-05-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-05-03",
           "voice": "narrator",
           "text": "The garden seemed to sing with happiness, and Claude howled along in his own special way.",
           "emotion": "joyful"
+        },
+        {
+          "id": "004-05-03-react",
+          "voice": "narrator",
+          "text": "Sir James nodded thoughtfully, considering his options.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -154,16 +249,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "004-06-claude",
+          "voice": "claude_thought",
+          "text": "Claude let out a soft woof of support. He believed in his young knight.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-06-02",
           "voice": "sir_james",
           "text": "Hello! Are you the keeper of this beautiful garden?",
           "emotion": "respectful"
         },
         {
+          "id": "004-06-02-exp",
+          "voice": "narrator",
+          "text": "A gentle breeze carried whispers of ancient magic.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-06-03",
           "voice": "narrator",
           "text": "The Garden Keeper smiled. 'I am. And you, young knight, have shown the purest form of kindness - caring for those who cannot ask for help.'",
           "emotion": "wise"
+        },
+        {
+          "id": "004-06-03-react",
+          "voice": "narrator",
+          "text": "Sir James's eyes widened with wonder.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -179,16 +293,35 @@
           "emotion": "magical"
         },
         {
+          "id": "004-07-claude",
+          "voice": "claude_thought",
+          "text": "Claude's ears perked up with curiosity. Something exciting was about to happen!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-07-02",
           "voice": "sir_james",
           "text": "What is this beautiful seed? It feels warm, like sunshine!",
           "emotion": "curious"
         },
         {
+          "id": "004-07-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "004-07-03",
           "voice": "narrator",
           "text": "'Plant this seed wherever kindness is needed,' said the Keeper, 'and watch love grow.'",
           "emotion": "gentle"
+        },
+        {
+          "id": "004-07-03-react",
+          "voice": "narrator",
+          "text": "Sir James squared his small shoulders with determination.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -204,10 +337,23 @@
           "emotion": "warm"
         },
         {
+          "id": "004-08-claude",
+          "voice": "claude_thought",
+          "text": "Claude nuzzled Sir James's hand gently, offering silent comfort.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "004-08-02",
           "voice": "sir_james",
           "text": "I learned something important today, Claude. Kindness isn't just for people - it's for all living things!",
           "emotion": "thoughtful"
+        },
+        {
+          "id": "004-08-02-exp",
+          "voice": "narrator",
+          "text": "Nature itself seemed to be watching, curious about what would happen next.",
+          "emotion": "descriptive"
         },
         {
           "id": "004-08-03",
@@ -221,7 +367,32 @@
           "text": "A kind heart sees the needs of others, even the smallest flower. You're becoming a true knight, my boy.",
           "emotion": "proud"
         }
-      ]
+      ],
+      "virtue_choice": {
+        "prompt": "What should Sir James do next?",
+        "options": [
+          {
+            "text": "Continue the adventure with courage!",
+            "virtue": "courage",
+            "next_chapter": 5
+          },
+          {
+            "text": "Take a moment to reflect on what was learned.",
+            "virtue": "wisdom",
+            "next_chapter": 5
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "parent_discussion": {
+    "chapter_theme": "Kindness to All Living Things",
+    "questions": [
+      "What did Sir James learn about kindness to all living things in this chapter?",
+      "How did Claude help Sir James during the adventure?",
+      "What would you have done if you were Sir James?",
+      "Can you think of a time when you showed similar courage/kindness/wisdom?"
+    ],
+    "activity": "Draw a picture of your favorite moment from Chapter 4!"
+  }
 }

@@ -29,16 +29,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "008-01-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-01-02",
           "voice": "sir_james",
           "text": "Claude, look! The river is full of stars! It's like the sky fell into the water!",
           "emotion": "amazed"
         },
         {
+          "id": "008-01-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-01-03",
           "voice": "narrator",
           "text": "The River of Stars sparkled and shimmered, each ripple sending tiny lights dancing through the darkness.",
           "emotion": "magical"
+        },
+        {
+          "id": "008-01-03-react",
+          "voice": "narrator",
+          "text": "Sir James's eyes widened with wonder.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -54,16 +73,35 @@
           "emotion": "concerned"
         },
         {
+          "id": "008-02-claude",
+          "voice": "claude_thought",
+          "text": "Claude's tail swished back and forth. This was going to be interesting!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-02-02",
           "voice": "sir_james",
           "text": "Little fireflies, why are your lights so dim? What's wrong?",
           "emotion": "caring"
         },
         {
+          "id": "008-02-02-exp",
+          "voice": "narrator",
+          "text": "Time seemed to slow down, making every detail crystal clear.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-02-03",
           "voice": "narrator",
           "text": "The fireflies explained that they had lost their way home and their lights were fading from sadness.",
           "emotion": "sympathetic"
+        },
+        {
+          "id": "008-02-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -79,15 +117,34 @@
           "emotion": "thoughtful"
         },
         {
+          "id": "008-03-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-03-02",
           "voice": "sir_james",
           "text": "I have an idea! Claude, what if we use the river's starlight to guide the fireflies home?",
           "emotion": "hopeful"
         },
         {
+          "id": "008-03-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-03-03",
           "voice": "narrator",
           "text": "Claude barked encouragingly. It was a wonderful plan that would need all of them working together.",
+          "emotion": "encouraging"
+        },
+        {
+          "id": "008-03-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
           "emotion": "encouraging"
         }
       ]
@@ -104,16 +161,35 @@
           "emotion": "magical"
         },
         {
+          "id": "008-04-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-04-02",
           "voice": "sir_james",
           "text": "Come, little fireflies! Let this starlight remind you of your own beautiful glow!",
           "emotion": "gentle"
         },
         {
+          "id": "008-04-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-04-03",
           "voice": "narrator",
           "text": "One by one, the fireflies flew to Sir James's hands, and their lights began to grow brighter!",
           "emotion": "joyful"
+        },
+        {
+          "id": "008-04-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -129,16 +205,35 @@
           "emotion": "triumphant"
         },
         {
+          "id": "008-05-claude",
+          "voice": "claude_thought",
+          "text": "Claude's ears perked up with curiosity. Something exciting was about to happen!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-05-02",
           "voice": "sir_james",
           "text": "You did it! Your lights are beautiful again! Now we can find your home together!",
           "emotion": "excited"
         },
         {
+          "id": "008-05-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-05-03",
           "voice": "narrator",
           "text": "The fireflies danced happily around Sir James and Claude, grateful for their kindness.",
           "emotion": "heartwarming"
+        },
+        {
+          "id": "008-05-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -154,16 +249,35 @@
           "emotion": "adventurous"
         },
         {
+          "id": "008-06-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-06-02",
           "voice": "sir_james",
           "text": "Stay close, everyone! The river will guide us. We're all in this together!",
           "emotion": "determined"
         },
         {
+          "id": "008-06-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-06-03",
           "voice": "narrator",
           "text": "Claude led the way, his nose guiding them while the fireflies lit the path with their renewed glow.",
           "emotion": "warm"
+        },
+        {
+          "id": "008-06-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -179,16 +293,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "008-07-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-07-02",
           "voice": "sir_james",
           "text": "This is amazing! I've never seen anything so beautiful! You're home, little friends!",
           "emotion": "joyful"
         },
         {
+          "id": "008-07-02-exp",
+          "voice": "narrator",
+          "text": "The moment felt special, like the beginning of something important.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "008-07-03",
           "voice": "narrator",
           "text": "The lost fireflies flew to join their family, their lights brighter than ever before.",
           "emotion": "touching"
+        },
+        {
+          "id": "008-07-03-react",
+          "voice": "narrator",
+          "text": "Sir James nodded thoughtfully, considering his options.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -204,10 +337,23 @@
           "emotion": "magical"
         },
         {
+          "id": "008-08-claude",
+          "voice": "claude_thought",
+          "text": "Claude nuzzled Sir James's hand gently, offering silent comfort.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "008-08-02",
           "voice": "sir_james",
           "text": "Thank you, friends! I learned that when we help others, we make the whole world brighter!",
           "emotion": "grateful"
+        },
+        {
+          "id": "008-08-02-exp",
+          "voice": "narrator",
+          "text": "A gentle breeze carried whispers of ancient magic.",
+          "emotion": "descriptive"
         },
         {
           "id": "008-08-03",
@@ -221,7 +367,32 @@
           "text": "When we light the way for others, we find our own path becomes brighter too. That's the magic of kindness.",
           "emotion": "proud"
         }
-      ]
+      ],
+      "virtue_choice": {
+        "prompt": "What should Sir James do next?",
+        "options": [
+          {
+            "text": "Continue the adventure with courage!",
+            "virtue": "courage",
+            "next_chapter": 9
+          },
+          {
+            "text": "Take a moment to reflect on what was learned.",
+            "virtue": "wisdom",
+            "next_chapter": 9
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "parent_discussion": {
+    "chapter_theme": "Helping Others and Working Together",
+    "questions": [
+      "What did Sir James learn about helping others and working together in this chapter?",
+      "How did Claude help Sir James during the adventure?",
+      "What would you have done if you were Sir James?",
+      "Can you think of a time when you showed similar courage/kindness/wisdom?"
+    ],
+    "activity": "Draw a picture of your favorite moment from Chapter 8!"
+  }
 }

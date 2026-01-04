@@ -29,16 +29,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "009-01-claude",
+          "voice": "claude_thought",
+          "text": "Claude's nose twitched. He could smell something magical in the air!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-01-02",
           "voice": "sir_james",
           "text": "Look Claude! The dragon, the Wise Owl, the Garden Keeper - everyone is here! What's happening?",
           "emotion": "surprised"
         },
         {
+          "id": "009-01-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-01-03",
           "voice": "narrator",
           "text": "The moonlight grew brighter, and a gentle voice filled the air. 'Welcome, Sir James. Tonight, we celebrate you.'",
           "emotion": "magical"
+        },
+        {
+          "id": "009-01-03-react",
+          "voice": "narrator",
+          "text": "Sir James's eyes widened with wonder.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -54,15 +73,34 @@
           "emotion": "mystical"
         },
         {
+          "id": "009-02-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-02-02",
           "voice": "sir_james",
           "text": "Should I walk on the moonbeam, Claude? It looks so magical!",
           "emotion": "curious"
         },
         {
+          "id": "009-02-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-02-03",
           "voice": "narrator",
           "text": "Claude nudged him forward gently. This was Sir James's moment to shine.",
+          "emotion": "encouraging"
+        },
+        {
+          "id": "009-02-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
           "emotion": "encouraging"
         }
       ]
@@ -79,16 +117,35 @@
           "emotion": "nostalgic"
         },
         {
+          "id": "009-03-claude",
+          "voice": "claude_thought",
+          "text": "Claude's tail swished back and forth. This was going to be interesting!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-03-02",
           "voice": "sir_james",
           "text": "I remember everything! The dragon's riddle about honor, the mirror's lesson about truth, the stars teaching me about dreams!",
           "emotion": "reflective"
         },
         {
+          "id": "009-03-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-03-03",
           "voice": "narrator",
           "text": "Each memory sparkled brighter as Sir James remembered the virtue he had learned.",
           "emotion": "warm"
+        },
+        {
+          "id": "009-03-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -104,16 +161,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "009-04-claude",
+          "voice": "claude_thought",
+          "text": "Claude's tail swished back and forth. This was going to be interesting!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-04-02",
           "voice": "sir_james",
           "text": "They're all glowing together! It's like they're happy to be reunited!",
           "emotion": "amazed"
         },
         {
+          "id": "009-04-02-exp",
+          "voice": "narrator",
+          "text": "The moment felt special, like the beginning of something important.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-04-03",
           "voice": "narrator",
           "text": "The gifts rose into the air and began to swirl together, creating a beautiful rainbow of light.",
           "emotion": "magical"
+        },
+        {
+          "id": "009-04-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -129,16 +205,35 @@
           "emotion": "triumphant"
         },
         {
+          "id": "009-05-claude",
+          "voice": "claude_thought",
+          "text": "Claude let out a soft woof of support. He believed in his young knight.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-05-02",
           "voice": "sir_james",
           "text": "It's beautiful! All the lessons I learned became this?",
           "emotion": "awed"
         },
         {
+          "id": "009-05-02-exp",
+          "voice": "narrator",
+          "text": "A gentle breeze carried whispers of ancient magic.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-05-03",
           "voice": "narrator",
           "text": "'This is the Medal of True Knighthood,' said the moonlight. 'You have earned it with your kind and brave heart.'",
           "emotion": "proud"
+        },
+        {
+          "id": "009-05-03-react",
+          "voice": "narrator",
+          "text": "Sir James's eyes widened with wonder.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -154,16 +249,35 @@
           "emotion": "joyful"
         },
         {
+          "id": "009-06-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-06-02",
           "voice": "sir_james",
           "text": "Thank you, everyone! I couldn't have learned these lessons without all of you!",
           "emotion": "grateful"
         },
         {
+          "id": "009-06-02-exp",
+          "voice": "narrator",
+          "text": "A gentle breeze carried whispers of ancient magic.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-06-03",
           "voice": "narrator",
           "text": "Claude howled happily, and the whole amphitheater filled with the sound of celebration.",
           "emotion": "festive"
+        },
+        {
+          "id": "009-06-03-react",
+          "voice": "narrator",
+          "text": "Sir James nodded thoughtfully, considering his options.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -179,16 +293,35 @@
           "emotion": "touching"
         },
         {
+          "id": "009-07-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-07-02",
           "voice": "sir_james",
           "text": "Yes! Claude has been with me through everything. He's the best friend anyone could have!",
           "emotion": "loving"
         },
         {
+          "id": "009-07-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "009-07-03",
           "voice": "narrator",
           "text": "A smaller medal appeared around Claude's neck - the Medal of Loyal Friendship. His tail wagged with pride.",
           "emotion": "heartwarming"
+        },
+        {
+          "id": "009-07-03-react",
+          "voice": "narrator",
+          "text": "Sir James squared his small shoulders with determination.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -204,10 +337,23 @@
           "emotion": "peaceful"
         },
         {
+          "id": "009-08-claude",
+          "voice": "claude_thought",
+          "text": "Claude's nose twitched. He could smell something magical in the air!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "009-08-02",
           "voice": "sir_james",
           "text": "I promise to always use what I've learned to help others. That's what being a true knight means.",
           "emotion": "determined"
+        },
+        {
+          "id": "009-08-02-exp",
+          "voice": "narrator",
+          "text": "The moment felt special, like the beginning of something important.",
+          "emotion": "descriptive"
         },
         {
           "id": "009-08-03",
@@ -221,7 +367,32 @@
           "text": "You've grown so much, my boy. Remember, the greatest adventures are still ahead. I'm so proud of you.",
           "emotion": "proud"
         }
-      ]
+      ],
+      "virtue_choice": {
+        "prompt": "What should Sir James do next?",
+        "options": [
+          {
+            "text": "Continue the adventure with courage!",
+            "virtue": "courage",
+            "next_chapter": 10
+          },
+          {
+            "text": "Take a moment to reflect on what was learned.",
+            "virtue": "wisdom",
+            "next_chapter": 10
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "parent_discussion": {
+    "chapter_theme": "Trusting Your Heart and Following Your Path",
+    "questions": [
+      "What did Sir James learn about trusting your heart and following your path in this chapter?",
+      "How did Claude help Sir James during the adventure?",
+      "What would you have done if you were Sir James?",
+      "Can you think of a time when you showed similar courage/kindness/wisdom?"
+    ],
+    "activity": "Draw a picture of your favorite moment from Chapter 9!"
+  }
 }

@@ -29,16 +29,35 @@
           "emotion": "peaceful"
         },
         {
+          "id": "010-01-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-01-02",
           "voice": "sir_james",
           "text": "Look Claude! There's Gramps waiting for us at the door. I can't wait to tell him everything!",
           "emotion": "excited"
         },
         {
+          "id": "010-01-02-exp",
+          "voice": "narrator",
+          "text": "Time seemed to slow down, making every detail crystal clear.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "010-01-03",
           "voice": "narrator",
           "text": "Gramps stood at the cottage door, his eyes twinkling with pride as he watched his young knight return.",
           "emotion": "warm"
+        },
+        {
+          "id": "010-01-03-react",
+          "voice": "narrator",
+          "text": "Sir James nodded thoughtfully, considering his options.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -54,16 +73,35 @@
           "emotion": "loving"
         },
         {
+          "id": "010-02-claude",
+          "voice": "claude_thought",
+          "text": "Claude let out a soft woof of support. He believed in his young knight.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-02-02",
           "voice": "sir_james",
           "text": "Gramps! I learned so much! About honor, truth, dreams, kindness - everything you taught me came alive!",
           "emotion": "joyful"
         },
         {
+          "id": "010-02-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "010-02-03",
           "voice": "narrator",
           "text": "Gramps held Sir James close. 'I know, my boy. I've been watching your journey with such pride.'",
           "emotion": "tender"
+        },
+        {
+          "id": "010-02-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -79,16 +117,35 @@
           "emotion": "proud"
         },
         {
+          "id": "010-03-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-03-02",
           "voice": "sir_james",
           "text": "Look, Gramps! All the lessons I learned became this medal. And Claude got one too - for being the best friend ever!",
           "emotion": "excited"
         },
         {
+          "id": "010-03-02-exp",
+          "voice": "narrator",
+          "text": "Time seemed to slow down, making every detail crystal clear.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "010-03-03",
           "voice": "narrator",
           "text": "Gramps's eyes glistened with happy tears. 'These medals show what was always in your hearts.'",
           "emotion": "emotional"
+        },
+        {
+          "id": "010-03-03-react",
+          "voice": "narrator",
+          "text": "Sir James squared his small shoulders with determination.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -104,16 +161,35 @@
           "emotion": "cozy"
         },
         {
+          "id": "010-04-claude",
+          "voice": "claude_thought",
+          "text": "Claude nuzzled Sir James's hand gently, offering silent comfort.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-04-02",
           "voice": "sir_james",
           "text": "Gramps, will there be more adventures? I feel like I'm ready for anything now!",
           "emotion": "eager"
         },
         {
+          "id": "010-04-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "010-04-03",
           "voice": "narrator",
           "text": "Gramps smiled and stirred the fire. 'Oh yes, my boy. A true knight's adventures never really end.'",
           "emotion": "wise"
+        },
+        {
+          "id": "010-04-03-react",
+          "voice": "narrator",
+          "text": "Sir James squared his small shoulders with determination.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -129,6 +205,13 @@
           "emotion": "gentle"
         },
         {
+          "id": "010-05-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-05-02",
           "voice": "gramps",
           "text": "You've learned that being a knight isn't about swords and armor. It's about the courage in your heart and the kindness in your actions.",
@@ -139,6 +222,12 @@
           "voice": "narrator",
           "text": "Sir James listened carefully, knowing that Gramps's words were treasures to keep forever.",
           "emotion": "reverent"
+        },
+        {
+          "id": "010-05-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -154,16 +243,35 @@
           "emotion": "solemn"
         },
         {
+          "id": "010-06-claude",
+          "voice": "claude_thought",
+          "text": "Claude's nose twitched. He could smell something magical in the air!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-06-02",
           "voice": "sir_james",
           "text": "I promise to always be brave, kind, honest, and true. I promise to help others and never give up on my dreams.",
           "emotion": "determined"
         },
         {
+          "id": "010-06-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "010-06-03",
           "voice": "narrator",
           "text": "Claude stood beside him and barked once, as if making the same promise. They were a team, now and forever.",
           "emotion": "touching"
+        },
+        {
+          "id": "010-06-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt a warm glow of courage in his heart.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -179,16 +287,35 @@
           "emotion": "magical"
         },
         {
+          "id": "010-07-claude",
+          "voice": "claude_thought",
+          "text": "Claude stayed close to Sir James, his faithful eyes full of encouragement.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "010-07-02",
           "voice": "sir_james",
           "text": "Look, Claude! Our friends in the sky are saying goodnight. What a wonderful adventure we had!",
           "emotion": "content"
         },
         {
+          "id": "010-07-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "010-07-03",
           "voice": "narrator",
           "text": "Claude wagged his tail sleepily, his eyes reflecting the starlight like tiny golden moons.",
           "emotion": "peaceful"
+        },
+        {
+          "id": "010-07-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -202,6 +329,13 @@
           "voice": "narrator",
           "text": "As Sir James climbed into bed with Claude beside him, Gramps tucked them in with a gentle smile.",
           "emotion": "loving"
+        },
+        {
+          "id": "010-08-claude",
+          "voice": "claude_thought",
+          "text": "Claude's tail swished back and forth. This was going to be interesting!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
         },
         {
           "id": "010-08-02",
@@ -220,8 +354,39 @@
           "voice": "narrator",
           "text": "And so ends Book Two of Sir James Adventures. But remember, young knights - every ending is just a new beginning. Sweet dreams, and may your heart always be brave and true.",
           "emotion": "closing"
+        },
+        {
+          "id": "010-08-04-react",
+          "voice": "narrator",
+          "text": "Sir James squared his small shoulders with determination.",
+          "emotion": "encouraging"
         }
-      ]
+      ],
+      "virtue_choice": {
+        "prompt": "What should Sir James do next?",
+        "options": [
+          {
+            "text": "Continue the adventure with courage!",
+            "virtue": "courage",
+            "next_chapter": null
+          },
+          {
+            "text": "Take a moment to reflect on what was learned.",
+            "virtue": "wisdom",
+            "next_chapter": null
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "parent_discussion": {
+    "chapter_theme": "Becoming Your Best Self",
+    "questions": [
+      "What did Sir James learn about becoming your best self in this chapter?",
+      "How did Claude help Sir James during the adventure?",
+      "What would you have done if you were Sir James?",
+      "Can you think of a time when you showed similar courage/kindness/wisdom?"
+    ],
+    "activity": "Draw a picture of your favorite moment from Chapter 10!"
+  }
 }

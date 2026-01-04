@@ -29,16 +29,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "002-01-claude",
+          "voice": "claude_thought",
+          "text": "Claude nuzzled Sir James's hand gently, offering silent comfort.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-01-02",
           "voice": "sir_james",
           "text": "Look Claude! There's something behind the waterfall! Do you see it?",
           "emotion": "excited"
         },
         {
+          "id": "002-01-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-01-03",
           "voice": "narrator",
           "text": "Claude barked excitedly, his tail wagging as he spotted the hidden entrance behind the curtain of water.",
           "emotion": "playful"
+        },
+        {
+          "id": "002-01-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -54,16 +73,35 @@
           "emotion": "mystical"
         },
         {
+          "id": "002-02-claude",
+          "voice": "claude_thought",
+          "text": "Claude nuzzled Sir James's hand gently, offering silent comfort.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-02-02",
           "voice": "sir_james",
           "text": "Hello! I am Sir James. We come in peace and friendship.",
           "emotion": "brave"
         },
         {
+          "id": "002-02-02-exp",
+          "voice": "narrator",
+          "text": "Nature itself seemed to be watching, curious about what would happen next.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-02-03",
           "voice": "narrator",
           "text": "The Guardian's voice echoed like wind chimes. 'Young knight, to pass through my garden, you must show me the courage in your heart.'",
           "emotion": "gentle"
+        },
+        {
+          "id": "002-02-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -79,15 +117,34 @@
           "emotion": "wonder"
         },
         {
+          "id": "002-03-claude",
+          "voice": "claude_thought",
+          "text": "Claude's nose twitched. He could smell something magical in the air!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-03-02",
           "voice": "sir_james",
           "text": "Claude, I think we need to work together on this. What do you think, boy?",
           "emotion": "thoughtful"
         },
         {
+          "id": "002-03-02-exp",
+          "voice": "narrator",
+          "text": "The moment felt special, like the beginning of something important.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-03-03",
           "voice": "narrator",
           "text": "Claude nuzzled Sir James's hand, and together they began to solve the crystal puzzle, matching colors and sounds.",
+          "emotion": "encouraging"
+        },
+        {
+          "id": "002-03-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt a warm glow of courage in his heart.",
           "emotion": "encouraging"
         }
       ]
@@ -104,16 +161,35 @@
           "emotion": "majestic"
         },
         {
+          "id": "002-04-claude",
+          "voice": "claude_thought",
+          "text": "Claude stayed close to Sir James, his faithful eyes full of encouragement.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-04-02",
           "voice": "sir_james",
           "text": "The Crystal of Truth! Gramps told me stories about this. It shows what's truly in your heart.",
           "emotion": "awed"
         },
         {
+          "id": "002-04-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-04-03",
           "voice": "narrator",
           "text": "As Sir James approached, the crystal began to glow brighter, recognizing the kindness within him.",
           "emotion": "warm"
+        },
+        {
+          "id": "002-04-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -129,16 +205,35 @@
           "emotion": "concerned"
         },
         {
+          "id": "002-05-claude",
+          "voice": "claude_thought",
+          "text": "Claude's ears perked up with curiosity. Something exciting was about to happen!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-05-02",
           "voice": "sir_james",
           "text": "Don't worry, little friends! My crystal will light the way. Follow me and Claude!",
           "emotion": "reassuring"
         },
         {
+          "id": "002-05-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-05-03",
           "voice": "narrator",
           "text": "The grateful creatures followed the warm glow, chirping happily as Sir James led them safely home.",
           "emotion": "heartwarming"
+        },
+        {
+          "id": "002-05-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -154,16 +249,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "002-06-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-06-02",
           "voice": "sir_james",
           "text": "It's beautiful, Claude. But we must be brave. One step at a time, together.",
           "emotion": "determined"
         },
         {
+          "id": "002-06-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-06-03",
           "voice": "narrator",
           "text": "With Claude by his side, Sir James crossed the crystal bridge, each step ringing like a gentle bell.",
           "emotion": "triumphant"
+        },
+        {
+          "id": "002-06-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -179,16 +293,35 @@
           "emotion": "reverent"
         },
         {
+          "id": "002-07-claude",
+          "voice": "claude_thought",
+          "text": "Claude's tail swished back and forth. This was going to be interesting!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-07-02",
           "voice": "sir_james",
           "text": "Look Claude! These knights learned about courage, kindness, and truth. Just like Gramps teaches me!",
           "emotion": "inspired"
         },
         {
+          "id": "002-07-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "002-07-03",
           "voice": "narrator",
           "text": "Sir James traced the paintings gently, feeling connected to all the brave knights who walked this path before him.",
           "emotion": "thoughtful"
+        },
+        {
+          "id": "002-07-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -204,10 +337,23 @@
           "emotion": "triumphant"
         },
         {
+          "id": "002-08-claude",
+          "voice": "claude_thought",
+          "text": "Claude's tail swished back and forth. This was going to be interesting!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "002-08-02",
           "voice": "sir_james",
           "text": "We did it, Claude! We learned that true beauty comes from helping others and being brave together!",
           "emotion": "joyful"
+        },
+        {
+          "id": "002-08-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
         },
         {
           "id": "002-08-03",
@@ -221,7 +367,32 @@
           "text": "Well done, my boy. The crystals showed you what was already in your heart - courage, kindness, and wonder.",
           "emotion": "proud"
         }
-      ]
+      ],
+      "virtue_choice": {
+        "prompt": "What should Sir James do next?",
+        "options": [
+          {
+            "text": "Continue the adventure with courage!",
+            "virtue": "courage",
+            "next_chapter": 3
+          },
+          {
+            "text": "Take a moment to reflect on what was learned.",
+            "virtue": "wisdom",
+            "next_chapter": 3
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "parent_discussion": {
+    "chapter_theme": "Appreciation of Nature's Beauty",
+    "questions": [
+      "What did Sir James learn about appreciation of nature's beauty in this chapter?",
+      "How did Claude help Sir James during the adventure?",
+      "What would you have done if you were Sir James?",
+      "Can you think of a time when you showed similar courage/kindness/wisdom?"
+    ],
+    "activity": "Draw a picture of your favorite moment from Chapter 2!"
+  }
 }

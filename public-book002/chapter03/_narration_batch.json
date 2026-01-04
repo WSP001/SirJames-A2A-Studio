@@ -29,16 +29,35 @@
           "emotion": "wonder"
         },
         {
+          "id": "003-01-claude",
+          "voice": "claude_thought",
+          "text": "Claude's nose twitched. He could smell something magical in the air!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-01-02",
           "voice": "sir_james",
           "text": "Hello, great dragon! I am Sir James, and this is my loyal friend Claude. We come seeking wisdom.",
           "emotion": "brave"
         },
         {
+          "id": "003-01-02-exp",
+          "voice": "narrator",
+          "text": "Sunlight danced through the leaves, creating patterns of gold and shadow.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-01-03",
           "voice": "narrator",
           "text": "The dragon opened one golden eye and smiled. 'A young knight with a pure heart. How refreshing! I have a riddle for you.'",
           "emotion": "gentle"
+        },
+        {
+          "id": "003-01-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -54,16 +73,35 @@
           "emotion": "mystical"
         },
         {
+          "id": "003-02-claude",
+          "voice": "claude_thought",
+          "text": "Claude let out a soft woof of support. He believed in his young knight.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-02-02",
           "voice": "sir_james",
           "text": "What is your riddle, wise dragon? I promise to think carefully before I answer.",
           "emotion": "thoughtful"
         },
         {
+          "id": "003-02-02-exp",
+          "voice": "narrator",
+          "text": "The moment felt special, like the beginning of something important.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-02-03",
           "voice": "narrator",
           "text": "The dragon's voice rumbled like distant thunder. 'What is stronger than steel, yet cannot be seen? What binds hearts together, yet sets spirits free?'",
           "emotion": "mysterious"
+        },
+        {
+          "id": "003-02-03-react",
+          "voice": "narrator",
+          "text": "Sir James took a deep breath, feeling brave.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -79,16 +117,35 @@
           "emotion": "peaceful"
         },
         {
+          "id": "003-03-claude",
+          "voice": "claude_thought",
+          "text": "Claude wagged his tail, sensing the adventure ahead.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-03-02",
           "voice": "sir_james",
           "text": "What do you think, Claude? Something stronger than steel but invisible... something that binds but also frees...",
           "emotion": "pondering"
         },
         {
+          "id": "003-03-02-exp",
+          "voice": "narrator",
+          "text": "Everything seemed to hold its breath in anticipation.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-03-03",
           "voice": "narrator",
           "text": "Claude's tail wagged gently, and Sir James felt the warmth of their friendship. Suddenly, he understood!",
           "emotion": "realization"
+        },
+        {
+          "id": "003-03-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt a warm glow of courage in his heart.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -104,16 +161,35 @@
           "emotion": "confident"
         },
         {
+          "id": "003-04-claude",
+          "voice": "claude_thought",
+          "text": "Claude tilted his head thoughtfully. His loyal heart was ready for anything.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-04-02",
           "voice": "sir_james",
           "text": "I know the answer, wise dragon! It is a promise - honor and trust! A promise binds hearts together, yet when kept, it sets our spirits free!",
           "emotion": "triumphant"
         },
         {
+          "id": "003-04-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-04-03",
           "voice": "narrator",
           "text": "The dragon's eyes sparkled with delight. 'Well done, young knight! You have wisdom beyond your years.'",
           "emotion": "proud"
+        },
+        {
+          "id": "003-04-03-react",
+          "voice": "narrator",
+          "text": "Sir James felt proud to be on this adventure.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -129,16 +205,35 @@
           "emotion": "magical"
         },
         {
+          "id": "003-05-claude",
+          "voice": "claude_thought",
+          "text": "Claude stayed close to Sir James, his faithful eyes full of encouragement.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-05-02",
           "voice": "sir_james",
           "text": "For me? Oh, thank you, wise dragon! I will treasure this always and remember your lesson about honor.",
           "emotion": "grateful"
         },
         {
+          "id": "003-05-02-exp",
+          "voice": "narrator",
+          "text": "The world around them felt alive with wonder.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-05-03",
           "voice": "narrator",
           "text": "The scale was warm in Sir James's hand, a reminder that keeping promises makes us stronger than any armor.",
           "emotion": "warm"
+        },
+        {
+          "id": "003-05-03-react",
+          "voice": "narrator",
+          "text": "Sir James nodded thoughtfully, considering his options.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -154,16 +249,35 @@
           "emotion": "solemn"
         },
         {
+          "id": "003-06-claude",
+          "voice": "claude_thought",
+          "text": "Claude's nose twitched. He could smell something magical in the air!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-06-02",
           "voice": "sir_james",
           "text": "I promise to always keep my word, to be honorable and true. This I vow as a knight!",
           "emotion": "determined"
         },
         {
+          "id": "003-06-02-exp",
+          "voice": "narrator",
+          "text": "Nature itself seemed to be watching, curious about what would happen next.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-06-03",
           "voice": "narrator",
           "text": "The dragon nodded wisely. 'A promise made with a pure heart is the most powerful magic of all.'",
           "emotion": "wise"
+        },
+        {
+          "id": "003-06-03-react",
+          "voice": "narrator",
+          "text": "Sir James remembered Gramps's wise words.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -179,16 +293,35 @@
           "emotion": "peaceful"
         },
         {
+          "id": "003-07-claude",
+          "voice": "claude_thought",
+          "text": "Claude let out a soft woof of support. He believed in his young knight.",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-07-02",
           "voice": "sir_james",
           "text": "You know what, Claude? Being honorable isn't just about big promises. It's about keeping the small ones too.",
           "emotion": "thoughtful"
         },
         {
+          "id": "003-07-02-exp",
+          "voice": "narrator",
+          "text": "Nature itself seemed to be watching, curious about what would happen next.",
+          "emotion": "descriptive"
+        },
+        {
           "id": "003-07-03",
           "voice": "narrator",
           "text": "Claude barked in agreement, and together they walked toward home, their hearts full of new understanding.",
           "emotion": "content"
+        },
+        {
+          "id": "003-07-03-react",
+          "voice": "narrator",
+          "text": "Sir James's eyes widened with wonder.",
+          "emotion": "encouraging"
         }
       ]
     },
@@ -204,10 +337,23 @@
           "emotion": "warm"
         },
         {
+          "id": "003-08-claude",
+          "voice": "claude_thought",
+          "text": "Claude's ears perked up with curiosity. Something exciting was about to happen!",
+          "emotion": "supportive",
+          "sfx": "dog_tail_wag"
+        },
+        {
           "id": "003-08-02",
           "voice": "sir_james",
           "text": "Gramps! I met a dragon and learned about honor! A promise is stronger than steel!",
           "emotion": "excited"
+        },
+        {
+          "id": "003-08-02-exp",
+          "voice": "narrator",
+          "text": "The air seemed to shimmer with possibility.",
+          "emotion": "descriptive"
         },
         {
           "id": "003-08-03",
@@ -221,7 +367,32 @@
           "text": "That's right, my boy. A true knight's word is his bond. I'm so proud of you.",
           "emotion": "proud"
         }
-      ]
+      ],
+      "virtue_choice": {
+        "prompt": "What should Sir James do next?",
+        "options": [
+          {
+            "text": "Continue the adventure with courage!",
+            "virtue": "courage",
+            "next_chapter": 4
+          },
+          {
+            "text": "Take a moment to reflect on what was learned.",
+            "virtue": "wisdom",
+            "next_chapter": 4
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "parent_discussion": {
+    "chapter_theme": "Keeping Promises and Being Honorable",
+    "questions": [
+      "What did Sir James learn about keeping promises and being honorable in this chapter?",
+      "How did Claude help Sir James during the adventure?",
+      "What would you have done if you were Sir James?",
+      "Can you think of a time when you showed similar courage/kindness/wisdom?"
+    ],
+    "activity": "Draw a picture of your favorite moment from Chapter 3!"
+  }
 }
