@@ -3,179 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sir James Adventures - Chapter 2: The Butterfly Garden</title>
+    <title>Sir James Adventures - Chapter 2</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
-            padding: 20px;
         }
-        .container {
-            max-width: 1200px;
+        .chapter-container {
+            max-width: 1000px;
             margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .chapter-subtitle {
-            text-align: center;
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .home-link {
-            display: block;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .home-link a {
-            background: linear-gradient(135deg, #ffd700, #ff8c00);
-            color: #333;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
-            transition: all 0.3s ease;
-        }
-        .home-link a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255,215,0,0.6);
-        }
-        .scenes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .scene-card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 20px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: rgba(0,0,0,0.3);
+            padding: 40px;
+            border-radius: 15px;
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
+        .chapter-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .chapter-intro {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .scene-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
         .scene-card:hover {
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.25);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.2);
         }
-        .scene-number {
-            font-size: 0.9em;
-            opacity: 0.8;
-            margin-bottom: 5px;
+        .scene-thumbnail {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .scene-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            display: block;
         }
         .scene-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 15px;
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .navigation {
             text-align: center;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .scene-thumb {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .start-btn {
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-        }
-        .start-btn a {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
+        .nav-button {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
             color: white;
-            padding: 20px 60px;
-            border-radius: 50px;
+            padding: 15px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.4em;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(76,175,80,0.4);
             transition: all 0.3s ease;
+            font-size: 1.1em;
+            min-width: 150px;
         }
-        .start-btn a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(76,175,80,0.6);
+        .nav-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        .nav-button.secondary {
+            background: transparent;
+            border-color: rgba(255,255,255,0.5);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Chapter 2</h1>
-        <div class="chapter-subtitle">The Butterfly Garden</div>
+    <div class="chapter-container">
+        <h1 class="chapter-title">Chapter 2: The Mist That Whispers</h1>
         
-        <div class="home-link">
-            <a href="../index.html">🏠 All Chapters</a>
+        <div class="chapter-intro">
+            The morning sun rises over Gramps's cottage, but something unusual catches Sir James's attention - a mysterious mist that seems to whisper secrets.
         </div>
         
-        <div class="scenes-grid">
-            
-        <a href="scene-001/index.html" class="scene-card">
-            <div class="scene-number">Scene 1</div>
-            <div class="scene-title">The Hidden Waterfall</div>
-            <img src="images/scene-001.png" alt="The Hidden Waterfall" class="scene-thumb">
-        </a>
-
-        <a href="scene-002/index.html" class="scene-card">
-            <div class="scene-number">Scene 2</div>
-            <div class="scene-title">The Crystal Guardian</div>
-            <img src="images/scene-002.png" alt="The Crystal Guardian" class="scene-thumb">
-        </a>
-
-        <a href="scene-003/index.html" class="scene-card">
-            <div class="scene-number">Scene 3</div>
-            <div class="scene-title">The Crystal Puzzle</div>
-            <img src="images/scene-003.png" alt="The Crystal Puzzle" class="scene-thumb">
-        </a>
-
-        <a href="scene-004/index.html" class="scene-card">
-            <div class="scene-number">Scene 4</div>
-            <div class="scene-title">The Crystal of Truth</div>
-            <img src="images/scene-004.png" alt="The Crystal of Truth" class="scene-thumb">
-        </a>
-
-        <a href="scene-005/index.html" class="scene-card">
-            <div class="scene-number">Scene 5</div>
-            <div class="scene-title">Helping the Lost Creatures</div>
-            <img src="images/scene-005.png" alt="Helping the Lost Creatures" class="scene-thumb">
-        </a>
-
-        <a href="scene-006/index.html" class="scene-card">
-            <div class="scene-number">Scene 6</div>
-            <div class="scene-title">The Crystal Bridge</div>
-            <img src="images/scene-006.png" alt="The Crystal Bridge" class="scene-thumb">
-        </a>
-
-        <a href="scene-007/index.html" class="scene-card">
-            <div class="scene-number">Scene 7</div>
-            <div class="scene-title">The Ancient Knights</div>
-            <img src="images/scene-007.png" alt="The Ancient Knights" class="scene-thumb">
-        </a>
-
-        <a href="scene-008/index.html" class="scene-card">
-            <div class="scene-number">Scene 8</div>
-            <div class="scene-title">Emerging Victorious</div>
-            <img src="images/scene-008.png" alt="Emerging Victorious" class="scene-thumb">
-        </a>
+        <div class="scene-grid">
+            <div class="scene-card">
+                <a href="scene-001/index.html" class="scene-link">
+                    <img src="images/scene-001.png" alt="Scene 1" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 1</span>
+                    <div class="scene-title">Morning Discovery</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-002/index.html" class="scene-link">
+                    <img src="images/scene-002.png" alt="Scene 2" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 2</span>
+                    <div class="scene-title">The Whispering Mist</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-003/index.html" class="scene-link">
+                    <img src="images/scene-003.png" alt="Scene 3" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 3</span>
+                    <div class="scene-title">Claude's Warning</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-004/index.html" class="scene-link">
+                    <img src="images/scene-004.png" alt="Scene 4" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 4</span>
+                    <div class="scene-title">Following the Sound</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-005/index.html" class="scene-link">
+                    <img src="images/scene-005.png" alt="Scene 5" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 5</span>
+                    <div class="scene-title">The Hidden Path</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-006/index.html" class="scene-link">
+                    <img src="images/scene-006.png" alt="Scene 6" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 6</span>
+                    <div class="scene-title">A Friend in Need</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-007/index.html" class="scene-link">
+                    <img src="images/scene-007.png" alt="Scene 7" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 7</span>
+                    <div class="scene-title">The Brave Choice</div>
+                </a>
+            </div> 
+            <div class="scene-card">
+                <a href="scene-008/index.html" class="scene-link">
+                    <img src="images/scene-008.png" alt="Scene 8" class="scene-thumbnail" onerror="this.src='/assets/images/placeholder.png'">
+                    <span>Scene 8</span>
+                    <div class="scene-title">Lessons Learned</div>
+                </a>
+            </div>
         </div>
         
-        <div class="start-btn">
-            <a href="scene-001/index.html">▶️ Start Chapter</a>
+        <div class="navigation">
+            <a href="../index.html" class="nav-button secondary">← Back to Chapters</a>
+            <a href="scene-001/index.html" class="nav-button">Begin Chapter 2 →</a>
         </div>
     </div>
 </body>
