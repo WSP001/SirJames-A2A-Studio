@@ -1,0 +1,227 @@
+{
+  "chapter": 9,
+  "title": "The Moonbeam Celebration",
+  "theme": "Guidance and Faith",
+  "virtue": "Trusting Your Heart and Following Your Path",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Circle of Friends",
+      "setting": "Ancient amphitheater with representatives from each chapter",
+      "lines": [
+        {
+          "id": "009-01-01",
+          "voice": "narrator",
+          "text": "Sir James and Claude arrived at a beautiful moonlit amphitheater where all their friends from past adventures had gathered.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "009-01-02",
+          "voice": "sir_james",
+          "text": "Look Claude! The dragon, the Wise Owl, the Garden Keeper - everyone is here! What's happening?",
+          "emotion": "surprised"
+        },
+        {
+          "id": "009-01-03",
+          "voice": "narrator",
+          "text": "The moonlight grew brighter, and a gentle voice filled the air. 'Welcome, Sir James. Tonight, we celebrate you.'",
+          "emotion": "magical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "The Moonbeam Path",
+      "setting": "Silver moonbeam creating a glowing path",
+      "lines": [
+        {
+          "id": "009-02-01",
+          "voice": "narrator",
+          "text": "A beautiful path of pure moonlight appeared before Sir James, stretching toward a glowing platform in the center.",
+          "emotion": "mystical"
+        },
+        {
+          "id": "009-02-02",
+          "voice": "sir_james",
+          "text": "Should I walk on the moonbeam, Claude? It looks so magical!",
+          "emotion": "curious"
+        },
+        {
+          "id": "009-02-03",
+          "voice": "narrator",
+          "text": "Claude nudged him forward gently. This was Sir James's moment to shine.",
+          "emotion": "encouraging"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "Remembering the Lessons",
+      "setting": "Images of past adventures floating in the air",
+      "lines": [
+        {
+          "id": "009-03-01",
+          "voice": "narrator",
+          "text": "As Sir James walked the moonbeam path, magical images of all his adventures floated around him like glowing memories.",
+          "emotion": "nostalgic"
+        },
+        {
+          "id": "009-03-02",
+          "voice": "sir_james",
+          "text": "I remember everything! The dragon's riddle about honor, the mirror's lesson about truth, the stars teaching me about dreams!",
+          "emotion": "reflective"
+        },
+        {
+          "id": "009-03-03",
+          "voice": "narrator",
+          "text": "Each memory sparkled brighter as Sir James remembered the virtue he had learned.",
+          "emotion": "warm"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "The Gifts Unite",
+      "setting": "All magical gifts glowing together",
+      "lines": [
+        {
+          "id": "009-04-01",
+          "voice": "narrator",
+          "text": "Sir James reached into his pocket and found all the magical gifts he had received - the dragon scale, the owl feather, the star crystal.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "009-04-02",
+          "voice": "sir_james",
+          "text": "They're all glowing together! It's like they're happy to be reunited!",
+          "emotion": "amazed"
+        },
+        {
+          "id": "009-04-03",
+          "voice": "narrator",
+          "text": "The gifts rose into the air and began to swirl together, creating a beautiful rainbow of light.",
+          "emotion": "magical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "The Knight's Medal",
+      "setting": "Gifts transforming into a golden medal",
+      "lines": [
+        {
+          "id": "009-05-01",
+          "voice": "narrator",
+          "text": "The swirling lights merged together and transformed into a beautiful golden medal shaped like a heart with a star in the center.",
+          "emotion": "triumphant"
+        },
+        {
+          "id": "009-05-02",
+          "voice": "sir_james",
+          "text": "It's beautiful! All the lessons I learned became this?",
+          "emotion": "awed"
+        },
+        {
+          "id": "009-05-03",
+          "voice": "narrator",
+          "text": "'This is the Medal of True Knighthood,' said the moonlight. 'You have earned it with your kind and brave heart.'",
+          "emotion": "proud"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "Friends Celebrate",
+      "setting": "All magical friends cheering and celebrating",
+      "lines": [
+        {
+          "id": "009-06-01",
+          "voice": "narrator",
+          "text": "All the magical friends cheered! The dragon breathed sparkles, the fireflies danced, and the flowers bloomed with joy.",
+          "emotion": "joyful"
+        },
+        {
+          "id": "009-06-02",
+          "voice": "sir_james",
+          "text": "Thank you, everyone! I couldn't have learned these lessons without all of you!",
+          "emotion": "grateful"
+        },
+        {
+          "id": "009-06-03",
+          "voice": "narrator",
+          "text": "Claude howled happily, and the whole amphitheater filled with the sound of celebration.",
+          "emotion": "festive"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "Claude's Honor",
+      "setting": "Special moment honoring Claude's loyalty",
+      "lines": [
+        {
+          "id": "009-07-01",
+          "voice": "narrator",
+          "text": "Then the moonlight shone directly on Claude. 'And you, faithful friend, deserve special recognition.'",
+          "emotion": "touching"
+        },
+        {
+          "id": "009-07-02",
+          "voice": "sir_james",
+          "text": "Yes! Claude has been with me through everything. He's the best friend anyone could have!",
+          "emotion": "loving"
+        },
+        {
+          "id": "009-07-03",
+          "voice": "narrator",
+          "text": "A smaller medal appeared around Claude's neck - the Medal of Loyal Friendship. His tail wagged with pride.",
+          "emotion": "heartwarming"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "A Knight's Promise",
+      "setting": "Sir James and Claude under the full moon",
+      "lines": [
+        {
+          "id": "009-08-01",
+          "voice": "narrator",
+          "text": "As the celebration continued, Sir James stood tall under the full moon, his medal glowing softly against his heart.",
+          "emotion": "peaceful"
+        },
+        {
+          "id": "009-08-02",
+          "voice": "sir_james",
+          "text": "I promise to always use what I've learned to help others. That's what being a true knight means.",
+          "emotion": "determined"
+        },
+        {
+          "id": "009-08-03",
+          "voice": "narrator",
+          "text": "Claude stood proudly beside him, and together they looked up at the moon, ready for whatever adventure came next.",
+          "emotion": "hopeful"
+        },
+        {
+          "id": "009-08-04",
+          "voice": "gramps",
+          "text": "You've grown so much, my boy. Remember, the greatest adventures are still ahead. I'm so proud of you.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}

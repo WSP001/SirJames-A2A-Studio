@@ -1,0 +1,260 @@
+{
+  "chapter_id": "ch06_river_of_choices",
+  "book": "book003",
+  "theme": "Word Families & Direction Words",
+  "skill_focus": "early_literacy",
+  "reading_level": "Early → Developing",
+  "virtue_focus": "courage",
+  "target_words": ["cat", "bat", "hat", "log", "fog", "dog", "up", "down", "left", "right"],
+  "scenes": [
+    {
+      "scene_id": "ch06_sc01_river_fork",
+      "title": "Fork in the River",
+      "interaction_loop": {
+        "challenge_id": "direction_word_recognition",
+        "primary_prompt": "NARRATOR: The river splits in two. One sign says 'UP'. One sign says 'DOWN'. Tap the sign that says DOWN.",
+        "ui_type": "tap_word",
+        "options": [
+          { "id": "up", "label": "UP", "icon": "⬆️", "correct": false },
+          { "id": "down", "label": "DOWN", "icon": "⬇️", "correct": true }
+        ],
+        "literacy": {
+          "focus_skill": "direction_words",
+          "target_words": ["up", "down"],
+          "phonics_hint": "D-D-Down starts with the 'duh' sound"
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch06_sc01_claude_hint.mp3",
+            "line": "(Sniffing) *Woof!* The water flows that way... down, down, down! D-D-Down!",
+            "metric_flag": "attention_nudge"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_word",
+            "actor": "Sparky",
+            "audio_file": "ch06_sc01_sparky_error.mp3",
+            "line": "Oop! That one starts with U-U-Up! We need D-D-Down! Look for the letter D!",
+            "action": "Sparky highlights the letter D",
+            "metric_flag": "phonics_hint_needed"
+          },
+          "parent_override": {
+            "trigger": "parent_chat_event",
+            "narrator_template": "NARRATOR: Even the wind whispers what your grown-up says: '${parent_text}'",
+            "metric_flag": "parent_wisdom_used"
+          },
+          "success": {
+            "trigger": "tap_correct_word",
+            "line_fast": "SIR JAMES: I knew it! DOWN! Full speed ahead!",
+            "line_slow": "SIR JAMES: Phew! We figured it out together, team. DOWN it is!",
+            "metric_mapping": {
+              "attempts_1": "mastery_high",
+              "attempts_2plus": "persistence_high"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch06_sc02_rock_hops",
+      "title": "Rock-Step Word Hops",
+      "interaction_loop": {
+        "challenge_id": "cvc_word_families",
+        "primary_prompt": "NARRATOR: Stepping stones across the river! Each rock has a word. Hop on the rocks that rhyme with CAT!",
+        "ui_type": "multi_tap",
+        "options": [
+          { "id": "cat", "label": "CAT", "icon": "🐱", "correct": true, "family": "-at" },
+          { "id": "bat", "label": "BAT", "icon": "🦇", "correct": true, "family": "-at" },
+          { "id": "hat", "label": "HAT", "icon": "🎩", "correct": true, "family": "-at" },
+          { "id": "dog", "label": "DOG", "icon": "🐕", "correct": false, "family": "-og" },
+          { "id": "log", "label": "LOG", "icon": "🪵", "correct": false, "family": "-og" }
+        ],
+        "literacy": {
+          "focus_skill": "rhyme_recognition",
+          "target_words": ["cat", "bat", "hat"],
+          "word_family": "-at"
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch06_sc02_claude_hint.mp3",
+            "line": "(Tilting head) *Woof!* Cat... bat... they sound the same at the end! -at, -at, -at!",
+            "metric_flag": "rhyme_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_family",
+            "actor": "Sparky",
+            "audio_file": "ch06_sc02_sparky_error.mp3",
+            "line": "Zzzzt! That's the -OG family! DOG, LOG, FOG! We need the -AT family! CAT, BAT, HAT!",
+            "action": "Sparky shows word family groupings",
+            "metric_flag": "word_family_confusion"
+          },
+          "parent_override": {
+            "trigger": "dashboard_phonics_focus",
+            "narrator_template": "NARRATOR: Your grown-up helps: '${parent_text}' Listen to the ending sound!",
+            "metric_flag": "parent_phonics_scaffold"
+          },
+          "success": {
+            "trigger": "all_correct_tapped",
+            "line_fast": "SIR JAMES: CAT, BAT, HAT! They all rhyme! I'm a word wizard!",
+            "line_slow": "SIR JAMES: I found them all! The -AT family sticks together!",
+            "metric_score": "rhyme_mastery"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch06_sc03_word_raft",
+      "title": "Sparky's Word Raft",
+      "interaction_loop": {
+        "challenge_id": "rhyme_matching",
+        "primary_prompt": "NARRATOR: Sparky's raft needs word pairs! Drag the words that rhyme together onto the raft!",
+        "ui_type": "drag_and_drop",
+        "options": [
+          { "id": "hat", "label": "HAT", "match": "cat" },
+          { "id": "cat", "label": "CAT", "match": "hat" },
+          { "id": "log", "label": "LOG", "match": "frog" },
+          { "id": "frog", "label": "FROG", "match": "log" },
+          { "id": "ship", "label": "SHIP", "match": "dip" },
+          { "id": "dip", "label": "DIP", "match": "ship" }
+        ],
+        "literacy": {
+          "focus_skill": "rhyme_matching",
+          "target_pairs": [["hat", "cat"], ["log", "frog"], ["ship", "dip"]]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch06_sc03_sparky_hint.mp3",
+            "line": "Zoom! HAT and CAT sound the same at the end! They're rhyme buddies!",
+            "metric_flag": "matching_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_match",
+            "actor": "Claude",
+            "audio_file": "ch06_sc03_claude_error.mp3",
+            "line": "(Head shake) *Whine...* HAT and LOG don't sound the same. Try listening to the ending!",
+            "action": "Words bounce back to original position",
+            "metric_flag": "rhyme_mismatch"
+          },
+          "parent_override": {
+            "trigger": "dashboard_slow_read",
+            "narrator_template": "NARRATOR: Let's say them slowly: '${parent_text}'",
+            "metric_flag": "parent_pacing_used"
+          },
+          "success": {
+            "trigger": "all_matched",
+            "line_fast": "SIR JAMES: All the rhyme buddies are on the raft! Let's sail!",
+            "line_slow": "SIR JAMES: I matched them all! Rhyming is fun!",
+            "metric_score": "matching_accuracy"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch06_sc04_calm_cove",
+      "title": "Calm Cove Reading Rest",
+      "interaction_loop": {
+        "challenge_id": "simple_sentence_reading",
+        "primary_prompt": "NARRATOR: The calm cove has a message painted on the rocks. Can you read it? 'The dog is in the boat.'",
+        "ui_type": "read_along_tap",
+        "sentence": "The dog is in the boat.",
+        "words": ["The", "dog", "is", "in", "the", "boat"],
+        "literacy": {
+          "focus_skill": "sentence_reading",
+          "sight_words": ["the", "is", "in"],
+          "content_words": ["dog", "boat"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch06_sc04_claude_hint.mp3",
+            "line": "(Pointing with paw) *Woof!* That's me! The DOG! I'm in the boat!",
+            "metric_flag": "reading_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_word",
+            "actor": "Gramps",
+            "audio_file": "ch06_sc04_gramps_error.mp3",
+            "line": "Take your time, James. Point to each word as you read. The... dog... is... in... the... boat.",
+            "action": "Words highlight one at a time",
+            "metric_flag": "tracking_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_co_read",
+            "narrator_template": "NARRATOR: Read together: '${parent_text}'",
+            "metric_flag": "parent_co_reading"
+          },
+          "success": {
+            "trigger": "sentence_complete",
+            "line_fast": "SIR JAMES: The dog is in the boat! I read the whole thing!",
+            "line_slow": "SIR JAMES: I... read... it! The dog is in the boat!",
+            "metric_score": "sentence_fluency"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch06_sc05_choice_ledger",
+      "title": "Choice Ledger & Rapids Preview",
+      "interaction_loop": {
+        "challenge_id": "review_quiz",
+        "primary_prompt": "NARRATOR: Before the rapids, let's check what you learned! Which word means the opposite of UP?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "down", "label": "DOWN", "icon": "⬇️", "correct": true },
+          { "id": "cat", "label": "CAT", "icon": "🐱", "correct": false }
+        ],
+        "literacy": {
+          "focus_skill": "review",
+          "concept": "opposites",
+          "target_words": ["up", "down"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch06_sc05_sparky_hint.mp3",
+            "line": "Zoom! UP goes this way (pointing up)... so the opposite goes... which way?",
+            "metric_flag": "review_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_answer",
+            "actor": "Claude",
+            "audio_file": "ch06_sc05_claude_error.mp3",
+            "line": "(Confused head tilt) *Woof?* CAT is an animal, not a direction! UP and DOWN are opposites!",
+            "action": "Claude demonstrates up/down with head movements",
+            "metric_flag": "concept_confusion"
+          },
+          "parent_override": {
+            "trigger": "dashboard_review_hint",
+            "narrator_template": "NARRATOR: Your grown-up reminds you: '${parent_text}'",
+            "metric_flag": "parent_review_scaffold"
+          },
+          "success": {
+            "trigger": "correct_answer",
+            "line_fast": "SIR JAMES: DOWN! The opposite of UP is DOWN! I'm ready for the rapids!",
+            "line_slow": "SIR JAMES: Oh! DOWN! I remember now! Let's go!",
+            "metric_score": "review_accuracy"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "direction_word_mastery",
+      "rhyme_mastery",
+      "matching_accuracy",
+      "sentence_fluency",
+      "review_accuracy"
+    ],
+    "words_introduced": ["cat", "bat", "hat", "log", "fog", "dog", "frog", "up", "down", "ship", "dip", "the", "is", "in", "boat"],
+    "foreshadow": "Next: Echo Mountain where blends bounce off the walls!",
+    "next_chapter": "ch07_echo_mountain"
+  }
+}

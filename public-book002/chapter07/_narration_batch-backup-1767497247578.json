@@ -1,0 +1,227 @@
+{
+  "chapter": 7,
+  "title": "The Wishing Star",
+  "theme": "Dreams and Aspirations",
+  "virtue": "Hope and Believing in Yourself",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Spiral Staircase",
+      "setting": "Ancient stone spiral staircase with glowing runes on walls",
+      "lines": [
+        {
+          "id": "007-01-01",
+          "voice": "narrator",
+          "text": "Sir James and Claude discovered a hidden tower with a spiral staircase that seemed to reach up to the stars themselves.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "007-01-02",
+          "voice": "sir_james",
+          "text": "Look at these glowing symbols on the walls, Claude! They're showing us the way up!",
+          "emotion": "excited"
+        },
+        {
+          "id": "007-01-03",
+          "voice": "narrator",
+          "text": "With each step they climbed, the runes glowed brighter, as if welcoming them to something magical above.",
+          "emotion": "mystical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "The Star Chamber",
+      "setting": "Tower top with open ceiling showing brilliant night sky",
+      "lines": [
+        {
+          "id": "007-02-01",
+          "voice": "narrator",
+          "text": "At the top of the tower, Sir James gasped. The ceiling was open to the most beautiful night sky he had ever seen!",
+          "emotion": "amazed"
+        },
+        {
+          "id": "007-02-02",
+          "voice": "sir_james",
+          "text": "Claude, I've never seen so many stars! They're so close, I feel like I could touch them!",
+          "emotion": "delighted"
+        },
+        {
+          "id": "007-02-03",
+          "voice": "narrator",
+          "text": "And then, one star began to glow brighter than all the others, slowly floating down toward them.",
+          "emotion": "magical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "The Wishing Star Appears",
+      "setting": "Glowing star hovering before Sir James",
+      "lines": [
+        {
+          "id": "007-03-01",
+          "voice": "narrator",
+          "text": "The star floated gently before Sir James, glowing with warm silver light. It was the legendary Wishing Star!",
+          "emotion": "wonder"
+        },
+        {
+          "id": "007-03-02",
+          "voice": "sir_james",
+          "text": "Are you... are you really a Wishing Star? Gramps told me stories about you!",
+          "emotion": "awed"
+        },
+        {
+          "id": "007-03-03",
+          "voice": "narrator",
+          "text": "The star twinkled warmly. 'I am. And I appear only to those whose hearts are full of hope and dreams.'",
+          "emotion": "gentle"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "Making a Wish",
+      "setting": "Sir James closing his eyes, star glowing brighter",
+      "lines": [
+        {
+          "id": "007-04-01",
+          "voice": "narrator",
+          "text": "The Wishing Star floated closer. 'You may make one wish, young knight. What does your heart truly desire?'",
+          "emotion": "anticipation"
+        },
+        {
+          "id": "007-04-02",
+          "voice": "sir_james",
+          "text": "I wish... I wish to always have the courage to help others and to be a true friend, like Claude is to me.",
+          "emotion": "sincere"
+        },
+        {
+          "id": "007-04-03",
+          "voice": "narrator",
+          "text": "The star glowed even brighter, touched by the selflessness of Sir James's wish.",
+          "emotion": "heartwarming"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "The Star's Wisdom",
+      "setting": "Star creating images of Sir James helping others",
+      "lines": [
+        {
+          "id": "007-05-01",
+          "voice": "narrator",
+          "text": "The Wishing Star created beautiful images in the air - pictures of Sir James helping friends and spreading kindness.",
+          "emotion": "magical"
+        },
+        {
+          "id": "007-05-02",
+          "voice": "sir_james",
+          "text": "Is that... is that my future? Will I really do all those wonderful things?",
+          "emotion": "hopeful"
+        },
+        {
+          "id": "007-05-03",
+          "voice": "narrator",
+          "text": "'These are possibilities,' said the star. 'Your choices will make them real. Believe in yourself.'",
+          "emotion": "wise"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "Claude's Dream",
+      "setting": "Star showing Claude's loyal heart",
+      "lines": [
+        {
+          "id": "007-06-01",
+          "voice": "narrator",
+          "text": "The star turned to Claude and showed his dream too - always being by Sir James's side, protecting and guiding.",
+          "emotion": "touching"
+        },
+        {
+          "id": "007-06-02",
+          "voice": "sir_james",
+          "text": "Claude, your dream is to stay with me forever? That's my dream too, boy!",
+          "emotion": "emotional"
+        },
+        {
+          "id": "007-06-03",
+          "voice": "narrator",
+          "text": "Claude barked joyfully and licked Sir James's face. Their friendship was written in the stars.",
+          "emotion": "joyful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "The Star's Gift",
+      "setting": "Star leaving a glowing crystal in Sir James's hands",
+      "lines": [
+        {
+          "id": "007-07-01",
+          "voice": "narrator",
+          "text": "Before returning to the sky, the Wishing Star left a small crystal that glowed with starlight in Sir James's hands.",
+          "emotion": "magical"
+        },
+        {
+          "id": "007-07-02",
+          "voice": "sir_james",
+          "text": "Thank you, Wishing Star! I will treasure this and never stop believing in my dreams!",
+          "emotion": "grateful"
+        },
+        {
+          "id": "007-07-03",
+          "voice": "narrator",
+          "text": "'Remember,' whispered the star as it rose, 'dreams come true for those who work hard and never give up.'",
+          "emotion": "inspiring"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "Dreams in Heart",
+      "setting": "Sir James and Claude descending tower under starlight",
+      "lines": [
+        {
+          "id": "007-08-01",
+          "voice": "narrator",
+          "text": "As Sir James and Claude walked down the spiral stairs, the star crystal lit their way with gentle silver light.",
+          "emotion": "peaceful"
+        },
+        {
+          "id": "007-08-02",
+          "voice": "sir_james",
+          "text": "I learned something important tonight, Claude. Dreams aren't just wishes - they're promises we make to ourselves.",
+          "emotion": "thoughtful"
+        },
+        {
+          "id": "007-08-03",
+          "voice": "narrator",
+          "text": "Above them, the Wishing Star twinkled one last time, proud of the young knight who understood the true magic of dreams.",
+          "emotion": "warm"
+        },
+        {
+          "id": "007-08-04",
+          "voice": "gramps",
+          "text": "Dreams are the seeds of tomorrow, my boy. Plant them with hope, water them with effort, and watch them grow.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}

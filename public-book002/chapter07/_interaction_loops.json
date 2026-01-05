@@ -1,0 +1,243 @@
+{
+  "chapter_id": "ch07_echo_mountain",
+  "book": "book003",
+  "theme": "Blends & Spelling",
+  "skill_focus": "developing_literacy",
+  "reading_level": "Developing",
+  "virtue_focus": "wisdom",
+  "target_words": ["clap", "brick", "stop", "tree", "cliff", "cloud", "step", "trail", "stone", "trip", "rock"],
+  "scenes": [
+    {
+      "scene_id": "ch07_sc01_base_camp",
+      "title": "Base Camp Echo Call",
+      "interaction_loop": {
+        "challenge_id": "consonant_blends",
+        "primary_prompt": "NARRATOR: The mountain echoes back sounds! Listen: 'CL-CL-CLAP!' Tap the word that starts with the CL sound.",
+        "ui_type": "tap_word",
+        "options": [
+          { "id": "clap", "label": "CLAP", "icon": "👏", "correct": true, "blend": "cl" },
+          { "id": "stop", "label": "STOP", "icon": "🛑", "correct": false, "blend": "st" },
+          { "id": "tree", "label": "TREE", "icon": "🌲", "correct": false, "blend": "tr" }
+        ],
+        "literacy": {
+          "focus_skill": "consonant_blends",
+          "target_blend": "cl",
+          "phonics_hint": "CL makes the 'cl' sound like in CLAP and CLOUD"
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch07_sc01_claude_hint.mp3",
+            "line": "(Clapping paws together) *Woof!* CL-CL-CLAP! I can clap! Which word starts like that?",
+            "metric_flag": "blend_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_blend",
+            "actor": "Sparky",
+            "audio_file": "ch07_sc01_sparky_error.mp3",
+            "line": "Zzzzt! That starts with a different sound! Listen: CL-CL-CLAP! Find the CL word!",
+            "action": "Sparky highlights the CL blend",
+            "metric_flag": "blend_confusion"
+          },
+          "parent_override": {
+            "trigger": "dashboard_phonics_focus",
+            "narrator_template": "NARRATOR: Your grown-up helps: '${parent_text}'",
+            "metric_flag": "parent_blend_scaffold"
+          },
+          "success": {
+            "trigger": "tap_correct_blend",
+            "line_fast": "SIR JAMES: CLAP! CL-CL-CLAP! I found it!",
+            "line_slow": "SIR JAMES: I heard the CL sound! CLAP!",
+            "metric_score": "blend_recognition"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch07_sc02_signposts",
+      "title": "Signposts in the Mist",
+      "interaction_loop": {
+        "challenge_id": "blend_recognition",
+        "primary_prompt": "NARRATOR: Signposts appear in the mist! Which word starts with the ST blend? ST-ST-STOP!",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "stop", "label": "STOP", "icon": "🛑", "correct": true, "blend": "st" },
+          { "id": "cliff", "label": "CLIFF", "icon": "🏔️", "correct": false, "blend": "cl" },
+          { "id": "trail", "label": "TRAIL", "icon": "🥾", "correct": false, "blend": "tr" }
+        ],
+        "literacy": {
+          "focus_skill": "blend_discrimination",
+          "target_blend": "st",
+          "contrast_blends": ["cl", "tr"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch07_sc02_gramps_hint.mp3",
+            "line": "Listen to the beginning, James. ST-ST-STOP. Which word starts with ST?",
+            "metric_flag": "discrimination_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_blend_selected",
+            "actor": "Sparky",
+            "audio_file": "ch07_sc02_sparky_error.mp3",
+            "line": "Zzzzt! That's a different blend! CLIFF starts with CL. TRAIL starts with TR. We need ST!",
+            "action": "Sparky shows blend comparison",
+            "metric_flag": "blend_discrimination_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_blend_focus",
+            "narrator_template": "NARRATOR: Your grown-up says: '${parent_text}'",
+            "metric_flag": "parent_discrimination_scaffold"
+          },
+          "success": {
+            "trigger": "correct_blend_selected",
+            "line_fast": "SIR JAMES: STOP! ST-ST-STOP! I can hear the blend!",
+            "line_slow": "SIR JAMES: I listened carefully... STOP starts with ST!",
+            "metric_score": "blend_discrimination"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch07_sc03_spelling_caves",
+      "title": "Echo Spelling Caves",
+      "interaction_loop": {
+        "challenge_id": "spelling_with_blends",
+        "primary_prompt": "NARRATOR: The cave wants you to spell! Use the letter tiles to spell: CLAP",
+        "ui_type": "letter_tiles",
+        "target_word": "CLAP",
+        "available_tiles": ["C", "L", "A", "P", "S", "T", "O"],
+        "literacy": {
+          "focus_skill": "spelling",
+          "target_word": "clap",
+          "blend": "cl"
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch07_sc03_claude_hint.mp3",
+            "line": "(Pawing at tiles) *Woof!* CL-A-P! Start with the C and L together!",
+            "metric_flag": "spelling_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_spelling",
+            "actor": "Sparky",
+            "audio_file": "ch07_sc03_sparky_error.mp3",
+            "line": "Zzzzt! Almost! CLAP has 4 letters: C-L-A-P. The CL blend comes first!",
+            "action": "Incorrect tiles shake and return",
+            "metric_flag": "spelling_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_spelling_hint",
+            "narrator_template": "NARRATOR: Your grown-up helps: '${parent_text}'",
+            "metric_flag": "parent_spelling_scaffold"
+          },
+          "success": {
+            "trigger": "correct_spelling",
+            "line_fast": "SIR JAMES: C-L-A-P! CLAP! I spelled it!",
+            "line_slow": "SIR JAMES: I got it! C... L... A... P! CLAP!",
+            "metric_score": "spelling_accuracy"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch07_sc04_story_fire",
+      "title": "Gramps' Story Fire",
+      "interaction_loop": {
+        "challenge_id": "blend_in_context",
+        "primary_prompt": "NARRATOR: Gramps tells a story by the fire. Tap the blend words as you hear them! 'The BRAVE knight took the TRAIL up the CLIFF.'",
+        "ui_type": "tap_highlight",
+        "sentence": "The brave knight took the trail up the cliff.",
+        "target_words": ["brave", "trail", "cliff"],
+        "literacy": {
+          "focus_skill": "blend_identification_in_context",
+          "target_blends": ["br", "tr", "cl"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch07_sc04_claude_hint.mp3",
+            "line": "(Ears perked) *Woof!* I hear blend sounds! BR-BRAVE! TR-TRAIL! CL-CLIFF!",
+            "metric_flag": "context_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_non_blend_word",
+            "actor": "Gramps",
+            "audio_file": "ch07_sc04_gramps_error.mp3",
+            "line": "That word doesn't start with a blend, James. Listen for two consonants together at the start.",
+            "action": "Non-blend words dim slightly",
+            "metric_flag": "context_identification_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_context_focus",
+            "narrator_template": "NARRATOR: Your grown-up points out: '${parent_text}'",
+            "metric_flag": "parent_context_scaffold"
+          },
+          "success": {
+            "trigger": "all_blends_tapped",
+            "line_fast": "SIR JAMES: I found all the blend words! BRAVE, TRAIL, CLIFF!",
+            "line_slow": "SIR JAMES: I listened to the story and found them all!",
+            "metric_score": "blend_context_mastery"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch07_sc05_summit_echo",
+      "title": "Summit Echo & Voices",
+      "interaction_loop": {
+        "challenge_id": "phrase_choice",
+        "primary_prompt": "NARRATOR: At the summit, you can shout a message that echoes forever! Which phrase will you choose?",
+        "ui_type": "phrase_choice",
+        "options": [
+          { "id": "brave", "label": "Be brave!", "icon": "💪", "correct": null },
+          { "id": "kind", "label": "Stay kind!", "icon": "💓", "correct": null },
+          { "id": "check", "label": "Check again!", "icon": "🔍", "correct": null }
+        ],
+        "literacy": {
+          "focus_skill": "phrase_reading",
+          "target_phrases": ["Be brave", "Stay kind", "Check again"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch07_sc05_sparky_hint.mp3",
+            "line": "Zoom! Each phrase is a message! Which one do you want the mountain to remember?",
+            "metric_flag": "phrase_selection_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_phrase_discuss",
+            "narrator_template": "NARRATOR: Your grown-up wonders: '${parent_text}'",
+            "metric_flag": "parent_phrase_guidance"
+          },
+          "success": {
+            "trigger": "phrase_selected",
+            "line_fast": "SIR JAMES: (Shouting) This is my message! Let it echo forever!",
+            "line_slow": "SIR JAMES: I choose this one... (shouting) Echo it back!",
+            "metric_score": "phrase_comprehension"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "blend_recognition",
+      "blend_discrimination",
+      "spelling_accuracy",
+      "blend_context_mastery",
+      "phrase_comprehension"
+    ],
+    "words_introduced": ["clap", "stop", "cliff", "cloud", "trail", "stone", "trip", "brave", "tree", "step"],
+    "blends_covered": ["cl", "st", "tr", "br"],
+    "foreshadow": "Next: City of Many Doors where sentences open the way!",
+    "next_chapter": "ch08_city_of_doors"
+  }
+}

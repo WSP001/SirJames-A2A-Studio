@@ -1,0 +1,246 @@
+{
+  "chapter_id": "ch09_star_orchard",
+  "book": "book003",
+  "theme": "Adjectives & Description",
+  "skill_focus": "bridge_to_fluency_literacy",
+  "reading_level": "Bridge-to-Fluency",
+  "virtue_focus": "trust",
+  "target_adjectives": ["bright", "soft", "tall", "small", "quiet", "busy", "sweet", "cold", "warm", "heavy", "light"],
+  "scenes": [
+    {
+      "scene_id": "ch09_sc01_star_tree",
+      "title": "Choosing a Star-Tree",
+      "interaction_loop": {
+        "challenge_id": "adjective_pairs",
+        "primary_prompt": "NARRATOR: The Star Orchard has many trees! Find the tree that is TALL and BRIGHT.",
+        "ui_type": "description_match",
+        "options": [
+          { "id": "tall_bright", "label": "Tall & Bright", "icon": "🌟", "correct": true, "adjectives": ["tall", "bright"] },
+          { "id": "small_dim", "label": "Small & Dim", "icon": "✨", "correct": false, "adjectives": ["small", "dim"] },
+          { "id": "tall_quiet", "label": "Tall & Quiet", "icon": "🌲", "correct": false, "adjectives": ["tall", "quiet"] }
+        ],
+        "literacy": {
+          "focus_skill": "adjective_pairs",
+          "target_adjectives": ["bright", "soft", "tall", "small", "quiet", "busy"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch09_sc01_claude_hint.mp3",
+            "line": "(Looking up) *Woof!* TALL means it goes way up high! BRIGHT means it glows!",
+            "metric_flag": "adjective_pair_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_description",
+            "actor": "Sparky",
+            "audio_file": "ch09_sc01_sparky_error.mp3",
+            "line": "Zzzzt! That tree is SMALL, not TALL! Look for the BIG one that GLOWS!",
+            "action": "Correct tree pulses brightly",
+            "metric_flag": "adjective_pair_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_description_focus",
+            "narrator_template": "NARRATOR: Your grown-up describes: '${parent_text}'",
+            "metric_flag": "parent_description_scaffold"
+          },
+          "success": {
+            "trigger": "correct_description",
+            "line_fast": "SIR JAMES: TALL and BRIGHT! I found it!",
+            "line_slow": "SIR JAMES: This tree is tall... and bright! This is the one!",
+            "metric_score": "adjective_pair_mastery"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch09_sc02_tasting_notes",
+      "title": "Tasting Notes",
+      "interaction_loop": {
+        "challenge_id": "cloze_adjective",
+        "primary_prompt": "NARRATOR: The star-fruit is delicious! Fill in the blank: 'It is ___ and ___.'",
+        "ui_type": "cloze_adjective",
+        "sentence_template": "It is ___ and ___.",
+        "options": [
+          { "id": "sweet", "label": "SWEET", "icon": "🍬", "slot": 1 },
+          { "id": "soft", "label": "SOFT", "icon": "☁️", "slot": 2 },
+          { "id": "cold", "label": "COLD", "icon": "❄️", "slot": 1 },
+          { "id": "warm", "label": "WARM", "icon": "🔥", "slot": 2 }
+        ],
+        "literacy": {
+          "focus_skill": "adjective_sentence_building",
+          "target_pattern": "It is ___ and ___."
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch09_sc02_gramps_hint.mp3",
+            "line": "Think about how the fruit tastes and feels, James. Is it sweet? Soft? Cold?",
+            "metric_flag": "cloze_support_needed"
+          },
+          "error_support": {
+            "trigger": "incomplete_sentence",
+            "actor": "Sparky",
+            "audio_file": "ch09_sc02_sparky_error.mp3",
+            "line": "Zzzzt! The sentence needs TWO describing words! 'It is ___ AND ___.'",
+            "action": "Empty slots highlight",
+            "metric_flag": "cloze_incomplete"
+          },
+          "parent_override": {
+            "trigger": "dashboard_sentence_focus",
+            "narrator_template": "NARRATOR: Your grown-up suggests: '${parent_text}'",
+            "metric_flag": "parent_sentence_scaffold"
+          },
+          "success": {
+            "trigger": "sentence_complete",
+            "line_fast": "SIR JAMES: It is sweet and soft! I described it!",
+            "line_slow": "SIR JAMES: It is... sweet... and... soft! I made a sentence!",
+            "metric_score": "adjective_sentence_building"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch09_sc03_preferences",
+      "title": "Claude's Preferences",
+      "interaction_loop": {
+        "challenge_id": "sentence_builder",
+        "primary_prompt": "NARRATOR: Claude wants to share what he likes! Build a sentence: 'I like the ___ star.'",
+        "ui_type": "sentence_builder",
+        "sentence_template": "I like the ___ star.",
+        "options": [
+          { "id": "bright", "label": "BRIGHT", "icon": "🌟" },
+          { "id": "soft", "label": "SOFT", "icon": "☁️" },
+          { "id": "warm", "label": "WARM", "icon": "🔥" }
+        ],
+        "literacy": {
+          "focus_skill": "preference_sentences",
+          "target_words": ["I", "like", "do", "not", "the", "bright"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch09_sc03_claude_hint.mp3",
+            "line": "(Tail wagging) *Woof!* I like the BRIGHT star! It's so shiny!",
+            "metric_flag": "preference_support_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_preference_focus",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_preference_scaffold"
+          },
+          "success": {
+            "trigger": "sentence_built",
+            "line_fast": "SIR JAMES: I like the bright star! That's my favorite!",
+            "line_slow": "SIR JAMES: I... like... the... bright star!",
+            "metric_score": "preference_expression"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch09_sc04_star_sorting",
+      "title": "Sparky's Star Sorting",
+      "interaction_loop": {
+        "challenge_id": "adjective_sorting",
+        "primary_prompt": "NARRATOR: Help Sparky sort the stars! Drag HOT stars to the red basket and COLD stars to the blue basket.",
+        "ui_type": "drag_to_basket",
+        "baskets": [
+          { "id": "hot_basket", "label": "HOT", "color": "red" },
+          { "id": "cold_basket", "label": "COLD", "color": "blue" }
+        ],
+        "items": [
+          { "id": "sun_star", "label": "Sun Star", "adjective": "hot", "basket": "hot_basket" },
+          { "id": "fire_star", "label": "Fire Star", "adjective": "hot", "basket": "hot_basket" },
+          { "id": "ice_star", "label": "Ice Star", "adjective": "cold", "basket": "cold_basket" },
+          { "id": "snow_star", "label": "Snow Star", "adjective": "cold", "basket": "cold_basket" }
+        ],
+        "literacy": {
+          "focus_skill": "adjective_categorization",
+          "target_adjectives": ["hot", "cold", "heavy", "light"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch09_sc04_sparky_hint.mp3",
+            "line": "Zoom! HOT things go in the RED basket! COLD things go in the BLUE basket!",
+            "metric_flag": "sorting_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_basket",
+            "actor": "Claude",
+            "audio_file": "ch09_sc04_claude_error.mp3",
+            "line": "(Shaking head) *Whine...* That's a COLD star! It goes in the BLUE basket!",
+            "action": "Star bounces back",
+            "metric_flag": "sorting_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_sorting_focus",
+            "narrator_template": "NARRATOR: Your grown-up helps: '${parent_text}'",
+            "metric_flag": "parent_sorting_scaffold"
+          },
+          "success": {
+            "trigger": "all_sorted",
+            "line_fast": "SIR JAMES: All sorted! Hot in red, cold in blue!",
+            "line_slow": "SIR JAMES: I sorted them all! Hot and cold!",
+            "metric_score": "adjective_categorization"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch09_sc05_night_poem",
+      "title": "Night-Sky Poem",
+      "interaction_loop": {
+        "challenge_id": "word_choice_poem",
+        "primary_prompt": "NARRATOR: Write a poem about the night sky! Choose words to fill in: 'The sky is ___. The stars are ___. I feel ___.'",
+        "ui_type": "word_choice_poem",
+        "poem_template": "The sky is ___.\nThe stars are ___.\nI feel ___.",
+        "word_choices": {
+          "line1": ["bright", "dark", "soft"],
+          "line2": ["kind", "brave", "warm"],
+          "line3": ["happy", "calm", "proud"]
+        },
+        "literacy": {
+          "focus_skill": "creative_composition",
+          "target_words": ["sky", "bright", "soft", "kind", "brave"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch09_sc05_gramps_hint.mp3",
+            "line": "There's no wrong answer, James. Pick the words that feel right to you.",
+            "metric_flag": "composition_support_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_poem_focus",
+            "narrator_template": "NARRATOR: Your grown-up encourages: '${parent_text}'",
+            "metric_flag": "parent_composition_scaffold"
+          },
+          "success": {
+            "trigger": "poem_complete",
+            "line_fast": "SIR JAMES: I wrote a poem! Listen to this!",
+            "line_slow": "SIR JAMES: The sky is... the stars are... I feel... I made a poem!",
+            "metric_score": "creative_expression"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "adjective_pair_mastery",
+      "adjective_sentence_building",
+      "preference_expression",
+      "adjective_categorization",
+      "creative_expression"
+    ],
+    "words_introduced": ["bright", "soft", "tall", "small", "quiet", "busy", "sweet", "cold", "warm", "heavy", "light", "hot", "dark", "kind", "brave", "happy", "calm", "proud"],
+    "foreshadow": "Next: Homecoming Circle where we celebrate everything we've learned!",
+    "next_chapter": "ch10_homecoming_circle"
+  }
+}

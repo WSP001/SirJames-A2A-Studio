@@ -1,0 +1,202 @@
+{
+  "chapter_id": "ch01_whispering_woods",
+  "book": "book003",
+  "theme": "Baseline Safety & Listening",
+  "skill_focus": "survival-sense",
+  "virtue_focus": "courage",
+  "scenes": [
+    {
+      "scene_id": "ch01_sc01_path_choice",
+      "title": "The Fork in the Path",
+      "interaction_loop": {
+        "challenge_id": "safety_vs_curiosity",
+        "primary_prompt": "NARRATOR: Two paths lie ahead. The Sunny Path is wide and bright. The Shadowy Shortcut is dark and fast. Which way should we go?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "sunny", "label": "Sunny Path", "icon": "☀️", "correct": null },
+          { "id": "shadow", "label": "Shadowy Shortcut", "icon": "🌲", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch01_sc01_claude_hint.mp3",
+            "line": "(Sniffing the air) *Woof!* The sunny path smells like warm strawberries. The dark one smells like... cold wet moss.",
+            "metric_flag": "hesitation_baseline"
+          },
+          "parent_override": {
+            "trigger": "dashboard_click_focus_safety",
+            "narrator_template": "NARRATOR: Your grown-up guide whispers: \"${parent_input}\" Let's be safe today.",
+            "metric_flag": "parent_guidance_safety"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "line_fast": "SIR JAMES: (Confident) Adventure awaits! Let's go!",
+            "line_slow": "SIR JAMES: (Thoughtful) Hmm... okay team. I've decided. We go this way.",
+            "metric_mapping": {
+              "sunny": "survival_sense: cautious",
+              "shadow": "survival_sense: adventurous"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch01_sc02_whispering_trees",
+      "title": "The First Whisper",
+      "interaction_loop": {
+        "challenge_id": "auditory_attention",
+        "primary_prompt": "NARRATOR: The trees are whispering a secret. Listen close... 'The... mossy... rock... is... safe...'",
+        "ui_type": "tap_object",
+        "options": [
+          { "id": "mossy_rock", "label": "Mossy Rock", "icon": "🪨", "correct": true },
+          { "id": "thorn_bush", "label": "Thorn Bush", "icon": "🌿", "correct": false }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch01_sc02_gramps_hint.mp3",
+            "line": "Did you hear that, James? Use your ears. Not the thorn... the rock.",
+            "metric_flag": "listening_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_thorn_bush",
+            "actor": "Sparky",
+            "audio_file": "ch01_sc02_sparky_warn.mp3",
+            "line": "Zzzzt! Ouchy! That's a sharp thorn! The trees said 'Mossy Rock'!",
+            "action": "Sparky glows red near the thorn bush",
+            "metric_flag": "auditory_miss"
+          },
+          "parent_override": {
+            "trigger": "dashboard_slow_read",
+            "narrator_template": "NARRATOR: Listen again, slowly... 'The... mossy... rock... is... safe...'",
+            "metric_flag": "parent_replay_used"
+          },
+          "success": {
+            "trigger": "tap_mossy_rock",
+            "line_fast": "SIR JAMES: Got it! To the rock!",
+            "line_slow": "SIR JAMES: I had to listen really hard, but I heard it. The rock is safe.",
+            "metric_score": "attention_span"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch01_sc03_forest_guide",
+      "title": "The Riddle or The Answer",
+      "interaction_loop": {
+        "challenge_id": "interaction_style_preference",
+        "primary_prompt": "FOREST GUIDE: I can show you the way. Do you want a Riddle to solve? Or should I just tell you the answer?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "riddle", "label": "Give me a Riddle!", "icon": "🧩", "correct": null },
+          { "id": "answer", "label": "Just tell me", "icon": "🗣️", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "10s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch01_sc03_claude_hint.mp3",
+            "line": "*Whine...* I just want to find the snacks. Can we ask for help?",
+            "metric_flag": "decision_paralysis"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "narrator_template": "NARRATOR: A message from home floats down: ${parent_text}",
+            "metric_flag": "parent_scaffold_used"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "line_fast": "SIR JAMES: I know what I want!",
+            "line_slow": "SIR JAMES: Okay... I think I've decided.",
+            "metric_mapping": {
+              "riddle": "learning_style: problem_solver",
+              "answer": "learning_style: social_learner"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch01_sc04_minor_scare",
+      "title": "The Hollow Log Boom",
+      "interaction_loop": {
+        "challenge_id": "emotional_regulation",
+        "primary_prompt": "NARRATOR: BOOM! The log sounds like a drum! Sir James jumps back. How is he feeling?",
+        "ui_type": "emotion_selector",
+        "options": [
+          { "id": "scared", "label": "Scared", "icon": "😨", "correct": null },
+          { "id": "brave", "label": "Brave", "icon": "💪", "correct": null },
+          { "id": "curious", "label": "Curious", "icon": "🤔", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Sir James",
+            "audio_file": "ch01_sc04_james_self.mp3",
+            "line": "My heart is beating really fast like a bunny rabbit...",
+            "metric_flag": "emotional_articulation_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_calm_down",
+            "narrator_template": "NARRATOR: Take a deep breath with Claude. In... 1, 2, 3. Out... 1, 2, 3. You are safe.",
+            "metric_flag": "regulation_assistance"
+          },
+          "success": {
+            "trigger": "select_emotion",
+            "line_fast": "SIR JAMES: Okay, I said it. I was scared. But I'm okay now.",
+            "line_slow": "SIR JAMES: It took me a moment, but I figured out how I feel.",
+            "metric_score": "emotional_awareness"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch01_sc05_campfire",
+      "title": "The Virtue Reflection",
+      "interaction_loop": {
+        "challenge_id": "metacognition_review",
+        "primary_prompt": "GRAMPS: You did well today. What was your strongest power?",
+        "ui_type": "virtue_selector",
+        "options": [
+          { "id": "courage", "label": "Courage", "icon": "💎", "correct": null },
+          { "id": "wisdom", "label": "Wisdom", "icon": "🥇", "correct": null },
+          { "id": "trust", "label": "Trust", "icon": "🏅", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch01_sc05_sparky_hint.mp3",
+            "line": "You were so brave at the loud log! Zoom!",
+            "metric_flag": "reflection_prompt_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_virtue_discuss",
+            "narrator_template": "NARRATOR: Your grown-up asks: ${parent_text}",
+            "metric_flag": "parent_reflection_guided"
+          },
+          "success": {
+            "trigger": "select_virtue",
+            "line_fast": "SIR JAMES: I choose... Courage! Because I kept going even when it was dark.",
+            "line_slow": "SIR JAMES: Hmm... I think my strongest power today was... this one!",
+            "metric_score": "self_perception_bias"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "hesitation_baseline",
+      "survival_sense",
+      "attention_span",
+      "learning_style",
+      "emotional_awareness",
+      "self_perception_bias"
+    ],
+    "foreshadow": "Tomorrow we enter the Crystal Caves where patterns glow!",
+    "next_chapter": "ch02_crystal_caves"
+  }
+}

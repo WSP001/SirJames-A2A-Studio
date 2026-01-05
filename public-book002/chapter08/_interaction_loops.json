@@ -1,0 +1,249 @@
+{
+  "chapter_id": "ch08_city_of_doors",
+  "book": "book003",
+  "theme": "Functional Reading & Sentences",
+  "skill_focus": "developing_to_bridge_literacy",
+  "reading_level": "Developing → Bridge",
+  "virtue_focus": "kindness",
+  "target_sentences": ["Stop.", "Look.", "Go.", "Wait.", "Go up the stairs.", "Open the door."],
+  "scenes": [
+    {
+      "scene_id": "ch08_sc01_gatehouse",
+      "title": "Gatehouse Signs",
+      "interaction_loop": {
+        "challenge_id": "functional_direction",
+        "primary_prompt": "NARRATOR: The gatehouse has signs everywhere! Tap the sign that says OPEN.",
+        "ui_type": "tap_the_label",
+        "options": [
+          { "id": "open", "label": "OPEN", "icon": "🚪", "correct": true },
+          { "id": "shut", "label": "SHUT", "icon": "🔒", "correct": false },
+          { "id": "left", "label": "LEFT", "icon": "⬅️", "correct": false },
+          { "id": "right", "label": "RIGHT", "icon": "➡️", "correct": false }
+        ],
+        "literacy": {
+          "focus_skill": "functional_words",
+          "target_words": ["open", "shut", "in", "out", "left", "right"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch08_sc01_claude_hint.mp3",
+            "line": "(Sniffing the door) *Woof!* We want to go IN! Which sign lets us in? O-P-E-N!",
+            "metric_flag": "functional_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_sign",
+            "actor": "Sparky",
+            "audio_file": "ch08_sc01_sparky_error.mp3",
+            "line": "Zzzzt! SHUT means closed! We need OPEN! O-P-E-N!",
+            "action": "Correct sign pulses gently",
+            "metric_flag": "functional_word_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_functional_focus",
+            "narrator_template": "NARRATOR: Your grown-up points: '${parent_text}'",
+            "metric_flag": "parent_functional_scaffold"
+          },
+          "success": {
+            "trigger": "tap_correct_sign",
+            "line_fast": "SIR JAMES: OPEN! The door swings wide!",
+            "line_slow": "SIR JAMES: O-P-E-N... OPEN! We can go in!",
+            "metric_score": "functional_word_mastery"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch08_sc02_street_crossing",
+      "title": "Street Crossing",
+      "interaction_loop": {
+        "challenge_id": "sentence_sequences",
+        "primary_prompt": "NARRATOR: To cross safely, put the steps in order! What comes first: Stop, Look, or Go?",
+        "ui_type": "sentence_order",
+        "correct_sequence": ["Stop.", "Look.", "Go."],
+        "options": [
+          { "id": "stop", "label": "Stop.", "order": 1 },
+          { "id": "look", "label": "Look.", "order": 2 },
+          { "id": "go", "label": "Go.", "order": 3 }
+        ],
+        "literacy": {
+          "focus_skill": "sequence_reading",
+          "target_sentences": ["Stop.", "Look.", "Go."]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch08_sc02_gramps_hint.mp3",
+            "line": "Before we cross, we always STOP first. Then we LOOK. Then we GO.",
+            "metric_flag": "sequence_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_sequence",
+            "actor": "Sparky",
+            "audio_file": "ch08_sc02_sparky_error.mp3",
+            "line": "Zzzzt! We can't GO first! That's not safe! STOP comes first!",
+            "action": "Incorrect order shakes and resets",
+            "metric_flag": "sequence_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_safety_focus",
+            "narrator_template": "NARRATOR: Your grown-up reminds you: '${parent_text}'",
+            "metric_flag": "parent_safety_scaffold"
+          },
+          "success": {
+            "trigger": "correct_sequence",
+            "line_fast": "SIR JAMES: Stop, Look, Go! I know how to cross safely!",
+            "line_slow": "SIR JAMES: First Stop... then Look... then Go! We made it!",
+            "metric_score": "sequence_comprehension"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch08_sc03_delivery",
+      "title": "Claude's Delivery",
+      "interaction_loop": {
+        "challenge_id": "sentence_comprehension",
+        "primary_prompt": "NARRATOR: Claude has a package! The note says: 'Go up the stairs.' Which picture shows what to do?",
+        "ui_type": "sentence_to_picture",
+        "sentence": "Go up the stairs.",
+        "options": [
+          { "id": "up_stairs", "label": "Going up stairs", "icon": "🔼", "correct": true },
+          { "id": "down_stairs", "label": "Going down stairs", "icon": "🔽", "correct": false },
+          { "id": "sitting", "label": "Sitting down", "icon": "🪑", "correct": false }
+        ],
+        "literacy": {
+          "focus_skill": "sentence_comprehension",
+          "target_sentence": "Go up the stairs."
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch08_sc03_claude_hint.mp3",
+            "line": "(Looking at stairs) *Woof!* Go UP! Not down! UP the stairs!",
+            "metric_flag": "comprehension_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_picture",
+            "actor": "Sparky",
+            "audio_file": "ch08_sc03_sparky_error.mp3",
+            "line": "Zzzzt! The note says UP! UP the stairs! Not down!",
+            "action": "Correct picture highlights",
+            "metric_flag": "comprehension_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_comprehension_focus",
+            "narrator_template": "NARRATOR: Your grown-up reads with you: '${parent_text}'",
+            "metric_flag": "parent_comprehension_scaffold"
+          },
+          "success": {
+            "trigger": "correct_picture",
+            "line_fast": "SIR JAMES: Go up the stairs! I understand!",
+            "line_slow": "SIR JAMES: Go... up... the stairs. This picture!",
+            "metric_score": "sentence_picture_match"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch08_sc04_shortcuts",
+      "title": "Sparky's Shortcuts",
+      "interaction_loop": {
+        "challenge_id": "adjective_contrast",
+        "primary_prompt": "NARRATOR: Sparky found two paths! One is SAFE and SLOW. One is FAST but BUMPY. Which path should we take?",
+        "ui_type": "choice_with_reading",
+        "options": [
+          { "id": "safe_slow", "label": "Safe and Slow", "icon": "🐢", "correct": null, "adjectives": ["safe", "slow"] },
+          { "id": "fast_bumpy", "label": "Fast but Bumpy", "icon": "🐇", "correct": null, "adjectives": ["fast", "bumpy"] }
+        ],
+        "literacy": {
+          "focus_skill": "adjective_introduction",
+          "target_adjectives": ["safe", "fast", "slow", "bumpy"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch08_sc04_sparky_hint.mp3",
+            "line": "Zoom! SAFE means nothing bad happens. FAST means quick! Which sounds better?",
+            "metric_flag": "adjective_support_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_adjective_focus",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_adjective_scaffold"
+          },
+          "success": {
+            "trigger": "path_selected",
+            "line_fast": "SIR JAMES: I choose this path! Let's go!",
+            "line_slow": "SIR JAMES: I read both choices... I pick this one!",
+            "metric_mapping": {
+              "safe_slow": "path_preference: cautious",
+              "fast_bumpy": "path_preference: adventurous"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch08_sc05_city_map",
+      "title": "City Map & Passport",
+      "interaction_loop": {
+        "challenge_id": "review_adjectives",
+        "primary_prompt": "NARRATOR: Your City Passport needs a stamp! Which word describes a place with no noise?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "quiet", "label": "QUIET", "icon": "🤫", "correct": true },
+          { "id": "noisy", "label": "NOISY", "icon": "📢", "correct": false }
+        ],
+        "literacy": {
+          "focus_skill": "adjective_opposites",
+          "target_pair": ["quiet", "noisy"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch08_sc05_claude_hint.mp3",
+            "line": "(Ears flat) *Whine...* NOISY is loud! QUIET is... shhh... no noise!",
+            "metric_flag": "opposite_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_opposite",
+            "actor": "Gramps",
+            "audio_file": "ch08_sc05_gramps_error.mp3",
+            "line": "Think about it, James. NOISY means lots of sound. What's the opposite?",
+            "action": "Shows contrast images",
+            "metric_flag": "opposite_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_opposite_focus",
+            "narrator_template": "NARRATOR: Your grown-up hints: '${parent_text}'",
+            "metric_flag": "parent_opposite_scaffold"
+          },
+          "success": {
+            "trigger": "correct_opposite",
+            "line_fast": "SIR JAMES: QUIET! No noise means quiet!",
+            "line_slow": "SIR JAMES: QUIET is the opposite of NOISY!",
+            "metric_score": "adjective_opposite_mastery"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "functional_word_mastery",
+      "sequence_comprehension",
+      "sentence_picture_match",
+      "adjective_understanding",
+      "adjective_opposite_mastery"
+    ],
+    "words_introduced": ["open", "shut", "stop", "look", "go", "wait", "up", "down", "safe", "fast", "slow", "bumpy", "quiet", "noisy"],
+    "foreshadow": "Next: Star Orchard where descriptions bloom!",
+    "next_chapter": "ch09_star_orchard"
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "chapter_id": "ch03_labyrinth_bridge",
+  "book": "book003",
+  "theme": "Teamwork & Strategy",
+  "skill_focus": "social-survival",
+  "virtue_focus": "trust",
+  "scenes": [
+    {
+      "scene_id": "ch03_sc01_living_map",
+      "title": "The Living Labyrinth Map",
+      "interaction_loop": {
+        "challenge_id": "route_selection",
+        "primary_prompt": "NARRATOR: The labyrinth map glows with three paths. The Short Path is tricky with puzzles. The Long Path is safe but slow. The Mystery Path... well, who knows?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "short", "label": "Short but Tricky", "icon": "⚡", "correct": null },
+          { "id": "long", "label": "Long but Safe", "icon": "🛡️", "correct": null },
+          { "id": "mystery", "label": "Surprise Me!", "icon": "✨", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch03_sc01_claude_hint.mp3",
+            "line": "(Sniffing each path) *Woof!* The short one smells like puzzles. The long one smells like... walking. A lot of walking.",
+            "metric_flag": "route_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_strategy_focus",
+            "narrator_template": "NARRATOR: Your grown-up whispers: \"${parent_text}\" Think about what feels right for your team.",
+            "metric_flag": "parent_strategy_guidance"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "line_fast": "SIR JAMES: I know exactly which way! Follow me, team!",
+            "line_slow": "SIR JAMES: Okay... I've thought about it. This is the path for us.",
+            "metric_mapping": {
+              "short": "risk_preference: high",
+              "long": "risk_preference: low",
+              "mystery": "risk_preference: adventurous"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch03_sc02_team_roles",
+      "title": "Team Roles & Turn-Taking",
+      "interaction_loop": {
+        "challenge_id": "role_assignment",
+        "primary_prompt": "NARRATOR: The labyrinth needs a team! Who should be the Scout (goes first), the Guard (watches behind), and the Navigator (reads the map)?",
+        "ui_type": "role_assignment",
+        "options": [
+          { "id": "claude_scout", "label": "Claude as Scout", "icon": "🐕", "role": "scout" },
+          { "id": "sparky_scout", "label": "Sparky as Scout", "icon": "⚡", "role": "scout" },
+          { "id": "james_scout", "label": "Sir James as Scout", "icon": "🧒", "role": "scout" },
+          { "id": "gramps_navigator", "label": "Gramps as Navigator", "icon": "🧔", "role": "navigator" }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "10s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch03_sc02_gramps_hint.mp3",
+            "line": "Think about what each friend does best, James. Claude has a great nose. Sparky is fast. You're brave.",
+            "metric_flag": "role_decision_delay"
+          },
+          "error_support": {
+            "trigger": "same_role_twice",
+            "actor": "Sparky",
+            "audio_file": "ch03_sc02_sparky_error.mp3",
+            "line": "Zzzzt! Wait! Someone already has that job! Each friend needs a different role!",
+            "action": "Sparky bounces between the duplicate selections",
+            "metric_flag": "role_assignment_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_teamwork_hint",
+            "narrator_template": "NARRATOR: A wise voice reminds you: \"${parent_text}\"",
+            "metric_flag": "parent_teamwork_scaffold"
+          },
+          "success": {
+            "trigger": "all_roles_assigned",
+            "line_fast": "SIR JAMES: Perfect! Everyone knows their job! Let's go!",
+            "line_slow": "SIR JAMES: Okay team, I figured out the best job for everyone. Ready?",
+            "metric_score": "delegation_skill"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch03_sc03_mist_corridor",
+      "title": "Mist Corridor & Strategy Planning",
+      "interaction_loop": {
+        "challenge_id": "planning_vs_action",
+        "primary_prompt": "NARRATOR: Thick mist fills the corridor. You can barely see! Should we draw a plan in the dust first, or rush toward the light we see flickering ahead?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "plan", "label": "Draw a Plan", "icon": "📝", "correct": null },
+          { "id": "rush", "label": "Rush to the Light", "icon": "🏃", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch03_sc03_claude_hint.mp3",
+            "line": "(Pawing at the ground) *Whine...* I can smell something ahead, but I can't see it. Maybe we should think first?",
+            "metric_flag": "strategy_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_patience_focus",
+            "narrator_template": "NARRATOR: Your grown-up gently says: \"${parent_text}\" Sometimes planning helps us go faster.",
+            "metric_flag": "parent_patience_guidance"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "line_fast": "SIR JAMES: I know what to do! This way!",
+            "line_slow": "SIR JAMES: Hmm... okay. I've made my choice. Here we go!",
+            "metric_mapping": {
+              "plan": "approach_style: strategic",
+              "rush": "approach_style: impulsive"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch03_sc04_almost_fall",
+      "title": "The Almost-Fall & Trust Test",
+      "interaction_loop": {
+        "challenge_id": "trust_decision",
+        "primary_prompt": "NARRATOR: The bridge wobbles! Sir James starts to slip! He can try to leap across alone, or grab Claude's collar and trust his friend to pull him back.",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "leap", "label": "Leap Alone", "icon": "🦘", "correct": null, "virtue": "courage" },
+          { "id": "trust", "label": "Grab Claude's Collar", "icon": "🤝", "correct": null, "virtue": "trust" }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch03_sc04_claude_hint.mp3",
+            "line": "(Barking urgently) *WOOF WOOF!* I'm right here! Grab on! I won't let you fall!",
+            "metric_flag": "trust_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_trust_focus",
+            "narrator_template": "NARRATOR: A calm voice reaches you: \"${parent_text}\" Friends help each other.",
+            "metric_flag": "parent_trust_guidance"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "line_fast": "SIR JAMES: (Grabbing Claude) I trust you, boy! Pull!",
+            "line_slow": "SIR JAMES: Okay... okay... I'm going to trust my friend. Here goes!",
+            "metric_mapping": {
+              "leap": "trust_style: independent",
+              "trust": "trust_style: collaborative"
+            },
+            "virtue_earned": {
+              "leap": "courage",
+              "trust": "trust"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch03_sc05_bridge_finale",
+      "title": "Bridge of Light Finale & Virtue Wrap-Up",
+      "interaction_loop": {
+        "challenge_id": "virtue_reflection",
+        "primary_prompt": "GRAMPS: You made it across together! Which virtue felt strongest in the labyrinth today?",
+        "ui_type": "virtue_selector",
+        "options": [
+          { "id": "courage", "label": "Courage", "icon": "💎", "correct": null },
+          { "id": "wisdom", "label": "Wisdom", "icon": "🥇", "correct": null },
+          { "id": "trust", "label": "Trust", "icon": "🏅", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch03_sc05_sparky_hint.mp3",
+            "line": "Zoom! You trusted Claude on the bridge! That was amazing teamwork!",
+            "metric_flag": "reflection_prompt_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_virtue_discuss",
+            "narrator_template": "NARRATOR: Your grown-up asks: \"${parent_text}\"",
+            "metric_flag": "parent_reflection_guided"
+          },
+          "success": {
+            "trigger": "select_virtue",
+            "line_fast": "SIR JAMES: I choose Trust! Because we did it together!",
+            "line_slow": "SIR JAMES: I think... my strongest power today was... working with my friends.",
+            "metric_score": "teamwork_awareness"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "risk_preference",
+      "delegation_skill",
+      "approach_style",
+      "trust_style",
+      "teamwork_awareness"
+    ],
+    "foreshadow": "Next: Skyward Harbor where words take flight!",
+    "next_chapter": "ch04_skyward_harbor"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "chapter_id": "ch10_homecoming_circle",
+  "book": "book003",
+  "theme": "Review, Reflection & Transfer",
+  "skill_focus": "consolidation_literacy",
+  "reading_level": "Consolidation",
+  "virtue_focus": "all",
+  "scenes": [
+    {
+      "scene_id": "ch10_sc01_path_remembering",
+      "title": "Path of Remembering",
+      "interaction_loop": {
+        "challenge_id": "mixed_review",
+        "primary_prompt": "NARRATOR: The Path of Remembering shows words from your journey! Match each word to its meaning.",
+        "ui_type": "tap_match_review",
+        "pairs": [
+          { "word": "UP", "meaning": "⬆️ Going higher", "category": "direction" },
+          { "word": "DOWN", "meaning": "⬇️ Going lower", "category": "direction" },
+          { "word": "BRAVE", "meaning": "💪 Not afraid", "category": "virtue" },
+          { "word": "KIND", "meaning": "💓 Being nice", "category": "virtue" },
+          { "word": "BRIGHT", "meaning": "🌟 Full of light", "category": "adjective" }
+        ],
+        "literacy": {
+          "focus_skill": "mixed_review",
+          "categories": ["direction", "virtue", "adjective"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch10_sc01_claude_hint.mp3",
+            "line": "(Tail wagging) *Woof!* We learned all these words together! UP means going higher!",
+            "metric_flag": "review_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_match",
+            "actor": "Sparky",
+            "audio_file": "ch10_sc01_sparky_error.mp3",
+            "line": "Zzzzt! That's not quite right! Think about what the word means!",
+            "action": "Incorrect match bounces back",
+            "metric_flag": "review_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_review_focus",
+            "narrator_template": "NARRATOR: Your grown-up reminds you: '${parent_text}'",
+            "metric_flag": "parent_review_scaffold"
+          },
+          "success": {
+            "trigger": "all_matched",
+            "line_fast": "SIR JAMES: I remember all the words! I'm a reading knight!",
+            "line_slow": "SIR JAMES: I matched them all! I learned so much!",
+            "metric_score": "review_accuracy"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch10_sc02_campfire_stories",
+      "title": "Campfire Word Stories",
+      "interaction_loop": {
+        "challenge_id": "sentence_completion",
+        "primary_prompt": "NARRATOR: Around the campfire, complete the story! 'Sir James was ___ because he helped his friends.'",
+        "ui_type": "sentence_completion",
+        "sentence_template": "Sir James was ___ because he helped his friends.",
+        "options": [
+          { "id": "brave", "label": "BRAVE", "icon": "💪", "correct": true },
+          { "id": "kind", "label": "KIND", "icon": "💓", "correct": true },
+          { "id": "sad", "label": "SAD", "icon": "😢", "correct": false }
+        ],
+        "literacy": {
+          "focus_skill": "virtue_words_in_context",
+          "target_words": ["trust", "fun", "brave", "because", "and"]
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch10_sc02_gramps_hint.mp3",
+            "line": "Helping friends is a good thing, James. What word describes someone who does good things?",
+            "metric_flag": "context_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_word",
+            "actor": "Claude",
+            "audio_file": "ch10_sc02_claude_error.mp3",
+            "line": "(Confused) *Whine?* SAD doesn't fit! Helping friends makes us feel GOOD!",
+            "action": "Incorrect word fades",
+            "metric_flag": "context_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_context_focus",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_context_scaffold"
+          },
+          "success": {
+            "trigger": "correct_word",
+            "line_fast": "SIR JAMES: Sir James was BRAVE because he helped his friends!",
+            "line_slow": "SIR JAMES: BRAVE... because he helped his friends. That makes sense!",
+            "metric_score": "context_comprehension"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch10_sc03_spelling_desk",
+      "title": "Home Desk Spelling",
+      "interaction_loop": {
+        "challenge_id": "spelling_assessment",
+        "primary_prompt": "NARRATOR: One last spelling challenge! Spell the word you hear: 'STOP'",
+        "ui_type": "letter_tiles",
+        "target_word": "STOP",
+        "available_tiles": ["S", "T", "O", "P", "A", "E", "I"],
+        "dynamic_words": true,
+        "literacy": {
+          "focus_skill": "spelling_assessment",
+          "pulls_from": "weak_areas"
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch10_sc03_sparky_hint.mp3",
+            "line": "Zoom! S-T-O-P! Start with the S sound!",
+            "metric_flag": "spelling_assessment_support"
+          },
+          "error_support": {
+            "trigger": "wrong_spelling",
+            "actor": "Gramps",
+            "audio_file": "ch10_sc03_gramps_error.mp3",
+            "line": "Sound it out, James. ST-O-P. Four letters.",
+            "action": "Incorrect tiles shake",
+            "metric_flag": "spelling_assessment_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_spelling_focus",
+            "narrator_template": "NARRATOR: Your grown-up helps: '${parent_text}'",
+            "metric_flag": "parent_spelling_scaffold"
+          },
+          "success": {
+            "trigger": "correct_spelling",
+            "line_fast": "SIR JAMES: S-T-O-P! STOP! I can spell!",
+            "line_slow": "SIR JAMES: S... T... O... P... STOP! I did it!",
+            "metric_score": "spelling_mastery"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch10_sc04_parents_circle",
+      "title": "Parents' Circle View",
+      "interaction_loop": {
+        "challenge_id": "story_summary",
+        "primary_prompt": "NARRATOR: The Parents' Circle shows your whole journey! What was your favorite part?",
+        "ui_type": "story_summary",
+        "options": [
+          { "id": "survival", "label": "Survival Adventures (Ch 1-5)", "icon": "🌲" },
+          { "id": "literacy", "label": "Reading Adventures (Ch 6-10)", "icon": "📚" },
+          { "id": "both", "label": "All of It!", "icon": "🌟" }
+        ],
+        "celebration": true,
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch10_sc04_claude_hint.mp3",
+            "line": "(Happy bark) *WOOF!* We had so many adventures! Which ones do you remember best?",
+            "metric_flag": "summary_support_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_celebration",
+            "narrator_template": "NARRATOR: Your grown-up celebrates: '${parent_text}'",
+            "metric_flag": "parent_celebration"
+          },
+          "success": {
+            "trigger": "favorite_selected",
+            "line_fast": "SIR JAMES: This was the best adventure ever!",
+            "line_slow": "SIR JAMES: I loved every part of our journey!",
+            "metric_score": "journey_reflection"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch10_sc05_next_book_window",
+      "title": "Window to Next Book",
+      "interaction_loop": {
+        "challenge_id": "future_choice",
+        "primary_prompt": "NARRATOR: A magical window shows glimpses of Book 4! What kind of adventure calls to you?",
+        "ui_type": "future_choice",
+        "options": [
+          { "id": "mystery", "label": "Mystery Stories", "icon": "🔍" },
+          { "id": "friendship", "label": "Friendship Tales", "icon": "🤝" },
+          { "id": "discovery", "label": "Discovery Quests", "icon": "🗺️" }
+        ],
+        "book004_seeds": true,
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch10_sc05_gramps_hint.mp3",
+            "line": "Every choice leads to a new adventure, James. What calls to your heart?",
+            "metric_flag": "future_choice_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_future_discuss",
+            "narrator_template": "NARRATOR: Your grown-up wonders: '${parent_text}'",
+            "metric_flag": "parent_future_input"
+          },
+          "success": {
+            "trigger": "future_selected",
+            "line_fast": "SIR JAMES: This is what I want next! I can't wait for Book 4!",
+            "line_slow": "SIR JAMES: I choose... this adventure. See you in Book 4!",
+            "metric_mapping": {
+              "mystery": "book004_preference: mystery",
+              "friendship": "book004_preference: social",
+              "discovery": "book004_preference: exploration"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "review_accuracy",
+      "context_comprehension",
+      "spelling_mastery",
+      "journey_reflection",
+      "book004_preference"
+    ],
+    "book004_seeds": {
+      "word_preferences": "dynamic_from_session",
+      "arc_preferences": "dynamic_from_choices",
+      "family_discussion_flags": "dynamic_from_parent_input"
+    },
+    "completion_certificate": true,
+    "knighthood_advancement": true,
+    "foreshadow": "Book 4 awaits! Your reading adventure continues!",
+    "next_chapter": null
+  }
+}

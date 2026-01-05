@@ -1,0 +1,208 @@
+{
+  "chapter_id": "ch02_crystal_caves",
+  "book": "book003",
+  "theme": "Patterns & Curiosity",
+  "skill_focus": "thinking-survival",
+  "virtue_focus": "wisdom",
+  "scenes": [
+    {
+      "scene_id": "ch02_sc01_cave_entrance",
+      "title": "The Shimmering Cave Entrance",
+      "interaction_loop": {
+        "challenge_id": "pattern_matching",
+        "primary_prompt": "NARRATOR: The cave door is locked! The crystals glow in a pattern: Red, Blue, Red, Blue, Red... What comes next?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "blue", "label": "Blue Crystal", "icon": "💎", "correct": true },
+          { "id": "red", "label": "Red Crystal", "icon": "❤️", "correct": false }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch02_sc01_claude_hint.mp3",
+            "line": "(Sniffing the crystals) *Woof!* Red... Blue... Red... Blue... Red... I smell a pattern!",
+            "metric_flag": "pattern_hesitation"
+          },
+          "error_support": {
+            "trigger": "wrong_pattern",
+            "actor": "Sparky",
+            "audio_file": "ch02_sc01_sparky_error.mp3",
+            "line": "Zzzzt! Look again! Red, Blue, Red, Blue... it keeps switching! What's next after Red?",
+            "action": "Sparky highlights the alternating pattern",
+            "metric_flag": "pattern_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_pattern_focus",
+            "narrator_template": "NARRATOR: Your grown-up whispers: '${parent_text}' Look for what repeats!",
+            "metric_flag": "parent_pattern_scaffold"
+          },
+          "success": {
+            "trigger": "correct_pattern",
+            "line_fast": "SIR JAMES: Blue! The pattern is Red, Blue, Red, Blue!",
+            "line_slow": "SIR JAMES: I see it now! Blue comes after Red!",
+            "metric_score": "pattern_recognition"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch02_sc02_echo_chamber",
+      "title": "Echo Chamber of Questions",
+      "interaction_loop": {
+        "challenge_id": "metacognition",
+        "primary_prompt": "NARRATOR: The echo chamber lights up when you ask good questions! Which question will help you find the way?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "notice", "label": "What do I notice?", "icon": "👀", "correct": true },
+          { "id": "try", "label": "What could I try?", "icon": "🧪", "correct": true },
+          { "id": "random", "label": "I'll just guess!", "icon": "🎲", "correct": false }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch02_sc02_gramps_hint.mp3",
+            "line": "Good questions light the way, James. What do you notice? What could you try?",
+            "metric_flag": "metacognition_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_question_model",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_question_modeled"
+          },
+          "success": {
+            "trigger": "good_question_selected",
+            "line_fast": "SIR JAMES: What do I notice? The crystals are showing me something!",
+            "line_slow": "SIR JAMES: Hmm... let me think about what I could try...",
+            "metric_score": "question_quality"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch02_sc03_crystal_puzzle",
+      "title": "Claude's Crystal Puzzle & Hint System",
+      "interaction_loop": {
+        "challenge_id": "sequence_puzzle",
+        "primary_prompt": "NARRATOR: A glowing chasm blocks the path! Step on the crystals in order: 1, 2, 3. But which crystal is 1?",
+        "ui_type": "sequence_tap",
+        "options": [
+          { "id": "crystal_1", "label": "1", "order": 1 },
+          { "id": "crystal_2", "label": "2", "order": 2 },
+          { "id": "crystal_3", "label": "3", "order": 3 }
+        ],
+        "hints_available": 3,
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch02_sc03_claude_hint.mp3",
+            "line": "(Pawing at crystal 1) *Woof!* This one glows brightest! Maybe start here?",
+            "metric_flag": "sequence_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_sequence",
+            "actor": "Sparky",
+            "audio_file": "ch02_sc03_sparky_error.mp3",
+            "line": "Zzzzt! That's not the right order! 1 comes before 2, and 2 comes before 3!",
+            "action": "Crystals flash in correct order briefly",
+            "metric_flag": "sequence_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_hint_button",
+            "narrator_template": "NARRATOR: A gentle nudge: '${parent_text}'",
+            "metric_flag": "parent_hint_used"
+          },
+          "success": {
+            "trigger": "correct_sequence",
+            "line_fast": "SIR JAMES: 1, 2, 3! I crossed the chasm!",
+            "line_slow": "SIR JAMES: I figured out the order! 1, 2, 3!",
+            "metric_score": "sequence_mastery"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch02_sc04_dark_pocket",
+      "title": "The Dark Pocket & Coping Choices",
+      "interaction_loop": {
+        "challenge_id": "coping_choice",
+        "primary_prompt": "NARRATOR: The cave gets very dark and quiet. Sir James feels a little worried. What should he do?",
+        "ui_type": "choice_binary",
+        "options": [
+          { "id": "sing", "label": "Sing a Silly Song", "icon": "🎵", "correct": null, "style": "active_coping" },
+          { "id": "hold", "label": "Hold Claude's Ear", "icon": "🐕", "correct": null, "style": "calm_coping" }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch02_sc04_claude_hint.mp3",
+            "line": "(Nuzzling close) *Whine...* I'm here, James. You can hold my ear if you want.",
+            "metric_flag": "coping_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_calm_focus",
+            "narrator_template": "NARRATOR: Your grown-up says: '${parent_text}' It's okay to feel worried.",
+            "metric_flag": "parent_emotional_support"
+          },
+          "success": {
+            "trigger": "coping_selected",
+            "line_fast": "SIR JAMES: I know what helps me feel better!",
+            "line_slow": "SIR JAMES: Okay... this is what I need right now.",
+            "metric_mapping": {
+              "sing": "coping_style: active",
+              "hold": "coping_style: calm"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch02_sc05_crystal_ledger",
+      "title": "Crystal Ledger & Parent Insights",
+      "interaction_loop": {
+        "challenge_id": "reflection",
+        "primary_prompt": "GRAMPS: The Crystal Ledger appears! It shows what you learned today. What was your favorite discovery?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "patterns", "label": "Finding Patterns", "icon": "🔮", "correct": null },
+          { "id": "questions", "label": "Asking Questions", "icon": "❓", "correct": null },
+          { "id": "coping", "label": "Staying Calm", "icon": "😌", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch02_sc05_sparky_hint.mp3",
+            "line": "Zoom! You found so many patterns today! And you asked great questions!",
+            "metric_flag": "reflection_support_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_reflection_prompt",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_reflection_guided"
+          },
+          "success": {
+            "trigger": "reflection_selected",
+            "line_fast": "SIR JAMES: I loved finding patterns! They're like secret codes!",
+            "line_slow": "SIR JAMES: I think my favorite part was... this one!",
+            "metric_score": "self_awareness"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "pattern_recognition",
+      "question_quality",
+      "sequence_mastery",
+      "coping_style",
+      "self_awareness"
+    ],
+    "foreshadow": "The Labyrinth awaits, where teamwork lights the way!",
+    "next_chapter": "ch03_labyrinth_bridge"
+  }
+}

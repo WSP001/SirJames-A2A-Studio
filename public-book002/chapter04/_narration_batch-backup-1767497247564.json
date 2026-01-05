@@ -1,0 +1,227 @@
+{
+  "chapter": 4,
+  "title": "The Enchanted Garden",
+  "theme": "Purity and Clarity",
+  "virtue": "Kindness to All Living Things",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Hidden Gate",
+      "setting": "Ancient stone wall with magical flowering vines, golden key glowing",
+      "lines": [
+        {
+          "id": "004-01-01",
+          "voice": "narrator",
+          "text": "Deep in the forest, Sir James and Claude found an ancient stone wall covered in beautiful roses and flowering vines.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "004-01-02",
+          "voice": "sir_james",
+          "text": "Look Claude! There's a hidden gate here. And see that golden key hanging from the rose bush?",
+          "emotion": "excited"
+        },
+        {
+          "id": "004-01-03",
+          "voice": "narrator",
+          "text": "Claude sniffed the air and wagged his tail. The garden beyond the gate smelled of magic and flowers.",
+          "emotion": "curious"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "Entering the Garden",
+      "setting": "Magical garden with talking flowers and crystal fountains",
+      "lines": [
+        {
+          "id": "004-02-01",
+          "voice": "narrator",
+          "text": "As the gate swung open, Sir James gasped in wonder. The garden was alive with colors he had never seen before!",
+          "emotion": "amazed"
+        },
+        {
+          "id": "004-02-02",
+          "voice": "sir_james",
+          "text": "Claude, the flowers are glowing! And is that fountain made of crystals?",
+          "emotion": "delighted"
+        },
+        {
+          "id": "004-02-03",
+          "voice": "narrator",
+          "text": "A gentle voice floated through the air. 'Welcome, young knight. This garden blooms for those with kind hearts.'",
+          "emotion": "mystical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "The Wilting Rose",
+      "setting": "Corner of garden with a sad, wilting rose",
+      "lines": [
+        {
+          "id": "004-03-01",
+          "voice": "narrator",
+          "text": "In a quiet corner, Sir James noticed a single rose that was wilting, its petals drooping sadly.",
+          "emotion": "concerned"
+        },
+        {
+          "id": "004-03-02",
+          "voice": "sir_james",
+          "text": "Oh no, this poor flower looks so sad! What can we do to help, Claude?",
+          "emotion": "caring"
+        },
+        {
+          "id": "004-03-03",
+          "voice": "narrator",
+          "text": "Claude gently nudged Sir James toward the crystal fountain, as if showing him the answer.",
+          "emotion": "helpful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "The Healing Water",
+      "setting": "Sir James carrying crystal water to the wilting rose",
+      "lines": [
+        {
+          "id": "004-04-01",
+          "voice": "narrator",
+          "text": "Sir James cupped the sparkling water from the fountain in his hands and carefully carried it to the wilting rose.",
+          "emotion": "gentle"
+        },
+        {
+          "id": "004-04-02",
+          "voice": "sir_james",
+          "text": "Here you go, little flower. This magic water will help you feel better.",
+          "emotion": "tender"
+        },
+        {
+          "id": "004-04-03",
+          "voice": "narrator",
+          "text": "As the water touched its roots, the rose began to glow and lift its petals toward the sun!",
+          "emotion": "joyful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "The Garden's Thanks",
+      "setting": "All flowers turning toward Sir James in gratitude",
+      "lines": [
+        {
+          "id": "004-05-01",
+          "voice": "narrator",
+          "text": "Suddenly, all the flowers in the garden turned toward Sir James, their petals opening wide in thanks.",
+          "emotion": "magical"
+        },
+        {
+          "id": "004-05-02",
+          "voice": "sir_james",
+          "text": "You're welcome, friends! Every living thing deserves kindness and care.",
+          "emotion": "warm"
+        },
+        {
+          "id": "004-05-03",
+          "voice": "narrator",
+          "text": "The garden seemed to sing with happiness, and Claude howled along in his own special way.",
+          "emotion": "joyful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "The Garden Keeper",
+      "setting": "Gentle fairy-like garden keeper appearing",
+      "lines": [
+        {
+          "id": "004-06-01",
+          "voice": "narrator",
+          "text": "From behind the tallest sunflower stepped a gentle figure made of flower petals and morning dew.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "004-06-02",
+          "voice": "sir_james",
+          "text": "Hello! Are you the keeper of this beautiful garden?",
+          "emotion": "respectful"
+        },
+        {
+          "id": "004-06-03",
+          "voice": "narrator",
+          "text": "The Garden Keeper smiled. 'I am. And you, young knight, have shown the purest form of kindness - caring for those who cannot ask for help.'",
+          "emotion": "wise"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "A Seed of Kindness",
+      "setting": "Garden Keeper giving Sir James a magical seed",
+      "lines": [
+        {
+          "id": "004-07-01",
+          "voice": "narrator",
+          "text": "The Garden Keeper placed a glowing seed in Sir James's palm. It sparkled like a tiny star.",
+          "emotion": "magical"
+        },
+        {
+          "id": "004-07-02",
+          "voice": "sir_james",
+          "text": "What is this beautiful seed? It feels warm, like sunshine!",
+          "emotion": "curious"
+        },
+        {
+          "id": "004-07-03",
+          "voice": "narrator",
+          "text": "'Plant this seed wherever kindness is needed,' said the Keeper, 'and watch love grow.'",
+          "emotion": "gentle"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "Carrying Kindness Home",
+      "setting": "Sir James and Claude leaving garden at sunset",
+      "lines": [
+        {
+          "id": "004-08-01",
+          "voice": "narrator",
+          "text": "As Sir James and Claude left the enchanted garden, the flowers waved their petals in farewell.",
+          "emotion": "warm"
+        },
+        {
+          "id": "004-08-02",
+          "voice": "sir_james",
+          "text": "I learned something important today, Claude. Kindness isn't just for people - it's for all living things!",
+          "emotion": "thoughtful"
+        },
+        {
+          "id": "004-08-03",
+          "voice": "narrator",
+          "text": "Claude barked happily, and the magical seed glowed warmly in Sir James's pocket all the way home.",
+          "emotion": "content"
+        },
+        {
+          "id": "004-08-04",
+          "voice": "gramps",
+          "text": "A kind heart sees the needs of others, even the smallest flower. You're becoming a true knight, my boy.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}

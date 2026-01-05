@@ -1,0 +1,227 @@
+{
+  "chapter": 6,
+  "title": "The Mirror of Truth",
+  "theme": "Unity and Hope",
+  "virtue": "Honesty and Self-Reflection",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Abandoned Tower",
+      "setting": "Dusty tower room with ornate mirror reflecting strange visions",
+      "lines": [
+        {
+          "id": "006-01-01",
+          "voice": "narrator",
+          "text": "Sir James and Claude climbed the winding stairs of an old tower, where dust danced in beams of golden light.",
+          "emotion": "mysterious"
+        },
+        {
+          "id": "006-01-02",
+          "voice": "sir_james",
+          "text": "Look Claude! There's an old mirror up here. It's so beautiful, even covered in dust.",
+          "emotion": "curious"
+        },
+        {
+          "id": "006-01-03",
+          "voice": "narrator",
+          "text": "As Sir James wiped the dust away, the mirror began to glow with a soft, silvery light.",
+          "emotion": "wonder"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "The Mirror Speaks",
+      "setting": "Mirror glowing with magical light, showing reflections",
+      "lines": [
+        {
+          "id": "006-02-01",
+          "voice": "narrator",
+          "text": "The mirror shimmered, and a gentle voice echoed through the tower. 'I am the Mirror of Truth.'",
+          "emotion": "mystical"
+        },
+        {
+          "id": "006-02-02",
+          "voice": "sir_james",
+          "text": "The Mirror of Truth? What do you show, magical mirror?",
+          "emotion": "intrigued"
+        },
+        {
+          "id": "006-02-03",
+          "voice": "narrator",
+          "text": "'I show not what you look like, but who you truly are inside,' the mirror replied softly.",
+          "emotion": "wise"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "Sir James's Reflection",
+      "setting": "Mirror showing Sir James's inner qualities as glowing light",
+      "lines": [
+        {
+          "id": "006-03-01",
+          "voice": "narrator",
+          "text": "Sir James looked into the mirror and saw something wonderful - his reflection glowed with warm, golden light.",
+          "emotion": "wonder"
+        },
+        {
+          "id": "006-03-02",
+          "voice": "sir_james",
+          "text": "Why am I glowing? I don't understand.",
+          "emotion": "surprised"
+        },
+        {
+          "id": "006-03-03",
+          "voice": "narrator",
+          "text": "'The light shows your kindness, your courage, and your honest heart,' explained the mirror.",
+          "emotion": "warm"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "Claude's Reflection",
+      "setting": "Mirror showing Claude with a glowing heart",
+      "lines": [
+        {
+          "id": "006-04-01",
+          "voice": "narrator",
+          "text": "Claude stepped forward and looked into the mirror. His reflection showed a heart that glowed like a ruby.",
+          "emotion": "touching"
+        },
+        {
+          "id": "006-04-02",
+          "voice": "sir_james",
+          "text": "Claude, your heart is so bright! The mirror shows how loyal and loving you are!",
+          "emotion": "joyful"
+        },
+        {
+          "id": "006-04-03",
+          "voice": "narrator",
+          "text": "Claude wagged his tail proudly. The mirror had shown what Sir James always knew - Claude had the truest heart.",
+          "emotion": "heartwarming"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "The Shadow Test",
+      "setting": "Mirror showing a small shadow in the corner",
+      "lines": [
+        {
+          "id": "006-05-01",
+          "voice": "narrator",
+          "text": "But then Sir James noticed a small shadow in the corner of his reflection. He felt worried.",
+          "emotion": "concerned"
+        },
+        {
+          "id": "006-05-02",
+          "voice": "sir_james",
+          "text": "What is that shadow? Did I do something wrong?",
+          "emotion": "worried"
+        },
+        {
+          "id": "006-05-03",
+          "voice": "narrator",
+          "text": "'Everyone has shadows,' said the mirror kindly. 'They remind us we can always grow and become better.'",
+          "emotion": "reassuring"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "Accepting Truth",
+      "setting": "Sir James touching the mirror gently",
+      "lines": [
+        {
+          "id": "006-06-01",
+          "voice": "narrator",
+          "text": "Sir James placed his hand on the cool glass of the mirror and took a deep breath.",
+          "emotion": "thoughtful"
+        },
+        {
+          "id": "006-06-02",
+          "voice": "sir_james",
+          "text": "I understand now. Being honest means seeing the truth about myself - the good and what I can improve.",
+          "emotion": "wise"
+        },
+        {
+          "id": "006-06-03",
+          "voice": "narrator",
+          "text": "The shadow in his reflection grew smaller, replaced by even more golden light.",
+          "emotion": "uplifting"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "The Mirror's Gift",
+      "setting": "A small hand mirror appearing for Sir James",
+      "lines": [
+        {
+          "id": "006-07-01",
+          "voice": "narrator",
+          "text": "The great mirror shimmered, and a small hand mirror appeared, floating gently toward Sir James.",
+          "emotion": "magical"
+        },
+        {
+          "id": "006-07-02",
+          "voice": "sir_james",
+          "text": "A gift? For me? Thank you, Mirror of Truth!",
+          "emotion": "grateful"
+        },
+        {
+          "id": "006-07-03",
+          "voice": "narrator",
+          "text": "'Use this whenever you need to remember who you truly are inside,' said the mirror warmly.",
+          "emotion": "gentle"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "Truth in Heart",
+      "setting": "Sir James and Claude leaving tower at sunset",
+      "lines": [
+        {
+          "id": "006-08-01",
+          "voice": "narrator",
+          "text": "As Sir James and Claude descended the tower stairs, the setting sun painted the world in shades of gold and pink.",
+          "emotion": "peaceful"
+        },
+        {
+          "id": "006-08-02",
+          "voice": "sir_james",
+          "text": "Being honest with ourselves is the first step to being honest with others, isn't it Claude?",
+          "emotion": "reflective"
+        },
+        {
+          "id": "006-08-03",
+          "voice": "narrator",
+          "text": "Claude barked in agreement, and together they walked home, their hearts full of truth and light.",
+          "emotion": "content"
+        },
+        {
+          "id": "006-08-04",
+          "voice": "gramps",
+          "text": "The bravest thing a knight can do is look honestly at himself. You've learned a powerful lesson today.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}

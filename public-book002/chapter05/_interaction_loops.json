@@ -1,0 +1,215 @@
+{
+  "chapter_id": "ch05_clockwork_library",
+  "book": "book003",
+  "theme": "Memory, Practice & Transfer",
+  "skill_focus": "transfer-survival",
+  "virtue_focus": "wisdom",
+  "scenes": [
+    {
+      "scene_id": "ch05_sc01_clockwork_stacks",
+      "title": "Entering the Clockwork Stacks",
+      "interaction_loop": {
+        "challenge_id": "memory_selection",
+        "primary_prompt": "NARRATOR: The library shelves hold memories from your journey! Which adventure do you want to revisit?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "woods", "label": "Whispering Woods", "icon": "🌲", "correct": null },
+          { "id": "caves", "label": "Crystal Caves", "icon": "💎", "correct": null },
+          { "id": "labyrinth", "label": "Labyrinth", "icon": "🏛️", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch05_sc01_claude_hint.mp3",
+            "line": "(Sniffing the books) *Woof!* Each book smells like a different adventure! Which one was your favorite?",
+            "metric_flag": "memory_selection_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_memory_focus",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_memory_guidance"
+          },
+          "success": {
+            "trigger": "memory_selected",
+            "line_fast": "SIR JAMES: I remember this one! Let me show you what I learned!",
+            "line_slow": "SIR JAMES: This adventure taught me something important...",
+            "metric_score": "memory_preference"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch05_sc02_code_room",
+      "title": "Claude's Code Room (APIs in Story Form)",
+      "interaction_loop": {
+        "challenge_id": "tile_arrangement",
+        "primary_prompt": "NARRATOR: The Code Room shows how things connect! Arrange the tiles: 'If I ask for help' → '?' What happens next?",
+        "ui_type": "sequence_match",
+        "options": [
+          { "id": "friends_answer", "label": "Friends Answer Kindly", "icon": "💬", "correct": true },
+          { "id": "nothing", "label": "Nothing Happens", "icon": "❌", "correct": false },
+          { "id": "magic", "label": "Magic Appears", "icon": "✨", "correct": false }
+        ],
+        "api_mapping": {
+          "ask_for_help": "hint_request",
+          "choose_courage": "virtue_selection",
+          "grownup_types": "parent_chat_event"
+        },
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch05_sc02_sparky_hint.mp3",
+            "line": "Zoom! When you ask for help, what do your friends do? They help you!",
+            "metric_flag": "connection_support_needed"
+          },
+          "error_support": {
+            "trigger": "wrong_connection",
+            "actor": "Gramps",
+            "audio_file": "ch05_sc02_gramps_error.mp3",
+            "line": "Think about it, James. When you asked Claude for help in the caves, what did he do?",
+            "action": "Shows flashback to Claude helping",
+            "metric_flag": "connection_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_connection_hint",
+            "narrator_template": "NARRATOR: Your grown-up reminds you: '${parent_text}'",
+            "metric_flag": "parent_connection_scaffold"
+          },
+          "success": {
+            "trigger": "correct_connection",
+            "line_fast": "SIR JAMES: When I ask for help, friends answer kindly! That's how it works!",
+            "line_slow": "SIR JAMES: Oh! I see the connection now!",
+            "metric_score": "cause_effect_understanding"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch05_sc03_parent_desk",
+      "title": "Parent Co-Author Desk",
+      "interaction_loop": {
+        "challenge_id": "co_authoring",
+        "primary_prompt": "NARRATOR: The Parent Desk glows! Your grown-up can help write the next part of your story. What kind of challenge should come next?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "short", "label": "Short Challenge", "icon": "⚡", "correct": null },
+          { "id": "feelings", "label": "Big Feelings Moment", "icon": "💓", "correct": null },
+          { "id": "teamwork", "label": "Teamwork Puzzle", "icon": "🤝", "correct": null }
+        ],
+        "parent_authoring": true,
+        "states": {
+          "idle_support": {
+            "trigger": "10s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch05_sc03_claude_hint.mp3",
+            "line": "(Looking at parent desk) *Woof!* Your grown-up might have ideas too!",
+            "metric_flag": "co_author_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_co_author",
+            "narrator_template": "NARRATOR: Your grown-up writes: '${parent_text}'",
+            "metric_flag": "parent_co_authored"
+          },
+          "success": {
+            "trigger": "challenge_selected",
+            "line_fast": "SIR JAMES: This is what I want to try next!",
+            "line_slow": "SIR JAMES: I think this kind of challenge would be fun...",
+            "metric_mapping": {
+              "short": "challenge_preference: quick",
+              "feelings": "challenge_preference: emotional",
+              "teamwork": "challenge_preference: social"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch05_sc04_skill_gauge",
+      "title": "Child Skill Gauge & Growth Story",
+      "interaction_loop": {
+        "challenge_id": "growth_recognition",
+        "primary_prompt": "NARRATOR: The Skill Gauge shows how you've grown! Which skill grew the most on your journey?",
+        "ui_type": "choice_quaternary",
+        "options": [
+          { "id": "persistence", "label": "Persistence", "icon": "💪", "correct": null },
+          { "id": "confidence", "label": "Confidence", "icon": "⭐", "correct": null },
+          { "id": "teamwork", "label": "Teamwork", "icon": "🤝", "correct": null },
+          { "id": "listening", "label": "Listening", "icon": "👂", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch05_sc04_gramps_hint.mp3",
+            "line": "Think about all the challenges you faced, James. What did you get better at?",
+            "metric_flag": "growth_reflection_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_growth_discuss",
+            "narrator_template": "NARRATOR: Your grown-up shares: '${parent_text}'",
+            "metric_flag": "parent_growth_feedback"
+          },
+          "success": {
+            "trigger": "skill_selected",
+            "line_fast": "SIR JAMES: I got so much better at this! I can feel it!",
+            "line_slow": "SIR JAMES: I think... this is what I grew the most in.",
+            "metric_score": "growth_awareness"
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch05_sc05_next_book_window",
+      "title": "Foreshadowing the Next Five Chapters",
+      "interaction_loop": {
+        "challenge_id": "arc_preference",
+        "primary_prompt": "NARRATOR: A window shows three paths for the next adventure! Which calls to you?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "mountains", "label": "Mountains (Exploration)", "icon": "🏔️", "correct": null },
+          { "id": "rivers", "label": "Rivers (Decisions)", "icon": "🌊", "correct": null },
+          { "id": "towers", "label": "Towers (Puzzles)", "icon": "🏰", "correct": null }
+        ],
+        "bridge_text": "The survival skills you learned will now become READING skills!",
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch05_sc05_sparky_hint.mp3",
+            "line": "Zoom! Each path leads to new words and reading adventures! Which one looks exciting?",
+            "metric_flag": "preference_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_preference_discuss",
+            "narrator_template": "NARRATOR: Your grown-up wonders: '${parent_text}'",
+            "metric_flag": "parent_preference_input"
+          },
+          "success": {
+            "trigger": "path_selected",
+            "line_fast": "SIR JAMES: This is where I want to go next! Reading adventure, here I come!",
+            "line_slow": "SIR JAMES: I choose... this path. I'm ready to learn to read!",
+            "metric_mapping": {
+              "mountains": "arc_preference: exploration",
+              "rivers": "arc_preference: decisions",
+              "towers": "arc_preference: puzzles"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "memory_preference",
+      "cause_effect_understanding",
+      "challenge_preference",
+      "growth_awareness",
+      "arc_preference"
+    ],
+    "bridge_transition": "SURVIVAL → LITERACY",
+    "foreshadow": "The River of Choices awaits, where words flow like water!",
+    "next_chapter": "ch06_river_of_choices"
+  }
+}

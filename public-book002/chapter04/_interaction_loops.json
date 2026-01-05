@@ -1,0 +1,206 @@
+{
+  "chapter_id": "ch04_skyward_harbor",
+  "book": "book003",
+  "theme": "Communication & Perspective",
+  "skill_focus": "communication-survival",
+  "virtue_focus": "kindness",
+  "scenes": [
+    {
+      "scene_id": "ch04_sc01_harbor_arrival",
+      "title": "Arrival at Skyward Harbor",
+      "interaction_loop": {
+        "challenge_id": "clarity_seeking",
+        "primary_prompt": "NARRATOR: The harbor is busy with flying ships! A sailor points three ways. Should you ask for clarity, observe the signs, or follow your gut?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "ask", "label": "Ask for Clarity", "icon": "❓", "correct": null },
+          { "id": "observe", "label": "Observe Signs", "icon": "👀", "correct": null },
+          { "id": "gut", "label": "Follow My Gut", "icon": "💫", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch04_sc01_claude_hint.mp3",
+            "line": "(Looking around confused) *Whine...* So many directions! Maybe we should ask someone?",
+            "metric_flag": "clarity_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_communication_focus",
+            "narrator_template": "NARRATOR: Your grown-up suggests: '${parent_text}'",
+            "metric_flag": "parent_communication_guidance"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "line_fast": "SIR JAMES: I know how to find out! Let me try this way!",
+            "line_slow": "SIR JAMES: Okay... I think this approach will work.",
+            "metric_mapping": {
+              "ask": "info_seeking: verbal",
+              "observe": "info_seeking: visual",
+              "gut": "info_seeking: intuitive"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch04_sc02_message_mix",
+      "title": "Message Misunderstanding Mini-Play",
+      "interaction_loop": {
+        "challenge_id": "tone_selection",
+        "primary_prompt": "NARRATOR: A grumpy captain misunderstood Sir James! How should James explain what he really meant?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "direct", "label": "Be Direct", "icon": "➡️", "correct": null },
+          { "id": "friendly", "label": "Be Friendly", "icon": "😊", "correct": null },
+          { "id": "goofy", "label": "Be Goofy", "icon": "🤪", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Gramps",
+            "audio_file": "ch04_sc02_gramps_hint.mp3",
+            "line": "Sometimes how we say something matters as much as what we say, James.",
+            "metric_flag": "tone_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_tone_focus",
+            "narrator_template": "NARRATOR: Your grown-up reminds you: '${parent_text}'",
+            "metric_flag": "parent_tone_guidance"
+          },
+          "success": {
+            "trigger": "tone_selected",
+            "line_fast": "SIR JAMES: Let me try saying it this way!",
+            "line_slow": "SIR JAMES: Maybe if I say it differently, he'll understand.",
+            "metric_mapping": {
+              "direct": "communication_style: assertive",
+              "friendly": "communication_style: warm",
+              "goofy": "communication_style: playful"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch04_sc03_listening_flags",
+      "title": "Tower of Listening Flags",
+      "interaction_loop": {
+        "challenge_id": "listening_focus",
+        "primary_prompt": "NARRATOR: The tower has three flags waving messages. Which one should Sir James listen to most carefully?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "feelings", "label": "Feelings Flag", "icon": "💓", "correct": null },
+          { "id": "facts", "label": "Facts Flag", "icon": "📊", "correct": null },
+          { "id": "plans", "label": "Plans Flag", "icon": "📋", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch04_sc03_claude_hint.mp3",
+            "line": "(Ears perked) *Woof!* I hear something important in each flag! Which matters most right now?",
+            "metric_flag": "listening_focus_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_listening_focus",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_listening_guidance"
+          },
+          "success": {
+            "trigger": "flag_selected",
+            "line_fast": "SIR JAMES: I'll focus on this one! It's what we need right now!",
+            "line_slow": "SIR JAMES: I think... this flag has the most important message.",
+            "metric_mapping": {
+              "feelings": "listening_priority: emotional",
+              "facts": "listening_priority: informational",
+              "plans": "listening_priority: action"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch04_sc04_storm_warning",
+      "title": "Storm Warning & Calm Leadership",
+      "interaction_loop": {
+        "challenge_id": "calm_response",
+        "primary_prompt": "NARRATOR: Storm clouds gather! The crew looks worried. What should Sir James do first?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "breathe", "label": "Take a Deep Breath", "icon": "🌬️", "correct": null },
+          { "id": "repeat", "label": "Repeat Instructions", "icon": "🔄", "correct": null },
+          { "id": "check", "label": "Check on Sparky", "icon": "⚡", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Sparky",
+            "audio_file": "ch04_sc04_sparky_hint.mp3",
+            "line": "Zzzzt! Everyone's looking at you, Sir James! What do we do first?",
+            "metric_flag": "leadership_hesitation"
+          },
+          "parent_override": {
+            "trigger": "dashboard_calm_focus",
+            "narrator_template": "NARRATOR: Your grown-up says calmly: '${parent_text}'",
+            "metric_flag": "parent_calming_guidance"
+          },
+          "success": {
+            "trigger": "response_selected",
+            "line_fast": "SIR JAMES: Everyone, follow me! We've got this!",
+            "line_slow": "SIR JAMES: Okay team... let's stay calm and do this together.",
+            "metric_mapping": {
+              "breathe": "stress_response: self_regulate",
+              "repeat": "stress_response: clarify",
+              "check": "stress_response: care_for_others"
+            }
+          }
+        }
+      }
+    },
+    {
+      "scene_id": "ch04_sc05_harbor_debrief",
+      "title": "Harbor Debrief & Family Story Hook",
+      "interaction_loop": {
+        "challenge_id": "flag_meaning",
+        "primary_prompt": "GRAMPS: You made it through the storm! What flag would you raise to show what you learned?",
+        "ui_type": "choice_ternary",
+        "options": [
+          { "id": "help", "label": "We Asked for Help", "icon": "🙋", "correct": null },
+          { "id": "calm", "label": "We Stayed Calm", "icon": "😌", "correct": null },
+          { "id": "fixed", "label": "We Fixed a Mix-Up", "icon": "🔧", "correct": null }
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Claude",
+            "audio_file": "ch04_sc05_claude_hint.mp3",
+            "line": "(Tail wagging) *Woof!* We did so many good things today! Which one felt the best?",
+            "metric_flag": "reflection_support_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_reflection_prompt",
+            "narrator_template": "NARRATOR: Your grown-up asks: '${parent_text}'",
+            "metric_flag": "parent_reflection_guided"
+          },
+          "success": {
+            "trigger": "flag_selected",
+            "line_fast": "SIR JAMES: This is what I'm most proud of today!",
+            "line_slow": "SIR JAMES: I think... this is what I learned the most.",
+            "metric_score": "communication_awareness"
+          }
+        }
+      }
+    }
+  ],
+  "chapter_summary": {
+    "parent_dashboard_metrics": [
+      "info_seeking_style",
+      "communication_style",
+      "listening_priority",
+      "stress_response",
+      "communication_awareness"
+    ],
+    "foreshadow": "The Clockwork Library holds all our memories!",
+    "next_chapter": "ch05_clockwork_library"
+  }
+}

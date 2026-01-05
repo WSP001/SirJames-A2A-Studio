@@ -1,0 +1,227 @@
+{
+  "chapter": 8,
+  "title": "The River of Stars",
+  "theme": "Community and Friendship",
+  "virtue": "Helping Others and Working Together",
+  "voice_config": {
+    "narrator": "${VOICEID_NARRATOR}",
+    "sir_james": "${VOICEID_SIR_JAMES}",
+    "claude_thoughts": "${VOICEID_NARRATOR}",
+    "gramps": "${VOICEID_GRAMPS}"
+  },
+  "claude_note": "Claude communicates via THOUGHT BUBBLES - his thoughts are narrated by the Narrator voice, not spoken directly",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.5,
+    "output_format": "mp3_44100_128"
+  },
+  "scenes": [
+    {
+      "scene": "scene-001",
+      "title": "The Celestial River",
+      "setting": "Magical river that reflects the stars, glowing with cosmic light",
+      "lines": [
+        {
+          "id": "008-01-01",
+          "voice": "narrator",
+          "text": "Deep in the night forest, Sir James and Claude discovered something extraordinary - a river that flowed with starlight!",
+          "emotion": "wonder"
+        },
+        {
+          "id": "008-01-02",
+          "voice": "sir_james",
+          "text": "Claude, look! The river is full of stars! It's like the sky fell into the water!",
+          "emotion": "amazed"
+        },
+        {
+          "id": "008-01-03",
+          "voice": "narrator",
+          "text": "The River of Stars sparkled and shimmered, each ripple sending tiny lights dancing through the darkness.",
+          "emotion": "magical"
+        }
+      ]
+    },
+    {
+      "scene": "scene-002",
+      "title": "The Lost Fireflies",
+      "setting": "Sad fireflies gathered by the riverbank",
+      "lines": [
+        {
+          "id": "008-02-01",
+          "voice": "narrator",
+          "text": "By the riverbank, Sir James noticed a group of fireflies whose lights had grown dim and sad.",
+          "emotion": "concerned"
+        },
+        {
+          "id": "008-02-02",
+          "voice": "sir_james",
+          "text": "Little fireflies, why are your lights so dim? What's wrong?",
+          "emotion": "caring"
+        },
+        {
+          "id": "008-02-03",
+          "voice": "narrator",
+          "text": "The fireflies explained that they had lost their way home and their lights were fading from sadness.",
+          "emotion": "sympathetic"
+        }
+      ]
+    },
+    {
+      "scene": "scene-003",
+      "title": "A Plan to Help",
+      "setting": "Sir James thinking by the glowing river",
+      "lines": [
+        {
+          "id": "008-03-01",
+          "voice": "narrator",
+          "text": "Sir James looked at the River of Stars and then at the sad fireflies. An idea began to form in his mind.",
+          "emotion": "thoughtful"
+        },
+        {
+          "id": "008-03-02",
+          "voice": "sir_james",
+          "text": "I have an idea! Claude, what if we use the river's starlight to guide the fireflies home?",
+          "emotion": "hopeful"
+        },
+        {
+          "id": "008-03-03",
+          "voice": "narrator",
+          "text": "Claude barked encouragingly. It was a wonderful plan that would need all of them working together.",
+          "emotion": "encouraging"
+        }
+      ]
+    },
+    {
+      "scene": "scene-004",
+      "title": "Working Together",
+      "setting": "Sir James cupping starlight from the river",
+      "lines": [
+        {
+          "id": "008-04-01",
+          "voice": "narrator",
+          "text": "Sir James gently cupped the glowing water in his hands. The starlight swirled and sparkled between his fingers.",
+          "emotion": "magical"
+        },
+        {
+          "id": "008-04-02",
+          "voice": "sir_james",
+          "text": "Come, little fireflies! Let this starlight remind you of your own beautiful glow!",
+          "emotion": "gentle"
+        },
+        {
+          "id": "008-04-03",
+          "voice": "narrator",
+          "text": "One by one, the fireflies flew to Sir James's hands, and their lights began to grow brighter!",
+          "emotion": "joyful"
+        }
+      ]
+    },
+    {
+      "scene": "scene-005",
+      "title": "Lights Restored",
+      "setting": "Fireflies glowing brightly again",
+      "lines": [
+        {
+          "id": "008-05-01",
+          "voice": "narrator",
+          "text": "Soon all the fireflies were glowing brightly again, their little lights twinkling like tiny stars.",
+          "emotion": "triumphant"
+        },
+        {
+          "id": "008-05-02",
+          "voice": "sir_james",
+          "text": "You did it! Your lights are beautiful again! Now we can find your home together!",
+          "emotion": "excited"
+        },
+        {
+          "id": "008-05-03",
+          "voice": "narrator",
+          "text": "The fireflies danced happily around Sir James and Claude, grateful for their kindness.",
+          "emotion": "heartwarming"
+        }
+      ]
+    },
+    {
+      "scene": "scene-006",
+      "title": "The Journey Home",
+      "setting": "Procession of fireflies following Sir James through forest",
+      "lines": [
+        {
+          "id": "008-06-01",
+          "voice": "narrator",
+          "text": "Sir James, Claude, and the fireflies set off through the forest, following the River of Stars.",
+          "emotion": "adventurous"
+        },
+        {
+          "id": "008-06-02",
+          "voice": "sir_james",
+          "text": "Stay close, everyone! The river will guide us. We're all in this together!",
+          "emotion": "determined"
+        },
+        {
+          "id": "008-06-03",
+          "voice": "narrator",
+          "text": "Claude led the way, his nose guiding them while the fireflies lit the path with their renewed glow.",
+          "emotion": "warm"
+        }
+      ]
+    },
+    {
+      "scene": "scene-007",
+      "title": "The Firefly Meadow",
+      "setting": "Beautiful meadow filled with thousands of fireflies",
+      "lines": [
+        {
+          "id": "008-07-01",
+          "voice": "narrator",
+          "text": "At last, they reached a beautiful meadow where thousands of fireflies danced in the night air - the fireflies' home!",
+          "emotion": "wonder"
+        },
+        {
+          "id": "008-07-02",
+          "voice": "sir_james",
+          "text": "This is amazing! I've never seen anything so beautiful! You're home, little friends!",
+          "emotion": "joyful"
+        },
+        {
+          "id": "008-07-03",
+          "voice": "narrator",
+          "text": "The lost fireflies flew to join their family, their lights brighter than ever before.",
+          "emotion": "touching"
+        }
+      ]
+    },
+    {
+      "scene": "scene-008",
+      "title": "The Gift of Friendship",
+      "setting": "Fireflies creating a glowing crown for Sir James",
+      "lines": [
+        {
+          "id": "008-08-01",
+          "voice": "narrator",
+          "text": "To thank Sir James, the fireflies gathered together and created a beautiful crown of living light.",
+          "emotion": "magical"
+        },
+        {
+          "id": "008-08-02",
+          "voice": "sir_james",
+          "text": "Thank you, friends! I learned that when we help others, we make the whole world brighter!",
+          "emotion": "grateful"
+        },
+        {
+          "id": "008-08-03",
+          "voice": "narrator",
+          "text": "Claude wagged his tail as they headed home, the firefly crown glowing softly on Sir James's head.",
+          "emotion": "content"
+        },
+        {
+          "id": "008-08-04",
+          "voice": "gramps",
+          "text": "When we light the way for others, we find our own path becomes brighter too. That's the magic of kindness.",
+          "emotion": "proud"
+        }
+      ]
+    }
+  ]
+}
