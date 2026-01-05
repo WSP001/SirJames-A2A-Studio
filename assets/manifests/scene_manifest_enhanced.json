@@ -1,0 +1,427 @@
+{
+  "manifest_version": "3.5.1",
+  "book": "book003",
+  "title": "Sir James Adventures: From Survival Skills to Reading Knights",
+  "architecture": "U2A + A2A + D2A",
+  "test_pilot": "Sir James (5yo personified)",
+  "battle_cry": "For the Commons Good! 🏰⚔️🐕✨",
+
+  "scenes": [
+    {
+      "id": "ch3_sc3_mist_corridor",
+      "book": "book003",
+      "chapter": 3,
+      "sequence": 3,
+      "title": "Mist Corridor & Strategy",
+      "mode": "survival",
+      "story_role": "labyrinth_strategy_choice",
+
+      "assets": {
+        "image": "chapter03/scene-003.png",
+        "audio_narration": "chapter03/scene-003_narration.mp3",
+        "audio_sfx": ["wind_soft", "stone_rumble"],
+        "script_id": "chapter03_scene-003",
+        "thumbnail": "chapter03/thumb-003.png"
+      },
+
+      "child_ui": {
+        "interaction_type": "choice_buttons",
+        "prompt_text": "What should Sir James do first?",
+        "choices": [
+          {
+            "id": "plan_first",
+            "label": "Draw a plan together",
+            "style_tag": "planner_team",
+            "recommended": true
+          },
+          {
+            "id": "rush_forward",
+            "label": "Run toward the light",
+            "style_tag": "bold_risk",
+            "recommended": false
+          },
+          {
+            "id": "ask_team",
+            "label": "Ask everyone what they think",
+            "style_tag": "social_consult",
+            "recommended": true
+          }
+        ]
+      },
+
+      "survival": {
+        "focus_skill": "strategy_and_teamwork",
+        "subskills": ["risk_assessment", "turn_taking", "planning_before_action"]
+      },
+
+      "dashboard": {
+        "parent_controls": [
+          {
+            "id": "extra_planning_questions",
+            "label": "Add extra planning questions",
+            "type": "toggle",
+            "default": false
+          },
+          {
+            "id": "shorter_scene_mode",
+            "label": "Keep this scene short today",
+            "type": "toggle",
+            "default": false
+          },
+          {
+            "id": "calm_tone_button",
+            "label": "Calm things down",
+            "type": "button",
+            "default": false
+          }
+        ],
+        "parent_prompts": [
+          "Ask: When do we make a plan at home before we do something?",
+          "Talk about a time when rushing helped or caused a mix-up."
+        ],
+        "virtue_choice": {
+          "virtues": ["courage", "wisdom", "teamwork"],
+          "summary_slot": "end_of_chapter_virtue_meter"
+        }
+      },
+
+      "loops": {
+        "support": [
+          {
+            "id": "idle_5s",
+            "trigger": "timer_5s",
+            "actor": "Claude",
+            "line_id": "claude_idle_hint",
+            "metric_flag": "strategy_attention_nudge"
+          },
+          {
+            "id": "high_risk_choice",
+            "trigger": "choice_rush_forward_first",
+            "actor": "Gramps",
+            "line_id": "gramps_risk_reflection",
+            "metric_flag": "risk_reframed_gently"
+          },
+          {
+            "id": "repeat_rush",
+            "trigger": "choice_rush_forward_multiple",
+            "actor": "Sparky",
+            "line_id": "sparky_safety_reminder",
+            "metric_flag": "repeated_risk_style"
+          }
+        ],
+        "parent_injection": {
+          "trigger": "parent_chat_or_calm_button",
+          "line_id": "narrator_parent_injection",
+          "metric_flag": "parent_reflection_used"
+        },
+        "celebration": {
+          "planner_success": {
+            "condition": "choice == 'plan_first' || choice == 'ask_team'",
+            "line_id": "sir_james_planner_success",
+            "metric_flag": "strategy_teamwork_style"
+          },
+          "brave_but_learning_success": {
+            "condition": "choice == 'rush_forward'",
+            "line_id": "sir_james_brave_learning",
+            "metric_flag": "brave_but_learning"
+          }
+        }
+      },
+
+      "metrics": {
+        "skills": ["risk_assessment", "teamwork", "emotional_regulation"],
+        "events": [
+          { "id": "choice_made", "schema": "strategy_choice_v1" },
+          { "id": "loop_support_fired", "schema": "loop_support_v1" },
+          { "id": "loop_parent_injected", "schema": "loop_parent_v1" },
+          { "id": "loop_celebration", "schema": "loop_celebration_v1" }
+        ],
+        "log_fields": [
+          "choice.id",
+          "choice.style_tag",
+          "attempt_index",
+          "parent_controls.extra_planning_questions",
+          "parent_controls.shorter_scene_mode"
+        ]
+      },
+
+      "routing": {
+        "on_success": "ch3_sc4_trust_moment",
+        "on_struggle": "ch3_sc3_mist_corridor_soft_retry",
+        "on_complete": "ch3_sc4_trust_moment"
+      },
+
+      "version": 1
+    },
+
+    {
+      "id": "ch1_sc1_path_choice",
+      "book": "book003",
+      "chapter": 1,
+      "sequence": 1,
+      "title": "The Fork in the Path",
+      "mode": "survival",
+      "story_role": "baseline_safety_choice",
+
+      "assets": {
+        "image": "chapter01/scene-001.png",
+        "audio_narration": "chapter01/scene-001_narration.mp3",
+        "audio_sfx": ["forest_ambience", "bird_chirp"],
+        "script_id": "chapter01_scene-001",
+        "thumbnail": "chapter01/thumb-001.png"
+      },
+
+      "child_ui": {
+        "interaction_type": "choice_buttons",
+        "prompt_text": "Which path should Sir James take?",
+        "choices": [
+          {
+            "id": "sunny_path",
+            "label": "The Sunny Path",
+            "style_tag": "cautious_safe",
+            "recommended": true
+          },
+          {
+            "id": "shadowy_shortcut",
+            "label": "The Shadowy Shortcut",
+            "style_tag": "adventurous_risk",
+            "recommended": false
+          }
+        ]
+      },
+
+      "survival": {
+        "focus_skill": "safety_awareness",
+        "subskills": ["environment_assessment", "risk_recognition", "trusted_path_selection"]
+      },
+
+      "dashboard": {
+        "parent_controls": [
+          {
+            "id": "safety_emphasis",
+            "label": "Emphasize safety today",
+            "type": "toggle",
+            "default": false
+          },
+          {
+            "id": "adventure_mode",
+            "label": "Allow more adventure",
+            "type": "toggle",
+            "default": false
+          },
+          {
+            "id": "calm_tone_button",
+            "label": "Calm things down",
+            "type": "button",
+            "default": false
+          }
+        ],
+        "parent_prompts": [
+          "Ask: How do we decide if a path is safe at the park?",
+          "Talk about why we stay where grown-ups can see us."
+        ],
+        "virtue_choice": {
+          "virtues": ["courage", "wisdom"],
+          "summary_slot": "end_of_chapter_virtue_meter"
+        }
+      },
+
+      "loops": {
+        "support": [
+          {
+            "id": "idle_7s",
+            "trigger": "timer_7s",
+            "actor": "Claude",
+            "line_id": "claude_sniff_hint",
+            "metric_flag": "hesitation_baseline"
+          },
+          {
+            "id": "shadow_choice_first",
+            "trigger": "choice_shadowy_shortcut_first",
+            "actor": "Gramps",
+            "line_id": "gramps_shadow_reflection",
+            "metric_flag": "adventurous_choice_noted"
+          }
+        ],
+        "parent_injection": {
+          "trigger": "parent_chat_or_calm_button",
+          "line_id": "narrator_parent_injection",
+          "metric_flag": "parent_safety_guidance"
+        },
+        "celebration": {
+          "safe_choice": {
+            "condition": "choice == 'sunny_path'",
+            "line_id": "sir_james_safe_success",
+            "metric_flag": "safety_preference_cautious"
+          },
+          "brave_choice": {
+            "condition": "choice == 'shadowy_shortcut'",
+            "line_id": "sir_james_brave_success",
+            "metric_flag": "safety_preference_adventurous"
+          }
+        }
+      },
+
+      "metrics": {
+        "skills": ["safety_awareness", "decision_making", "baseline_assessment"],
+        "events": [
+          { "id": "choice_made", "schema": "safety_choice_v1" },
+          { "id": "loop_support_fired", "schema": "loop_support_v1" },
+          { "id": "loop_parent_injected", "schema": "loop_parent_v1" },
+          { "id": "loop_celebration", "schema": "loop_celebration_v1" }
+        ],
+        "log_fields": [
+          "choice.id",
+          "choice.style_tag",
+          "attempt_index",
+          "session_start_time",
+          "baseline_flags"
+        ]
+      },
+
+      "routing": {
+        "on_success": "ch1_sc2_whispering_trees",
+        "on_struggle": "ch1_sc1_path_choice_soft_retry",
+        "on_complete": "ch1_sc2_whispering_trees"
+      },
+
+      "version": 1
+    },
+
+    {
+      "id": "ch6_sc1_river_fork",
+      "book": "book003",
+      "chapter": 6,
+      "sequence": 1,
+      "title": "Fork in the River",
+      "mode": "literacy",
+      "story_role": "direction_word_introduction",
+
+      "assets": {
+        "image": "chapter06/scene-001.png",
+        "audio_narration": "chapter06/scene-001_narration.mp3",
+        "audio_sfx": ["river_flow", "bird_call"],
+        "script_id": "chapter06_scene-001",
+        "thumbnail": "chapter06/thumb-001.png"
+      },
+
+      "child_ui": {
+        "interaction_type": "tap_word",
+        "prompt_text": "Tap the sign that says DOWN",
+        "choices": [
+          {
+            "id": "up",
+            "label": "UP",
+            "correct": false,
+            "phonics_hint": "U-U-Up starts with the 'uh' sound"
+          },
+          {
+            "id": "down",
+            "label": "DOWN",
+            "correct": true,
+            "phonics_hint": "D-D-Down starts with the 'duh' sound"
+          }
+        ]
+      },
+
+      "literacy": {
+        "focus_skill": "direction_words",
+        "target_words": ["up", "down"],
+        "word_family": null,
+        "phonics_focus": "initial_consonant_d"
+      },
+
+      "dashboard": {
+        "parent_controls": [
+          {
+            "id": "extra_phonics_support",
+            "label": "Add extra phonics hints",
+            "type": "toggle",
+            "default": false
+          },
+          {
+            "id": "slower_pace",
+            "label": "Slow down the pace",
+            "type": "toggle",
+            "default": false
+          },
+          {
+            "id": "repeat_word_button",
+            "label": "Repeat the word",
+            "type": "button",
+            "default": false
+          }
+        ],
+        "parent_prompts": [
+          "Ask: Can you show me UP and DOWN with your hands?",
+          "Practice: Point to things that are UP and things that are DOWN."
+        ],
+        "virtue_choice": {
+          "virtues": ["courage", "wisdom"],
+          "summary_slot": "end_of_chapter_reading_meter"
+        }
+      },
+
+      "loops": {
+        "support": [
+          {
+            "id": "idle_5s",
+            "trigger": "timer_5s",
+            "actor": "Claude",
+            "line_id": "claude_direction_hint",
+            "metric_flag": "attention_nudge"
+          },
+          {
+            "id": "wrong_word_tap",
+            "trigger": "tap_wrong_word",
+            "actor": "Sparky",
+            "line_id": "sparky_phonics_correction",
+            "metric_flag": "phonics_hint_needed"
+          }
+        ],
+        "parent_injection": {
+          "trigger": "parent_chat_or_repeat_button",
+          "line_id": "narrator_parent_injection",
+          "metric_flag": "parent_literacy_support"
+        },
+        "celebration": {
+          "fast_success": {
+            "condition": "attempts == 1",
+            "line_id": "sir_james_fast_success",
+            "metric_flag": "direction_word_mastery"
+          },
+          "persistence_success": {
+            "condition": "attempts > 1",
+            "line_id": "sir_james_persistence_success",
+            "metric_flag": "direction_word_persistence"
+          }
+        }
+      },
+
+      "metrics": {
+        "skills": ["direction_words", "phonics_awareness", "word_recognition"],
+        "events": [
+          { "id": "word_tapped", "schema": "literacy_tap_v1" },
+          { "id": "loop_support_fired", "schema": "loop_support_v1" },
+          { "id": "loop_parent_injected", "schema": "loop_parent_v1" },
+          { "id": "loop_celebration", "schema": "loop_celebration_v1" }
+        ],
+        "log_fields": [
+          "word.id",
+          "word.correct",
+          "attempt_index",
+          "phonics_hint_shown",
+          "parent_controls.extra_phonics_support"
+        ]
+      },
+
+      "routing": {
+        "on_success": "ch6_sc2_rock_hops",
+        "on_struggle": "ch6_sc1_river_fork_soft_retry",
+        "on_complete": "ch6_sc2_rock_hops"
+      },
+
+      "version": 1
+    }
+  ]
+}

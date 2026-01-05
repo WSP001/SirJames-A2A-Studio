@@ -1,0 +1,384 @@
+{
+  "manifest_version": "3.5.1",
+  "book": "book003",
+  "description": "Enhanced narration batch entries with loop-ready lines for all scenes",
+
+  "scenes": {
+    "ch3_sc3_mist_corridor": {
+      "scene_id": "ch3_sc3_mist_corridor",
+      "chapter": 3,
+      "title": "Mist Corridor & Strategy",
+
+      "base": {
+        "narrator": [
+          "The mist ahead curls like white smoke, hiding the twists of the corridor.",
+          "Far away, a warm light glows at the end of the passage."
+        ],
+        "sir_james": [
+          "I can see the light, but not the floor. Should we run, or make a plan?"
+        ],
+        "gramps": [
+          "Every knight chooses how to face the fog, lad."
+        ]
+      },
+
+      "loops": {
+        "claude_idle_hint": {
+          "actor": "Claude",
+          "text": "(Sniffing slowly) Woof... I smell loose stones near the walls, and solid rock in the middle.",
+          "emotion": "helpful",
+          "sfx": "dog_sniff"
+        },
+        "gramps_risk_reflection": {
+          "actor": "Gramps",
+          "text": "Quick feet can be brave, but a quick map can be brave and wise. Want to mark safe spots with your finger first?",
+          "emotion": "gentle_guidance"
+        },
+        "sparky_safety_reminder": {
+          "actor": "Sparky",
+          "text": "Zooming is fun, but I keep bonking my nose in this fog! Maybe we draw a zig-zag path before we blast off?",
+          "emotion": "playful_warning"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "A calm thought drifts through the mist, sounding just like your grown-up: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_planner_success": {
+          "actor": "Sir James",
+          "text": "Our plan worked! I feel brave and ready, not rushed and wobbly.",
+          "emotion": "proud_confident"
+        },
+        "sir_james_brave_learning": {
+          "actor": "Sir James",
+          "text": "Whoa! That was faster than I expected. Next time, I want to draw the path first so everyone feels ready.",
+          "emotion": "reflective_growth"
+        }
+      }
+    },
+
+    "ch1_sc1_path_choice": {
+      "scene_id": "ch1_sc1_path_choice",
+      "chapter": 1,
+      "title": "The Fork in the Path",
+
+      "base": {
+        "narrator": [
+          "Two paths stretch before Sir James and Claude.",
+          "The Sunny Path is wide and bright, with wildflowers dancing in the breeze.",
+          "The Shadowy Shortcut is narrow and dark, disappearing into thick trees."
+        ],
+        "sir_james": [
+          "Which way should we go, Claude? The sunny one looks nice, but the dark one might be faster!"
+        ],
+        "gramps": [
+          "A knight always looks before he leaps, James. What does your heart tell you?"
+        ]
+      },
+
+      "loops": {
+        "claude_sniff_hint": {
+          "actor": "Claude",
+          "text": "(Sniffing the air) *Woof!* The sunny path smells like warm strawberries. The dark one smells like... cold wet moss.",
+          "emotion": "curious_helpful",
+          "sfx": "dog_sniff"
+        },
+        "gramps_shadow_reflection": {
+          "actor": "Gramps",
+          "text": "The shortcut might be faster, but can you see where your feet will land? Sometimes the longer path is the safer adventure.",
+          "emotion": "gentle_wisdom"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "A gentle voice floats on the breeze, sounding just like your grown-up: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_safe_success": {
+          "actor": "Sir James",
+          "text": "The sunny path it is! Adventure awaits where we can see our way!",
+          "emotion": "confident_happy"
+        },
+        "sir_james_brave_success": {
+          "actor": "Sir James",
+          "text": "Into the shadows! I'm brave enough to try the shortcut. Claude, stay close!",
+          "emotion": "brave_determined"
+        }
+      }
+    },
+
+    "ch1_sc2_whispering_trees": {
+      "scene_id": "ch1_sc2_whispering_trees",
+      "chapter": 1,
+      "title": "The First Whisper",
+
+      "base": {
+        "narrator": [
+          "The trees around Sir James begin to whisper secrets.",
+          "Listen close... 'The... mossy... rock... is... safe...'"
+        ],
+        "sir_james": [
+          "Did you hear that, Claude? The trees are talking!"
+        ]
+      },
+
+      "loops": {
+        "gramps_listening_hint": {
+          "actor": "Gramps",
+          "text": "Did you hear that, James? Use your ears. Not the thorn... the rock.",
+          "emotion": "encouraging"
+        },
+        "sparky_error_correction": {
+          "actor": "Sparky",
+          "text": "Zzzzt! Ouchy! That's a sharp thorn! The trees said 'Mossy Rock'!",
+          "emotion": "playful_warning",
+          "sfx": "sparky_zap"
+        },
+        "claude_idle_hint": {
+          "actor": "Claude",
+          "text": "(Ears perked up) *Woof!* I hear it too! Mossy... rock... safe!",
+          "emotion": "alert_helpful",
+          "sfx": "dog_alert"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "The wind carries a familiar voice: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_fast_success": {
+          "actor": "Sir James",
+          "text": "Got it! To the rock! I listened carefully!",
+          "emotion": "proud_excited"
+        },
+        "sir_james_persistence_success": {
+          "actor": "Sir James",
+          "text": "I had to listen really hard, but I heard it. The rock is safe!",
+          "emotion": "relieved_proud"
+        }
+      }
+    },
+
+    "ch2_sc1_cave_entrance": {
+      "scene_id": "ch2_sc1_cave_entrance",
+      "chapter": 2,
+      "title": "The Shimmering Cave Entrance",
+
+      "base": {
+        "narrator": [
+          "The cave door is locked with a crystal puzzle!",
+          "The crystals glow in a pattern: Red, Blue, Red, Blue, Red..."
+        ],
+        "sir_james": [
+          "It's a pattern! Red, Blue, Red, Blue... what comes next?"
+        ]
+      },
+
+      "loops": {
+        "claude_pattern_hint": {
+          "actor": "Claude",
+          "text": "(Sniffing the crystals) *Woof!* Red... Blue... Red... Blue... Red... I smell a pattern!",
+          "emotion": "curious_helpful",
+          "sfx": "dog_sniff"
+        },
+        "sparky_error_correction": {
+          "actor": "Sparky",
+          "text": "Zzzzt! Look again! Red, Blue, Red, Blue... it keeps switching! What's next after Red?",
+          "emotion": "encouraging"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "A whisper echoes in the cave: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_fast_success": {
+          "actor": "Sir James",
+          "text": "Blue! The pattern is Red, Blue, Red, Blue! I cracked the code!",
+          "emotion": "excited_proud"
+        },
+        "sir_james_persistence_success": {
+          "actor": "Sir James",
+          "text": "I see it now! Blue comes after Red! Patterns are like puzzles!",
+          "emotion": "relieved_happy"
+        }
+      }
+    },
+
+    "ch6_sc1_river_fork": {
+      "scene_id": "ch6_sc1_river_fork",
+      "chapter": 6,
+      "title": "Fork in the River",
+
+      "base": {
+        "narrator": [
+          "The river splits in two directions.",
+          "Two signs point the way. One says 'UP'. One says 'DOWN'."
+        ],
+        "sir_james": [
+          "I need to find the sign that says DOWN. Let me look carefully!"
+        ]
+      },
+
+      "loops": {
+        "claude_direction_hint": {
+          "actor": "Claude",
+          "text": "(Sniffing) *Woof!* The water flows that way... down, down, down! D-D-Down!",
+          "emotion": "helpful_excited",
+          "sfx": "dog_bark"
+        },
+        "sparky_phonics_correction": {
+          "actor": "Sparky",
+          "text": "Oop! That one starts with U-U-Up! We need D-D-Down! Look for the letter D!",
+          "emotion": "encouraging",
+          "sfx": "sparky_zap"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "Even the wind whispers what your grown-up says: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_fast_success": {
+          "actor": "Sir James",
+          "text": "I knew it! DOWN! D-O-W-N! Full speed ahead!",
+          "emotion": "confident_proud"
+        },
+        "sir_james_persistence_success": {
+          "actor": "Sir James",
+          "text": "Phew! We figured it out together, team. DOWN it is!",
+          "emotion": "relieved_happy"
+        }
+      }
+    },
+
+    "ch6_sc2_rock_hops": {
+      "scene_id": "ch6_sc2_rock_hops",
+      "chapter": 6,
+      "title": "Rock-Step Word Hops",
+
+      "base": {
+        "narrator": [
+          "Stepping stones cross the river!",
+          "Each rock has a word. Some rhyme with CAT!"
+        ],
+        "sir_james": [
+          "CAT... BAT... HAT... they all end the same! I need to find the rhyming rocks!"
+        ]
+      },
+
+      "loops": {
+        "claude_rhyme_hint": {
+          "actor": "Claude",
+          "text": "(Tilting head) *Woof!* Cat... bat... they sound the same at the end! -at, -at, -at!",
+          "emotion": "curious_helpful",
+          "sfx": "dog_curious"
+        },
+        "sparky_family_correction": {
+          "actor": "Sparky",
+          "text": "Zzzzt! That's the -OG family! DOG, LOG, FOG! We need the -AT family! CAT, BAT, HAT!",
+          "emotion": "playful_teaching"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "A helpful voice floats across the water: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_fast_success": {
+          "actor": "Sir James",
+          "text": "CAT, BAT, HAT! They all rhyme! I'm a word wizard!",
+          "emotion": "excited_proud"
+        },
+        "sir_james_persistence_success": {
+          "actor": "Sir James",
+          "text": "I found them all! The -AT family sticks together!",
+          "emotion": "accomplished_happy"
+        }
+      }
+    },
+
+    "ch7_sc1_base_camp": {
+      "scene_id": "ch7_sc1_base_camp",
+      "chapter": 7,
+      "title": "Base Camp Echo Call",
+
+      "base": {
+        "narrator": [
+          "The mountain echoes back sounds!",
+          "Listen: 'CL-CL-CLAP!' The echo bounces off the rocks."
+        ],
+        "sir_james": [
+          "CL-CL-CLAP! I need to find the word that starts with that sound!"
+        ]
+      },
+
+      "loops": {
+        "claude_blend_hint": {
+          "actor": "Claude",
+          "text": "(Clapping paws together) *Woof!* CL-CL-CLAP! I can clap! Which word starts like that?",
+          "emotion": "playful_helpful",
+          "sfx": "dog_paw_clap"
+        },
+        "sparky_blend_correction": {
+          "actor": "Sparky",
+          "text": "Zzzzt! That starts with a different sound! Listen: CL-CL-CLAP! Find the CL word!",
+          "emotion": "encouraging"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "The mountain echoes your grown-up's voice: \"${parent_text}\"",
+          "emotion": "warm_supportive"
+        },
+        "sir_james_fast_success": {
+          "actor": "Sir James",
+          "text": "CLAP! CL-CL-CLAP! I found it! I can hear the blend!",
+          "emotion": "excited_proud"
+        },
+        "sir_james_persistence_success": {
+          "actor": "Sir James",
+          "text": "I heard the CL sound! CLAP! Blends are like two letters holding hands!",
+          "emotion": "accomplished_understanding"
+        }
+      }
+    },
+
+    "ch10_sc5_next_book_window": {
+      "scene_id": "ch10_sc5_next_book_window",
+      "chapter": 10,
+      "title": "Window to Next Book",
+
+      "base": {
+        "narrator": [
+          "A magical window appears, showing glimpses of Book 4!",
+          "Three paths shimmer with possibility."
+        ],
+        "sir_james": [
+          "I can see new adventures waiting! Which one calls to me?"
+        ],
+        "gramps": [
+          "Every ending is a new beginning, James. What does your heart want to explore next?"
+        ]
+      },
+
+      "loops": {
+        "gramps_future_hint": {
+          "actor": "Gramps",
+          "text": "Every choice leads to a new adventure, James. What calls to your heart?",
+          "emotion": "wise_encouraging"
+        },
+        "claude_celebration": {
+          "actor": "Claude",
+          "text": "(Tail wagging wildly) *WOOF WOOF!* We did it! We finished the whole book! I'm so proud of us!",
+          "emotion": "joyful_proud",
+          "sfx": "dog_happy_bark"
+        },
+        "narrator_parent_injection": {
+          "actor": "Narrator",
+          "template": "Your grown-up's voice fills the air with warmth: \"${parent_text}\"",
+          "emotion": "celebratory"
+        },
+        "sir_james_completion": {
+          "actor": "Sir James",
+          "text": "I did it! I learned to read AND had the best adventure ever! See you in Book 4!",
+          "emotion": "triumphant_excited"
+        }
+      }
+    }
+  }
+}
