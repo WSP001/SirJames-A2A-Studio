@@ -1,0 +1,425 @@
+{
+  "chapter_id": "ch06_river_crossing",
+  "book": "book003",
+  "theme": "Word Families & Direction Words",
+  "skill_focus": "literacy_bridge",
+  "virtue_focus": ["wisdom", "courage", "persistence"],
+  "voice_ids": {
+    "sir_james": "SOYHLrjzK2X1ezoPC6cr",
+    "narrator": "XrExE9yKIg1WjnnlVkGX",
+    "gramps": "pqHfZKP75CvOlQylNhV4",
+    "claude": "SFX_ONLY"
+  },
+
+  "scenes": [
+    {
+      "scene_id": "ch06_sc01_river_fork",
+      "title": "Fork in the River",
+      "sequence": 1,
+      "interaction_loop": {
+        "challenge_id": "direction_word_recognition",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch06_sc01_prime",
+          "text": "The river splits in two directions. Two signs point the way. One says 'UP'. One says 'DOWN'. Tap the sign that says DOWN.",
+          "emotion": "adventurous",
+          "audio_file": "chapter06/audio/ch06_sc01_prime.mp3"
+        },
+        "ui_type": "tap_word",
+        "options": [
+          {"id": "up", "label": "UP", "correct": false, "phonics_hint": "U-U-Up starts with 'uh'"},
+          {"id": "down", "label": "DOWN", "correct": true, "phonics_hint": "D-D-Down starts with 'duh'"}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Claude",
+            "line_id": "ch06_sc01_idle",
+            "text": "(Sniffing) *Woof!* The water flows that way... down, down, down! D-D-Down!",
+            "emotion": "helpful_excited",
+            "sfx": "dog_bark",
+            "audio_file": "chapter06/audio/ch06_sc01_idle.mp3",
+            "visual_cue": "Claude points nose toward DOWN sign, water animation flows down",
+            "metric_flag": "direction_attention_nudge"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_word",
+            "actor": "Sparky",
+            "line_id": "ch06_sc01_err",
+            "text": "Zzzzt! That one starts with U-U-Up! We need D-D-Down! Look for the letter D!",
+            "emotion": "encouraging",
+            "sfx": "sparky_zap",
+            "audio_file": "chapter06/audio/ch06_sc01_err.mp3",
+            "visual_cue": "Sparky circles the D in DOWN, letter D pulses",
+            "metric_flag": "phonics_hint_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_repeat_word",
+            "actor": "Narrator",
+            "line_id": "ch06_sc01_parent",
+            "template": "Your grown-up says: \"${parent_text}\" Let's sound it out together.",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_literacy_support"
+          },
+          "success": {
+            "trigger": "tap_down",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc01_win_fast",
+                "text": "I knew it! DOWN! D-O-W-N! Full speed ahead!",
+                "emotion": "confident_proud",
+                "audio_file": "chapter06/audio/ch06_sc01_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc01_win_slow",
+                "text": "Phew! We figured it out together, team. DOWN it is!",
+                "emotion": "relieved_happy",
+                "audio_file": "chapter06/audio/ch06_sc01_win_slow.mp3"
+              }
+            },
+            "metric_score": "direction_word_mastery"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch06_sc02_rock_hops"
+      }
+    },
+
+    {
+      "scene_id": "ch06_sc02_rock_hops",
+      "title": "Rock-Step Word Hops",
+      "sequence": 2,
+      "interaction_loop": {
+        "challenge_id": "cvc_word_families",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch06_sc02_prime",
+          "text": "Stepping stones cross the river! Each rock has a word. Find all the words that rhyme with CAT. Tap: CAT, BAT, HAT!",
+          "emotion": "playful",
+          "audio_file": "chapter06/audio/ch06_sc02_prime.mp3"
+        },
+        "ui_type": "multi_tap",
+        "options": [
+          {"id": "cat", "label": "CAT", "family": "at", "correct": true},
+          {"id": "bat", "label": "BAT", "family": "at", "correct": true},
+          {"id": "hat", "label": "HAT", "family": "at", "correct": true},
+          {"id": "dog", "label": "DOG", "family": "og", "correct": false},
+          {"id": "log", "label": "LOG", "family": "og", "correct": false}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "6s_no_action",
+            "actor": "Claude",
+            "line_id": "ch06_sc02_idle",
+            "text": "(Tilting head) *Woof!* Cat... bat... they sound the same at the end! -at, -at, -at!",
+            "emotion": "curious_helpful",
+            "sfx": "dog_curious",
+            "audio_file": "chapter06/audio/ch06_sc02_idle.mp3",
+            "visual_cue": "Claude's ears perk up, -AT ending highlights on correct words",
+            "metric_flag": "rhyme_attention_nudge"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_family",
+            "actor": "Sparky",
+            "line_id": "ch06_sc02_err",
+            "text": "Zzzzt! That's the -OG family! DOG, LOG, FOG! We need the -AT family! CAT, BAT, HAT!",
+            "emotion": "playful_teaching",
+            "sfx": "sparky_zap",
+            "audio_file": "chapter06/audio/ch06_sc02_err.mp3",
+            "visual_cue": "Sparky draws line between -OG words, then circles -AT words",
+            "metric_flag": "word_family_confusion"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "actor": "Narrator",
+            "line_id": "ch06_sc02_parent",
+            "template": "A helpful voice floats across the water: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_rhyme_support"
+          },
+          "success": {
+            "trigger": "all_correct_tapped",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc02_win_fast",
+                "text": "CAT, BAT, HAT! They all rhyme! I'm a word wizard!",
+                "emotion": "excited_proud",
+                "audio_file": "chapter06/audio/ch06_sc02_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc02_win_slow",
+                "text": "I found them all! The -AT family sticks together!",
+                "emotion": "accomplished_happy",
+                "audio_file": "chapter06/audio/ch06_sc02_win_slow.mp3"
+              }
+            },
+            "metric_score": "rhyme_mastery"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch06_sc03_waterfall_words"
+      }
+    },
+
+    {
+      "scene_id": "ch06_sc03_waterfall_words",
+      "title": "Waterfall Word Match",
+      "sequence": 3,
+      "interaction_loop": {
+        "challenge_id": "rhyme_matching",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch06_sc03_prime",
+          "text": "Words are falling down the waterfall! Match the rhyming pairs before they splash away! Find the word that rhymes with SUN.",
+          "emotion": "urgent_playful",
+          "sfx": "waterfall_splash",
+          "audio_file": "chapter06/audio/ch06_sc03_prime.mp3"
+        },
+        "ui_type": "tap_word",
+        "options": [
+          {"id": "run", "label": "RUN", "correct": true, "rhymes_with": "sun"},
+          {"id": "sit", "label": "SIT", "correct": false},
+          {"id": "fun", "label": "FUN", "correct": true, "rhymes_with": "sun"},
+          {"id": "map", "label": "MAP", "correct": false}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Gramps",
+            "line_id": "ch06_sc03_idle",
+            "text": "Listen to the ending, lad. SUN... what sounds like -UN?",
+            "emotion": "gentle_teaching",
+            "audio_file": "chapter06/audio/ch06_sc03_idle.mp3",
+            "visual_cue": "Gramps points to ear, -UN ending echoes",
+            "metric_flag": "rhyme_listening_support"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_word",
+            "actor": "Sparky",
+            "line_id": "ch06_sc03_err",
+            "text": "Zzzzt! SIT ends with -IT! SUN ends with -UN! Try RUN or FUN!",
+            "emotion": "encouraging",
+            "sfx": "sparky_zap",
+            "audio_file": "chapter06/audio/ch06_sc03_err.mp3",
+            "visual_cue": "Sparky highlights -UN ending on RUN and FUN",
+            "metric_flag": "rhyme_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "actor": "Narrator",
+            "line_id": "ch06_sc03_parent",
+            "template": "The waterfall whispers: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_rhyme_assist"
+          },
+          "success": {
+            "trigger": "tap_correct_rhyme",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc03_win_fast",
+                "text": "RUN rhymes with SUN! I can hear the -UN!",
+                "emotion": "confident",
+                "audio_file": "chapter06/audio/ch06_sc03_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc03_win_slow",
+                "text": "I listened really carefully. SUN... RUN... they match!",
+                "emotion": "proud",
+                "audio_file": "chapter06/audio/ch06_sc03_win_slow.mp3"
+              }
+            },
+            "metric_score": "rhyme_recognition"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch06_sc04_bridge_sentence"
+      }
+    },
+
+    {
+      "scene_id": "ch06_sc04_bridge_sentence",
+      "title": "The Bridge of Words",
+      "sequence": 4,
+      "interaction_loop": {
+        "challenge_id": "simple_sentence_reading",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch06_sc04_prime",
+          "text": "A bridge appears with words carved into it! Read the sentence: 'The cat sat on the mat.' Tap each word as you read it.",
+          "emotion": "encouraging",
+          "audio_file": "chapter06/audio/ch06_sc04_prime.mp3"
+        },
+        "ui_type": "sentence_tap",
+        "sentence": ["The", "cat", "sat", "on", "the", "mat"],
+        "options": [
+          {"id": "the1", "label": "The", "position": 1},
+          {"id": "cat", "label": "cat", "position": 2},
+          {"id": "sat", "label": "sat", "position": 3},
+          {"id": "on", "label": "on", "position": 4},
+          {"id": "the2", "label": "the", "position": 5},
+          {"id": "mat", "label": "mat", "position": 6}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Claude",
+            "line_id": "ch06_sc04_idle",
+            "text": "(Looking at words) *Woof!* The... cat... sat... I can almost read it!",
+            "emotion": "excited_curious",
+            "sfx": "dog_alert",
+            "audio_file": "chapter06/audio/ch06_sc04_idle.mp3",
+            "visual_cue": "Claude's paw points to each word in sequence",
+            "metric_flag": "sentence_attention_nudge"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_order",
+            "actor": "Sparky",
+            "line_id": "ch06_sc04_err",
+            "text": "Zzzzt! We read left to right! Start with 'The' on the left side!",
+            "emotion": "helpful",
+            "sfx": "sparky_zap",
+            "audio_file": "chapter06/audio/ch06_sc04_err.mp3",
+            "visual_cue": "Sparky draws arrow from left to right, first word pulses",
+            "metric_flag": "reading_direction_error"
+          },
+          "parent_override": {
+            "trigger": "dashboard_read_together",
+            "actor": "Narrator",
+            "line_id": "ch06_sc04_parent",
+            "template": "Your grown-up reads with you: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_reading_together"
+          },
+          "success": {
+            "trigger": "sentence_complete",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc04_win_fast",
+                "text": "I read it! 'The cat sat on the mat!' I'm reading!",
+                "emotion": "triumphant",
+                "audio_file": "chapter06/audio/ch06_sc04_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc04_win_slow",
+                "text": "Word by word, I did it! The cat sat on the mat!",
+                "emotion": "proud_accomplished",
+                "audio_file": "chapter06/audio/ch06_sc04_win_slow.mp3"
+              }
+            },
+            "metric_score": "sentence_fluency"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch06_sc05_literacy_reflection"
+      }
+    },
+
+    {
+      "scene_id": "ch06_sc05_literacy_reflection",
+      "title": "The Reading Knight",
+      "sequence": 5,
+      "interaction_loop": {
+        "challenge_id": "metacognition_literacy",
+        "primary_prompt": {
+          "actor": "Gramps",
+          "line_id": "ch06_sc05_prime",
+          "text": "You crossed the river using words, lad! What helped you the most today?",
+          "emotion": "proud_warm",
+          "audio_file": "chapter06/audio/ch06_sc05_prime.mp3"
+        },
+        "ui_type": "virtue_selector",
+        "options": [
+          {"id": "listening", "label": "👂 Listening", "description": "I listened to the sounds in words"},
+          {"id": "patterns", "label": "🔤 Patterns", "description": "I found words that rhyme"},
+          {"id": "persistence", "label": "💪 Persistence", "description": "I kept trying even when it was hard"}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "line_id": "ch06_sc05_idle",
+            "text": "You found so many rhyming words! CAT, BAT, HAT! Zoom!",
+            "emotion": "encouraging",
+            "sfx": "sparky_zoom",
+            "audio_file": "chapter06/audio/ch06_sc05_idle.mp3",
+            "visual_cue": "Sparky circles the Patterns option",
+            "metric_flag": "reflection_prompt_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "actor": "Narrator",
+            "line_id": "ch06_sc05_parent",
+            "template": "Your grown-up adds: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_reflection_assist"
+          },
+          "success": {
+            "trigger": "select_skill",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc05_win_fast",
+                "text": "I'm becoming a Reading Knight! Words are my new superpower!",
+                "emotion": "triumphant",
+                "audio_file": "chapter06/audio/ch06_sc05_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch06_sc05_win_slow",
+                "text": "Reading is hard, but I'm getting better every day!",
+                "emotion": "determined",
+                "audio_file": "chapter06/audio/ch06_sc05_win_slow.mp3"
+              }
+            },
+            "metric_score": "literacy_self_perception"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "chapter_complete",
+        "next_chapter": "ch07_mountain_blends"
+      }
+    }
+  ],
+
+  "chapter_summary": {
+    "total_scenes": 5,
+    "skills_measured": [
+      "direction_word_mastery",
+      "rhyme_mastery",
+      "rhyme_recognition",
+      "sentence_fluency",
+      "literacy_self_perception"
+    ],
+    "parent_dashboard_metrics": {
+      "direction_attention_nudge": "Needed hint for direction words",
+      "phonics_hint_needed": "Needed phonics support for initial sounds",
+      "word_family_confusion": "Mixed up word families (-AT vs -OG)",
+      "rhyme_listening_support": "Needed help hearing rhyme endings",
+      "rhyme_error": "Tapped non-rhyming word",
+      "sentence_attention_nudge": "Needed help with sentence reading",
+      "reading_direction_error": "Tapped words out of order",
+      "reflection_prompt_needed": "Needed prompt to reflect on skills"
+    },
+    "literacy_skills_introduced": [
+      "Direction words (UP, DOWN)",
+      "CVC word families (-AT, -OG, -UN)",
+      "Rhyme recognition",
+      "Simple sentence reading",
+      "Left-to-right reading direction"
+    ],
+    "foreshadow": "Chapter 7 introduces consonant blends (CL, BR, ST) in the Mountain Echoes"
+  }
+}
