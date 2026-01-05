@@ -1,0 +1,385 @@
+{
+  "chapter_id": "ch01_whispering_woods",
+  "book": "book003",
+  "theme": "Baseline Safety & Listening",
+  "skill_focus": "survival_baseline",
+  "virtue_focus": ["courage", "wisdom"],
+  "voice_ids": {
+    "sir_james": "SOYHLrjzK2X1ezoPC6cr",
+    "narrator": "XrExE9yKIg1WjnnlVkGX",
+    "gramps": "pqHfZKP75CvOlQylNhV4",
+    "claude": "SFX_ONLY"
+  },
+
+  "scenes": [
+    {
+      "scene_id": "ch01_sc01_path_choice",
+      "title": "The Fork in the Path",
+      "sequence": 1,
+      "interaction_loop": {
+        "challenge_id": "safety_vs_curiosity",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch01_sc01_prime",
+          "text": "Two paths lie ahead. The Sunny Path is wide and bright. The Shadowy Shortcut is dark and fast. Tap the path you choose.",
+          "emotion": "intriguing",
+          "audio_file": "chapter01/audio/ch01_sc01_prime.mp3"
+        },
+        "ui_type": "choice_binary",
+        "options": [
+          {"id": "sunny", "label": "The Sunny Path", "style_tag": "cautious_safe"},
+          {"id": "shadow", "label": "The Shadowy Shortcut", "style_tag": "adventurous_risk"}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "7s_no_action",
+            "actor": "Claude",
+            "line_id": "ch01_sc01_idle",
+            "text": "(Sniffing) *Woof!* The sunny path smells like warm strawberries. The dark one smells like... cold wet moss.",
+            "emotion": "helpful",
+            "sfx": "dog_sniff",
+            "audio_file": "chapter01/audio/ch01_sc01_idle.mp3",
+            "visual_cue": "Claude sniffs both paths, tail wagging toward sunny",
+            "metric_flag": "hesitation_baseline"
+          },
+          "parent_override": {
+            "trigger": "dashboard_click_focus_safety",
+            "actor": "Narrator",
+            "line_id": "ch01_sc01_parent",
+            "template": "Your grown-up guide sends a message: \"${parent_input}\" Let's be smart today.",
+            "emotion": "warm_supportive",
+            "audio_file": null,
+            "metric_flag": "parent_guidance_safety"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc01_win_fast",
+                "text": "Adventure awaits! Let's go!",
+                "emotion": "confident",
+                "audio_file": "chapter01/audio/ch01_sc01_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc01_win_slow",
+                "text": "Hmm... okay team. I've decided. We go this way.",
+                "emotion": "thoughtful",
+                "audio_file": "chapter01/audio/ch01_sc01_win_slow.mp3"
+              }
+            },
+            "metric_mapping": {
+              "sunny": {"survival_sense": "cautious", "virtue": "wisdom"},
+              "shadow": {"survival_sense": "adventurous", "virtue": "courage"}
+            }
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch01_sc02_whispering_trees"
+      }
+    },
+
+    {
+      "scene_id": "ch01_sc02_whispering_trees",
+      "title": "The First Whisper",
+      "sequence": 2,
+      "interaction_loop": {
+        "challenge_id": "auditory_attention",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch01_sc02_prime",
+          "text": "The trees are whispering a secret. Listen close... 'The... mossy... rock... is... safe...'",
+          "emotion": "mysterious",
+          "audio_file": "chapter01/audio/ch01_sc02_prime.mp3"
+        },
+        "ui_type": "tap_object",
+        "options": [
+          {"id": "mossy_rock", "label": "Mossy Rock", "correct": true},
+          {"id": "thorn_bush", "label": "Thorn Bush", "correct": false},
+          {"id": "hollow_log", "label": "Hollow Log", "correct": false}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Gramps",
+            "line_id": "ch01_sc02_idle",
+            "text": "Did you hear that, James? Use your ears. Not the thorn... the rock.",
+            "emotion": "gentle",
+            "audio_file": "chapter01/audio/ch01_sc02_idle.mp3",
+            "visual_cue": "Gramps cups hand to ear, mossy rock glows softly",
+            "metric_flag": "listening_support_needed"
+          },
+          "error_support": {
+            "trigger": "tap_wrong_object",
+            "actor": "Sparky",
+            "line_id": "ch01_sc02_err",
+            "text": "Zzzzt! Ouchy! That's a sharp thorn! The trees said 'Mossy Rock'!",
+            "emotion": "energetic",
+            "sfx": "sparky_zap",
+            "audio_file": "chapter01/audio/ch01_sc02_err.mp3",
+            "visual_cue": "Sparky glows red near the thorn bush, then yellow near rock",
+            "metric_flag": "auditory_miss"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "actor": "Narrator",
+            "line_id": "ch01_sc02_parent",
+            "template": "A whisper from home: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_listening_help"
+          },
+          "success": {
+            "trigger": "tap_mossy_rock",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc02_win_fast",
+                "text": "Got it! To the rock!",
+                "emotion": "relieved",
+                "audio_file": "chapter01/audio/ch01_sc02_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc02_win_slow",
+                "text": "I had to listen really hard, but I heard it. The rock is safe.",
+                "emotion": "proud",
+                "audio_file": "chapter01/audio/ch01_sc02_win_slow.mp3"
+              }
+            },
+            "metric_score": "attention_span"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch01_sc03_forest_guide"
+      }
+    },
+
+    {
+      "scene_id": "ch01_sc03_forest_guide",
+      "title": "The Riddle or The Answer",
+      "sequence": 3,
+      "interaction_loop": {
+        "challenge_id": "interaction_style_preference",
+        "primary_prompt": {
+          "actor": "Forest Guide",
+          "line_id": "ch01_sc03_prime",
+          "text": "I can show you the way. Do you want a Riddle to solve? Or should I just tell you the answer?",
+          "emotion": "mysterious",
+          "audio_file": "chapter01/audio/ch01_sc03_prime.mp3"
+        },
+        "ui_type": "choice_binary",
+        "options": [
+          {"id": "riddle", "label": "Give me a Riddle!", "style_tag": "problem_solver"},
+          {"id": "answer", "label": "Just tell me the answer", "style_tag": "social_learner"}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "10s_no_action",
+            "actor": "Claude",
+            "line_id": "ch01_sc03_idle",
+            "text": "*Whine...* I just want to find the snacks. Can we ask for help?",
+            "emotion": "uncertain",
+            "sfx": "dog_whine",
+            "audio_file": "chapter01/audio/ch01_sc03_idle.mp3",
+            "visual_cue": "Claude looks between both options, tilts head",
+            "metric_flag": "decision_paralysis"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "actor": "Narrator",
+            "line_id": "ch01_sc03_parent",
+            "template": "A message from home floats down: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_scaffold_used"
+          },
+          "success": {
+            "trigger": "selection_made",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc03_win_fast",
+                "text": "I know what I want! Let's do it!",
+                "emotion": "confident",
+                "audio_file": "chapter01/audio/ch01_sc03_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc03_win_slow",
+                "text": "Okay... I think I'll try this one.",
+                "emotion": "thoughtful",
+                "audio_file": "chapter01/audio/ch01_sc03_win_slow.mp3"
+              }
+            },
+            "metric_mapping": {
+              "riddle": {"learning_style": "problem_solver"},
+              "answer": {"learning_style": "social_learner"}
+            }
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch01_sc04_minor_scare"
+      }
+    },
+
+    {
+      "scene_id": "ch01_sc04_minor_scare",
+      "title": "The Hollow Log Boom",
+      "sequence": 4,
+      "interaction_loop": {
+        "challenge_id": "emotional_regulation",
+        "primary_prompt": {
+          "actor": "Narrator",
+          "line_id": "ch01_sc04_prime",
+          "text": "BOOM! The log sounds like a drum! Sir James jumps back. How is he feeling?",
+          "emotion": "dramatic",
+          "sfx": "log_boom",
+          "audio_file": "chapter01/audio/ch01_sc04_prime.mp3"
+        },
+        "ui_type": "emotion_selector",
+        "options": [
+          {"id": "scared", "label": "😨 Scared", "emoji": "😨"},
+          {"id": "surprised", "label": "😲 Surprised", "emoji": "😲"},
+          {"id": "excited", "label": "😄 Excited", "emoji": "😄"},
+          {"id": "curious", "label": "🤔 Curious", "emoji": "🤔"}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "5s_no_action",
+            "actor": "Sir James",
+            "line_id": "ch01_sc04_idle",
+            "text": "My heart is beating really fast like a bunny rabbit...",
+            "emotion": "vulnerable",
+            "audio_file": "chapter01/audio/ch01_sc04_idle.mp3",
+            "visual_cue": "Sir James holds hand to chest, Claude nuzzles him",
+            "metric_flag": "emotional_articulation_delay"
+          },
+          "parent_override": {
+            "trigger": "dashboard_calm_down",
+            "actor": "Narrator",
+            "line_id": "ch01_sc04_calm",
+            "text": "Take a deep breath with Claude. In... 1, 2, 3. Out... 1, 2, 3. You are safe.",
+            "emotion": "soothing",
+            "audio_file": "chapter01/audio/ch01_sc04_calm.mp3",
+            "visual_cue": "Claude breathes slowly, chest rising and falling",
+            "metric_flag": "regulation_assistance"
+          },
+          "success": {
+            "trigger": "select_emotion",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc04_win_fast",
+                "text": "Okay, I said it. I was scared. But I'm okay now.",
+                "emotion": "brave",
+                "audio_file": "chapter01/audio/ch01_sc04_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc04_win_slow",
+                "text": "It took me a minute, but I figured out how I feel.",
+                "emotion": "reflective",
+                "audio_file": "chapter01/audio/ch01_sc04_win_slow.mp3"
+              }
+            },
+            "metric_score": "emotional_awareness"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "ch01_sc05_campfire"
+      }
+    },
+
+    {
+      "scene_id": "ch01_sc05_campfire",
+      "title": "The Virtue Reflection",
+      "sequence": 5,
+      "interaction_loop": {
+        "challenge_id": "metacognition_review",
+        "primary_prompt": {
+          "actor": "Gramps",
+          "line_id": "ch01_sc05_prime",
+          "text": "You did well today, lad. What was your strongest power?",
+          "emotion": "warm_proud",
+          "audio_file": "chapter01/audio/ch01_sc05_prime.mp3"
+        },
+        "ui_type": "virtue_selector",
+        "options": [
+          {"id": "courage", "label": "💎 Courage", "description": "I kept going even when it was scary"},
+          {"id": "wisdom", "label": "🥇 Wisdom", "description": "I listened and made smart choices"},
+          {"id": "kindness", "label": "💚 Kindness", "description": "I helped my friends along the way"}
+        ],
+        "states": {
+          "idle_support": {
+            "trigger": "8s_no_action",
+            "actor": "Sparky",
+            "line_id": "ch01_sc05_idle",
+            "text": "You were so brave at the loud log! Zoom!",
+            "emotion": "encouraging",
+            "sfx": "sparky_zoom",
+            "audio_file": "chapter01/audio/ch01_sc05_idle.mp3",
+            "visual_cue": "Sparky circles around the Courage option",
+            "metric_flag": "reflection_prompt_needed"
+          },
+          "parent_override": {
+            "trigger": "dashboard_chat_hint",
+            "actor": "Narrator",
+            "line_id": "ch01_sc05_parent",
+            "template": "Your grown-up says: \"${parent_text}\"",
+            "emotion": "warm_supportive",
+            "metric_flag": "parent_reflection_assist"
+          },
+          "success": {
+            "trigger": "select_virtue",
+            "lines": {
+              "fast": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc05_win_fast",
+                "text": "I choose... Courage! Because I kept going even when it was dark.",
+                "emotion": "proud",
+                "audio_file": "chapter01/audio/ch01_sc05_win_fast.mp3"
+              },
+              "slow": {
+                "actor": "Sir James",
+                "line_id": "ch01_sc05_win_slow",
+                "text": "Hmm... I think I was wise today. I listened to the trees.",
+                "emotion": "thoughtful",
+                "audio_file": "chapter01/audio/ch01_sc05_win_slow.mp3"
+              }
+            },
+            "metric_score": "self_perception_bias"
+          }
+        }
+      },
+      "routing": {
+        "on_complete": "chapter_complete",
+        "next_chapter": "ch02_crystal_caves"
+      }
+    }
+  ],
+
+  "chapter_summary": {
+    "total_scenes": 5,
+    "skills_measured": [
+      "survival_sense",
+      "attention_span",
+      "learning_style",
+      "emotional_awareness",
+      "self_perception_bias"
+    ],
+    "parent_dashboard_metrics": {
+      "hesitation_baseline": "How long child takes to make first choice",
+      "listening_support_needed": "Whether auditory attention needed hints",
+      "auditory_miss": "Tapped wrong object after hearing instruction",
+      "decision_paralysis": "Took >10s to choose learning style",
+      "emotional_articulation_delay": "Needed time to identify feelings",
+      "regulation_assistance": "Parent used calm-down button",
+      "reflection_prompt_needed": "Needed hint to reflect on virtues"
+    },
+    "foreshadow": "Chapter 2 introduces pattern recognition in the Crystal Caves"
+  }
+}
