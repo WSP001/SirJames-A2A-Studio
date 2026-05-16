@@ -176,6 +176,7 @@ def generate_scene_html(chapter_num: int, scene_data: dict, scene_idx: int, tota
             border: none;
             color: #333;
             padding: 15px 40px;
+            min-height: 48px;
             font-size: 1.2em;
             font-weight: bold;
             border-radius: 50px;
@@ -195,6 +196,7 @@ def generate_scene_html(chapter_num: int, scene_data: dict, scene_idx: int, tota
             background: linear-gradient(135deg, #ffd700, #ff8c00);
             color: #333;
             padding: 18px 30px;
+            min-height: 48px;
             border-radius: 50px;
             text-decoration: none;
             text-align: center;
@@ -221,6 +223,7 @@ def generate_scene_html(chapter_num: int, scene_data: dict, scene_idx: int, tota
             border: 3px solid white;
             color: white;
             padding: 18px 25px;
+            min-height: 48px;
             border-radius: 50px;
             text-decoration: none;
             text-align: center;
