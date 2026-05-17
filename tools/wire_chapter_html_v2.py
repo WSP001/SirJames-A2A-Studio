@@ -116,6 +116,7 @@ def generate_scene_html(chapter_num: int, scene_data: dict, scene_idx: int, tota
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sir James Adventures - Chapter {chapter_num} - {chapter_title}</title>
+    <script src="/js/storyflow.js" defer></script>
     <style>
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
         body {{
