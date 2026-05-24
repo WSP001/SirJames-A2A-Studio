@@ -276,17 +276,96 @@ netlify deploy --prod
 
 ---
 
+## Phase 6: Knight School Integration (Book003.5)
+
+> **Added:** May 24, 2026 — Swift KnightSchool modules converted to web
+
+### 6.1 Challenge Engine
+| Task | Status | Source | Target | Expected Result |
+|------|--------|--------|--------|-----------------|
+| Convert Swift Reading Rhythm to JS | 🟢 | `KnightlyReadingRhythmChallenge.swift` | `knight_school_challenges.js` | ReadingRhythmChallenge class ✅ |
+| Convert Swift Listening to JS | 🟢 | `KnightlyListeningChallenge.swift` | `knight_school_challenges.js` | ListeningChallenge class ✅ |
+| Convert Swift Typing to JS | 🟢 | `KnightlyTypingChallenge.swift` | `knight_school_challenges.js` | TypingChallenge class ✅ |
+| Convert Swift Memory Pattern to JS | 🟢 | `KnightlyMemoryPatternChallenge.swift` | `knight_school_challenges.js` | MemoryPatternChallenge class ✅ |
+| Create KnightSchoolEngine orchestrator | 🟢 | New | `knight_school_challenges.js` | Integrates with LoopEngine ✅ |
+| Create auto-play configuration | 🟢 | `SceneView.swift` `.onAppear` | `auto_play_config.json` | No-click audio for 5yo ✅ |
+
+### 6.2 Character Bible Update
+| Task | Status | File | Changes |
+|------|--------|------|---------|
+| Update Sir James outfit | 🟢 | `CONSISTENCY.md` v2.0.0 | Cyber-Chivalric training suit ✅ |
+| Update Claude collar | 🟢 | `CONSISTENCY.md` v2.0.0 | SJA logo tag ✅ |
+| Update Gramps as ex-knight | 🟢 | `CONSISTENCY.md` v2.0.0 | Strong, sword on back, NOT feeble ✅ |
+| Add Finnian the Red Fox | 🟢 | `CONSISTENCY.md` v2.0.0 | Sly trickster, wrong-path temptation ✅ |
+| Add Whindle the Owl | 🟢 | `CONSISTENCY.md` v2.0.0 | Forest sage, listening challenges ✅ |
+| Add Knight School challenge types | 🟢 | `CONSISTENCY.md` v2.0.0 | 4 challenges + auto-play rules ✅ |
+
+### 6.3 Chapter Loop Muscle (Remaining)
+| Chapter | Theme | Knight School Challenge | Status |
+|---------|-------|----------------------|--------|
+| 1 | Survival Baseline | — | 🟢 Complete ✅ |
+| 2 | Patterns & Curiosity | Memory Pattern (intro) | 🔴 Needs complete JSON |
+| 3 | Teamwork & Strategy | Memory Pattern + Listening | 🔴 Needs complete JSON |
+| 4 | Communication | Reading Rhythm + Typing | 🔴 Needs complete JSON |
+| 5 | Memory & Transfer | Listening + Memory Pattern | 🔴 Needs complete JSON |
+| 6 | Literacy Bridge | Word Families | 🟢 Complete ✅ |
+| 7 | Blends & Spelling | Typing + Reading Rhythm | 🔴 Needs complete JSON |
+| 8 | Sentences | Reading Rhythm | 🔴 Needs complete JSON |
+| 9 | Review & All Challenges | ALL FOUR (Knight School Gates) | 🔴 Needs complete JSON |
+| 10 | Graduation & Book004 Seeding | Celebration + Foreshadowing | 🔴 Needs complete JSON |
+
+### 6.4 Acting Master Directive
+| Task | Status | File | Purpose |
+|------|--------|------|---------|
+| Rewrite Acting Master Directive | 🟢 | `BOOK003_ACTING_MASTER_DIRECTIVE.md` v2.0.0 | Full KnightSchool integration guide ✅ |
+| Updated DALL-E image prompts | 🟢 | Inside Acting Master Directive | Cyber-Chivalric suit, SJA collar, Castle Courtyard ✅ |
+| Red Fox mechanic documented | 🟢 | Inside Acting Master Directive | Wrong-path temptation flow ✅ |
+| Auto-play config documented | 🟢 | Inside Acting Master Directive | iPad 9th Gen + Safari workarounds ✅ |
+
+---
+
+## Phase 7: Book003.5 Story Rewrite (Pending)
+
+> **Theme:** Sir James's Pre-Knight School Graduation
+> **Premise:** Pre-kindergarten IS Knight School in Sir James's world
+
+### 7.1 Story Arc
+| Chapter | Theme | Knight School Tie-In | Status |
+|---------|-------|---------------------|--------|
+| 1 | First Day at Knight School | Introductions, Castle Courtyard | 🔴 Needs story rewrite |
+| 2 | The Pattern Quest | Memory Pattern challenge (knightly symbols) | 🔴 Needs story rewrite |
+| 3 | The Cave of Echoes | Listening challenge + Tree of Trust (Memory) | 🔴 Needs story rewrite |
+| 4 | The Ancient Scroll | Reading Rhythm + Training Yard (Typing) | 🔴 Needs story rewrite |
+| 5 | The Echo Bridge | Listening (medium) + Star Crystal (Memory) | 🔴 Needs story rewrite |
+| 6 | River Crossing (Literacy Bridge) | Word Families + Direction Words | 🟡 Loops done, story update needed |
+| 7 | The Royal Library | Typing (Archivists) + Reading (Story Circle) | 🔴 Needs story rewrite |
+| 8 | The Knight's Code | Sentence Reading + Comprehension | 🔴 Needs story rewrite |
+| 9 | The Knight School Gates | ALL FOUR CHALLENGES (Final Test) | 🔴 Needs story rewrite |
+| 10 | Graduation Day! | Celebration + Book004 Foreshadowing | 🔴 Needs story rewrite |
+
+### 7.2 New Characters to Integrate
+| Character | First Appearance | Role |
+|-----------|-----------------|------|
+| Finnian 🦊 | Chapter 2 (foreshadow), Chapter 4 (full) | Wrong-path temptation |
+| Whindle 🦉 | Chapter 3 (Cave of Echoes) | Listening challenge guide |
+| Sparky 🐿️ | Chapter 1 onwards | Energetic encourager |
+
+---
+
 ## 🏆 Success Criteria
 
-When all tasks are 🟢 GREEN, Book003 is ready:
+When all tasks are 🟢 GREEN, Book003.5 is ready:
 
 - [ ] All 10 chapters playable with images and audio
-- [ ] Parent Dashboard shows virtue tracking
+- [ ] Knight School challenges integrated (Reading, Listening, Typing, Memory)
+- [ ] Auto-play audio (no button clicks for 5yo SJ)
+- [ ] Parent Dashboard shows virtue tracking + Knight School metrics
+- [ ] Finnian Red Fox wrong-path mechanic working
 - [ ] Preprogrammed theme buttons work
 - [ ] Feedback loop stores preferences
 - [ ] Cost per chapter < $1.00
-- [ ] Works on iPad 9th Gen
-- [ ] Character consistency maintained (5yo Sir James, Redbone Claude)
+- [ ] Works on iPad 9th Gen (Safari, touch targets ≥48px)
+- [ ] Character consistency maintained (5yo Sir James in Cyber-Chivalric suit, Redbone Claude with SJA collar)
 
 ---
 
@@ -296,7 +375,11 @@ When all tasks are 🟢 GREEN, Book003 is ready:
 |----------|----------|---------|
 | HANDOFF_BOOK003.md | `SirJames-A2A-Studio/` | Complete handoff with A2A/D2A architecture |
 | AGENTS.md | `SirJames-A2A-Studio/` | 7-agent definitions and communication rules |
-| CONSISTENCY.md | `SirJames-A2A-Studio/` | Character Bible (IMMUTABLE) |
+| CONSISTENCY.md v2.0.0 | `SirJames-A2A-Studio/` | Character Bible (updated with all characters) |
+| BOOK003_ACTING_MASTER_DIRECTIVE.md v2.0.0 | `SirJames-A2A-Studio/` | KnightSchool integration master guide |
+| BOOK003_5_MASTER_STATUS.md | `SirJames-A2A-Studio/` | Enterprise loop system status |
+| knight_school_challenges.js | `assets/scripts/book003/` | 4 challenge engines (Swift → Web) |
+| auto_play_config.json | `assets/scripts/book003/` | Auto-play rules for 5yo SJ |
 | DEVELOPER_README_BOOK003.md | `SirJamesAdventures003/` | Developer onboarding |
 | ONBOARDING_FIRST_60_MIN_BOOK003.md | `SirJamesAdventures003/` | First hour checklist |
 | MASTER.md | `SirTrav-A2A-Studio/` | D2A build plan reference |

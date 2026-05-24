@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "description": "Auto-play configuration for Book003.5 - No button clicks for 5yo SJ",
+    "version": "1.0.0",
+    "updated": "2026-05-24",
+    "source": "Converted from SceneView.swift .onAppear { narrator.speak(scene.narration) }"
+  },
+  "auto_play_rules": {
+    "narration_auto_start": true,
+    "narration_delay_ms": 500,
+    "claude_thought_delay_ms": 3000,
+    "idle_support_timeout_ms": 8000,
+    "error_support_timeout_ms": 5000,
+    "celebration_auto_play": true,
+    "next_scene_auto_transition": true,
+    "next_scene_transition_delay_ms": 2000,
+    "parent_override_enabled": true
+  },
+  "ipad_9th_gen": {
+    "min_touch_target_px": 48,
+    "min_font_size_px": 24,
+    "no_hover_states": true,
+    "safari_audio_context_resume": true,
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+    "backdrop_filter_fallback": true
+  },
+  "scene_flow": {
+    "on_scene_load": [
+      { "action": "play_audio", "target": "prime_narration", "delay_ms": 500 },
+      { "action": "show_character", "target": "scene_characters", "delay_ms": 0 }
+    ],
+    "on_narration_end": [
+      { "action": "show_thought_bubble", "target": "claude", "delay_ms": 3000 },
+      { "action": "start_idle_timer", "timeout_ms": 8000 }
+    ],
+    "on_idle_timeout": [
+      { "action": "play_audio", "target": "idle_support" },
+      { "action": "show_visual_hint", "target": "interaction_area" }
+    ],
+    "on_correct_answer": [
+      { "action": "play_audio", "target": "celebration" },
+      { "action": "award_virtue_points", "target": "scene_virtues" },
+      { "action": "log_to_dashboard", "target": "parent_metrics" },
+      { "action": "auto_navigate", "target": "next_scene", "delay_ms": 2000 }
+    ],
+    "on_wrong_answer": [
+      { "action": "play_audio", "target": "error_support" },
+      { "action": "show_thought_bubble", "target": "claude_hint" },
+      { "action": "restart_idle_timer", "timeout_ms": 5000 }
+    ],
+    "on_finnian_appears": [
+      { "action": "show_thought_bubble", "target": "claude_warning", "icon": "caution" },
+      { "action": "play_audio", "target": "finnian_temptation" },
+      { "action": "show_choice", "options": ["follow_finnian", "ask_gramps"] }
+    ]
+  },
+  "challenge_auto_play": {
+    "reading_rhythm": {
+      "auto_start_reading": true,
+      "word_highlight_enabled": true,
+      "speed_control_visible": true,
+      "gramps_intro_auto_play": true
+    },
+    "listening": {
+      "auto_play_sequence": true,
+      "replay_button_visible": true,
+      "whindle_guidance_auto": true
+    },
+    "typing": {
+      "virtual_keyboard_visible": true,
+      "finger_guide_enabled": true,
+      "auto_hint_after_errors": 2
+    },
+    "memory_pattern": {
+      "auto_show_pattern": true,
+      "pattern_display_interval_ms": 1000,
+      "auto_replay_after_failures": 3
+    }
+  },
+  "audio_config": {
+    "format": "mp3",
+    "bitrate": "128kbps",
+    "normalization": "-16 LUFS",
+    "safari_workaround": "AudioContext.resume() on first user interaction",
+    "preload_strategy": "preload next scene audio during current scene"
+  },
+  "voice_ids": {
+    "sir_james": { "id": "SOYHLrjzK2X1ezoPC6cr", "name": "Harry", "service": "ElevenLabs" },
+    "narrator": { "id": "XrExE9yKIg1WjnnlVkGX", "name": "Matilda", "service": "ElevenLabs" },
+    "gramps": { "id": "pqHfZKP75CvOlQylNhV4", "name": "Bill", "service": "ElevenLabs" },
+    "claude": { "id": null, "name": "SFX only", "service": "local" },
+    "finnian": { "id": null, "name": "TBD - smooth persuasive", "service": "ElevenLabs" },
+    "whindle": { "id": null, "name": "TBD - mystical measured", "service": "ElevenLabs" },
+    "sparky": { "id": null, "name": "TBD - high-pitched energetic", "service": "ElevenLabs" }
+  }
+}
